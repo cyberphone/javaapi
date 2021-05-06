@@ -71,6 +71,7 @@ var activeTableTab = "active-table-tab";
 </dl>
 <hr>
 <pre>public static interface <span class="type-name-label">CBORHmacValidator.KeyLocator</span></pre>
+<div class="block">For dynamic key retrieval.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -94,7 +95,9 @@ var activeTableTab = "active-table-tab";
 <td class="col-first"><code>byte[]</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#locate(java.lang.String,org.webpki.crypto.HmacAlgorithms)">locate</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;optionalKeyId,
 <a href="../crypto/HmacAlgorithms.html" title="enum in org.webpki.crypto">HmacAlgorithms</a>&nbsp;hmacAlgorithm)</code></th>
-<td class="col-last">&nbsp;</td>
+<td class="col-last">
+<div class="block">Check signature data and retrieve validation key.</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -118,7 +121,13 @@ var activeTableTab = "active-table-tab";
 <a href="../crypto/HmacAlgorithms.html" title="enum in org.webpki.crypto">HmacAlgorithms</a>&nbsp;hmacAlgorithm)</span>
        throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
+<div class="block">Check signature data and retrieve validation key.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>optionalKeyId</code> - KeyId or null</dd>
+<dd><code>hmacAlgorithm</code> - The found HMAC algorithm</dd>
+<dt>Returns:</dt>
+<dd>Secret key for validation</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
