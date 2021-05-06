@@ -108,7 +108,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr class="alt-color" id="i2">
 <td class="col-first"><code>abstract byte[]</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#encode()">encode</a></span>()</code></th>
-<td class="col-last">&nbsp;</td>
+<td class="col-last">
+<div class="block">Encode CBOR object.</div>
+</td>
 </tr>
 <tr class="row-color" id="i3">
 <td class="col-first"><code>boolean</code></td>
@@ -168,7 +170,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tr class="alt-color" id="i14">
 <td class="col-first"><code>abstract <a href="CBORTypes.html" title="enum in org.webpki.cbor">CBORTypes</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getType()">getType</a></span>()</code></th>
-<td class="col-last">&nbsp;</td>
+<td class="col-last">
+<div class="block">Get core CBOR type.</div>
+</td>
 </tr>
 <tr class="row-color" id="i15">
 <td class="col-first"><code>boolean</code></td>
@@ -207,6 +211,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <section class="detail" id="getType()">
 <h3>getType</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type"><a href="CBORTypes.html" title="enum in org.webpki.cbor">CBORTypes</a></span>&nbsp;<span class="member-name">getType</span>()</div>
+<div class="block">Get core CBOR type.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>The CBOR core type</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -214,7 +223,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h3>encode</h3>
 <div class="member-signature"><span class="modifiers">public abstract</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="member-name">encode</span>()
                        throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Encode CBOR object.</div>
 <dl class="notes">
+<dt>Returns:</dt>
+<dd>Byte data</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>

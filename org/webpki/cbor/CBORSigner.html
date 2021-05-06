@@ -11,7 +11,7 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -157,6 +157,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Set signature key Id.</div>
 </td>
 </tr>
+<tr class="row-color" id="i1">
+<td class="col-first"><code><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setProvider(java.lang.String)">setProvider</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider)</code></th>
+<td class="col-last">
+<div class="block">Set cryptographic provider.</div>
+</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -242,6 +249,19 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd><code>keyId</code> - A keId string</dd>
 <dt>Returns:</dt>
 <dd>this</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setProvider(java.lang.String)">
+<h3>setProvider</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></span>&nbsp;<span class="member-name">setProvider</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider)</span></div>
+<div class="block">Set cryptographic provider.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>provider</code> - Name of provider like "BC"</dd>
+<dt>Returns:</dt>
+<dd>CBORSigner</dd>
 </dl>
 </section>
 </li>
