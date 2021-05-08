@@ -92,15 +92,14 @@ extends <a href="JSONSigner.html" title="class in org.webpki.json">JSONSigner</a
 </thead>
 <tbody>
 <tr class="alt-color">
-<th class="col-constructor-name" scope="row"><code><span class="member-name-link"><a href="#%3Cinit%3E(java.security.PrivateKey,java.security.cert.X509Certificate%5B%5D,java.lang.String)">JSONX509Signer</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
-<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]&nbsp;certificatePath,
-<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider)</code></th>
+<th class="col-constructor-name" scope="row"><code><span class="member-name-link"><a href="#%3Cinit%3E(java.security.PrivateKey,java.security.cert.X509Certificate%5B%5D)">JSONX509Signer</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]&nbsp;certificatePath)</code></th>
 <td class="col-last">
 <div class="block">Constructor for JCE based solutions.</div>
 </td>
 </tr>
 <tr class="row-color">
-<th class="col-constructor-name" scope="row"><code><span class="member-name-link"><a href="#%3Cinit%3E(org.webpki.crypto.SignerInterface)">JSONX509Signer</a></span>&#8203;(<a href="../crypto/SignerInterface.html" title="interface in org.webpki.crypto">SignerInterface</a>&nbsp;signer)</code></th>
+<th class="col-constructor-name" scope="row"><code><span class="member-name-link"><a href="#%3Cinit%3E(org.webpki.crypto.X509SignerInterface)">JSONX509Signer</a></span>&#8203;(<a href="../crypto/X509SignerInterface.html" title="interface in org.webpki.crypto">X509SignerInterface</a>&nbsp;signer)</code></th>
 <td class="col-last">
 <div class="block">Constructor for custom crypto solutions.</div>
 </td>
@@ -128,18 +127,18 @@ extends <a href="JSONSigner.html" title="class in org.webpki.json">JSONSigner</a
 <tbody>
 <tr class="alt-color" id="i0">
 <td class="col-first"><code><a href="JSONX509Signer.html" title="class in org.webpki.json">JSONX509Signer</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setAlgorithmPreferences(org.webpki.crypto.AlgorithmPreferences)">setAlgorithmPreferences</a></span>&#8203;(<a href="../crypto/AlgorithmPreferences.html" title="enum in org.webpki.crypto">AlgorithmPreferences</a>&nbsp;algorithmPreferences)</code></th>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setAlgorithm(org.webpki.crypto.AsymSignatureAlgorithms)">setAlgorithm</a></span>&#8203;(<a href="../crypto/AsymSignatureAlgorithms.html" title="enum in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
 <tr class="row-color" id="i1">
-<td class="col-first"><code>void</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setExtensionNames(java.lang.String%5B%5D,boolean)">setExtensionNames</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;names,
-boolean&nbsp;encryptionMode)</code></th>
+<td class="col-first"><code><a href="JSONX509Signer.html" title="class in org.webpki.json">JSONX509Signer</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setAlgorithmPreferences(org.webpki.crypto.AlgorithmPreferences)">setAlgorithmPreferences</a></span>&#8203;(<a href="../crypto/AlgorithmPreferences.html" title="enum in org.webpki.crypto">AlgorithmPreferences</a>&nbsp;algorithmPreferences)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
 <tr class="alt-color" id="i2">
-<td class="col-first"><code><a href="JSONX509Signer.html" title="class in org.webpki.json">JSONX509Signer</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setSignatureAlgorithm(org.webpki.crypto.AsymSignatureAlgorithms)">setSignatureAlgorithm</a></span>&#8203;(<a href="../crypto/AsymSignatureAlgorithms.html" title="enum in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm)</code></th>
+<td class="col-first"><code>void</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setExtensionNames(java.lang.String%5B%5D,boolean)">setExtensionNames</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;names,
+boolean&nbsp;encryptionMode)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
 </tbody>
@@ -148,7 +147,7 @@ boolean&nbsp;encryptionMode)</code></th>
 </div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.org.webpki.json.JSONSigner">Methods inherited from class&nbsp;org.webpki.json.<a href="JSONSigner.html" title="class in org.webpki.json">JSONSigner</a></h3>
-<code><a href="JSONSigner.html#getNormalizedData()">getNormalizedData</a>, <a href="JSONSigner.html#setExcluded(java.lang.String%5B%5D)">setExcluded</a>, <a href="JSONSigner.html#setExtensionData(org.webpki.json.JSONObjectWriter)">setExtensionData</a>, <a href="JSONSigner.html#setExtensionNames(java.lang.String%5B%5D)">setExtensionNames</a>, <a href="JSONSigner.html#setKeyId(java.lang.String)">setKeyId</a>, <a href="JSONSigner.html#setOutputPublicKeyInfo(boolean)">setOutputPublicKeyInfo</a></code></div>
+<code><a href="JSONSigner.html#getNormalizedData()">getNormalizedData</a>, <a href="JSONSigner.html#setExcluded(java.lang.String%5B%5D)">setExcluded</a>, <a href="JSONSigner.html#setExtensionData(org.webpki.json.JSONObjectWriter)">setExtensionData</a>, <a href="JSONSigner.html#setExtensionNames(java.lang.String%5B%5D)">setExtensionNames</a>, <a href="JSONSigner.html#setKeyId(java.lang.String)">setKeyId</a></code></div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -164,34 +163,33 @@ boolean&nbsp;encryptionMode)</code></th>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(org.webpki.crypto.SignerInterface)">
+<section class="detail" id="&lt;init&gt;(org.webpki.crypto.X509SignerInterface)">
 <h3>JSONX509Signer</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="member-name">JSONX509Signer</span>&#8203;(<span class="parameters"><a href="../crypto/SignerInterface.html" title="interface in org.webpki.crypto">SignerInterface</a>&nbsp;signer)</span>
-               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="member-name">JSONX509Signer</span>&#8203;(<span class="parameters"><a href="../crypto/X509SignerInterface.html" title="interface in org.webpki.crypto">X509SignerInterface</a>&nbsp;signer)</span>
+               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block">Constructor for custom crypto solutions.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>signer</code> - Handle to implementation</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - &nbsp;</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="&lt;init&gt;(java.security.PrivateKey,java.security.cert.X509Certificate[],java.lang.String)">
+<section class="detail" id="&lt;init&gt;(java.security.PrivateKey,java.security.cert.X509Certificate[])">
 <h3>JSONX509Signer</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="member-name">JSONX509Signer</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
-<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]&nbsp;certificatePath,
-<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider)</span>
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]&nbsp;certificatePath)</span>
                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Constructor for JCE based solutions.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>privateKey</code> - Private key</dd>
-<dd><code>certificatePath</code> - Certificate path</dd>
-<dd><code>provider</code> - Optional JCE provider or null</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - &nbsp;</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
 </section>
 </li>
@@ -204,9 +202,16 @@ boolean&nbsp;encryptionMode)</code></th>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="setSignatureAlgorithm(org.webpki.crypto.AsymSignatureAlgorithms)">
-<h3>setSignatureAlgorithm</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JSONX509Signer.html" title="class in org.webpki.json">JSONX509Signer</a></span>&nbsp;<span class="member-name">setSignatureAlgorithm</span>&#8203;(<span class="parameters"><a href="../crypto/AsymSignatureAlgorithms.html" title="enum in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm)</span></div>
+<section class="detail" id="setAlgorithm(org.webpki.crypto.AsymSignatureAlgorithms)">
+<h3>setAlgorithm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JSONX509Signer.html" title="class in org.webpki.json">JSONX509Signer</a></span>&nbsp;<span class="member-name">setAlgorithm</span>&#8203;(<span class="parameters"><a href="../crypto/AsymSignatureAlgorithms.html" title="enum in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm)</span>
+                            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
+<dl class="notes">
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
+</dl>
 </section>
 </li>
 <li>

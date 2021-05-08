@@ -11,7 +11,7 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -89,9 +89,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </thead>
 <tbody>
 <tr class="alt-color">
-<th class="col-constructor-name" scope="row"><code><span class="member-name-link"><a href="#%3Cinit%3E(org.webpki.crypto.SignerInterface)">PKCS7Signer</a></span>&#8203;(<a href="../crypto/SignerInterface.html" title="interface in org.webpki.crypto">SignerInterface</a>&nbsp;signer)</code></th>
+<th class="col-constructor-name" scope="row"><code><span class="member-name-link"><a href="#%3Cinit%3E(org.webpki.crypto.X509SignerInterface)">PKCS7Signer</a></span>&#8203;(<a href="../crypto/X509SignerInterface.html" title="interface in org.webpki.crypto">X509SignerInterface</a>&nbsp;signer)</code></th>
 <td class="col-last">
-<div class="block">Creates an PKCS7Signer using the given <a href="../crypto/SignerInterface.html" title="interface in org.webpki.crypto"><code>SignerInterface</code></a>.</div>
+<div class="block">Creates an PKCS7Signer using the given <a href="../crypto/X509SignerInterface.html" title="interface in org.webpki.crypto"><code>X509SignerInterface</code></a>.</div>
 </td>
 </tr>
 </tbody>
@@ -116,18 +116,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </thead>
 <tbody>
 <tr class="alt-color" id="i0">
-<td class="col-first"><code>void</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setSignatureAlgorithm(org.webpki.crypto.AsymSignatureAlgorithms)">setSignatureAlgorithm</a></span>&#8203;(<a href="../crypto/AsymSignatureAlgorithms.html" title="enum in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;signatureAlgorithm)</code></th>
-<td class="col-last">&nbsp;</td>
-</tr>
-<tr class="row-color" id="i1">
 <td class="col-first"><code>byte[]</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#signDetachedMessage(byte%5B%5D)">signDetachedMessage</a></span>&#8203;(byte[]&nbsp;message)</code></th>
 <td class="col-last">
 <div class="block">Signs a message.</div>
 </td>
 </tr>
-<tr class="alt-color" id="i2">
+<tr class="row-color" id="i1">
 <td class="col-first"><code>byte[]</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#signMessage(byte%5B%5D)">signMessage</a></span>&#8203;(byte[]&nbsp;message)</code></th>
 <td class="col-last">
@@ -153,10 +148,10 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(org.webpki.crypto.SignerInterface)">
+<section class="detail" id="&lt;init&gt;(org.webpki.crypto.X509SignerInterface)">
 <h3>PKCS7Signer</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="member-name">PKCS7Signer</span>&#8203;(<span class="parameters"><a href="../crypto/SignerInterface.html" title="interface in org.webpki.crypto">SignerInterface</a>&nbsp;signer)</span></div>
-<div class="block">Creates an PKCS7Signer using the given <a href="../crypto/SignerInterface.html" title="interface in org.webpki.crypto"><code>SignerInterface</code></a>.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="member-name">PKCS7Signer</span>&#8203;(<span class="parameters"><a href="../crypto/X509SignerInterface.html" title="interface in org.webpki.crypto">X509SignerInterface</a>&nbsp;signer)</span></div>
+<div class="block">Creates an PKCS7Signer using the given <a href="../crypto/X509SignerInterface.html" title="interface in org.webpki.crypto"><code>X509SignerInterface</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>signer</code> - The signer</dd>
@@ -172,16 +167,11 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="setSignatureAlgorithm(org.webpki.crypto.AsymSignatureAlgorithms)">
-<h3>setSignatureAlgorithm</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">setSignatureAlgorithm</span>&#8203;(<span class="parameters"><a href="../crypto/AsymSignatureAlgorithms.html" title="enum in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;signatureAlgorithm)</span></div>
-</section>
-</li>
-<li>
 <section class="detail" id="signDetachedMessage(byte[])">
 <h3>signDetachedMessage</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="member-name">signDetachedMessage</span>&#8203;(<span class="parameters">byte[]&nbsp;message)</span>
-                           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+                           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block">Signs a message.
  <p>Creates a detached (not containing the actual data signed) PKCS#7 SignedData message.</div>
 <dl class="notes">
@@ -191,6 +181,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd>DER-encoded PKCS#7 SignedData message.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - If something unexpected happens...</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
 </section>
 </li>
@@ -198,7 +189,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <section class="detail" id="signMessage(byte[])">
 <h3>signMessage</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="member-name">signMessage</span>&#8203;(<span class="parameters">byte[]&nbsp;message)</span>
-                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block">Signs a message.
  <p>Creates a PKCS#7 SignedData message.</div>
 <dl class="notes">
@@ -208,6 +200,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <dd>DER-encoded PKCS#7 SignedData message.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - If something unexpected happens...</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
 </section>
 </li>

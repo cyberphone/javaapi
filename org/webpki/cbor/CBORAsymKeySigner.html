@@ -11,7 +11,7 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -111,8 +111,7 @@ extends <a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a
 </td>
 </tr>
 <tr class="row-color">
-<th class="col-constructor-name" scope="row"><code><span class="member-name-link"><a href="#%3Cinit%3E(java.security.PrivateKey,org.webpki.crypto.AsymSignatureAlgorithms)">CBORAsymKeySigner</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
-<a href="../crypto/AsymSignatureAlgorithms.html" title="enum in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;signatureAlgorithm)</code></th>
+<th class="col-constructor-name" scope="row"><code><span class="member-name-link"><a href="#%3Cinit%3E(org.webpki.crypto.AsymKeySignerInterface)">CBORAsymKeySigner</a></span>&#8203;(<a href="../crypto/AsymKeySignerInterface.html" title="interface in org.webpki.crypto">AsymKeySignerInterface</a>&nbsp;signer)</code></th>
 <td class="col-last">
 <div class="block">Initialize signer.</div>
 </td>
@@ -139,6 +138,13 @@ extends <a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a
 </thead>
 <tbody>
 <tr class="alt-color" id="i0">
+<td class="col-first"><code><a href="CBORAsymKeySigner.html" title="class in org.webpki.cbor">CBORAsymKeySigner</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setAlgorithm(org.webpki.crypto.AsymSignatureAlgorithms)">setAlgorithm</a></span>&#8203;(<a href="../crypto/AsymSignatureAlgorithms.html" title="enum in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm)</code></th>
+<td class="col-last">
+<div class="block">Set signature algorithm.</div>
+</td>
+</tr>
+<tr class="row-color" id="i1">
 <td class="col-first"><code><a href="CBORAsymKeySigner.html" title="class in org.webpki.cbor">CBORAsymKeySigner</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setPublicKey(java.security.PublicKey)">setPublicKey</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey)</code></th>
 <td class="col-last">
@@ -167,15 +173,18 @@ extends <a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(java.security.PrivateKey,org.webpki.crypto.AsymSignatureAlgorithms)">
+<section class="detail" id="&lt;init&gt;(org.webpki.crypto.AsymKeySignerInterface)">
 <h3>CBORAsymKeySigner</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="member-name">CBORAsymKeySigner</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
-<a href="../crypto/AsymSignatureAlgorithms.html" title="enum in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;signatureAlgorithm)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="member-name">CBORAsymKeySigner</span>&#8203;(<span class="parameters"><a href="../crypto/AsymKeySignerInterface.html" title="interface in org.webpki.crypto">AsymKeySignerInterface</a>&nbsp;signer)</span>
+                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block">Initialize signer.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>privateKey</code> - The key to sign with</dd>
-<dd><code>signatureAlgorithm</code> - The algorithm to use</dd>
+<dd><code>signer</code> - Custom signer</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
 </section>
 </li>
@@ -183,7 +192,8 @@ extends <a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a
 <section class="detail" id="&lt;init&gt;(java.security.PrivateKey)">
 <h3>CBORAsymKeySigner</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="member-name">CBORAsymKeySigner</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey)</span>
-                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block">Initialize signer.
  
  The default signature algorithm to use is based on the recommendations
@@ -193,6 +203,7 @@ extends <a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a
 <dd><code>privateKey</code> - The key to sign with</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
 </section>
 </li>
@@ -214,6 +225,24 @@ extends <a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a
 <dd><code>publicKey</code> - The public key</dd>
 <dt>Returns:</dt>
 <dd>this</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setAlgorithm(org.webpki.crypto.AsymSignatureAlgorithms)">
+<h3>setAlgorithm</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORAsymKeySigner.html" title="class in org.webpki.cbor">CBORAsymKeySigner</a></span>&nbsp;<span class="member-name">setAlgorithm</span>&#8203;(<span class="parameters"><a href="../crypto/AsymSignatureAlgorithms.html" title="enum in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm)</span>
+                               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
+<div class="block">Set signature algorithm.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>algorithm</code> - The algorithm</dd>
+<dt>Returns:</dt>
+<dd>this</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
 </section>
 </li>

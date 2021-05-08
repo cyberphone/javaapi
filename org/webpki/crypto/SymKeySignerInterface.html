@@ -89,13 +89,12 @@ var activeTableTab = "active-table-tab";
 <tbody>
 <tr class="alt-color" id="i0">
 <td class="col-first"><code><a href="HmacAlgorithms.html" title="enum in org.webpki.crypto">HmacAlgorithms</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getHmacAlgorithm()">getHmacAlgorithm</a></span>()</code></th>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getAlgorithm()">getAlgorithm</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
 <tr class="row-color" id="i1">
 <td class="col-first"><code>byte[]</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#signData(byte%5B%5D,org.webpki.crypto.HmacAlgorithms)">signData</a></span>&#8203;(byte[]&nbsp;data,
-<a href="HmacAlgorithms.html" title="enum in org.webpki.crypto">HmacAlgorithms</a>&nbsp;algorithm)</code></th>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#signData(byte%5B%5D)">signData</a></span>&#8203;(byte[]&nbsp;data)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
 </tbody>
@@ -114,25 +113,28 @@ var activeTableTab = "active-table-tab";
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="signData(byte[],org.webpki.crypto.HmacAlgorithms)">
+<section class="detail" id="signData(byte[])">
 <h3>signData</h3>
-<div class="member-signature"><span class="return-type">byte[]</span>&nbsp;<span class="member-name">signData</span>&#8203;(<span class="parameters">byte[]&nbsp;data,
-<a href="HmacAlgorithms.html" title="enum in org.webpki.crypto">HmacAlgorithms</a>&nbsp;algorithm)</span>
-         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="member-signature"><span class="return-type">byte[]</span>&nbsp;<span class="member-name">signData</span>&#8203;(<span class="parameters">byte[]&nbsp;data)</span>
+         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="getHmacAlgorithm()">
-<h3>getHmacAlgorithm</h3>
-<div class="member-signature"><span class="return-type"><a href="HmacAlgorithms.html" title="enum in org.webpki.crypto">HmacAlgorithms</a></span>&nbsp;<span class="member-name">getHmacAlgorithm</span>()
-                         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<section class="detail" id="getAlgorithm()">
+<h3>getAlgorithm</h3>
+<div class="member-signature"><span class="return-type"><a href="HmacAlgorithms.html" title="enum in org.webpki.crypto">HmacAlgorithms</a></span>&nbsp;<span class="member-name">getAlgorithm</span>()
+                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
 </section>
 </li>

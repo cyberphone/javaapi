@@ -115,13 +115,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tbody>
 <tr class="alt-color" id="i0">
 <td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createCert(org.webpki.ca.CertSpec,org.webpki.asn1.cert.DistinguishedName,java.math.BigInteger,java.util.Date,java.util.Date,org.webpki.crypto.AsymSignatureAlgorithms,org.webpki.crypto.AsymKeySignerInterface,java.security.PublicKey)">createCert</a></span>&#8203;(<a href="CertSpec.html" title="class in org.webpki.ca">CertSpec</a>&nbsp;certSpec,
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createCert(org.webpki.ca.CertSpec,org.webpki.asn1.cert.DistinguishedName,java.math.BigInteger,java.util.Date,java.util.Date,org.webpki.crypto.AsymKeySignerInterface,java.security.PublicKey,java.security.PublicKey)">createCert</a></span>&#8203;(<a href="CertSpec.html" title="class in org.webpki.ca">CertSpec</a>&nbsp;certSpec,
 <a href="../asn1/cert/DistinguishedName.html" title="class in org.webpki.asn1.cert">DistinguishedName</a>&nbsp;issuerName,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a>&nbsp;serialNumber,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html" title="class or interface in java.util" class="external-link">Date</a>&nbsp;startDate,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html" title="class or interface in java.util" class="external-link">Date</a>&nbsp;endDate,
-<a href="../crypto/AsymSignatureAlgorithms.html" title="enum in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;certSignAlg,
 <a href="../crypto/AsymKeySignerInterface.html" title="interface in org.webpki.crypto">AsymKeySignerInterface</a>&nbsp;signer,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;issuerPublicKey,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;subjectPublicKey)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
@@ -158,20 +158,22 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="createCert(org.webpki.ca.CertSpec,org.webpki.asn1.cert.DistinguishedName,java.math.BigInteger,java.util.Date,java.util.Date,org.webpki.crypto.AsymSignatureAlgorithms,org.webpki.crypto.AsymKeySignerInterface,java.security.PublicKey)">
+<section class="detail" id="createCert(org.webpki.ca.CertSpec,org.webpki.asn1.cert.DistinguishedName,java.math.BigInteger,java.util.Date,java.util.Date,org.webpki.crypto.AsymKeySignerInterface,java.security.PublicKey,java.security.PublicKey)">
 <h3>createCert</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a></span>&nbsp;<span class="member-name">createCert</span>&#8203;(<span class="parameters"><a href="CertSpec.html" title="class in org.webpki.ca">CertSpec</a>&nbsp;certSpec,
 <a href="../asn1/cert/DistinguishedName.html" title="class in org.webpki.asn1.cert">DistinguishedName</a>&nbsp;issuerName,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a>&nbsp;serialNumber,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html" title="class or interface in java.util" class="external-link">Date</a>&nbsp;startDate,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html" title="class or interface in java.util" class="external-link">Date</a>&nbsp;endDate,
-<a href="../crypto/AsymSignatureAlgorithms.html" title="enum in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;certSignAlg,
 <a href="../crypto/AsymKeySignerInterface.html" title="interface in org.webpki.crypto">AsymKeySignerInterface</a>&nbsp;signer,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;issuerPublicKey,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;subjectPublicKey)</span>
-                           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+                           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
 </section>
 </li>

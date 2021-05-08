@@ -167,7 +167,7 @@ byte[]&nbsp;expectedServerCertificateFingerprint)</code></th>
 </tr>
 <tr class="row-color" id="i9">
 <td class="col-first"><code>void</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setRequestSigner(org.webpki.crypto.SignerInterface)">setRequestSigner</a></span>&#8203;(<a href="../crypto/SignerInterface.html" title="interface in org.webpki.crypto">SignerInterface</a>&nbsp;signer)</code></th>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setRequestSigner(org.webpki.crypto.X509SignerInterface)">setRequestSigner</a></span>&#8203;(<a href="../crypto/X509SignerInterface.html" title="interface in org.webpki.crypto">X509SignerInterface</a>&nbsp;signer)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
 <tr class="alt-color" id="i10">
@@ -308,7 +308,8 @@ byte[]&nbsp;expectedServerCertificateFingerprint)</span>
 <section class="detail" id="writeJSONData(org.webpki.json.JSONObjectWriter)">
 <h3>writeJSONData</h3>
 <div class="member-signature"><span class="modifiers">protected final</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">writeJSONData</span>&#8203;(<span class="parameters"><a href="../json/JSONObjectWriter.html" title="class in org.webpki.json">JSONObjectWriter</a>&nbsp;wr)</span>
-                            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+                            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="../json/JSONEncoder.html#writeJSONData(org.webpki.json.JSONObjectWriter)">JSONEncoder</a></code></span></div>
 <div class="block">INTERNAL USE ONLY.</div>
 <dl class="notes">
@@ -318,13 +319,14 @@ byte[]&nbsp;expectedServerCertificateFingerprint)</span>
 <dd><code>wr</code> - A JSON writer</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code> - For any underlying error</dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="setRequestSigner(org.webpki.crypto.SignerInterface)">
+<section class="detail" id="setRequestSigner(org.webpki.crypto.X509SignerInterface)">
 <h3>setRequestSigner</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">setRequestSigner</span>&#8203;(<span class="parameters"><a href="../crypto/SignerInterface.html" title="interface in org.webpki.crypto">SignerInterface</a>&nbsp;signer)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">setRequestSigner</span>&#8203;(<span class="parameters"><a href="../crypto/X509SignerInterface.html" title="interface in org.webpki.crypto">X509SignerInterface</a>&nbsp;signer)</span>
                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
