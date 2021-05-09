@@ -1315,7 +1315,8 @@ import org.webpki.json.JSONSignatureDecoder;
 <section class="detail" id="setCertificatePath(java.security.cert.X509Certificate[])">
 <h3>setCertificatePath</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JSONObjectWriter.html" title="class in org.webpki.json">JSONObjectWriter</a></span>&nbsp;<span class="member-name">setCertificatePath</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]&nbsp;certificatePath)</span>
-                                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+                                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block">Set a <a href="https://cyberphone.github.io/doc/security/jsf.html" target="_blank"><b>JSF</b></a>
  certificate path property.
  <p>Each path element (certificate) is base64url encoded and the path must be
@@ -1331,6 +1332,7 @@ import org.webpki.json.JSONSignatureDecoder;
 <dd>Current instance of <a href="JSONObjectWriter.html" title="class in org.webpki.json"><code>JSONObjectWriter</code></a></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
 </section>
 </li>
