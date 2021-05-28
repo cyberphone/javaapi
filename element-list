@@ -3,6 +3,8 @@ org.webpki.asn1.cert
 org.webpki.ca
 org.webpki.cbor
 org.webpki.crypto
+org.webpki.crypto.encryption
+org.webpki.crypto.signatures
 org.webpki.jose
 org.webpki.jose.jws
 org.webpki.json

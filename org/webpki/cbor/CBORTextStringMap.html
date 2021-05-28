@@ -11,7 +11,7 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":10,"i7":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -125,7 +125,7 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 </tr>
 <tr class="row-color" id="i1">
 <td class="col-first"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getMappedValue(java.lang.String)">getMappedValue</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</code></th>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getObject(java.lang.String)">getObject</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</code></th>
 <td class="col-last">
 <div class="block">Get map value.</div>
 </td>
@@ -146,20 +146,27 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 </tr>
 <tr class="alt-color" id="i4">
 <td class="col-first"><code><a href="CBORTextStringMap.html" title="class in org.webpki.cbor">CBORTextStringMap</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setMappedValue(java.lang.String,org.webpki.cbor.CBORObject)">setMappedValue</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#removeObject(java.lang.String)">removeObject</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</code></th>
+<td class="col-last">
+<div class="block">Remove object from map.</div>
+</td>
+</tr>
+<tr class="row-color" id="i5">
+<td class="col-first"><code><a href="CBORTextStringMap.html" title="class in org.webpki.cbor">CBORTextStringMap</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setObject(java.lang.String,org.webpki.cbor.CBORObject)">setObject</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
 <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;value)</code></th>
 <td class="col-last">
 <div class="block">Set map value.</div>
 </td>
 </tr>
-<tr class="row-color" id="i5">
+<tr class="alt-color" id="i6">
 <td class="col-first"><code>static void</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setRfc7049SortingMode(boolean)">setRfc7049SortingMode</a></span>&#8203;(boolean&nbsp;flag)</code></th>
 <td class="col-last">
 <div class="block">Set RFC7049 key sorting.</div>
 </td>
 </tr>
-<tr class="alt-color" id="i6">
+<tr class="row-color" id="i7">
 <td class="col-first"><code><a href="CBORTextStringMap.html" title="class in org.webpki.cbor">CBORTextStringMap</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#sign(java.lang.String,org.webpki.cbor.CBORSigner)">sign</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
 <a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a>&nbsp;signer)</code></th>
@@ -167,7 +174,7 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <div class="block">Sign CBOR object.</div>
 </td>
 </tr>
-<tr class="row-color" id="i7">
+<tr class="alt-color" id="i8">
 <td class="col-first"><code>void</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#validate(java.lang.String,org.webpki.cbor.CBORValidator)">validate</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
 <a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a>&nbsp;validator)</code></th>
@@ -211,11 +218,41 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="setMappedValue(java.lang.String,org.webpki.cbor.CBORObject)">
-<h3>setMappedValue</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORTextStringMap.html" title="class in org.webpki.cbor">CBORTextStringMap</a></span>&nbsp;<span class="member-name">setMappedValue</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
+<section class="detail" id="getType()">
+<h3>getType</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORTypes.html" title="enum in org.webpki.cbor">CBORTypes</a></span>&nbsp;<span class="member-name">getType</span>()</div>
+<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="CBORObject.html#getType()">CBORObject</a></code></span></div>
+<div class="block">Get core CBOR type.</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="CBORObject.html#getType()">getType</a></code>&nbsp;in class&nbsp;<code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></dd>
+<dt>Returns:</dt>
+<dd>The CBOR core type</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="removeObject(java.lang.String)">
+<h3>removeObject</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORTextStringMap.html" title="class in org.webpki.cbor">CBORTextStringMap</a></span>&nbsp;<span class="member-name">removeObject</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</span>
+                               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Remove object from map.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>key</code> - The key</dd>
+<dt>Returns:</dt>
+<dd>The CBORTextStringMap</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setObject(java.lang.String,org.webpki.cbor.CBORObject)">
+<h3>setObject</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORTextStringMap.html" title="class in org.webpki.cbor">CBORTextStringMap</a></span>&nbsp;<span class="member-name">setObject</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
 <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;value)</span>
-                                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+                            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Set map value.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -278,10 +315,10 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 </section>
 </li>
 <li>
-<section class="detail" id="getMappedValue(java.lang.String)">
-<h3>getMappedValue</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="member-name">getMappedValue</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</span>
-                          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<section class="detail" id="getObject(java.lang.String)">
+<h3>getObject</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="member-name">getObject</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</span>
+                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Get map value.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -302,20 +339,6 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>flag</code> - true for RFC7049, false for RFC 8949</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getType()">
-<h3>getType</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORTypes.html" title="enum in org.webpki.cbor">CBORTypes</a></span>&nbsp;<span class="member-name">getType</span>()</div>
-<div class="block"><span class="descfrm-type-label">Description copied from class:&nbsp;<code><a href="CBORObject.html#getType()">CBORObject</a></code></span></div>
-<div class="block">Get core CBOR type.</div>
-<dl class="notes">
-<dt>Specified by:</dt>
-<dd><code><a href="CBORObject.html#getType()">getType</a></code>&nbsp;in class&nbsp;<code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></dd>
-<dt>Returns:</dt>
-<dd>The CBOR core type</dd>
 </dl>
 </section>
 </li>

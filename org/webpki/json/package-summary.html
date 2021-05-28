@@ -68,7 +68,7 @@ To make the system on par with XML Schemas the JSON library also supports:<br>
     There is also a class for encrypting data using JSON formatted containers:
     <a href="https://cyberphone.github.io/doc/security/jef.html" target="_blank"><b>JSON Encryption
         Format</b></a>.
-    <br>See <a href="JSONObjectWriter.html#createEncryptionObject(byte%5B%5D,org.webpki.json.DataEncryptionAlgorithms,org.webpki.json.JSONEncrypter)"><code>JSONObjectWriter.createEncryptionObject(byte[],DataEncryptionAlgorithms,JSONEncrypter)</code></a>
+    <br>See <a href="JSONObjectWriter.html#createEncryptionObject(byte%5B%5D,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,org.webpki.json.JSONEncrypter)"><code>JSONObjectWriter.createEncryptionObject(byte[],DataEncryptionAlgorithms,JSONEncrypter)</code></a>
     for more information.
 </p>
 <h3>Reading and Writing JSON Data</h3>
@@ -386,45 +386,33 @@ hi true 1 2
 </thead>
 <tbody>
 <tr class="alt-color">
-<th class="col-first" scope="row"><a href="DataEncryptionAlgorithms.html" title="enum in org.webpki.json">DataEncryptionAlgorithms</a></th>
-<td class="col-last">
-<div class="block">JWE content encryption algorithms.</div>
-</td>
-</tr>
-<tr class="row-color">
 <th class="col-first" scope="row"><a href="JSONCryptoHelper.KEY_ID_OPTIONS.html" title="enum in org.webpki.json">JSONCryptoHelper.KEY_ID_OPTIONS</a></th>
 <td class="col-last">
 <div class="block">KeyID parameter to Options</div>
 </td>
 </tr>
-<tr class="alt-color">
+<tr class="row-color">
 <th class="col-first" scope="row"><a href="JSONCryptoHelper.PUBLIC_KEY_OPTIONS.html" title="enum in org.webpki.json">JSONCryptoHelper.PUBLIC_KEY_OPTIONS</a></th>
 <td class="col-last">
 <div class="block">Public key parameter to Options</div>
 </td>
 </tr>
-<tr class="row-color">
+<tr class="alt-color">
 <th class="col-first" scope="row"><a href="JSONOutputFormats.html" title="enum in org.webpki.json">JSONOutputFormats</a></th>
 <td class="col-last">
 <div class="block">JSON output formats.</div>
 </td>
 </tr>
-<tr class="alt-color">
+<tr class="row-color">
 <th class="col-first" scope="row"><a href="JSONSignatureTypes.html" title="enum in org.webpki.json">JSONSignatureTypes</a></th>
 <td class="col-last">
 <div class="block">Supported signature types</div>
 </td>
 </tr>
-<tr class="row-color">
+<tr class="alt-color">
 <th class="col-first" scope="row"><a href="JSONTypes.html" title="enum in org.webpki.json">JSONTypes</a></th>
 <td class="col-last">
 <div class="block">Basic JSON types read by the parser.</div>
-</td>
-</tr>
-<tr class="alt-color">
-<th class="col-first" scope="row"><a href="KeyEncryptionAlgorithms.html" title="enum in org.webpki.json">KeyEncryptionAlgorithms</a></th>
-<td class="col-last">
-<div class="block">JWE algorithms.</div>
 </td>
 </tr>
 </tbody>
