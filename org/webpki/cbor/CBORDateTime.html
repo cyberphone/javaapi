@@ -93,13 +93,15 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <tbody>
 <tr class="alt-color">
 <th class="col-constructor-name" scope="row"><code><span class="member-name-link"><a href="#%3Cinit%3E(java.lang.String)">CBORDateTime</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;dateTimeString)</code></th>
-<td class="col-last">&nbsp;</td>
+<td class="col-last">
+<div class="block">Create a CBOR <code>date-time</code> object.</div>
+</td>
 </tr>
 <tr class="row-color">
 <th class="col-constructor-name" scope="row"><code><span class="member-name-link"><a href="#%3Cinit%3E(java.util.GregorianCalendar,java.util.EnumSet)">CBORDateTime</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/GregorianCalendar.html" title="class or interface in java.util" class="external-link">GregorianCalendar</a>&nbsp;dateTime,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="../util/ISODateTime.DatePatterns.html" title="enum in org.webpki.util">ISODateTime.DatePatterns</a>&gt;&nbsp;format)</code></th>
 <td class="col-last">
-<div class="block">Date-time creation</div>
+<div class="block">Create a CBOR <code>date-time</code> object.</div>
 </td>
 </tr>
 </tbody>
@@ -163,11 +165,11 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <h3>CBORDateTime</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="member-name">CBORDateTime</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/GregorianCalendar.html" title="class or interface in java.util" class="external-link">GregorianCalendar</a>&nbsp;dateTime,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="../util/ISODateTime.DatePatterns.html" title="enum in org.webpki.util">ISODateTime.DatePatterns</a>&gt;&nbsp;format)</span></div>
-<div class="block">Date-time creation</div>
+<div class="block">Create a CBOR <code>date-time</code> object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>dateTime</code> - </dd>
-<dd><code>format</code> - </dd>
+<dd><code>dateTime</code> - Java format potentially including fractions of a second.</dd>
+<dd><code>format</code> - Controls how it will be presented on the &quot;wire&quot;.</dd>
 </dl>
 </section>
 </li>
@@ -176,7 +178,10 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <h3>CBORDateTime</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="member-name">CBORDateTime</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;dateTimeString)</span>
              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Create a CBOR <code>date-time</code> object.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>dateTime</code> - ISO format potentially including fractions of a second.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
