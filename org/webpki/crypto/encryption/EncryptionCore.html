@@ -131,8 +131,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tbody>
 <tr class="alt-color" id="i0">
 <td class="col-first"><code>static byte[]</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#concatKdf(byte%5B%5D,byte%5B%5D,int)">concatKdf</a></span>&#8203;(byte[]&nbsp;secret,
-byte[]&nbsp;algorithmId,
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#concatKdf(byte%5B%5D,java.lang.String,int)">concatKdf</a></span>&#8203;(byte[]&nbsp;secret,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;joseAlgorithmId,
 int&nbsp;keyLength)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
@@ -166,14 +166,15 @@ byte[]&nbsp;authData)</code></th>
 </tr>
 <tr class="alt-color" id="i4">
 <td class="col-first"><code>static byte[]</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#hmacKdf(byte%5B%5D,int,int)">hmacKdf</a></span>&#8203;(byte[]&nbsp;secret,
-int&nbsp;algorithmId,
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#hmacKdf(byte%5B%5D,byte%5B%5D,int)">hmacKdf</a></span>&#8203;(byte[]&nbsp;secret,
+byte[]&nbsp;info,
 int&nbsp;keyLength)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
 <tr class="row-color" id="i5">
 <td class="col-first"><code>static byte[]</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#receiverKeyAgreement(org.webpki.crypto.encryption.KeyEncryptionAlgorithms,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.security.PublicKey,java.security.PrivateKey,byte%5B%5D)">receiverKeyAgreement</a></span>&#8203;(<a href="KeyEncryptionAlgorithms.html" title="enum in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#receiverKeyAgreement(boolean,org.webpki.crypto.encryption.KeyEncryptionAlgorithms,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.security.PublicKey,java.security.PrivateKey,byte%5B%5D)">receiverKeyAgreement</a></span>&#8203;(boolean&nbsp;coseMode,
+<a href="KeyEncryptionAlgorithms.html" title="enum in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
 <a href="ContentEncryptionAlgorithms.html" title="enum in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;receivedPublicKey,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
@@ -202,7 +203,8 @@ byte[]&nbsp;encryptedKey,
 </tr>
 <tr class="alt-color" id="i8">
 <td class="col-first"><code>static <a href="EncryptionCore.AsymmetricEncryptionResult.html" title="class in org.webpki.crypto.encryption">EncryptionCore.AsymmetricEncryptionResult</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#senderKeyAgreement(byte%5B%5D,org.webpki.crypto.encryption.KeyEncryptionAlgorithms,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.security.PublicKey)">senderKeyAgreement</a></span>&#8203;(byte[]&nbsp;contentEncryptionKey,
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#senderKeyAgreement(boolean,byte%5B%5D,org.webpki.crypto.encryption.KeyEncryptionAlgorithms,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.security.PublicKey)">senderKeyAgreement</a></span>&#8203;(boolean&nbsp;coseMode,
+byte[]&nbsp;contentEncryptionKey,
 <a href="KeyEncryptionAlgorithms.html" title="enum in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
 <a href="ContentEncryptionAlgorithms.html" title="enum in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;staticKey)</code></th>
@@ -379,10 +381,10 @@ byte[]&nbsp;encryptedKey,
 </section>
 </li>
 <li>
-<section class="detail" id="hmacKdf(byte[],int,int)">
+<section class="detail" id="hmacKdf(byte[],byte[],int)">
 <h3>hmacKdf</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="member-name">hmacKdf</span>&#8203;(<span class="parameters">byte[]&nbsp;secret,
-int&nbsp;algorithmId,
+byte[]&nbsp;info,
 int&nbsp;keyLength)</span>
                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
@@ -394,10 +396,10 @@ int&nbsp;keyLength)</span>
 </section>
 </li>
 <li>
-<section class="detail" id="concatKdf(byte[],byte[],int)">
+<section class="detail" id="concatKdf(byte[],java.lang.String,int)">
 <h3>concatKdf</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="member-name">concatKdf</span>&#8203;(<span class="parameters">byte[]&nbsp;secret,
-byte[]&nbsp;algorithmId,
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;joseAlgorithmId,
 int&nbsp;keyLength)</span>
                         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
@@ -409,9 +411,10 @@ int&nbsp;keyLength)</span>
 </section>
 </li>
 <li>
-<section class="detail" id="receiverKeyAgreement(org.webpki.crypto.encryption.KeyEncryptionAlgorithms,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.security.PublicKey,java.security.PrivateKey,byte[])">
+<section class="detail" id="receiverKeyAgreement(boolean,org.webpki.crypto.encryption.KeyEncryptionAlgorithms,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.security.PublicKey,java.security.PrivateKey,byte[])">
 <h3>receiverKeyAgreement</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="member-name">receiverKeyAgreement</span>&#8203;(<span class="parameters"><a href="KeyEncryptionAlgorithms.html" title="enum in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="member-name">receiverKeyAgreement</span>&#8203;(<span class="parameters">boolean&nbsp;coseMode,
+<a href="KeyEncryptionAlgorithms.html" title="enum in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
 <a href="ContentEncryptionAlgorithms.html" title="enum in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;receivedPublicKey,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
@@ -421,6 +424,7 @@ byte[]&nbsp;encryptedKeyData)</span>
 <div class="block">Perform a receiver side ECDH operation.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
+<dd><code>coseMode</code> - True => hmacKdf, else concatKdf</dd>
 <dd><code>keyEncryptionAlgorithm</code> - The ECDH algorithm</dd>
 <dd><code>contentEncryptionAlgorithm</code> - The designated content encryption algorithm</dd>
 <dd><code>receivedPublicKey</code> - The sender's (usually ephemeral) public key</dd>
@@ -435,9 +439,10 @@ byte[]&nbsp;encryptedKeyData)</span>
 </section>
 </li>
 <li>
-<section class="detail" id="senderKeyAgreement(byte[],org.webpki.crypto.encryption.KeyEncryptionAlgorithms,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.security.PublicKey)">
+<section class="detail" id="senderKeyAgreement(boolean,byte[],org.webpki.crypto.encryption.KeyEncryptionAlgorithms,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.security.PublicKey)">
 <h3>senderKeyAgreement</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EncryptionCore.AsymmetricEncryptionResult.html" title="class in org.webpki.crypto.encryption">EncryptionCore.AsymmetricEncryptionResult</a></span>&nbsp;<span class="member-name">senderKeyAgreement</span>&#8203;(<span class="parameters">byte[]&nbsp;contentEncryptionKey,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EncryptionCore.AsymmetricEncryptionResult.html" title="class in org.webpki.crypto.encryption">EncryptionCore.AsymmetricEncryptionResult</a></span>&nbsp;<span class="member-name">senderKeyAgreement</span>&#8203;(<span class="parameters">boolean&nbsp;coseMode,
+byte[]&nbsp;contentEncryptionKey,
 <a href="KeyEncryptionAlgorithms.html" title="enum in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
 <a href="ContentEncryptionAlgorithms.html" title="enum in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;staticKey)</span>
@@ -446,6 +451,7 @@ byte[]&nbsp;encryptedKeyData)</span>
 <div class="block">Perform a sender side ECDH operation.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
+<dd><code>coseMode</code> - True => hmacKdf, else concatKdf</dd>
 <dd><code>contentEncryptionKey</code> - Also known as CEK</dd>
 <dd><code>keyEncryptionAlgorithm</code> - The ECDH algorithm</dd>
 <dd><code>contentEncryptionAlgorithm</code> - The designated content encryption algorithm</dd>
