@@ -77,7 +77,7 @@ var activeTableTab = "active-table-tab";
 extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></pre>
 <div class="block">Base class for creating CBOR encryption objects.
  
- It uses COSE algorithms but not the packaging.</div>
+ It uses COSE algorithms but not COSE packaging.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -100,42 +100,42 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <td class="col-first"><code>static <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#ALGORITHM_LABEL">ALGORITHM_LABEL</a></span></code></th>
 <td class="col-last">
-<div class="block">Integer value: 1</div>
+<div class="block">Integer value: 1.</div>
 </td>
 </tr>
 <tr class="row-color">
 <td class="col-first"><code>static <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#CERT_PATH_LABEL">CERT_PATH_LABEL</a></span></code></th>
 <td class="col-last">
-<div class="block">Integer value: 6</div>
+<div class="block">Integer value: 6.</div>
 </td>
 </tr>
 <tr class="alt-color">
 <td class="col-first"><code>static <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#CIPHER_TEXT_LABEL">CIPHER_TEXT_LABEL</a></span></code></th>
 <td class="col-last">
-<div class="block">Integer value: 9</div>
+<div class="block">Integer value: 9.</div>
 </td>
 </tr>
 <tr class="row-color">
 <td class="col-first"><code>static <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#EPHEMERAL_KEY_LABEL">EPHEMERAL_KEY_LABEL</a></span></code></th>
 <td class="col-last">
-<div class="block">Integer value: 5</div>
+<div class="block">Integer value: 5.</div>
 </td>
 </tr>
 <tr class="alt-color">
 <td class="col-first"><code>static <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#IV_LABEL">IV_LABEL</a></span></code></th>
 <td class="col-last">
-<div class="block">Integer value: 8</div>
+<div class="block">Integer value: 8.</div>
 </td>
 </tr>
 <tr class="row-color">
 <td class="col-first"><code>static <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#KEY_ENCRYPTION_LABEL">KEY_ENCRYPTION_LABEL</a></span></code></th>
 <td class="col-last">
-<div class="block">Integer value: 2</div>
+<div class="block">Integer value: 2.</div>
 </td>
 </tr>
 <tr class="alt-color">
@@ -143,21 +143,21 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#KEY_ID_LABEL">KEY_ID_LABEL</a></span></code></th>
 <td class="col-last">
 <div class="block">/**
- Integer value: 3</div>
+ Integer value: 3.</div>
 </td>
 </tr>
 <tr class="row-color">
 <td class="col-first"><code>static <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#PUBLIC_KEY_LABEL">PUBLIC_KEY_LABEL</a></span></code></th>
 <td class="col-last">
-<div class="block">Integer value: 4</div>
+<div class="block">Integer value: 4.</div>
 </td>
 </tr>
 <tr class="alt-color">
 <td class="col-first"><code>static <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#TAG_LABEL">TAG_LABEL</a></span></code></th>
 <td class="col-last">
-<div class="block">Integer value: 7</div>
+<div class="block">Integer value: 7.</div>
 </td>
 </tr>
 </tbody>
@@ -217,14 +217,15 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <section class="detail" id="ALGORITHM_LABEL">
 <h3>ALGORITHM_LABEL</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="member-name">ALGORITHM_LABEL</span></div>
-<div class="block">Integer value: 1</div>
+<div class="block">Integer value: 1.
+ Note: This label is also used in key encryption sub-maps.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="KEY_ENCRYPTION_LABEL">
 <h3>KEY_ENCRYPTION_LABEL</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="member-name">KEY_ENCRYPTION_LABEL</span></div>
-<div class="block">Integer value: 2</div>
+<div class="block">Integer value: 2.</div>
 </section>
 </li>
 <li>
@@ -232,49 +233,54 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h3>KEY_ID_LABEL</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="member-name">KEY_ID_LABEL</span></div>
 <div class="block">/**
- Integer value: 3</div>
+ Integer value: 3.
+ Note: This label is alternatively used in key encryption sub-maps.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="PUBLIC_KEY_LABEL">
 <h3>PUBLIC_KEY_LABEL</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="member-name">PUBLIC_KEY_LABEL</span></div>
-<div class="block">Integer value: 4</div>
+<div class="block">Integer value: 4.
+ Note: This label is only used in key encryption sub-maps.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="EPHEMERAL_KEY_LABEL">
 <h3>EPHEMERAL_KEY_LABEL</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="member-name">EPHEMERAL_KEY_LABEL</span></div>
-<div class="block">Integer value: 5</div>
+<div class="block">Integer value: 5.
+ Note: This label is only used in key encryption sub-maps.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="CERT_PATH_LABEL">
 <h3>CERT_PATH_LABEL</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="member-name">CERT_PATH_LABEL</span></div>
-<div class="block">Integer value: 6</div>
+<div class="block">Integer value: 6.
+ Note: This label is only used in key encryption sub-maps.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="TAG_LABEL">
 <h3>TAG_LABEL</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="member-name">TAG_LABEL</span></div>
-<div class="block">Integer value: 7</div>
+<div class="block">Integer value: 7.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="IV_LABEL">
 <h3>IV_LABEL</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="member-name">IV_LABEL</span></div>
-<div class="block">Integer value: 8</div>
+<div class="block">Integer value: 8.</div>
 </section>
 </li>
 <li>
 <section class="detail" id="CIPHER_TEXT_LABEL">
 <h3>CIPHER_TEXT_LABEL</h3>
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="member-name">CIPHER_TEXT_LABEL</span></div>
-<div class="block">Integer value: 9</div>
+<div class="block">Integer value: 9.
+ Note: This label is also used in key encryption sub-maps.</div>
 </section>
 </li>
 </ul>
@@ -293,13 +299,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  
  In the case the public key is not provided in the 
  object, the encryption key may be tied to an identifier
- known by the relying party.  How such an identifier
+ known by the recipient.  How such an identifier
  is used to retrieve the proper private key is up to a
  convention between the parties using
  a specific message scheme.  A keyId may be a database
  index or a hash of the public key.
  <p>
- For symmetric-algorithms, a keyId or implicit key are
+ For symmetric key-algorithms, a keyId or implicit key are
  the only ways to retrieve the proper secret key.
  </p></div>
 <dl class="notes">
@@ -319,9 +325,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <div class="block">Encrypt data.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>dataToEncrypt</code> - </dd>
+<dd><code>dataToEncrypt</code> - The data to encrypt</dd>
 <dt>Returns:</dt>
-<dd>CBORIntegerMap holding an encryption object</dd>
+<dd>CBORIntegerMap CBOR encryption object</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
