@@ -166,7 +166,8 @@ byte[]&nbsp;authData)</code></th>
 </tr>
 <tr class="alt-color" id="i4">
 <td class="col-first"><code>static byte[]</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#hmacKdf(byte%5B%5D,byte%5B%5D,int)">hmacKdf</a></span>&#8203;(byte[]&nbsp;secret,
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#hmacKdf(byte%5B%5D,byte%5B%5D,byte%5B%5D,int)">hmacKdf</a></span>&#8203;(byte[]&nbsp;ikm,
+byte[]&nbsp;salt,
 byte[]&nbsp;info,
 int&nbsp;keyLength)</code></th>
 <td class="col-last">&nbsp;</td>
@@ -381,9 +382,10 @@ byte[]&nbsp;encryptedKey,
 </section>
 </li>
 <li>
-<section class="detail" id="hmacKdf(byte[],byte[],int)">
+<section class="detail" id="hmacKdf(byte[],byte[],byte[],int)">
 <h3>hmacKdf</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="member-name">hmacKdf</span>&#8203;(<span class="parameters">byte[]&nbsp;secret,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="member-name">hmacKdf</span>&#8203;(<span class="parameters">byte[]&nbsp;ikm,
+byte[]&nbsp;salt,
 byte[]&nbsp;info,
 int&nbsp;keyLength)</span>
                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
