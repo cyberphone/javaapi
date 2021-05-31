@@ -11,8 +11,8 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":10,"i8":10};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
 var tableTab = "table-tab";
@@ -107,7 +107,7 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <section class="method-summary" id="method.summary">
 <h2>Method Summary</h2>
 <div class="member-summary" id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="active-table-tab">All Methods</button><button role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t1" class="table-tab" onclick="show(1);">Static Methods</button><button role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="table-tab" onclick="show(2);">Instance Methods</button><button role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t4" class="table-tab" onclick="show(8);">Concrete Methods</button></div>
+<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" id="t0" class="active-table-tab">All Methods</button><button role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t2" class="table-tab" onclick="show(2);">Instance Methods</button><button role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" id="t4" class="table-tab" onclick="show(8);">Concrete Methods</button></div>
 <div id="method-summary-table.tabpanel" role="tabpanel">
 <table class="summary-table" aria-labelledby="t0">
 <thead>
@@ -126,46 +126,46 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 </td>
 </tr>
 <tr class="row-color" id="i1">
+<td class="col-first"><code>int[]</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getKeys()">getKeys</a></span>()</code></th>
+<td class="col-last">
+<div class="block">Enumerate all keys in a map.</div>
+</td>
+</tr>
+<tr class="alt-color" id="i2">
 <td class="col-first"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getObject(int)">getObject</a></span>&#8203;(int&nbsp;key)</code></th>
 <td class="col-last">
 <div class="block">Get map value.</div>
 </td>
 </tr>
-<tr class="alt-color" id="i2">
+<tr class="row-color" id="i3">
 <td class="col-first"><code><a href="CBORTypes.html" title="enum in org.webpki.cbor">CBORTypes</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getType()">getType</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Get core CBOR type.</div>
 </td>
 </tr>
-<tr class="row-color" id="i3">
+<tr class="alt-color" id="i4">
 <td class="col-first"><code>boolean</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#hasKey(int)">hasKey</a></span>&#8203;(int&nbsp;key)</code></th>
 <td class="col-last">
 <div class="block">Check map for key presence.</div>
 </td>
 </tr>
-<tr class="alt-color" id="i4">
+<tr class="row-color" id="i5">
 <td class="col-first"><code><a href="CBORIntegerMap.html" title="class in org.webpki.cbor">CBORIntegerMap</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#removeObject(int)">removeObject</a></span>&#8203;(int&nbsp;key)</code></th>
 <td class="col-last">
 <div class="block">Remove object from map.</div>
 </td>
 </tr>
-<tr class="row-color" id="i5">
+<tr class="alt-color" id="i6">
 <td class="col-first"><code><a href="CBORIntegerMap.html" title="class in org.webpki.cbor">CBORIntegerMap</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setObject(int,org.webpki.cbor.CBORObject)">setObject</a></span>&#8203;(int&nbsp;key,
 <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;value)</code></th>
 <td class="col-last">
 <div class="block">Set map value.</div>
-</td>
-</tr>
-<tr class="alt-color" id="i6">
-<td class="col-first"><code>static void</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setRfc7049SortingMode(boolean)">setRfc7049SortingMode</a></span>&#8203;(boolean&nbsp;flag)</code></th>
-<td class="col-last">
-<div class="block">Set RFC7049 key sorting.</div>
 </td>
 </tr>
 <tr class="row-color" id="i7">
@@ -190,7 +190,7 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 </div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.org.webpki.cbor.CBORObject">Methods inherited from class&nbsp;org.webpki.cbor.<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></h3>
-<code><a href="CBORObject.html#checkObjectForUnread()">checkObjectForUnread</a>, <a href="CBORObject.html#decode(byte%5B%5D)">decode</a>, <a href="CBORObject.html#equals(java.lang.Object)">equals</a>, <a href="CBORObject.html#getArray()">getArray</a>, <a href="CBORObject.html#getBigInteger()">getBigInteger</a>, <a href="CBORObject.html#getBoolean()">getBoolean</a>, <a href="CBORObject.html#getByteString()">getByteString</a>, <a href="CBORObject.html#getDateTime()">getDateTime</a>, <a href="CBORObject.html#getInt()">getInt</a>, <a href="CBORObject.html#getIntegerMap()">getIntegerMap</a>, <a href="CBORObject.html#getLong()">getLong</a>, <a href="CBORObject.html#getTextString()">getTextString</a>, <a href="CBORObject.html#getTextStringMap()">getTextStringMap</a>, <a href="CBORObject.html#isNULL()">isNULL</a>, <a href="CBORObject.html#scan()">scan</a>, <a href="CBORObject.html#toString()">toString</a></code></div>
+<code><a href="CBORObject.html#checkObjectForUnread()">checkObjectForUnread</a>, <a href="CBORObject.html#decode(byte%5B%5D)">decode</a>, <a href="CBORObject.html#equals(java.lang.Object)">equals</a>, <a href="CBORObject.html#getArray()">getArray</a>, <a href="CBORObject.html#getBigInteger()">getBigInteger</a>, <a href="CBORObject.html#getBoolean()">getBoolean</a>, <a href="CBORObject.html#getByteString()">getByteString</a>, <a href="CBORObject.html#getDateTime()">getDateTime</a>, <a href="CBORObject.html#getInt()">getInt</a>, <a href="CBORObject.html#getIntegerMap()">getIntegerMap</a>, <a href="CBORObject.html#getLong()">getLong</a>, <a href="CBORObject.html#getTextString()">getTextString</a>, <a href="CBORObject.html#getTextStringMap()">getTextStringMap</a>, <a href="CBORObject.html#isNull()">isNull</a>, <a href="CBORObject.html#scan()">scan</a>, <a href="CBORObject.html#setRfc8949SortingMode(boolean)">setRfc8949SortingMode</a>, <a href="CBORObject.html#toString()">toString</a></code></div>
 <div class="inherited-list">
 <h3 id="methods.inherited.from.class.java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -242,7 +242,7 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <div class="block">Remove object from map.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - The key</dd>
+<dd><code>key</code> - Key in integer format.</dd>
 <dt>Returns:</dt>
 <dd>The CBORIntegerMap</dd>
 <dt>Throws:</dt>
@@ -259,8 +259,8 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <div class="block">Set map value.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - The key</dd>
-<dd><code>value</code> - The value expressed as a CBOR object</dd>
+<dd><code>key</code> - Key in integer format</dd>
+<dd><code>value</code> - Value expressed as a CBOR object</dd>
 <dt>Returns:</dt>
 <dd>The CBORIntegerMap</dd>
 <dt>Throws:</dt>
@@ -311,9 +311,23 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <div class="block">Check map for key presence.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - The key</dd>
+<dd><code>key</code> - Key in integer format</dd>
 <dt>Returns:</dt>
 <dd><code>true</code> if the key is present</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getKeys()">
+<h3>getKeys</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int[]</span>&nbsp;<span class="member-name">getKeys</span>()
+              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Enumerate all keys in a map.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Array of keys</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
 </section>
 </li>
@@ -325,23 +339,11 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <div class="block">Get map value.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - </dd>
+<dd><code>key</code> - Key in integer format</dd>
 <dt>Returns:</dt>
-<dd>The CBORObject</dd>
+<dd>Value in CBOR notation</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="setRfc7049SortingMode(boolean)">
-<h3>setRfc7049SortingMode</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">setRfc7049SortingMode</span>&#8203;(<span class="parameters">boolean&nbsp;flag)</span></div>
-<div class="block">Set RFC7049 key sorting.
- Default: true</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>flag</code> - true for RFC7049, false for RFC 8949</dd>
 </dl>
 </section>
 </li>

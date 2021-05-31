@@ -11,7 +11,7 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10,"i1":9,"i2":6,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":6,"i15":10,"i16":10,"i17":10};
+<script type="text/javascript">var data = {"i0":10,"i1":9,"i2":6,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":6,"i15":10,"i16":10,"i17":9,"i18":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -180,7 +180,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr class="row-color" id="i15">
 <td class="col-first"><code>boolean</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#isNULL()">isNULL</a></span>()</code></th>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#isNull()">isNull</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
 <tr class="alt-color" id="i16">
@@ -189,6 +189,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <td class="col-last">&nbsp;</td>
 </tr>
 <tr class="row-color" id="i17">
+<td class="col-first"><code>static void</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setRfc8949SortingMode(boolean)">setRfc8949SortingMode</a></span>&#8203;(boolean&nbsp;flag)</code></th>
+<td class="col-last">
+<div class="block">Set RFC 8949/7049 key sorting.</div>
+</td>
+</tr>
+<tr class="alt-color" id="i18">
 <td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#toString()">toString</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
@@ -237,6 +244,19 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </section>
 </li>
 <li>
+<section class="detail" id="setRfc8949SortingMode(boolean)">
+<h3>setRfc8949SortingMode</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">setRfc8949SortingMode</span>&#8203;(<span class="parameters">boolean&nbsp;flag)</span></div>
+<div class="block">Set RFC 8949/7049 key sorting.
+ 
+ Default: false => RFC 8949 key sorting</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>flag</code> - true for RFC 8949, false for RFC 7049</dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getLong()">
 <h3>getLong</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="member-name">getLong</span>()
@@ -270,9 +290,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </section>
 </li>
 <li>
-<section class="detail" id="isNULL()">
-<h3>isNULL</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="member-name">isNULL</span>()
+<section class="detail" id="isNull()">
+<h3>isNull</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="member-name">isNull</span>()
                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
