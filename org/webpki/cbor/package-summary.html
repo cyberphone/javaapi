@@ -148,7 +148,7 @@ Currently supported signature algorithms:
 <table class='webpkitable'>
 <tr><th>Name</th><th>Identifier</th><th>Compatibility</th></tr>
 <tr style='text-align:center'><td><code>Ed25519</code></td><td>-8</td><td>FIDO, PKIX [1]</td></tr>
-<tr style='text-align:center'><td><code>Ed448</code></td><td>-9</td><td>PKIX, PKIX [2]</td></tr>
+<tr style='text-align:center'><td><code>Ed448</code></td><td>-9</td><td>PKIX [2]</td></tr>
 <tr style='text-align:center'><td><code>ES256</code></td><td>-7</td><td>COSE + JOSE</td></tr>
 <tr style='text-align:center'><td><code>ES384</code></td><td>-35</td><td>COSE + JOSE</td></tr>
 <tr style='text-align:center'><td><code>ES512</code></td><td>-36</td><td>COSE + JOSE</td></tr>
@@ -164,7 +164,7 @@ existing cryptographic APIs only rarely accept &quot;EdDSA&quot; as a valid sign
 In current FIDO alliance specifications the COSE <code>EdDSA</code> algorithm identifier has
 therefore been redefined to rather mean EdDSA with an Ed25519 key which is also what CSF follows.
 PKIX' RFC&nbsp;8410 makes the same distinction.</p>
-<p>[2] CSF extends the scheme used for Ed25519 for Ed448 as well.</p>
+<p>[2] CSF extends the scheme used for <code>Ed25519</code> to <code>Ed448</code> as well.</p>
 
 <h3 id='cef'>Encryption Support</h3>
 The CBOR library contains support for encrypting and decrypting
