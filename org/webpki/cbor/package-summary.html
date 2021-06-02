@@ -149,13 +149,13 @@ Currently supported signature algorithms:
 <tr><th>Name</th><th>Identifier</th><th>Compatibility</th></tr>
 <tr style='text-align:center'><td><code>Ed25519</code></td><td>-8</td><td>FIDO, PKIX [1]</td></tr>
 <tr style='text-align:center'><td><code>Ed448</code></td><td>-9</td><td>PKIX [2]</td></tr>
-<tr style='text-align:center'><td><code>ES256</code></td><td>-7</td><td>COSE + JOSE</td></tr>
-<tr style='text-align:center'><td><code>ES384</code></td><td>-35</td><td>COSE + JOSE</td></tr>
-<tr style='text-align:center'><td><code>ES512</code></td><td>-36</td><td>COSE + JOSE</td></tr>
-<tr style='text-align:center'><td><code>PS256</code></td><td>-37</td><td>COSE + JOSE</td></tr>
-<tr style='text-align:center'><td><code>PS384</code></td><td>-38</td><td>COSE + JOSE</td></tr>
-<tr style='text-align:center'><td><code>PS512</code></td><td>-39</td><td>COSE + JOSE</td></tr>
-<tr style='text-align:center'><td><code>RS256</code></td><td>-257</td><td>COSE + JOSE</td></tr>
+<tr style='text-align:center'><td><code>ES256</code></td><td>-7</td><td>COSE, JOSE</td></tr>
+<tr style='text-align:center'><td><code>ES384</code></td><td>-35</td><td>COSE, JOSE</td></tr>
+<tr style='text-align:center'><td><code>ES512</code></td><td>-36</td><td>COSE, JOSE</td></tr>
+<tr style='text-align:center'><td><code>PS256</code></td><td>-37</td><td>COSE, JOSE</td></tr>
+<tr style='text-align:center'><td><code>PS384</code></td><td>-38</td><td>COSE, JOSE</td></tr>
+<tr style='text-align:center'><td><code>PS512</code></td><td>-39</td><td>COSE, JOSE</td></tr>
+<tr style='text-align:center'><td><code>RS256</code></td><td>-257</td><td>COSE, JOSE</td></tr>
 <tr style='text-align:center'><td><code>RS384</code></td><td>-258</td><td>JOSE</td></tr>
 <tr style='text-align:center'><td><code>RS512</code></td><td>-259</td><td>JOSE</td></tr>
 </table>
@@ -245,7 +245,35 @@ is profiled as follows:
 <li><code>salt</code>: N/A. Default extract mode handling <b>must</b> be implemented.</li>
 <li><code>info</code>: COSE key encryption algorithms <b>must</b> be expressed as
 32-bit (4 byte) signed big-endian integers.</li>
-</ul></div>
+</ul>
+<p id='cef-content-encryption-algorithms'>
+Currently supported content encryption algorithms:
+</p>
+
+<table class='webpkitable' style='margin-bottom:1em'>
+<tr><th>Name</th><th>Identifier</th><th>Compatibility</th></tr>
+<tr style='text-align:center'><td><code>A128GCM</code></td><td>1</td><td>COSE, JOSE</td></tr>
+<tr style='text-align:center'><td><code>A192GCM</code></td><td>2</td><td>COSE, JOSE</td></tr>
+<tr style='text-align:center'><td><code>A256GCM</code></td><td>3</td><td>COSE, JOSE</td></tr>
+<tr style='text-align:center'><td><code>A128CBC-HS256</code></td><td>200</td><td>JOSE</td></tr>
+<tr style='text-align:center'><td><code>A192CBC-HS384</code></td><td>201</td><td>JOSE</td></tr>
+<tr style='text-align:center'><td><code>A256CBC-HS512</code></td><td>202</td><td>JOSE</td></tr>
+</table>
+<p id='cef-key-encryption-algorithms' style='padding-top:1em'>
+Currently supported key encryption algorithms:
+</p>
+<table class='webpkitable'>
+<tr><th>Name</th><th>Identifier</th><th>Compatibility</th></tr>
+<tr style='text-align:center'><td><code>ECDH-ES</code></td><td>-25</td><td>COSE, JOSE [1]</td></tr>
+<tr style='text-align:center'><td><code>ECDH-ES+A128KW</code></td><td>-29</td><td>COSE, JOSE [1]</td></tr>
+<tr style='text-align:center'><td><code>ECDH-ES+A192KW</code></td><td>-30</td><td>COSE, JOSE [1]</td></tr>
+<tr style='text-align:center'><td><code>ECDH-ES+A256KW</code></td><td>-31</td><td>COSE, JOSE [1]</td></tr>
+<tr style='text-align:center'><td><code>RSA-OAEP</code></td><td>-40</td><td>COSE, JOSE</td></tr>
+<tr style='text-align:center'><td><code>RSA-OAEP-256</code></td><td>-41</td><td>COSE, JOSE</td></tr>
+</table>
+<p>
+[1] Note that COSE and JOSE do no use the same Key Derivation Function (KDF).
+</p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
