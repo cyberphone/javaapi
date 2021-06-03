@@ -58,9 +58,6 @@ like COSE and FIDO/CTAP2.
 <tr><td><code>false</code></td><td></td><td><code>boolean</code></td></tr>
 <tr><td><code>null</code></td><td></td><td><code>null</code></td></tr>
 </table>
-&nbsp;<br>
-CBOR maps are limited to either use <code>integer</code>
-or <code>text&nbsp;string</code> objects as keys.
 <h3>Deterministic Serialization</h3>
 Since this package is intended for security related
 work, it is (by design) quite picky when decoding CBOR data
@@ -71,7 +68,6 @@ and does not accept:
 that due to their value could equally well be provided in the
 shorter <code>integer</code> format.</li>
 <li>Maps with keys that are not sorted according to the selected canonicalization scheme.</li>
-<li>Map objects mixing <code>integer</code> and <code>text string</code> keys.</li>
 </ul>
 On output (encode) the preferred serialization format is always used
 regardless how it was provided.
@@ -412,9 +408,9 @@ Currently supported key encryption algorithms:
 </td>
 </tr>
 <tr class="alt-color">
-<th class="col-first" scope="row"><a href="CBORIntegerMap.html" title="class in org.webpki.cbor">CBORIntegerMap</a></th>
+<th class="col-first" scope="row"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></th>
 <td class="col-last">
-<div class="block">Class for holding CBOR integer maps.</div>
+<div class="block">Class for holding CBOR maps.</div>
 </td>
 </tr>
 <tr class="row-color">
@@ -460,12 +456,6 @@ Currently supported key encryption algorithms:
 </td>
 </tr>
 <tr class="alt-color">
-<th class="col-first" scope="row"><a href="CBORTextStringMap.html" title="class in org.webpki.cbor">CBORTextStringMap</a></th>
-<td class="col-last">
-<div class="block">Class for holding CBOR text string maps.</div>
-</td>
-</tr>
-<tr class="row-color">
 <th class="col-first" scope="row"><a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a></th>
 <td class="col-last">
 <div class="block">Base class for CBOR signature validation</div>

@@ -11,7 +11,7 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10,"i1":9,"i2":9,"i3":6,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":6,"i16":10,"i17":10,"i18":9,"i19":10};
+<script type="text/javascript">var data = {"i0":10,"i1":9,"i2":9,"i3":6,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":6,"i15":10,"i16":10,"i17":9,"i18":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -70,7 +70,7 @@ var activeTableTab = "active-table-tab";
 <section class="description">
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="CBORArray.html" title="class in org.webpki.cbor">CBORArray</a></code>, <code><a href="CBORBigInteger.html" title="class in org.webpki.cbor">CBORBigInteger</a></code>, <code><a href="CBORBoolean.html" title="class in org.webpki.cbor">CBORBoolean</a></code>, <code><a href="CBORByteString.html" title="class in org.webpki.cbor">CBORByteString</a></code>, <code><a href="CBORDateTime.html" title="class in org.webpki.cbor">CBORDateTime</a></code>, <code><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code>, <code><a href="CBORIntegerMap.html" title="class in org.webpki.cbor">CBORIntegerMap</a></code>, <code><a href="CBORNull.html" title="class in org.webpki.cbor">CBORNull</a></code>, <code><a href="CBORTextString.html" title="class in org.webpki.cbor">CBORTextString</a></code>, <code><a href="CBORTextStringMap.html" title="class in org.webpki.cbor">CBORTextStringMap</a></code></dd>
+<dd><code><a href="CBORArray.html" title="class in org.webpki.cbor">CBORArray</a></code>, <code><a href="CBORBigInteger.html" title="class in org.webpki.cbor">CBORBigInteger</a></code>, <code><a href="CBORBoolean.html" title="class in org.webpki.cbor">CBORBoolean</a></code>, <code><a href="CBORByteString.html" title="class in org.webpki.cbor">CBORByteString</a></code>, <code><a href="CBORDateTime.html" title="class in org.webpki.cbor">CBORDateTime</a></code>, <code><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code>, <code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code>, <code><a href="CBORNull.html" title="class in org.webpki.cbor">CBORNull</a></code>, <code><a href="CBORTextString.html" title="class in org.webpki.cbor">CBORTextString</a></code></dd>
 </dl>
 <hr>
 <pre>public abstract class <span class="type-name-label">CBORObject</span>
@@ -161,13 +161,13 @@ boolean&nbsp;ignoreKeySortingOrder)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
 <tr class="row-color" id="i11">
-<td class="col-first"><code><a href="CBORIntegerMap.html" title="class in org.webpki.cbor">CBORIntegerMap</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getIntegerMap()">getIntegerMap</a></span>()</code></th>
+<td class="col-first"><code>long</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getLong()">getLong</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
 <tr class="alt-color" id="i12">
-<td class="col-first"><code>long</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getLong()">getLong</a></span>()</code></th>
+<td class="col-first"><code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getMap()">getMap</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
 <tr class="row-color" id="i13">
@@ -176,35 +176,30 @@ boolean&nbsp;ignoreKeySortingOrder)</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
 <tr class="alt-color" id="i14">
-<td class="col-first"><code><a href="CBORTextStringMap.html" title="class in org.webpki.cbor">CBORTextStringMap</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getTextStringMap()">getTextStringMap</a></span>()</code></th>
-<td class="col-last">&nbsp;</td>
-</tr>
-<tr class="row-color" id="i15">
 <td class="col-first"><code>abstract <a href="CBORTypes.html" title="enum in org.webpki.cbor">CBORTypes</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getType()">getType</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Get core CBOR type.</div>
 </td>
 </tr>
-<tr class="alt-color" id="i16">
+<tr class="row-color" id="i15">
 <td class="col-first"><code>boolean</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#isNull()">isNull</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
-<tr class="row-color" id="i17">
+<tr class="alt-color" id="i16">
 <td class="col-first"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#scan()">scan</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
-<tr class="alt-color" id="i18">
+<tr class="row-color" id="i17">
 <td class="col-first"><code>static void</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setRfc8949SortingMode(boolean)">setRfc8949SortingMode</a></span>&#8203;(boolean&nbsp;flag)</code></th>
 <td class="col-last">
 <div class="block">Set RFC 8949/7049 key sorting.</div>
 </td>
 </tr>
-<tr class="row-color" id="i19">
+<tr class="alt-color" id="i18">
 <td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#toString()">toString</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
@@ -354,21 +349,10 @@ boolean&nbsp;ignoreKeySortingOrder)</code></th>
 </section>
 </li>
 <li>
-<section class="detail" id="getTextStringMap()">
-<h3>getTextStringMap</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORTextStringMap.html" title="class in org.webpki.cbor">CBORTextStringMap</a></span>&nbsp;<span class="member-name">getTextStringMap</span>()
-                                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getIntegerMap()">
-<h3>getIntegerMap</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORIntegerMap.html" title="class in org.webpki.cbor">CBORIntegerMap</a></span>&nbsp;<span class="member-name">getIntegerMap</span>()
-                             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<section class="detail" id="getMap()">
+<h3>getMap</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="member-name">getMap</span>()
+               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <dl class="notes">
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
