@@ -130,7 +130,7 @@ according to the following table:
 <tr><td style='text-align:center'>2</td><td><i>Optional</i> public key in COSE format</td></tr>
 <tr><td style='text-align:center'>3</td><td><i>Optional</i> key Id supplied as a <code>text string</code></td></tr>
 <tr><td style='text-align:center'>4</td><td><i>Optional</i> certificate path supplied as an array of <code>byte string</code> objects</td></tr>
-<tr><td style='text-align:center'>5</td><td>Signature value</td></tr>
+<tr><td style='text-align:center'>5</td><td>Signature value supplied as a <code>byte string</code></td></tr>
 </table>
 <p>
 CSF signatures are validated by running the signature validation 
@@ -181,13 +181,13 @@ and the algorithms A256GCM and ECDH-ES+A256KW for content respectively key-wrapp
     1: -31,
     <span style='color:grey'>// Key Id</span>
     3: "example.com:x25519",
-    <span style='color:grey'>// Ephemeral key descriptor in COSE format</span>
+    <span style='color:grey'>// Ephemeral public key descriptor in COSE format</span>
     5: {
       <span style='color:grey'>// kty = OKP</span>
       1: 1,
       <span style='color:grey'>// crv = X25519</span>
       -1: 4,
-       <span style='color:grey'>// x</span>
+      <span style='color:grey'>// x</span>
       -2: h'6b073a97a9bc95e68800f0814a7cd02f2446d6cca8581e3a27bfd490fdaaf631'
     },
     <span style='color:grey'>// Encrypted key</span>
