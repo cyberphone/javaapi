@@ -169,8 +169,8 @@ arbitrary binary data using a specific scheme called
 In similarity to CSF, CEF also depends on <i>deterministic serialization</i>
 which is used to create authentication data to content encryption
 algorithms like GCM.
-The following shows a printout of a CEF object using an X25519 key
-and the algorithms A256GCM and ECDH-ES+A256KW for content respectively key-wrapping:
+The following shows a printout of a CEF object using the algorithms
+A256GCM and ECDH-ES+A256KW for content- respectively key-wrapping:
 <pre>
 {
   <span style='color:grey'>// Content encryption algorithm = COSE/A256GCM</span>
@@ -179,7 +179,7 @@ and the algorithms A256GCM and ECDH-ES+A256KW for content respectively key-wrapp
   2: {
     <span style='color:grey'>// Key encryption algorithm = COSE/ECDH-ES+A256KW</span>
     1: -31,
-    <span style='color:grey'>// Key Id</span>
+    <span style='color:grey'>// Key Id to a static X25519 key</span>
     3: "example.com:x25519",
     <span style='color:grey'>// Ephemeral public key descriptor in COSE format</span>
     5: {
