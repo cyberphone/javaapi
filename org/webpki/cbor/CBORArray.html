@@ -11,7 +11,7 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+<script type="text/javascript">var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -120,8 +120,10 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <tbody>
 <tr class="alt-color" id="i0">
 <td class="col-first"><code><a href="CBORArray.html" title="class in org.webpki.cbor">CBORArray</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#addElement(org.webpki.cbor.CBORObject)">addElement</a></span>&#8203;(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;cborObject)</code></th>
-<td class="col-last">&nbsp;</td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#addObject(org.webpki.cbor.CBORObject)">addObject</a></span>&#8203;(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;cborObject)</code></th>
+<td class="col-last">
+<div class="block">Append object to the list.</div>
+</td>
 </tr>
 <tr class="row-color" id="i1">
 <td class="col-first"><code>byte[]</code></td>
@@ -132,19 +134,30 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 </tr>
 <tr class="alt-color" id="i2">
 <td class="col-first"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getElement(int)">getElement</a></span>&#8203;(int&nbsp;index)</code></th>
-<td class="col-last">&nbsp;</td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getObject(int)">getObject</a></span>&#8203;(int&nbsp;index)</code></th>
+<td class="col-last">
+<div class="block">Get object at a specific position.</div>
+</td>
 </tr>
 <tr class="row-color" id="i3">
 <td class="col-first"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>[]</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getElements()">getElements</a></span>()</code></th>
-<td class="col-last">&nbsp;</td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getObjects()">getObjects</a></span>()</code></th>
+<td class="col-last">
+<div class="block">Return the entire array.</div>
+</td>
 </tr>
 <tr class="alt-color" id="i4">
 <td class="col-first"><code><a href="CBORTypes.html" title="enum in org.webpki.cbor">CBORTypes</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getType()">getType</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Get core CBOR type.</div>
+</td>
+</tr>
+<tr class="row-color" id="i5">
+<td class="col-first"><code>int</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#size()">size</a></span>()</code></th>
+<td class="col-last">
+<div class="block">Get the size of the array.</div>
 </td>
 </tr>
 </tbody>
@@ -184,26 +197,54 @@ extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="getElement(int)">
-<h3>getElement</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="member-name">getElement</span>&#8203;(<span class="parameters">int&nbsp;index)</span>
-                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<section class="detail" id="size()">
+<h3>size</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="member-name">size</span>()</div>
+<div class="block">Get the size of the array.</div>
 <dl class="notes">
+<dt>Returns:</dt>
+<dd>The number of elements in the array</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getObject(int)">
+<h3>getObject</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="member-name">getObject</span>&#8203;(<span class="parameters">int&nbsp;index)</span>
+                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Get object at a specific position.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>index</code> - The position (0 - size-1)</dd>
+<dt>Returns:</dt>
+<dd>CBOR object</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="addElement(org.webpki.cbor.CBORObject)">
-<h3>addElement</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORArray.html" title="class in org.webpki.cbor">CBORArray</a></span>&nbsp;<span class="member-name">addElement</span>&#8203;(<span class="parameters"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;cborObject)</span></div>
+<section class="detail" id="addObject(org.webpki.cbor.CBORObject)">
+<h3>addObject</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORArray.html" title="class in org.webpki.cbor">CBORArray</a></span>&nbsp;<span class="member-name">addObject</span>&#8203;(<span class="parameters"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;cborObject)</span></div>
+<div class="block">Append object to the list.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>cborObject</code> - </dd>
+<dt>Returns:</dt>
+<dd><code>this</code></dd>
+</dl>
 </section>
 </li>
 <li>
-<section class="detail" id="getElements()">
-<h3>getElements</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>[]</span>&nbsp;<span class="member-name">getElements</span>()</div>
+<section class="detail" id="getObjects()">
+<h3>getObjects</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>[]</span>&nbsp;<span class="member-name">getObjects</span>()</div>
+<div class="block">Return the entire array.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Array of CBOR objects</dd>
+</dl>
 </section>
 </li>
 <li>
