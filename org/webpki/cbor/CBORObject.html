@@ -97,7 +97,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <tbody>
 <tr class="alt-color" id="i0">
 <td class="col-first"><code>void</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#checkObjectForUnread()">checkObjectForUnread</a></span>()</code></th>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#checkForUnread()">checkForUnread</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Check for unread CBOR data.</div>
 </td>
@@ -218,7 +218,7 @@ boolean&nbsp;ignoreKeySortingOrder)</code></th>
 </tr>
 <tr class="row-color" id="i17">
 <td class="col-first"><code>static void</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setRfc8949SortingMode(boolean)">setRfc8949SortingMode</a></span>&#8203;(boolean&nbsp;flag)</code></th>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setRfc7049SortingMode(boolean)">setRfc7049SortingMode</a></span>&#8203;(boolean&nbsp;flag)</code></th>
 <td class="col-last">
 <div class="block">Set RFC 8949/7049 key sorting.</div>
 </td>
@@ -274,15 +274,15 @@ boolean&nbsp;ignoreKeySortingOrder)</code></th>
 </section>
 </li>
 <li>
-<section class="detail" id="setRfc8949SortingMode(boolean)">
-<h3>setRfc8949SortingMode</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">setRfc8949SortingMode</span>&#8203;(<span class="parameters">boolean&nbsp;flag)</span></div>
+<section class="detail" id="setRfc7049SortingMode(boolean)">
+<h3>setRfc7049SortingMode</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">setRfc7049SortingMode</span>&#8203;(<span class="parameters">boolean&nbsp;flag)</span></div>
 <div class="block">Set RFC 8949/7049 key sorting.
  
- Default: false => RFC 7049 key sorting</div>
+ Default: false => RFC 8949 key sorting</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>flag</code> - true for RFC 8949, false for RFC 7049</dd>
+<dd><code>flag</code> - true for RFC 7049, false for RFC 8949</dd>
 </dl>
 </section>
 </li>
@@ -518,10 +518,10 @@ boolean&nbsp;ignoreKeySortingOrder)</span>
 </section>
 </li>
 <li>
-<section class="detail" id="checkObjectForUnread()">
-<h3>checkObjectForUnread</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">checkObjectForUnread</span>()
-                          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<section class="detail" id="checkForUnread()">
+<h3>checkForUnread</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="member-name">checkForUnread</span>()
+                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Check for unread CBOR data.
  
  Check if all data from the current node and downwards have been read.</div>
