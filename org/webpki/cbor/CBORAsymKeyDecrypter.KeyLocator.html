@@ -93,8 +93,8 @@ var activeTableTab = "active-table-tab";
 <tbody>
 <tr class="alt-color" id="i0">
 <td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#locate(java.security.PublicKey,java.lang.String,org.webpki.crypto.encryption.KeyEncryptionAlgorithms)">locate</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;optionalPublicKey,
-<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;optionalKeyId,
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#locate(java.security.PublicKey,byte%5B%5D,org.webpki.crypto.encryption.KeyEncryptionAlgorithms)">locate</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;optionalPublicKey,
+byte[]&nbsp;optionalKeyId,
 <a href="../crypto/encryption/KeyEncryptionAlgorithms.html" title="enum in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm)</code></th>
 <td class="col-last">
 <div class="block">Lookup private decryption key.</div>
@@ -116,10 +116,10 @@ var activeTableTab = "active-table-tab";
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="locate(java.security.PublicKey,java.lang.String,org.webpki.crypto.encryption.KeyEncryptionAlgorithms)">
+<section class="detail" id="locate(java.security.PublicKey,byte[],org.webpki.crypto.encryption.KeyEncryptionAlgorithms)">
 <h3>locate</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a></span>&nbsp;<span class="member-name">locate</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;optionalPublicKey,
-<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;optionalKeyId,
+byte[]&nbsp;optionalKeyId,
 <a href="../crypto/encryption/KeyEncryptionAlgorithms.html" title="enum in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm)</span>
            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>

@@ -189,7 +189,7 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 </tr>
 <tr class="row-color" id="i1">
 <td class="col-first"><code><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setKeyId(java.lang.String)">setKeyId</a></span>&#8203;(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;keyId)</code></th>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setKeyId(byte%5B%5D)">setKeyId</a></span>&#8203;(byte[]&nbsp;keyId)</code></th>
 <td class="col-last">
 <div class="block">Set encryption key Id.</div>
 </td>
@@ -291,9 +291,9 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="setKeyId(java.lang.String)">
+<section class="detail" id="setKeyId(byte[])">
 <h3>setKeyId</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></span>&nbsp;<span class="member-name">setKeyId</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;keyId)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></span>&nbsp;<span class="member-name">setKeyId</span>&#8203;(<span class="parameters">byte[]&nbsp;keyId)</span></div>
 <div class="block">Set encryption key Id.
  
  In the case the public key is not provided in the 
@@ -302,14 +302,14 @@ extends <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/ja
  is used to retrieve the proper private key is up to a
  convention between the parties using
  a specific message scheme.  A keyId may be a database
- index or a hash of the public key.
+ index, a hash of the public key, or a text string.
  <p>
  For symmetric key-algorithms, a keyId or implicit key are
  the only ways to retrieve the proper secret key.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>keyId</code> - A key Id string</dd>
+<dd><code>keyId</code> - A key Id byte array</dd>
 <dt>Returns:</dt>
 <dd>this</dd>
 </dl>
