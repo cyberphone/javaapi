@@ -11,7 +11,7 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10,"i1":9,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":9,"i18":10};
+<script type="text/javascript">var data = {"i0":10,"i1":9,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":9,"i20":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -175,55 +175,69 @@ boolean&nbsp;ignoreKeySortingOrder)</code></th>
 </td>
 </tr>
 <tr class="row-color" id="i11">
+<td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getIntegerAsBigInteger()">getIntegerAsBigInteger</a></span>()</code></th>
+<td class="col-last">
+<div class="block">Get CBOR integer as a BigInteger value.</div>
+</td>
+</tr>
+<tr class="alt-color" id="i12">
 <td class="col-first"><code>long</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getLong()">getLong</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Get <code>long</code> value.</div>
 </td>
 </tr>
-<tr class="alt-color" id="i12">
+<tr class="row-color" id="i13">
 <td class="col-first"><code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getMap()">getMap</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Get <code>map</code> object.</div>
 </td>
 </tr>
-<tr class="row-color" id="i13">
+<tr class="alt-color" id="i14">
 <td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getTextString()">getTextString</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Get <code>text string</code> value.</div>
 </td>
 </tr>
-<tr class="alt-color" id="i14">
+<tr class="row-color" id="i15">
 <td class="col-first"><code><a href="CBORTypes.html" title="enum in org.webpki.cbor">CBORTypes</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getType()">getType</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Get core CBOR type.</div>
 </td>
 </tr>
-<tr class="row-color" id="i15">
+<tr class="alt-color" id="i16">
+<td class="col-first"><code>long</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getUnsignedLong()">getUnsignedLong</a></span>()</code></th>
+<td class="col-last">
+<div class="block">Get <i>unsigned</i> <code>long</code> value.</div>
+</td>
+</tr>
+<tr class="row-color" id="i17">
 <td class="col-first"><code>boolean</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#isNull()">isNull</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Check for <code>null</code>.</div>
 </td>
 </tr>
-<tr class="alt-color" id="i16">
+<tr class="alt-color" id="i18">
 <td class="col-first"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#scan()">scan</a></span>()</code></th>
 <td class="col-last">
 <div class="block">Scan object.</div>
 </td>
 </tr>
-<tr class="row-color" id="i17">
+<tr class="row-color" id="i19">
 <td class="col-first"><code>static void</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#setRfc7049SortingMode(boolean)">setRfc7049SortingMode</a></span>&#8203;(boolean&nbsp;flag)</code></th>
 <td class="col-last">
 <div class="block">Set RFC 8949/7049 key sorting.</div>
 </td>
 </tr>
-<tr class="alt-color" id="i18">
+<tr class="alt-color" id="i20">
 <td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#toString()">toString</a></span>()</code></th>
 <td class="col-last">
@@ -287,6 +301,26 @@ boolean&nbsp;ignoreKeySortingOrder)</code></th>
 </section>
 </li>
 <li>
+<section class="detail" id="getIntegerAsBigInteger()">
+<h3>getIntegerAsBigInteger</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a></span>&nbsp;<span class="member-name">getIntegerAsBigInteger</span>()
+                                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Get CBOR integer as a BigInteger value.
+ <p>
+ This method requires that the object is a
+ <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a>, 
+ otherwise an exception will be thrown.
+ </p>
+ This method supports the full (65-bit) CBOR integer range.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Value</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getLong()">
 <h3>getLong</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="member-name">getLong</span>()
@@ -294,8 +328,30 @@ boolean&nbsp;ignoreKeySortingOrder)</code></th>
 <div class="block">Get <code>long</code> value.
  <p>
  This method requires that the object is a
- <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a>, otherwise an exception will be thrown.
- </p></div>
+ <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a> and fits a Java (<i>signed</i>) long, 
+ otherwise an exception will be thrown.
+ </p>
+ Also see <a href="#getIntegerAsBigInteger()"><code>getIntegerAsBigInteger()</code></a>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Value</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getUnsignedLong()">
+<h3>getUnsignedLong</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="member-name">getUnsignedLong</span>()
+                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Get <i>unsigned</i> <code>long</code> value.
+ <p>
+ This method requires that the object is a positive
+ <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a> and fits a Java long (sign bit is used as well),
+ otherwise an exception will be thrown.
+ </p>
+ Also see <a href="#getIntegerAsBigInteger()"><code>getIntegerAsBigInteger()</code></a>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>Value</dd>
@@ -312,8 +368,10 @@ boolean&nbsp;ignoreKeySortingOrder)</code></th>
 <div class="block">Get <code>integer</code> value.
  <p>
  This method requires that the object is a
- <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a>, otherwise an exception will be thrown.
- </p></div>
+ <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a> and fits a Java (<i>signed</i>) int, 
+ otherwise an exception will be thrown.
+ </p>
+ Also see <a href="#getIntegerAsBigInteger()"><code>getIntegerAsBigInteger()</code></a>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>Value</dd>
@@ -366,7 +424,8 @@ boolean&nbsp;ignoreKeySortingOrder)</code></th>
 <div class="block">Get <code>big number</code> value.
  <p>
  This method requires that the object is either a
- <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a> or a <a href="CBORBigInteger.html" title="class in org.webpki.cbor"><code>CBORBigInteger</code></a>, otherwise an exception will be thrown.
+ <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a> or a <a href="CBORBigInteger.html" title="class in org.webpki.cbor"><code>CBORBigInteger</code></a>, 
+ otherwise an exception will be thrown.
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
