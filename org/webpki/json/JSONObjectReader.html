@@ -198,7 +198,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/GregorianCalendar.html" title="class or interface in java.util" class="external-link">GregorianCalendar</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDateTime(java.lang.String,java.util.EnumSet)" class="member-name-link">getDateTime</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="../util/ISODateTime.DatePatterns.html" title="enum class in org.webpki.util">ISODateTime.DatePatterns</a>&gt;&nbsp;format)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="../util/ISODateTime.DatePatterns.html" title="enum class in org.webpki.util">ISODateTime.DatePatterns</a>&gt;&nbsp;constraints)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Read a JSON dateTime property in ISO format.</div>
 </div>
@@ -592,7 +592,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <section class="detail" id="getDateTime(java.lang.String,java.util.EnumSet)">
 <h3>getDateTime</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/GregorianCalendar.html" title="class or interface in java.util" class="external-link">GregorianCalendar</a></span>&nbsp;<span class="element-name">getDateTime</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;name,
- <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="../util/ISODateTime.DatePatterns.html" title="enum class in org.webpki.util">ISODateTime.DatePatterns</a>&gt;&nbsp;format)</span>
+ <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/EnumSet.html" title="class or interface in java.util" class="external-link">EnumSet</a>&lt;<a href="../util/ISODateTime.DatePatterns.html" title="enum class in org.webpki.util">ISODateTime.DatePatterns</a>&gt;&nbsp;constraints)</span>
                               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Read a JSON dateTime property in ISO format.<p>
  Note: Since JSON does not support a native dateTime 
@@ -600,7 +600,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>name</code> - Property</dd>
-<dd><code>format</code> - Required input format</dd>
+<dd><code>constraints</code> - Required input format</dd>
 <dt>Returns:</dt>
 <dd>Java <code>GregorianCalendar</code></dd>
 <dt>Throws:</dt>
