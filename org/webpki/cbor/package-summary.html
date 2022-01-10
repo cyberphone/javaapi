@@ -63,15 +63,16 @@ like COSE and FIDO/CTAP2.
 <tr><th>CBOR Data Type</th><th>&nbsp;&nbsp;</th><th>Java Counterpart</th></tr>
 <tr><td><code>unsigned integer</code></td><td></td><td><code>long</code></td></tr>
 <tr><td><code>negative integer</code></td><td></td><td><code>long</code></td></tr>
-<tr><td><code>byte string</code></td><td></td><td><code>byte[]</code></td></tr>
-<tr><td><code>text string</code></td><td></td><td><code>String</code></td></tr>
 <tr><td><code>unsigned bignum</code></td><td></td><td><code>BigInteger</code></td></tr>
 <tr><td><code>negative bignum</code></td><td></td><td><code>BigInteger</code></td></tr>
-<tr><td><code>date-time</code></td><td></td><td><code>GregorianCalendar</code></td></tr>
+<tr><td><code>floating point</code> *</td><td></td><td><code>double</code></td></tr>
+<tr><td><code>byte string</code></td><td></td><td><code>byte[]</code></td></tr>
+<tr><td><code>text string</code></td><td></td><td><code>String</code></td></tr>
 <tr><td><code>true</code></td><td></td><td><code>boolean</code></td></tr>
 <tr><td><code>false</code></td><td></td><td><code>boolean</code></td></tr>
 <tr><td><code>null</code></td><td></td><td><code>null</code></td></tr>
 </table>
+<p>*) Note that floating point data covers the 16, 32, and 64-bit IEEE 754 variants.</p>
 <h3>Deterministic Serialization</h3>
 Since this package is intended for security related
 work, it is (by design) quite picky when decoding CBOR data
@@ -81,6 +82,8 @@ and does (by default) not accept:
 <li><code>bignum</code> objects
 that due to their value could equally well be provided in the
 shorter <code>integer</code> format.</li>
+<li>Floating point data that could equally well be properly represented by a
+shorter variant.  As an example <code>0.0</code> must be encoded as a 16-bit floating point type. </li>
 <li>Maps with keys that are not sorted according to section 4.2.1 of RFC 8949.</li>
 </ul>
 On output (encode) the preferred serialization format is always used
@@ -106,7 +109,7 @@ enabling constructs like the following:
    3: "FR7630002111110020050014382",
    4: "https://europeanpaymentsinitiative.eu/fwp",
    5: "62932",
-   6: 0("2021-05-03T09:50:08Z"),
+   6: "2021-05-03T09:50:08Z",
    <span style='color:grey'>// signature object</span>
    7: {
      <span style='color:grey'>// Signature algorithm = COSE/ES256</span>
@@ -123,8 +126,8 @@ enabling constructs like the following:
        -3: h'9826dcbd4ce6e388f72edd9be413f2425a10f75b5fd83d95fa0cde53159a51d8'
      },
      <span style='color:grey'>// Signature value</span>
-     5: h'71994b13d48eeb8e9a5cd2801e11af93af92bb1acfcbd92ef0a4f1bb317faf94ae61e
-80443763cf212b9fd28f3c91c92ade64558b4382623320f58dfd785606e'
+     5: h'9afd236f8c9e7d2f27480570df11983a36dec25950a97d6fe66136839065
+93e755d266b2a2adbd562739d7bcfa1c20ea7770f6677bfde34a310101f445c32712'
    }
 }
 </pre>
@@ -135,12 +138,13 @@ label 7 holds an associated <i>enveloped</i> signature.  A CBOR signature must
 be provided as a CBOR <code>map</code> having a fixed set of labels 
 according to the following table:
 <table class='webpkitable'>
-<tr><th>Label</th><th>Function</th></tr>
-<tr><td style='text-align:center'>1</td><td>Signature algorithm using COSE identifiers</td></tr>
-<tr><td style='text-align:center'>2</td><td><i>Optional</i> public key in COSE format</td></tr>
-<tr><td style='text-align:center'>3</td><td><i>Optional</i> key Id supplied as a <code>byte string</code></td></tr>
-<tr><td style='text-align:center'>4</td><td><i>Optional</i> certificate path supplied as an array of <code>byte string</code> objects</td></tr>
-<tr><td style='text-align:center'>5</td><td>Signature value supplied as a <code>byte string</code></td></tr>
+<tr><th>Label</th><th>Argument</th><th>Function</th></tr>
+<tr><td style='text-align:center'>1</td><td><code>integer</code></td><td>Signature algorithm using COSE identifiers</td></tr>
+<tr><td style='text-align:center'>2</td><td><code>map</code></td><td><i>Optional</i> public key in COSE format</td></tr>
+<tr><td style='text-align:center'>3</td><td><code>byte string</code></td><td><i>Optional</i> key Id</td></tr>
+<tr><td style='text-align:center'>4</td><td><code>byte string</code></td><td><i>Optional</i> certificate path supplied 
+as an array of X.509 objects in DER format, where the first object <b>must</b> be the signature certificate</td></tr>
+<tr><td style='text-align:center'>5</td><td><code>byte string</code></td><td>Signature value</td></tr>
 </table>
 <p>
 CSF signatures are validated by running the signature validation 
@@ -355,7 +359,7 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORBigInteger.html" title="class in org.webpki.cbor">CBORBigInteger</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Class for holding CBOR <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link"><code>BigInteger</code></a>.</div>
+<div class="block">Class for holding CBOR <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link"><code>BigInteger</code></a>.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORBoolean.html" title="class in org.webpki.cbor">CBORBoolean</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
@@ -365,13 +369,13 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for holding CBOR byte strings.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORDateTime.html" title="class in org.webpki.cbor">CBORDateTime</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORDecrypter.html" title="class in org.webpki.cbor">CBORDecrypter</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">Class for holding CBOR date-time objects (RFC 3339).</div>
-</div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORDecrypter.html" title="class in org.webpki.cbor">CBORDecrypter</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Base class for creating CBOR decryption objects.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORDouble.html" title="class in org.webpki.cbor">CBORDouble</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">Class for holding CBOR floating point numbers.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
