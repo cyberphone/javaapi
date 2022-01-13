@@ -98,65 +98,90 @@ Note that unlike COSE (RFC 8152), CSF
 leverages <i>deterministic serialization</i>,
 enabling constructs like the following:
 </p>
-<pre>
-{
-   1: {
-     1: "Space Shop",
-     2: "100.00",
-     3: "EUR"
-   },
-   2: "spaceshop.com",
-   3: "FR7630002111110020050014382",
-   4: "https://europeanpaymentsinitiative.eu/fwp",
-   5: "62932",
-   6: "2021-05-03T09:50:08Z",
-   <span style='color:grey'>// signature object</span>
-   7: {
-     <span style='color:grey'>// Signature algorithm = COSE/ES256</span>
-     1: -7,
-     <span style='color:grey'>// Public key descriptor in COSE format</span>
-     2: {
-       <span style='color:grey'>// kty = EC</span>
-       1: 2,
-       <span style='color:grey'>// crv = P-256</span>
-       -1: 1,
-       <span style='color:grey'>// x</span>
-       -2: h'e812b1a6dcbc708f9ec43cc2921fa0a14e9d5eadcc6dc63471dd4b680c6236b5',
-       <span style='color:grey'>// y</span>
-       -3: h'9826dcbd4ce6e388f72edd9be413f2425a10f75b5fd83d95fa0cde53159a51d8'
-     },
-     <span style='color:grey'>// Signature value</span>
-     5: h'9afd236f8c9e7d2f27480570df11983a36dec25950a97d6fe66136839065
-93e755d266b2a2adbd562739d7bcfa1c20ea7770f6677bfde34a310101f445c32712'
-   }
+<div style='word-break:break-all'><code>
+{<br>
+&nbsp;&nbsp;1: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1: "Space Shop",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2: "435.00",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;3: "USD"<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;2: "spaceshop.com",<br>
+&nbsp;&nbsp;3: "FR7630002111110020050014382",<br>
+&nbsp;&nbsp;4: "https://bankdirect.org",<br>
+&nbsp;&nbsp;5: "05768401",<br>
+&nbsp;&nbsp;6: "2022-01-14T09:34:08-05:00",<br>
+&nbsp;&nbsp;7: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1: 38.8882,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;2: 77.0199<br>
+&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;<span style='color:grey'>// Signature object</span><br>
+&nbsp;&nbsp;8: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>// Signature algorithm = COSE/ES256</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;1: -7,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>// Public key descriptor in COSE format</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;3: {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>// kty = EC</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1: 2,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>// crv = P-256</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1: 1,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>// x</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-2: h'e812b1a6dcbc708f9ec43cc2921fa0a14e9d5eadcc6dc63471dd4b680c6236b5',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>// y</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-3: h'9826dcbd4ce6e388f72edd9be413f2425a10f75b5fd83d95fa0cde53159a51d8'<br>
+&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>// Signature value</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;5: h'771b9cc536ccb3a68d59adffb7bb4dacf7cf0fd5a1a3f52837ba37e508010c2fe438236fdc713ece9df2f0f5ef2181c3f8963beb1c6f119de6fdd5e5c72548c1'<br>
+&nbsp;&nbsp;}<br>
 }
-</pre>
+</code></div>
+<p>
+The same object expressed as hex-encoded CBOR:
+</p>
+<p>
+<div style='word-break:break-all'><code>
+a801a3016a53706163652053686f7002663433352e30300363555344026d737061636573686f702e636f6d03781b465237363330303032313131313130303230303530303134333832047668747470733a2f2f62616e6b6469726563742e6f726705683035373638343031067819323032322d30312d31345430393a33343a30382d30353a303007a201fb404371b089a0275202fb405341460aa64c3008a3012603a401022001215820e812b1a6dcbc708f9ec43cc2921fa0a14e9d5eadcc6dc63471dd4b680c6236b52258209826dcbd4ce6e388f72edd9be413f2425a10f75b5fd83d95fa0cde53159a51d8055840771b9cc536ccb3a68d59adffb7bb4dacf7cf0fd5a1a3f52837ba37e508010c2fe438236fdc713ece9df2f0f5ef2181c3f8963beb1c6f119de6fdd5e5c72548c1
+</code></div>
+
+</p>
+<p>
 <i>Explanation: </i>
-Labels 1-6 represent the application data while the <i>application-specific</i>
-label 7 holds an associated <i>enveloped</i> signature.  A CBOR signature must
+Labels 1-7 represent application data while the <i>application-specific</i>
+label 8 holds an associated <i>enveloped</i> signature.  A CBOR signature must
 (for compatibility with CSF),
 be provided as a CBOR <code>map</code> having a fixed set of labels 
 according to the following table:
+</p>
 <table class='webpkitable'>
-<tr><th>Label</th><th>Argument</th><th>Function</th></tr>
-<tr><td style='text-align:center'>1</td><td><code>integer</code></td><td>Signature algorithm using COSE identifiers</td></tr>
-<tr><td style='text-align:center'>2</td><td><code>map</code></td><td><i>Optional</i> public key in COSE format</td></tr>
-<tr><td style='text-align:center'>3</td><td><code>byte string</code></td><td><i>Optional</i> key Id</td></tr>
-<tr><td style='text-align:center'>4</td><td><code>byte string</code></td><td><i>Optional</i> certificate path supplied 
-as an array of X.509 objects in DER format, where the first object <b>must</b> be the signature certificate</td></tr>
-<tr><td style='text-align:center'>5</td><td><code>byte string</code></td><td>Signature value</td></tr>
+<tr><th>Label</th><th>Name</th><th>Argument</th><th>Function</th></tr>
+
+<tr><td style='text-align:center'><code>1</code></td><td><code>algorithm</code></td>
+<td><code>integer</code></td><td>Signature algorithm using COSE identifiers.</td></tr>
+
+<tr><td style='text-align:center'><code>2</code></td><td><code>keyId</code></td>
+<td><code>byte&nbsp;string</code></td><td><i>Optional</i> key identifier. Note that <code>keyId</code> <b>must not</b> be used together with <code>publicKey</code> or <code>certificatePath</code>.
+
+<tr><td style='text-align:center'><code>3</code></td><td><code>publicKey</code></td><td><code>map</code></td><td><i>Optional</i> public key in COSE format.</td></tr>
+</td></tr>
+
+<tr><td style='text-align:center'><code>4</code></td><td><code>certificatePath</code></td><td><code>array</code></td><td><i>Optional</i> certificate path supplied 
+as an array of <code>byte&nbsp;string</code> objects holding X.509 certificates in DER format, where the first object <b>must</b> be the signature certificate.</td></tr>
+
+<tr><td style='text-align:center'><code>5</code></td><td><code>signatureValue</code></td><td><code>byte&nbsp;string</code></td><td>Signature value.</td></tr>
 </table>
 <p>
 CSF signatures are validated by running the signature validation 
-algorithm over the complete CBOR binary representation, with the signature label (5) and
-its associated value as the sole exception. Note that the length
-of the <code>map</code> object holding the signature value <b>must</b>
+algorithm over the complete CBOR binary representation, with the signature label (<code>5</code>) and
+its associated <code>signatureValue</code> as the sole exception. Note that the length
+of the <code>map</code> object holding the <code>signatureValue</code> <b>must</b>
 be updated (to reflect the removal of an element) during validation.</p>
 <p id='csf-algorithms'>
 Currently supported signature algorithms:
 </p>
 <table class='webpkitable'>
 <tr><th>Name</th><th>Identifier</th><th>Compatibility</th></tr>
+<tr style='text-align:center'><td><code>HS256</code></td><td>5</td><td>COSE, JOSE</td></tr>
+<tr style='text-align:center'><td><code>HS384</code></td><td>6</td><td>COSE, JOSE</td></tr>
+<tr style='text-align:center'><td><code>HS512</code></td><td>7</td><td>COSE, JOSE</td></tr>
 <tr style='text-align:center'><td><code>Ed25519</code></td><td>-8</td><td>FIDO, PKIX [1]</td></tr>
 <tr style='text-align:center'><td><code>Ed448</code></td><td>-9</td><td>PKIX [2]</td></tr>
 <tr style='text-align:center'><td><code>ES256</code></td><td>-7</td><td>COSE, JOSE</td></tr>
@@ -349,11 +374,11 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class for creating CBOR asymmetric key signatures.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORAsymSignatureValidator.html" title="class in org.webpki.cbor">CBORAsymSignatureValidator</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORAsymKeyValidator.html" title="class in org.webpki.cbor">CBORAsymKeyValidator</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for CBOR asymmetric key signature validation.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORAsymSignatureValidator.KeyLocator.html" title="interface in org.webpki.cbor">CBORAsymSignatureValidator.KeyLocator</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORAsymKeyValidator.KeyLocator.html" title="interface in org.webpki.cbor">CBORAsymKeyValidator.KeyLocator</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">For dynamic key retrieval.</div>
 </div>
@@ -441,8 +466,20 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Base class for CBOR signature validation</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="JSONReader.html" title="class in org.webpki.cbor">JSONReader</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORX509Signer.html" title="class in org.webpki.cbor">CBORX509Signer</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Class for creating CBOR X509 signatures.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORX509Validator.html" title="class in org.webpki.cbor">CBORX509Validator</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">Class for CBOR X509 signature validation.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORX509Validator.SignatureParameters.html" title="interface in org.webpki.cbor">CBORX509Validator.SignatureParameters</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="block">For checking signature parameters</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="JSONReader.html" title="class in org.webpki.cbor">JSONReader</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for converting JSON to CBOR.</div>
 </div>
 </div>

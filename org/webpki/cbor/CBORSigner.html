@@ -66,14 +66,14 @@ var activeTableTab = "active-table-tab";
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="CBORAsymKeySigner.html" title="class in org.webpki.cbor">CBORAsymKeySigner</a></code>, <code><a href="CBORHmacSigner.html" title="class in org.webpki.cbor">CBORHmacSigner</a></code></dd>
+<dd><code><a href="CBORAsymKeySigner.html" title="class in org.webpki.cbor">CBORAsymKeySigner</a></code>, <code><a href="CBORHmacSigner.html" title="class in org.webpki.cbor">CBORHmacSigner</a></code>, <code><a href="CBORX509Signer.html" title="class in org.webpki.cbor">CBORX509Signer</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">CBORSigner</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Base class for creating CBOR signatures.
  
- It uses COSE algorithms but not the packaging.</div>
+ It uses COSE algorithms but relies on CSF for the packaging.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -99,12 +99,12 @@ var activeTableTab = "active-table-tab";
 <div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
 <div class="col-second even-row-color"><code><a href="#KEY_ID_LABEL" class="member-name-link">KEY_ID_LABEL</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">Integer value: 3</div>
+<div class="block">Integer value: 2</div>
 </div>
 <div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
 <div class="col-second odd-row-color"><code><a href="#PUBLIC_KEY_LABEL" class="member-name-link">PUBLIC_KEY_LABEL</a></code></div>
 <div class="col-last odd-row-color">
-<div class="block">Integer value: 2</div>
+<div class="block">Integer value: 3</div>
 </div>
 <div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
 <div class="col-second even-row-color"><code><a href="#SIGNATURE_LABEL" class="member-name-link">SIGNATURE_LABEL</a></code></div>
@@ -160,16 +160,16 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="PUBLIC_KEY_LABEL">
-<h3>PUBLIC_KEY_LABEL</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">PUBLIC_KEY_LABEL</span></div>
+<section class="detail" id="KEY_ID_LABEL">
+<h3>KEY_ID_LABEL</h3>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">KEY_ID_LABEL</span></div>
 <div class="block">Integer value: 2</div>
 </section>
 </li>
 <li>
-<section class="detail" id="KEY_ID_LABEL">
-<h3>KEY_ID_LABEL</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">KEY_ID_LABEL</span></div>
+<section class="detail" id="PUBLIC_KEY_LABEL">
+<h3>PUBLIC_KEY_LABEL</h3>
+<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">PUBLIC_KEY_LABEL</span></div>
 <div class="block">Integer value: 3</div>
 </section>
 </li>
@@ -213,6 +213,9 @@ var activeTableTab = "active-table-tab";
  <p>
  For HMAC-signatures, a keyId or implicit key are
  the only ways to retrieve the proper secret key.
+ </p>
+ <p>
+ Note that keyId is not permitted for X509 based signatures.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
