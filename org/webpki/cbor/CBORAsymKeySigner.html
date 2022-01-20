@@ -126,7 +126,7 @@ var activeTableTab = "active-table-tab";
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORAsymKeySigner.html" title="class in org.webpki.cbor">CBORAsymKeySigner</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setPublicKey(java.security.PublicKey)" class="member-name-link">setPublicKey</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Put a public into the signature container.</div>
+<div class="block">Put a public key into the signature container.</div>
 </div>
 </div>
 </div>
@@ -195,10 +195,15 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="setPublicKey(java.security.PublicKey)">
 <h3>setPublicKey</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORAsymKeySigner.html" title="class in org.webpki.cbor">CBORAsymKeySigner</a></span>&nbsp;<span class="element-name">setPublicKey</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey)</span></div>
-<div class="block">Put a public into the signature container.</div>
+<div class="block">Put a public key into the signature container.
+ 
+ <p>
+ Note that a public key value of <code>null</code> 
+ is equivalent to the default (=no public key).
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>publicKey</code> - The public key</dd>
+<dd><code>publicKey</code> - The public key or <code>null</code></dd>
 <dt>Returns:</dt>
 <dd>this</dd>
 </dl>

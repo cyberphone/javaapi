@@ -128,7 +128,7 @@ var activeTableTab = "active-table-tab";
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(byte%5B%5D)" class="member-name-link">setKeyId</a><wbr>(byte[]&nbsp;keyId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Set signature key Id.</div>
+<div class="block">Set signature <code>keyId</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setProvider(java.lang.String)" class="member-name-link">setProvider</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider)</code></div>
@@ -199,27 +199,31 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="setKeyId(byte[])">
 <h3>setKeyId</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></span>&nbsp;<span class="element-name">setKeyId</span><wbr><span class="parameters">(byte[]&nbsp;keyId)</span></div>
-<div class="block">Set signature key Id.
+<div class="block">Set signature <code>keyId</code>.
  
  In the case the public key is not provided in the signature
  object, the signature key may be tied to an identifier
  known by the relying party.  How such an identifier
  is used to retrieve the proper public key is up to a
  convention between the parties using
- a specific message scheme.  A keyId may be a database
+ a specific message scheme.  A <code>keyId</code> may be a database
  index, a hash of the public key, a text string,
  or a URL pointing to a Web server holding a public key
  in PEM format.
  <p>
- For HMAC-signatures, a keyId or implicit key are
+ For HMAC-signatures, a <code>keyId</code> or implicit key are
  the only ways to retrieve the proper secret key.
  </p>
  <p>
- Note that keyId is not permitted for X509 based signatures.
+ Note that <code>keyId</code> is not permitted for X509 based signatures.
+ </p>
+ <p>
+ A <code>keyId</code> argument of <code>null</code> 
+ is equivalent to the default (= no <code>keyId</code>).
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>keyId</code> - A key Id byte array</dd>
+<dd><code>keyId</code> - A key Id byte array or <code>null</code></dd>
 <dt>Returns:</dt>
 <dd>this</dd>
 </dl>
