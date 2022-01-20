@@ -226,6 +226,24 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
+<section class="detail" id="getBigInteger()">
+<h3>getBigInteger</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a></span>&nbsp;<span class="element-name">getBigInteger</span>()
+                         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Get <code>big number</code> value.
+ <p>
+ This method requires that the object is a
+ <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a>, otherwise an exception will be thrown.
+ </p></div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>BigInteger</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
 <section class="detail" id="getLong()">
 <h3>getLong</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getLong</span>()
@@ -328,29 +346,11 @@ var activeTableTab = "active-table-tab";
 <div class="block">Check for <code>null</code>.
  <p>
  If the object is a <a href="CBORNull.html" title="class in org.webpki.cbor"><code>CBORNull</code></a> the call will return
- <code>true</code>, else it will return <code>false></code>.
+ <code>true</code>, else it will return <code>false</code>.
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>Status</dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getBigInteger()">
-<h3>getBigInteger</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a></span>&nbsp;<span class="element-name">getBigInteger</span>()
-                         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Get <code>big number</code> value.
- <p>
- This method requires that the object is either a
- <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a>, otherwise an exception will be thrown.
- </p></div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>BigInteger</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
