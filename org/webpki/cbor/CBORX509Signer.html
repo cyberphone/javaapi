@@ -92,11 +92,11 @@ var activeTableTab = "active-table-tab";
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.security.PrivateKey,java.security.cert.X509Certificate%5B%5D)" class="member-name-link">CBORX509Signer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]&nbsp;certificatePath)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Initialize signer.</div>
+<div class="block">Initializes an X509 signer with a private key.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(org.webpki.crypto.X509SignerInterface)" class="member-name-link">CBORX509Signer</a><wbr>(<a href="../crypto/X509SignerInterface.html" title="interface in org.webpki.crypto">X509SignerInterface</a>&nbsp;signer)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Initialize signer.</div>
+<div class="block">Initializes a signer with an external interface.</div>
 </div>
 </div>
 </section>
@@ -120,7 +120,7 @@ var activeTableTab = "active-table-tab";
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORX509Signer.html" title="class in org.webpki.cbor">CBORX509Signer</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setAlgorithm(org.webpki.crypto.AsymSignatureAlgorithms)" class="member-name-link">setAlgorithm</a><wbr>(<a href="../crypto/AsymSignatureAlgorithms.html" title="enum class in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Set signature algorithm.</div>
+<div class="block">Sets signature algorithm.</div>
 </div>
 </div>
 </div>
@@ -148,7 +148,7 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORX509Signer</span><wbr><span class="parameters">(<a href="../crypto/X509SignerInterface.html" title="interface in org.webpki.crypto">X509SignerInterface</a>&nbsp;signer)</span>
                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Initialize signer.</div>
+<div class="block">Initializes a signer with an external interface.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>signer</code> - Custom signer</dd>
@@ -165,7 +165,7 @@ var activeTableTab = "active-table-tab";
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]&nbsp;certificatePath)</span>
                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Initialize signer.
+<div class="block">Initializes an X509 signer with a private key.
  
  The default signature algorithm to use is based on the recommendations
  in RFC 7518.</div>
@@ -192,7 +192,7 @@ var activeTableTab = "active-table-tab";
 <h3>setAlgorithm</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORX509Signer.html" title="class in org.webpki.cbor">CBORX509Signer</a></span>&nbsp;<span class="element-name">setAlgorithm</span><wbr><span class="parameters">(<a href="../crypto/AsymSignatureAlgorithms.html" title="enum class in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm)</span>
                             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Set signature algorithm.</div>
+<div class="block">Sets signature algorithm.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>algorithm</code> - The algorithm</dd>

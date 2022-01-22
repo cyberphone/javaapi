@@ -106,7 +106,7 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.webpki.cbor.CBORX509Validator.SignatureParameters)" class="member-name-link">CBORX509Validator</a><wbr>(<a href="CBORX509Validator.SignatureParameters.html" title="interface in org.webpki.cbor">CBORX509Validator.SignatureParameters</a>&nbsp;checker)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Initialize validator with a parameter checker.</div>
+<div class="block">Initializes X509 validator with a parameter checker.</div>
 </div>
 </div>
 </section>
@@ -125,7 +125,7 @@ var activeTableTab = "active-table-tab";
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decodeCertificateArray(org.webpki.cbor.CBORArray)" class="member-name-link">decodeCertificateArray</a><wbr>(<a href="CBORArray.html" title="class in org.webpki.cbor">CBORArray</a>&nbsp;array)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Get certificate path from a CBOR array.</div>
+<div class="block">Decodes a certificate path from a CBOR array.</div>
 </div>
 </div>
 </div>
@@ -151,7 +151,7 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="&lt;init&gt;(org.webpki.cbor.CBORX509Validator.SignatureParameters)">
 <h3>CBORX509Validator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORX509Validator</span><wbr><span class="parameters">(<a href="CBORX509Validator.SignatureParameters.html" title="interface in org.webpki.cbor">CBORX509Validator.SignatureParameters</a>&nbsp;checker)</span></div>
-<div class="block">Initialize validator with a parameter checker.</div>
+<div class="block">Initializes X509 validator with a parameter checker.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>checker</code> - The checker interface</dd>
@@ -172,7 +172,7 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]</span>&nbsp;<span class="element-name">decodeCertificateArray</span><wbr><span class="parameters">(<a href="CBORArray.html" title="class in org.webpki.cbor">CBORArray</a>&nbsp;array)</span>
                                                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Get certificate path from a CBOR array.
+<div class="block">Decodes a certificate path from a CBOR array.
  
  Note that the array must only contain a
  list of X509 certificates in DER format.
