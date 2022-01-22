@@ -38,13 +38,13 @@ var activeTableTab = "active-table-tab";
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field-summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
 </ul>
 <ul class="sub-nav-list">
 <li>Detail:&nbsp;</li>
-<li><a href="#field-detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method-detail">Method</a></li>
 </ul>
@@ -77,63 +77,6 @@ var activeTableTab = "active-table-tab";
 </section>
 <section class="summary">
 <ul class="summary-list">
-<!-- =========== FIELD SUMMARY =========== -->
-<li>
-<section class="field-summary" id="field-summary">
-<h2>Field Summary</h2>
-<div class="caption"><span>Fields</span></div>
-<div class="summary-table three-column-summary">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Field</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second even-row-color"><code><a href="#ALGORITHM_LABEL" class="member-name-link">ALGORITHM_LABEL</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Integer value: 1.</div>
-</div>
-<div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#CERT_PATH_LABEL" class="member-name-link">CERT_PATH_LABEL</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Integer value: 6.</div>
-</div>
-<div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second even-row-color"><code><a href="#CIPHER_TEXT_LABEL" class="member-name-link">CIPHER_TEXT_LABEL</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Integer value: 9.</div>
-</div>
-<div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#EPHEMERAL_KEY_LABEL" class="member-name-link">EPHEMERAL_KEY_LABEL</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Integer value: 5.</div>
-</div>
-<div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second even-row-color"><code><a href="#IV_LABEL" class="member-name-link">IV_LABEL</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Integer value: 8.</div>
-</div>
-<div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#KEY_ENCRYPTION_LABEL" class="member-name-link">KEY_ENCRYPTION_LABEL</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Integer value: 2.</div>
-</div>
-<div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second even-row-color"><code><a href="#KEY_ID_LABEL" class="member-name-link">KEY_ID_LABEL</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Integer value: 3.</div>
-</div>
-<div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#PUBLIC_KEY_LABEL" class="member-name-link">PUBLIC_KEY_LABEL</a></code></div>
-<div class="col-last odd-row-color">
-<div class="block">Integer value: 4.</div>
-</div>
-<div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second even-row-color"><code><a href="#TAG_LABEL" class="member-name-link">TAG_LABEL</a></code></div>
-<div class="col-last even-row-color">
-<div class="block">Integer value: 7.</div>
-</div>
-</div>
-</section>
-</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
@@ -151,7 +94,17 @@ var activeTableTab = "active-table-tab";
 <div class="block">Encrypts data.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(byte%5B%5D)" class="member-name-link">setKeyId</a><wbr>(byte[]&nbsp;keyId)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(int)" class="member-name-link">setKeyId</a><wbr>(int&nbsp;keyId)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets optional key Id.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(java.lang.String)" class="member-name-link">setKeyId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;keyId)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets optional key Id.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(org.webpki.cbor.CBORObject)" class="member-name-link">setKeyId</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;keyId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets optional key Id.</div>
 </div>
@@ -167,93 +120,15 @@ var activeTableTab = "active-table-tab";
 </section>
 <section class="details">
 <ul class="details-list">
-<!-- ============ FIELD DETAIL =========== -->
-<li>
-<section class="field-details" id="field-detail">
-<h2>Field Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="ALGORITHM_LABEL">
-<h3>ALGORITHM_LABEL</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">ALGORITHM_LABEL</span></div>
-<div class="block">Integer value: 1.
- Note: This label is also used in key encryption sub-maps.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="KEY_ENCRYPTION_LABEL">
-<h3>KEY_ENCRYPTION_LABEL</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">KEY_ENCRYPTION_LABEL</span></div>
-<div class="block">Integer value: 2.
- This label holds a key encryption sub-map.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="KEY_ID_LABEL">
-<h3>KEY_ID_LABEL</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">KEY_ID_LABEL</span></div>
-<div class="block">Integer value: 3.
- Note: This label is alternatively used in key encryption sub-maps.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="PUBLIC_KEY_LABEL">
-<h3>PUBLIC_KEY_LABEL</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">PUBLIC_KEY_LABEL</span></div>
-<div class="block">Integer value: 4.
- Note: This label is only used in key encryption sub-maps.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="EPHEMERAL_KEY_LABEL">
-<h3>EPHEMERAL_KEY_LABEL</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">EPHEMERAL_KEY_LABEL</span></div>
-<div class="block">Integer value: 5.
- Note: This label is only used in key encryption sub-maps.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="CERT_PATH_LABEL">
-<h3>CERT_PATH_LABEL</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">CERT_PATH_LABEL</span></div>
-<div class="block">Integer value: 6.
- Note: This label is only used in key encryption sub-maps.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="TAG_LABEL">
-<h3>TAG_LABEL</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">TAG_LABEL</span></div>
-<div class="block">Integer value: 7.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="IV_LABEL">
-<h3>IV_LABEL</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">IV_LABEL</span></div>
-<div class="block">Integer value: 8.</div>
-</section>
-</li>
-<li>
-<section class="detail" id="CIPHER_TEXT_LABEL">
-<h3>CIPHER_TEXT_LABEL</h3>
-<div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">CIPHER_TEXT_LABEL</span></div>
-<div class="block">Integer value: 9.
- Note: This label is also used in key encryption sub-maps using key-wrapping.</div>
-</section>
-</li>
-</ul>
-</section>
-</li>
 <!-- ============ METHOD DETAIL ========== -->
 <li>
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="setKeyId(byte[])">
+<section class="detail" id="setKeyId(org.webpki.cbor.CBORObject)">
 <h3>setKeyId</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></span>&nbsp;<span class="element-name">setKeyId</span><wbr><span class="parameters">(byte[]&nbsp;keyId)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></span>&nbsp;<span class="element-name">setKeyId</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;keyId)</span></div>
 <div class="block">Sets optional key Id.
  
  In the case the public key is not provided in the 
@@ -266,10 +141,40 @@ var activeTableTab = "active-table-tab";
  <p>
  For symmetric key-algorithms, a keyId or implicit key are
  the only ways to retrieve the proper secret key.
+ </p>
+ <p>
+ Note that a <code>keyId</code> argument of <code>null</code> 
+ is equivalent to the default (= no <code>keyId</code>).
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>keyId</code> - A key Id byte array</dd>
+<dd><code>keyId</code> - A CBOR key Id or <code>null</code></dd>
+<dt>Returns:</dt>
+<dd>this</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setKeyId(int)">
+<h3>setKeyId</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></span>&nbsp;<span class="element-name">setKeyId</span><wbr><span class="parameters">(int&nbsp;keyId)</span></div>
+<div class="block">Sets optional key Id.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>keyId</code> - A CBOR key Id</dd>
+<dt>Returns:</dt>
+<dd>this</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setKeyId(java.lang.String)">
+<h3>setKeyId</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></span>&nbsp;<span class="element-name">setKeyId</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;keyId)</span></div>
+<div class="block">Sets optional key Id.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>keyId</code> - A CBOR key Id</dd>
 <dt>Returns:</dt>
 <dd>this</dd>
 </dl>
