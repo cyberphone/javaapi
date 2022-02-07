@@ -73,6 +73,11 @@ applications.
 <tr><td><code>null</code></td><td></td><td><code>null</code></td></tr>
 </table>
 <p>*) Note that floating point data covers the 16, 32, and 64-bit IEEE 754 variants.</p>
+<p>
+In addition to the primitives above, this implementation also supports
+arbitrary tagged objects
+based on CBOR major type 6.
+</p>
 <h3>Deterministic Serialization</h3>
 Since this package is intended for security related
 work, it is (by design) quite picky when decoding CBOR data
@@ -490,28 +495,32 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for creating CBOR symmetric key encryptions.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORTextString.html" title="class in org.webpki.cbor">CBORTextString</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORTaggedObject.html" title="class in org.webpki.cbor">CBORTaggedObject</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Class for holding CBOR tagged objects.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORTextString.html" title="class in org.webpki.cbor">CBORTextString</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for holding CBOR text strings.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="CBORTypes.html" title="enum class in org.webpki.cbor">CBORTypes</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="col-first even-row-color class-summary class-summary-tab3"><a href="CBORTypes.html" title="enum class in org.webpki.cbor">CBORTypes</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab3">
 <div class="block">Enumeration of CBOR types.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Base class for CBOR signature validation</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORX509Signer.html" title="class in org.webpki.cbor">CBORX509Signer</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORX509Signer.html" title="class in org.webpki.cbor">CBORX509Signer</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class for creating CBOR X509 signatures.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORX509Validator.html" title="class in org.webpki.cbor">CBORX509Validator</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORX509Validator.html" title="class in org.webpki.cbor">CBORX509Validator</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for CBOR X509 signature validation.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CBORX509Validator.SignatureParameters.html" title="interface in org.webpki.cbor">CBORX509Validator.SignatureParameters</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORX509Validator.SignatureParameters.html" title="interface in org.webpki.cbor">CBORX509Validator.SignatureParameters</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">For checking signature parameters.</div>
 </div>
 </div>

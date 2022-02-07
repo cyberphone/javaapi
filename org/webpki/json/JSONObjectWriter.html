@@ -161,16 +161,16 @@ var activeTableTab = "active-table-tab";
  (<a href="https://tools.ietf.org/html/rfc7517" target="_blank"><b>JWK</b></a>) formatted public key.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="JSONObjectWriter.html" title="class in org.webpki.json">JSONObjectWriter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createEncryptionObject(byte%5B%5D,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,org.webpki.json.JSONEncrypter)" class="member-name-link">createEncryptionObject</a><wbr>(byte[]&nbsp;unencryptedData,
- <a href="../crypto/encryption/ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createEncryptionObject(byte%5B%5D,org.webpki.crypto.ContentEncryptionAlgorithms,org.webpki.json.JSONEncrypter)" class="member-name-link">createEncryptionObject</a><wbr>(byte[]&nbsp;unencryptedData,
+ <a href="../crypto/ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  <a href="JSONEncrypter.html" title="class in org.webpki.json">JSONEncrypter</a>&nbsp;encrypter)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a <a href="https://cyberphone.github.io/doc/security/jef.html" target="_blank"><b>JEF</b></a>
  encrypted object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="JSONObjectWriter.html" title="class in org.webpki.json">JSONObjectWriter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createEncryptionObjects(byte%5B%5D,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.util.List)" class="member-name-link">createEncryptionObjects</a><wbr>(byte[]&nbsp;unencryptedData,
- <a href="../crypto/encryption/ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createEncryptionObjects(byte%5B%5D,org.webpki.crypto.ContentEncryptionAlgorithms,java.util.List)" class="member-name-link">createEncryptionObjects</a><wbr>(byte[]&nbsp;unencryptedData,
+ <a href="../crypto/ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="JSONEncrypter.html" title="class in org.webpki.json">JSONEncrypter</a>&gt;&nbsp;encrypters)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a <a href="https://cyberphone.github.io/doc/security/jef.html" target="_blank"><b>JEF</b></a>
@@ -1257,10 +1257,10 @@ import org.webpki.json.JSONSignatureDecoder;
 </section>
 </li>
 <li>
-<section class="detail" id="createEncryptionObject(byte[],org.webpki.crypto.encryption.ContentEncryptionAlgorithms,org.webpki.json.JSONEncrypter)">
+<section class="detail" id="createEncryptionObject(byte[],org.webpki.crypto.ContentEncryptionAlgorithms,org.webpki.json.JSONEncrypter)">
 <h3>createEncryptionObject</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="JSONObjectWriter.html" title="class in org.webpki.json">JSONObjectWriter</a></span>&nbsp;<span class="element-name">createEncryptionObject</span><wbr><span class="parameters">(byte[]&nbsp;unencryptedData,
- <a href="../crypto/encryption/ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
+ <a href="../crypto/ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  <a href="JSONEncrypter.html" title="class in org.webpki.json">JSONEncrypter</a>&nbsp;encrypter)</span>
                                                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
@@ -1280,10 +1280,10 @@ import org.webpki.json.JSONSignatureDecoder;
 </section>
 </li>
 <li>
-<section class="detail" id="createEncryptionObjects(byte[],org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.util.List)">
+<section class="detail" id="createEncryptionObjects(byte[],org.webpki.crypto.ContentEncryptionAlgorithms,java.util.List)">
 <h3>createEncryptionObjects</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="JSONObjectWriter.html" title="class in org.webpki.json">JSONObjectWriter</a></span>&nbsp;<span class="element-name">createEncryptionObjects</span><wbr><span class="parameters">(byte[]&nbsp;unencryptedData,
- <a href="../crypto/encryption/ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
+ <a href="../crypto/ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/List.html" title="class or interface in java.util" class="external-link">List</a>&lt;<a href="JSONEncrypter.html" title="class in org.webpki.json">JSONEncrypter</a>&gt;&nbsp;encrypters)</span>
                                                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>

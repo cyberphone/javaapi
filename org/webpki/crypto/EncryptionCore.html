@@ -5,10 +5,10 @@
 <title>EncryptionCore (WebPKI.org Support)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="description" content="declaration: package: org.webpki.crypto.encryption, class: EncryptionCore">
+<meta name="description" content="declaration: package: org.webpki.crypto, class: EncryptionCore">
 <meta name="generator" content="javadoc/ClassWriterImpl">
-<link rel="stylesheet" type="text/css" href="../../../../stylesheet.css" title="Style">
-<script type="text/javascript" src="../../../../script.js"></script>
+<link rel="stylesheet" type="text/css" href="../../../stylesheet.css" title="Style">
+<script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration-page">
 <script type="text/javascript">var evenRowColor = "even-row-color";
@@ -26,11 +26,11 @@ var activeTableTab = "active-table-tab";
 <div class="top-nav" id="navbar-top">
 <div class="skip-nav"><a href="#skip-navbar-top" title="Skip navigation links">Skip navigation links</a></div>
 <ul id="navbar-top-firstrow" class="nav-list" title="Navigation">
-<li><a href="../../../../index.html">Overview</a></li>
+<li><a href="../../../index.html">Overview</a></li>
 <li><a href="package-summary.html">Package</a></li>
 <li class="nav-bar-cell1-rev">Class</li>
 <li><a href="package-tree.html">Tree</a></li>
-<li><a href="../../../../help-doc.html#class">Help</a></li>
+<li><a href="../../../help-doc.html#class">Help</a></li>
 </ul>
 </div>
 <div class="sub-nav">
@@ -57,11 +57,11 @@ var activeTableTab = "active-table-tab";
 <main role="main">
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
-<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">org.webpki.crypto.encryption</a></div>
+<div class="sub-title"><span class="package-label-in-type">Package</span>&nbsp;<a href="package-summary.html">org.webpki.crypto</a></div>
 <h1 title="Class EncryptionCore" class="title">Class EncryptionCore</h1>
 </div>
 <div class="inheritance" title="Inheritance Tree"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">java.lang.Object</a>
-<div class="inheritance">org.webpki.crypto.encryption.EncryptionCore</div>
+<div class="inheritance">org.webpki.crypto.EncryptionCore</div>
 </div>
 <section class="class-description" id="class-description">
 <hr>
@@ -85,12 +85,12 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="EncryptionCore.AsymmetricEncryptionResult.html" class="type-name-link" title="class in org.webpki.crypto.encryption">EncryptionCore.AsymmetricEncryptionResult</a></code></div>
+<div class="col-second even-row-color"><code><a href="EncryptionCore.AsymmetricEncryptionResult.html" class="type-name-link" title="class in org.webpki.crypto">EncryptionCore.AsymmetricEncryptionResult</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Return object for ECDH and RSA encryptions.</div>
 </div>
 <div class="col-first odd-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="EncryptionCore.SymmetricEncryptionResult.html" class="type-name-link" title="class in org.webpki.crypto.encryption">EncryptionCore.SymmetricEncryptionResult</a></code></div>
+<div class="col-second odd-row-color"><code><a href="EncryptionCore.SymmetricEncryptionResult.html" class="type-name-link" title="class in org.webpki.crypto">EncryptionCore.SymmetricEncryptionResult</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">Return object for symmetric key encryptions.</div>
 </div>
@@ -114,7 +114,7 @@ var activeTableTab = "active-table-tab";
  int&nbsp;keyLength)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#contentDecryption(org.webpki.crypto.encryption.ContentEncryptionAlgorithms,byte%5B%5D,byte%5B%5D,byte%5B%5D,byte%5B%5D,byte%5B%5D)" class="member-name-link">contentDecryption</a><wbr>(<a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#contentDecryption(org.webpki.crypto.ContentEncryptionAlgorithms,byte%5B%5D,byte%5B%5D,byte%5B%5D,byte%5B%5D,byte%5B%5D)" class="member-name-link">contentDecryption</a><wbr>(<a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  byte[]&nbsp;key,
  byte[]&nbsp;cipherText,
  byte[]&nbsp;iv,
@@ -123,8 +123,8 @@ var activeTableTab = "active-table-tab";
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Decrypt using a symmetric key.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EncryptionCore.SymmetricEncryptionResult.html" title="class in org.webpki.crypto.encryption">EncryptionCore.SymmetricEncryptionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#contentEncryption(org.webpki.crypto.encryption.ContentEncryptionAlgorithms,byte%5B%5D,byte%5B%5D,byte%5B%5D,byte%5B%5D)" class="member-name-link">contentEncryption</a><wbr>(<a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EncryptionCore.SymmetricEncryptionResult.html" title="class in org.webpki.crypto">EncryptionCore.SymmetricEncryptionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#contentEncryption(org.webpki.crypto.ContentEncryptionAlgorithms,byte%5B%5D,byte%5B%5D,byte%5B%5D,byte%5B%5D)" class="member-name-link">contentEncryption</a><wbr>(<a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  byte[]&nbsp;key,
  byte[]&nbsp;iv,
  byte[]&nbsp;plainText,
@@ -133,7 +133,7 @@ var activeTableTab = "active-table-tab";
 <div class="block">Perform a symmetric key encryption.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createIv(org.webpki.crypto.encryption.ContentEncryptionAlgorithms)" class="member-name-link">createIv</a><wbr>(<a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createIv(org.webpki.crypto.ContentEncryptionAlgorithms)" class="member-name-link">createIv</a><wbr>(<a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#hmacKdf(byte%5B%5D,byte%5B%5D,byte%5B%5D,int)" class="member-name-link">hmacKdf</a><wbr>(byte[]&nbsp;ikm,
@@ -142,9 +142,9 @@ var activeTableTab = "active-table-tab";
  int&nbsp;keyLength)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiverKeyAgreement(boolean,org.webpki.crypto.encryption.KeyEncryptionAlgorithms,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.security.PublicKey,java.security.PrivateKey,byte%5B%5D)" class="member-name-link">receiverKeyAgreement</a><wbr>(boolean&nbsp;coseMode,
- <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
- <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiverKeyAgreement(boolean,org.webpki.crypto.KeyEncryptionAlgorithms,org.webpki.crypto.ContentEncryptionAlgorithms,java.security.PublicKey,java.security.PrivateKey,byte%5B%5D)" class="member-name-link">receiverKeyAgreement</a><wbr>(boolean&nbsp;coseMode,
+ <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
+ <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;receivedPublicKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
  byte[]&nbsp;encryptedKeyData)</code></div>
@@ -152,24 +152,24 @@ var activeTableTab = "active-table-tab";
 <div class="block">Perform a receiver side ECDH operation.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rsaDecryptKey(org.webpki.crypto.encryption.KeyEncryptionAlgorithms,byte%5B%5D,java.security.PrivateKey)" class="member-name-link">rsaDecryptKey</a><wbr>(<a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rsaDecryptKey(org.webpki.crypto.KeyEncryptionAlgorithms,byte%5B%5D,java.security.PrivateKey)" class="member-name-link">rsaDecryptKey</a><wbr>(<a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
  byte[]&nbsp;encryptedKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Decrypt a symmetric key using an RSA cipher.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EncryptionCore.AsymmetricEncryptionResult.html" title="class in org.webpki.crypto.encryption">EncryptionCore.AsymmetricEncryptionResult</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rsaEncryptKey(byte%5B%5D,org.webpki.crypto.encryption.KeyEncryptionAlgorithms,java.security.PublicKey)" class="member-name-link">rsaEncryptKey</a><wbr>(byte[]&nbsp;contentEncryptionKey,
- <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EncryptionCore.AsymmetricEncryptionResult.html" title="class in org.webpki.crypto">EncryptionCore.AsymmetricEncryptionResult</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#rsaEncryptKey(byte%5B%5D,org.webpki.crypto.KeyEncryptionAlgorithms,java.security.PublicKey)" class="member-name-link">rsaEncryptKey</a><wbr>(byte[]&nbsp;contentEncryptionKey,
+ <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Perform an RSA encrypt key operation.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EncryptionCore.AsymmetricEncryptionResult.html" title="class in org.webpki.crypto.encryption">EncryptionCore.AsymmetricEncryptionResult</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#senderKeyAgreement(boolean,byte%5B%5D,org.webpki.crypto.encryption.KeyEncryptionAlgorithms,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.security.PublicKey)" class="member-name-link">senderKeyAgreement</a><wbr>(boolean&nbsp;coseMode,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="EncryptionCore.AsymmetricEncryptionResult.html" title="class in org.webpki.crypto">EncryptionCore.AsymmetricEncryptionResult</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#senderKeyAgreement(boolean,byte%5B%5D,org.webpki.crypto.KeyEncryptionAlgorithms,org.webpki.crypto.ContentEncryptionAlgorithms,java.security.PublicKey)" class="member-name-link">senderKeyAgreement</a><wbr>(boolean&nbsp;coseMode,
  byte[]&nbsp;contentEncryptionKey,
- <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
- <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
+ <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
+ <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;staticKey)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Perform a sender side ECDH operation.</div>
@@ -240,15 +240,15 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="createIv(org.webpki.crypto.encryption.ContentEncryptionAlgorithms)">
+<section class="detail" id="createIv(org.webpki.crypto.ContentEncryptionAlgorithms)">
 <h3>createIv</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">createIv</span><wbr><span class="parameters">(<a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">createIv</span><wbr><span class="parameters">(<a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm)</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="contentEncryption(org.webpki.crypto.encryption.ContentEncryptionAlgorithms,byte[],byte[],byte[],byte[])">
+<section class="detail" id="contentEncryption(org.webpki.crypto.ContentEncryptionAlgorithms,byte[],byte[],byte[],byte[])">
 <h3>contentEncryption</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EncryptionCore.SymmetricEncryptionResult.html" title="class in org.webpki.crypto.encryption">EncryptionCore.SymmetricEncryptionResult</a></span>&nbsp;<span class="element-name">contentEncryption</span><wbr><span class="parameters">(<a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EncryptionCore.SymmetricEncryptionResult.html" title="class in org.webpki.crypto">EncryptionCore.SymmetricEncryptionResult</a></span>&nbsp;<span class="element-name">contentEncryption</span><wbr><span class="parameters">(<a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  byte[]&nbsp;key,
  byte[]&nbsp;iv,
  byte[]&nbsp;plainText,
@@ -270,9 +270,9 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="contentDecryption(org.webpki.crypto.encryption.ContentEncryptionAlgorithms,byte[],byte[],byte[],byte[],byte[])">
+<section class="detail" id="contentDecryption(org.webpki.crypto.ContentEncryptionAlgorithms,byte[],byte[],byte[],byte[],byte[])">
 <h3>contentDecryption</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">contentDecryption</span><wbr><span class="parameters">(<a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">contentDecryption</span><wbr><span class="parameters">(<a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  byte[]&nbsp;key,
  byte[]&nbsp;cipherText,
  byte[]&nbsp;iv,
@@ -296,10 +296,10 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="rsaEncryptKey(byte[],org.webpki.crypto.encryption.KeyEncryptionAlgorithms,java.security.PublicKey)">
+<section class="detail" id="rsaEncryptKey(byte[],org.webpki.crypto.KeyEncryptionAlgorithms,java.security.PublicKey)">
 <h3>rsaEncryptKey</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EncryptionCore.AsymmetricEncryptionResult.html" title="class in org.webpki.crypto.encryption">EncryptionCore.AsymmetricEncryptionResult</a></span>&nbsp;<span class="element-name">rsaEncryptKey</span><wbr><span class="parameters">(byte[]&nbsp;contentEncryptionKey,
- <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EncryptionCore.AsymmetricEncryptionResult.html" title="class in org.webpki.crypto">EncryptionCore.AsymmetricEncryptionResult</a></span>&nbsp;<span class="element-name">rsaEncryptKey</span><wbr><span class="parameters">(byte[]&nbsp;contentEncryptionKey,
+ <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey)</span>
                                                                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block">Perform an RSA encrypt key operation.</div>
@@ -316,9 +316,9 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="rsaDecryptKey(org.webpki.crypto.encryption.KeyEncryptionAlgorithms,byte[],java.security.PrivateKey)">
+<section class="detail" id="rsaDecryptKey(org.webpki.crypto.KeyEncryptionAlgorithms,byte[],java.security.PrivateKey)">
 <h3>rsaDecryptKey</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">rsaDecryptKey</span><wbr><span class="parameters">(<a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">rsaDecryptKey</span><wbr><span class="parameters">(<a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
  byte[]&nbsp;encryptedKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey)</span>
                             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
@@ -367,11 +367,11 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="receiverKeyAgreement(boolean,org.webpki.crypto.encryption.KeyEncryptionAlgorithms,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.security.PublicKey,java.security.PrivateKey,byte[])">
+<section class="detail" id="receiverKeyAgreement(boolean,org.webpki.crypto.KeyEncryptionAlgorithms,org.webpki.crypto.ContentEncryptionAlgorithms,java.security.PublicKey,java.security.PrivateKey,byte[])">
 <h3>receiverKeyAgreement</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">receiverKeyAgreement</span><wbr><span class="parameters">(boolean&nbsp;coseMode,
- <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
- <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
+ <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
+ <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;receivedPublicKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
  byte[]&nbsp;encryptedKeyData)</span>
@@ -395,12 +395,12 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="senderKeyAgreement(boolean,byte[],org.webpki.crypto.encryption.KeyEncryptionAlgorithms,org.webpki.crypto.encryption.ContentEncryptionAlgorithms,java.security.PublicKey)">
+<section class="detail" id="senderKeyAgreement(boolean,byte[],org.webpki.crypto.KeyEncryptionAlgorithms,org.webpki.crypto.ContentEncryptionAlgorithms,java.security.PublicKey)">
 <h3>senderKeyAgreement</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EncryptionCore.AsymmetricEncryptionResult.html" title="class in org.webpki.crypto.encryption">EncryptionCore.AsymmetricEncryptionResult</a></span>&nbsp;<span class="element-name">senderKeyAgreement</span><wbr><span class="parameters">(boolean&nbsp;coseMode,
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="EncryptionCore.AsymmetricEncryptionResult.html" title="class in org.webpki.crypto">EncryptionCore.AsymmetricEncryptionResult</a></span>&nbsp;<span class="element-name">senderKeyAgreement</span><wbr><span class="parameters">(boolean&nbsp;coseMode,
  byte[]&nbsp;contentEncryptionKey,
- <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
- <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto.encryption">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
+ <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
+ <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;staticKey)</span>
                                                                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
