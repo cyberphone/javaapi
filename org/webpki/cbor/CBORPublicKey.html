@@ -83,14 +83,14 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decode(org.webpki.cbor.CBORObject)" class="member-name-link">decode</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;cborPublicKey)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decode(org.webpki.cbor.CBORObject)" class="member-name-link">decode</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;cosePublicKey)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">CBOR/COSE to Java/JCE conversion.</div>
+<div class="block">Converts COSE public key to JCE.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#encode(java.security.PublicKey)" class="member-name-link">encode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#encode(java.security.PublicKey)" class="member-name-link">encode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;jcePublicKey)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Java/JCE to CBOR/COSE conversion.</div>
+<div class="block">Converts JCE public key to COSE.</div>
 </div>
 </div>
 </div>
@@ -112,15 +112,15 @@ var activeTableTab = "active-table-tab";
 <li>
 <section class="detail" id="encode(java.security.PublicKey)">
 <h3>encode</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">encode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey)</span>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">encode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;jcePublicKey)</span>
                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Java/JCE to CBOR/COSE conversion.</div>
+<div class="block">Converts JCE public key to COSE.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>publicKey</code> - </dd>
+<dd><code>jcePublicKey</code> - in Java/JCE format</dd>
 <dt>Returns:</dt>
-<dd>Public key in CBOR format</dd>
+<dd>Public key in COSE format</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
@@ -130,15 +130,15 @@ var activeTableTab = "active-table-tab";
 <li>
 <section class="detail" id="decode(org.webpki.cbor.CBORObject)">
 <h3>decode</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a></span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;cborPublicKey)</span>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a></span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;cosePublicKey)</span>
                         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">CBOR/COSE to Java/JCE conversion.</div>
+<div class="block">Converts COSE public key to JCE.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>cborPublicKey</code> - Public key in CBOR format</dd>
+<dd><code>cosePublicKey</code> - Public key in COSE format</dd>
 <dt>Returns:</dt>
-<dd>Public key as a Java object</dd>
+<dd>Public key as a Java/JCE object</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
