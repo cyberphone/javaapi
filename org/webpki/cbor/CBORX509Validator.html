@@ -11,11 +11,7 @@
 <script type="text/javascript" src="../../../script.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var evenRowColor = "even-row-color";
-var oddRowColor = "odd-row-color";
-var tableTab = "table-tab";
-var activeTableTab = "active-table-tab";
-</script>
+<script type="text/javascript"></script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
 </noscript>
@@ -46,7 +42,7 @@ var activeTableTab = "active-table-tab";
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-detail">Constr</a>&nbsp;|&nbsp;</li>
-<li><a href="#method-detail">Method</a></li>
+<li>Method</li>
 </ul>
 </div>
 </div>
@@ -70,12 +66,12 @@ var activeTableTab = "active-table-tab";
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CBORX509Validator</span>
 <span class="extends-implements">extends <a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a></span></div>
 <div class="block">Class for CBOR X509 signature validation.
- 
- It uses COSE algorithms but relies on CSF for the packaging.
- 
- Note that validator objects may be used any number of times
- (assuming that the same parameters are valid).  They are also
- thread-safe.</div>
+<p>
+ See <a href="CBORValidator.html" title="class in org.webpki.cbor"><code>CBORValidator</code></a> for details.
+</p> 
+ <p>
+ Note that X509 signatures do not permit the use of a keyId.
+ </p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -115,21 +111,6 @@ var activeTableTab = "active-table-tab";
 <li>
 <section class="method-summary" id="method-summary">
 <h2>Method Summary</h2>
-<div id="method-summary-table">
-<div class="table-tabs" role="tablist" aria-orientation="horizontal"><button id="method-summary-table-tab0" role="tab" aria-selected="true" aria-controls="method-summary-table.tabpanel" tabindex="0" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table', 3)" class="active-table-tab">All Methods</button><button id="method-summary-table-tab1" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab1', 3)" class="table-tab">Static Methods</button><button id="method-summary-table-tab4" role="tab" aria-selected="false" aria-controls="method-summary-table.tabpanel" tabindex="-1" onkeydown="switchTab(event)" onclick="show('method-summary-table', 'method-summary-table-tab4', 3)" class="table-tab">Concrete Methods</button></div>
-<div id="method-summary-table.tabpanel" role="tabpanel">
-<div class="summary-table three-column-summary" aria-labelledby="method-summary-table-tab0">
-<div class="table-header col-first">Modifier and Type</div>
-<div class="table-header col-second">Method</div>
-<div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decodeCertificateArray(org.webpki.cbor.CBORArray)" class="member-name-link">decodeCertificateArray</a><wbr>(<a href="CBORArray.html" title="class in org.webpki.cbor">CBORArray</a>&nbsp;array)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Decodes a certificate path from a CBOR array.</div>
-</div>
-</div>
-</div>
-</div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.webpki.cbor.CBORValidator">Methods inherited from class&nbsp;org.webpki.cbor.<a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a></h3>
 <code><a href="CBORValidator.html#validate(int,org.webpki.cbor.CBORMap)">validate</a>, <a href="CBORValidator.html#validate(java.lang.String,org.webpki.cbor.CBORMap)">validate</a>, <a href="CBORValidator.html#validate(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORMap)">validate</a></code></div>
@@ -155,39 +136,6 @@ var activeTableTab = "active-table-tab";
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>checker</code> - The checker interface</dd>
-</dl>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<!-- ============ METHOD DETAIL ========== -->
-<li>
-<section class="method-details" id="method-detail">
-<h2>Method Details</h2>
-<ul class="member-list">
-<li>
-<section class="detail" id="decodeCertificateArray(org.webpki.cbor.CBORArray)">
-<h3>decodeCertificateArray</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]</span>&nbsp;<span class="element-name">decodeCertificateArray</span><wbr><span class="parameters">(<a href="CBORArray.html" title="class in org.webpki.cbor">CBORArray</a>&nbsp;array)</span>
-                                                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
-<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Decodes a certificate path from a CBOR array.
- 
- Note that the array must only contain a
- list of X509 certificates in DER format.
- The certificates must be in ascending
- order with respect to parenthood.  That is,
- the first certificate would typically be
- an end-entity certificate.
- 
- See <a href="CBORX509Signer.html#encodeCertificateArray(java.security.cert.X509Certificate%5B%5D)"><code>CBORX509Signer.encodeCertificateArray(X509Certificate[])</code></a>.</div>
-<dl class="notes">
-<dt>Returns:</dt>
-<dd>Certificate path</dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
 </section>
 </li>

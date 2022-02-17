@@ -152,7 +152,7 @@
  A special case is the value <code>0xffffffffffffffffL</code>
  (long <code>-1</code>), which corresponds to <code>-2^64</code>.
  </p>
- See <a href="#%3Cinit%3E(long)"><code>CBORInteger(long)</code></a> and <a href="#%3Cinit%3E(java.math.BigInteger)"><code>CBORInteger(java.math.BigInteger)</code></a>.</div>
+ See <a href="#%3Cinit%3E(long)"><code>CBORInteger(long)</code></a> and <a href="#%3Cinit%3E(java.math.BigInteger)"><code>CBORInteger(BigInteger)</code></a>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>value</code> - long value</dd>
@@ -165,9 +165,11 @@
 <h3>CBORInteger</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORInteger</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a>&nbsp;value)</span></div>
 <div class="block">Creates a CBOR integer value of any size.
- 
- This constructor permits using the full range of applicable
- <code>integer</code> and <code>big&nbsp;number</code> values.</div>
+ <p>
+ If <code>value</code> is within the CBOR <code>integer</code> range,
+ the <code>integer</code> type will be used, otherwise serializations
+ will use the <code>big&nbsp;number</code> type.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>value</code> - Integer in BigInteger format</dd>

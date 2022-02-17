@@ -66,12 +66,9 @@
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CBORHmacValidator</span>
 <span class="extends-implements">extends <a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a></span></div>
 <div class="block">Class for CBOR HMAC signature validation.
-
- It uses COSE algorithms but relies on CSF for the packaging.
- 
- Note that validator objects may be used any number of times
- (assuming that the same parameters are valid).  They are also
- thread-safe.</div>
+<p>
+ See <a href="CBORValidator.html" title="class in org.webpki.cbor"><code>CBORValidator</code></a> for details.
+</p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -143,7 +140,7 @@
  constructor gives the validator full control.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>secretKey</code> - The anticipated public key</dd>
+<dd><code>secretKey</code> - The anticipated secret key</dd>
 </dl>
 </section>
 </li>

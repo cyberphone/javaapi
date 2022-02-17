@@ -72,8 +72,23 @@ var activeTableTab = "active-table-tab";
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">CBORSigner</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
 <div class="block">Base class for creating CBOR signatures.
- 
- It uses COSE algorithms but relies on CSF for the packaging.</div>
+ <p>
+ This implementation supports signatures using CSF (CBOR Signature Format) packaging,
+ while algorithms are derived from COSE.
+ </p>
+ <p>
+ Note that signer objects may be used any number of times
+ (assuming that the same parameters are valid).  They are also
+ thread-safe.
+ </p></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="CBORValidator.html" title="class in org.webpki.cbor"><code>CBORValidator</code></a></li>
+</ul>
+</dd>
+</dl>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -156,16 +171,11 @@ var activeTableTab = "active-table-tab";
  convention between the parties using
  a specific message scheme.  A <code>keyId</code> may be a
  database index, a hash of the public key, a text string,
- or a URL pointing to a Web server holding a public key
- in PEM format.
+ or a URL pointing to a public key in PEM format.
  <p>
  For HMAC-signatures, a <code>keyId</code> or implicit key are
  the only ways to retrieve the proper secret key.
  </p>
- <p>
- Note that <code>keyId</code> is not permitted for X509 based signatures.
- </p>
- <p>
  <p>
  Note that a <code>keyId</code> argument of <code>null</code> 
  is equivalent to the default (= no <code>keyId</code>).
@@ -184,7 +194,10 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></span>&nbsp;<span class="element-name">setKeyId</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;keyId)</span></div>
 <div class="block">Sets signature <code>keyId</code>.
  
- The <code>keyId</code> will be represented as a CBOR <code>text&nbsp;string</code>.</div>
+ The <code>keyId</code> will be represented as a CBOR <code>text&nbsp;string</code>.
+ <p>
+ See <a href="#setKeyId(org.webpki.cbor.CBORObject)"><code>setKeyId(CBORObject)</code></a> for details.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>keyId</code> - A CBOR key Id</dd>
@@ -199,7 +212,11 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></span>&nbsp;<span class="element-name">setKeyId</span><wbr><span class="parameters">(int&nbsp;keyId)</span></div>
 <div class="block">Sets signature <code>keyId</code>.
  
- The <code>keyId</code> will be represented as a CBOR <code>integer</code>.</div>
+ The <code>keyId</code> will be represented as a CBOR <code>integer</code>.
+ 
+ <p>
+ See <a href="#setKeyId(org.webpki.cbor.CBORObject)"><code>setKeyId(CBORObject)</code></a> for details.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>keyId</code> - A CBOR key Id</dd>
@@ -228,7 +245,11 @@ var activeTableTab = "active-table-tab";
  <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;objectToSign)</span>
              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Signs CBOR object.</div>
+<div class="block">Signs CBOR object.
+ 
+ <p>
+ Adds an enveloped CSF object (signature) to a CBOR map.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key holding the signature in the CBOR map to sign</dd>
@@ -248,7 +269,11 @@ var activeTableTab = "active-table-tab";
  <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;objectToSign)</span>
              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Signs CBOR object.</div>
+<div class="block">Signs CBOR object.
+ 
+ <p>
+ See <a href="#sign(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORMap)"><code>sign(CBORObject, CBORMap)</code></a> for details.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key holding the signature in the CBOR map to sign</dd>
@@ -268,7 +293,10 @@ var activeTableTab = "active-table-tab";
  <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;objectToSign)</span>
              throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Signs CBOR object.</div>
+<div class="block">Signs CBOR object.
+ <p>
+ See <a href="#sign(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORMap)"><code>sign(CBORObject, CBORMap)</code></a> for details.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key holding the signature in the CBOR map to sign</dd>

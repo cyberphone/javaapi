@@ -110,10 +110,12 @@ var activeTableTab = "active-table-tab";
     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block">Checks signature data.
- 
+ <p>
  A relying party is supposed to verify that the
- certificate(path) is trusted and that the
- signature algorithm meets their policy requirements.</div>
+ certificate(path) is trusted and that the supplied
+ algorithm meets their policy requirements.
+ Deviations should force the implementation to throw an exception.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>certificatePath</code> - Path to be verified</dd>

@@ -71,7 +71,24 @@ var activeTableTab = "active-table-tab";
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">CBORValidator</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Base class for CBOR signature validation</div>
+<div class="block">Base class for validating CBOR signatures.
+ <p>
+ This implementation supports signatures using CSF (CBOR Signature Format) packaging,
+ while algorithms are derived from COSE.
+ </p>
+ <p>
+ Note that validator objects may be used any number of times
+ (assuming that the same parameters are valid).  They are also
+ thread-safe.
+ </p></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="CBORSigner.html" title="class in org.webpki.cbor"><code>CBORSigner</code></a></li>
+</ul>
+</dd>
+</dl>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -128,7 +145,11 @@ var activeTableTab = "active-table-tab";
  <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;signedObject)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Validates signed CBOR map.</div>
+<div class="block">Validates signed CBOR map.
+ <p>
+ This method presumes that <code>signedObject</code> holds
+ an enveloped signature according to CSF.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key in map holding signature</dd>
@@ -148,7 +169,10 @@ var activeTableTab = "active-table-tab";
  <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;signedObject)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Validates signed CBOR map.</div>
+<div class="block">Validates signed CBOR map.
+ <p>
+ See <a href="#validate(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORMap)"><code>validate(CBORObject, CBORMap)</code></a> for details.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key in map holding signature</dd>
@@ -168,7 +192,10 @@ var activeTableTab = "active-table-tab";
  <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;signedObject)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Validates signed CBOR map.</div>
+<div class="block">Validates signed CBOR map.
+ <p>
+ See <a href="#validate(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORMap)"><code>validate(CBORObject, CBORMap)</code></a> for details.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key in map holding signature</dd>
