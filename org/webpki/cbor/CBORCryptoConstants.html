@@ -98,17 +98,17 @@
 <div class="block">COSE "crv" identifier (7).</div>
 </div>
 <div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#COSE_CRV_NIST_P_256" class="member-name-link">COSE_CRV_NIST_P_256</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#COSE_CRV_P_256" class="member-name-link">COSE_CRV_P_256</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">COSE "crv" identifier (1).</div>
 </div>
 <div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second even-row-color"><code><a href="#COSE_CRV_NIST_P_384" class="member-name-link">COSE_CRV_NIST_P_384</a></code></div>
+<div class="col-second even-row-color"><code><a href="#COSE_CRV_P_384" class="member-name-link">COSE_CRV_P_384</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">COSE "crv" identifier (2).</div>
 </div>
 <div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#COSE_CRV_NIST_P_521" class="member-name-link">COSE_CRV_NIST_P_521</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#COSE_CRV_P_521" class="member-name-link">COSE_CRV_P_521</a></code></div>
 <div class="col-last odd-row-color">
 <div class="block">COSE "crv" identifier (3).</div>
 </div>
@@ -178,38 +178,43 @@
 <div class="block">COSE RSA modulus label (-1).</div>
 </div>
 <div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#EPHEMERAL_KEY_LABEL" class="member-name-link">EPHEMERAL_KEY_LABEL</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#CUSTOM_DATA_LABEL" class="member-name-link">CUSTOM_DATA_LABEL</a></code></div>
 <div class="col-last odd-row-color">
+<div class="block">CEF "customData" label (0).</div>
+</div>
+<div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
+<div class="col-second even-row-color"><code><a href="#EPHEMERAL_KEY_LABEL" class="member-name-link">EPHEMERAL_KEY_LABEL</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">CEF "ephemeralKey" label (5).</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second even-row-color"><code><a href="#IV_LABEL" class="member-name-link">IV_LABEL</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#IV_LABEL" class="member-name-link">IV_LABEL</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">CEF "iv" label (9).</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#KEY_ENCRYPTION_LABEL" class="member-name-link">KEY_ENCRYPTION_LABEL</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
+<div class="col-second even-row-color"><code><a href="#KEY_ENCRYPTION_LABEL" class="member-name-link">KEY_ENCRYPTION_LABEL</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">CEF "keyEncryption" label (2).</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second even-row-color"><code><a href="#KEY_ID_LABEL" class="member-name-link">KEY_ID_LABEL</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#KEY_ID_LABEL" class="member-name-link">KEY_ID_LABEL</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">CSF/CEF "keyId" label (3).</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#PUBLIC_KEY_LABEL" class="member-name-link">PUBLIC_KEY_LABEL</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
+<div class="col-second even-row-color"><code><a href="#PUBLIC_KEY_LABEL" class="member-name-link">PUBLIC_KEY_LABEL</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">CSF/CEF "publicKey" label (4).</div>
 </div>
-<div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second even-row-color"><code><a href="#SIGNATURE_LABEL" class="member-name-link">SIGNATURE_LABEL</a></code></div>
-<div class="col-last even-row-color">
+<div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
+<div class="col-second odd-row-color"><code><a href="#SIGNATURE_LABEL" class="member-name-link">SIGNATURE_LABEL</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">CSF "signature" label (7).</div>
 </div>
-<div class="col-first odd-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
-<div class="col-second odd-row-color"><code><a href="#TAG_LABEL" class="member-name-link">TAG_LABEL</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>static final <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
+<div class="col-second even-row-color"><code><a href="#TAG_LABEL" class="member-name-link">TAG_LABEL</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">CEF "tag" label (8).</div>
 </div>
 </div>
@@ -302,23 +307,23 @@
 </section>
 </li>
 <li>
-<section class="detail" id="COSE_CRV_NIST_P_256">
-<h3>COSE_CRV_NIST_P_256</h3>
-<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">COSE_CRV_NIST_P_256</span></div>
+<section class="detail" id="COSE_CRV_P_256">
+<h3>COSE_CRV_P_256</h3>
+<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">COSE_CRV_P_256</span></div>
 <div class="block">COSE "crv" identifier (1).</div>
 </section>
 </li>
 <li>
-<section class="detail" id="COSE_CRV_NIST_P_384">
-<h3>COSE_CRV_NIST_P_384</h3>
-<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">COSE_CRV_NIST_P_384</span></div>
+<section class="detail" id="COSE_CRV_P_384">
+<h3>COSE_CRV_P_384</h3>
+<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">COSE_CRV_P_384</span></div>
 <div class="block">COSE "crv" identifier (2).</div>
 </section>
 </li>
 <li>
-<section class="detail" id="COSE_CRV_NIST_P_521">
-<h3>COSE_CRV_NIST_P_521</h3>
-<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">COSE_CRV_NIST_P_521</span></div>
+<section class="detail" id="COSE_CRV_P_521">
+<h3>COSE_CRV_P_521</h3>
+<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">COSE_CRV_P_521</span></div>
 <div class="block">COSE "crv" identifier (3).</div>
 </section>
 </li>
@@ -348,6 +353,14 @@
 <h3>COSE_CRV_ED448</h3>
 <div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">COSE_CRV_ED448</span></div>
 <div class="block">COSE "crv" identifier (7).</div>
+</section>
+</li>
+<li>
+<section class="detail" id="CUSTOM_DATA_LABEL">
+<h3>CUSTOM_DATA_LABEL</h3>
+<div class="member-signature"><span class="modifiers">static final</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">CUSTOM_DATA_LABEL</span></div>
+<div class="block">CEF "customData" label (0).
+ Passes through and is protected by being a part of AAD.</div>
 </section>
 </li>
 <li>
