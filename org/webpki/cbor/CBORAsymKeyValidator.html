@@ -84,7 +84,7 @@
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="CBORAsymKeyValidator.KeyLocator.html" class="type-name-link" title="interface in org.webpki.cbor">CBORAsymKeyValidator.KeyLocator</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">For dynamic key retrieval.</div>
+<div class="block">Interface for dynamic key retrieval.</div>
 </div>
 </div>
 </section>
@@ -133,10 +133,20 @@
 <section class="detail" id="&lt;init&gt;(java.security.PublicKey)">
 <h3>CBORAsymKeyValidator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORAsymKeyValidator</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey)</span></div>
-<div class="block">Initializes a validator with a public key.</div>
+<div class="block">Initializes a validator with a public key.
+ <p>
+ This constructor presumes that the validation key is given by the context
+ and that the supplied algorithm meets the policy.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>publicKey</code> - The anticipated public key</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list-long">
+<li><a href="#%3Cinit%3E(org.webpki.cbor.CBORAsymKeyValidator.KeyLocator)"><code>CBORAsymKeyValidator(org.webpki.cbor.CBORAsymKeyValidator.KeyLocator)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
@@ -145,9 +155,10 @@
 <h3>CBORAsymKeyValidator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORAsymKeyValidator</span><wbr><span class="parameters">(<a href="CBORAsymKeyValidator.KeyLocator.html" title="interface in org.webpki.cbor">CBORAsymKeyValidator.KeyLocator</a>&nbsp;keyLocator)</span></div>
 <div class="block">Initializes a validator with a key locator.
- 
- This option provides full control for the verifier
+ <p>
+ This constructor provides full control for the verifier
  regarding in-lined public keys and key identifiers.
+ </p>
  <p>
  If no public key is found in the signature object, 
  the <a href="CBORAsymKeyValidator.KeyLocator.html" title="interface in org.webpki.cbor"><code>CBORAsymKeyValidator.KeyLocator</code></a> will be called BEFORE signature validation

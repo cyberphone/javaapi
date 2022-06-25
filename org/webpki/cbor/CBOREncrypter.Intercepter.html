@@ -67,7 +67,11 @@ var activeTableTab = "active-table-tab";
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public static interface </span><span class="element-name type-name-label">CBOREncrypter.Intercepter</span></div>
-<div class="block">For customizing encryption map objects.</div>
+<div class="block">Interface for customizing encryption map objects.
+ <p>
+ Implementations of this interface must be set by calling
+ <a href="CBOREncrypter.html#setIntercepter(org.webpki.cbor.CBOREncrypter.Intercepter)"><code>CBOREncrypter.setIntercepter(Intercepter)</code></a>.
+ </p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -90,7 +94,7 @@ var activeTableTab = "active-table-tab";
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#wrap(org.webpki.cbor.CBORMap)" class="member-name-link">wrap</a><wbr>(<a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;encryptionObject)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Optionally wraps map in a tag.</div>
+<div class="block">Optionally wraps a map in a tag.</div>
 </div>
 </div>
 </div>
@@ -112,15 +116,16 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(<a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;encryptionObject)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Optionally wraps map in a tag.
+<div class="block">Optionally wraps a map in a tag.
  <p>
- See <a href="CBORCryptoUtils.html#getContainerMap(org.webpki.cbor.CBORObject)"><code>CBORCryptoUtils.getContainerMap(CBORObject)</code></a> for details.
+ See <a href="CBORCryptoUtils.html#unwrapContainerMap(org.webpki.cbor.CBORObject)"><code>CBORCryptoUtils.unwrapContainerMap(CBORObject)</code></a> for details
+ on the syntax for wrapped maps.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>encryptionObject</code> - Unwrapped map</dd>
 <dt>Returns:</dt>
-<dd>Original or wrapped map</dd>
+<dd>Original (default) or wrapped map</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
@@ -133,10 +138,14 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">getCustomData</span>()
                           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Optionally adds custom data to the map.</div>
+<div class="block">Optionally adds custom data to the map.
+ <p>
+ Custom data may be any valid CBOR object.  This data is assigned
+ to the CEF specific label <a href="CBORCryptoConstants.html#CUSTOM_DATA_LABEL"><code>CBORCryptoConstants.CUSTOM_DATA_LABEL</code></a>.
+ </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd><code>null</code> or customData object.</dd>
+<dd><code>null</code> (default) or custom data object.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>

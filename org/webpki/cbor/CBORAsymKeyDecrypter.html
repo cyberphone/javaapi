@@ -65,13 +65,7 @@
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CBORAsymKeyDecrypter</span>
 <span class="extends-implements">extends <a href="CBORDecrypter.html" title="class in org.webpki.cbor">CBORDecrypter</a></span></div>
-<div class="block">Class for CBOR asymmetric key decryption.
- 
- It uses COSE algorithms but relies on CEF for the packaging.
- 
- Note that decrypter objects may be used any number of times
- (assuming that the same parameters are valid).  They are also
- thread-safe.</div>
+<div class="block">Class for asymmetric key decryption.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -87,7 +81,7 @@
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="CBORAsymKeyDecrypter.KeyLocator.html" class="type-name-link" title="interface in org.webpki.cbor">CBORAsymKeyDecrypter.KeyLocator</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">For dynamic key retrieval.</div>
+<div class="block">Interface for dynamic key retrieval.</div>
 </div>
 </div>
 </section>
@@ -136,10 +130,13 @@
 <section class="detail" id="&lt;init&gt;(java.security.PrivateKey)">
 <h3>CBORAsymKeyDecrypter</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORAsymKeyDecrypter</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey)</span></div>
-<div class="block">Initializes a decrypter with a private key.</div>
+<div class="block">Initializes a decrypter with a private key.
+ <p>
+ This constructor presumes that the decryption key is given by the context.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>privateKey</code> - The anticipated private key to decrypt with</dd>
+<dd><code>privateKey</code> - Decryption key</dd>
 </dl>
 </section>
 </li>

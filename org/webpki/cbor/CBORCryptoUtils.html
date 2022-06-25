@@ -93,9 +93,9 @@ var activeTableTab = "active-table-tab";
 <div class="block">Encodes certificate path into a CBOR array.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#getContainerMap(org.webpki.cbor.CBORObject)" class="member-name-link">getContainerMap</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;container)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#unwrapContainerMap(org.webpki.cbor.CBORObject)" class="member-name-link">unwrapContainerMap</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;container)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Retrieves the container map object.</div>
+<div class="block">Unwraps a container map object.</div>
 </div>
 </div>
 </div>
@@ -169,20 +169,40 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="getContainerMap(org.webpki.cbor.CBORObject)">
-<h3>getContainerMap</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">getContainerMap</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;container)</span>
-                               throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Retrieves the container map object.
+<section class="detail" id="unwrapContainerMap(org.webpki.cbor.CBORObject)">
+<h3>unwrapContainerMap</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">unwrapContainerMap</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;container)</span>
+                                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Unwraps a container map object.
  
  <p>
- This method is intended for CBOR map objects that <i>optionally</i>
+ This method is intended for CBOR <code>map</code> objects that <i>optionally</i>
  are wrapped in a tag.  This implementation accepts two variants of tags:
  </p>
+ <code>&nbsp;&nbsp;&nbsp;&nbsp;nnn(</code><i>CBOR&nbsp;map</i><code>)</code><br>
+ <code>&nbsp;&nbsp;&nbsp;&nbsp;nnn([</code><i>CBOR&nbsp;text&nbsp;string</i><code>,&nbsp;</code><i>CBOR&nbsp;map</i><code>])</code>
+ <p>
+ The purpose of the second construct is to provide a
+ generic way of adding an object type identifier in the
+ form of a URL to CBOR <code>map</code> objects.
+ The CBOR tag (<code>nnn</code>) would in this case be <i>constant</i>. 
+ Example:
+ </p>
  <pre>
-     nnn({})
-     nnn(["string data", {}])
- </pre></div>
+     211(["https://example.com/myobject", {
+       "amount": "145.00",
+       "currency": "USD"
+     }])</pre><p>
+ Both wrapping methods are intrinsically
+ supported by <a href="CBORValidator.html" title="class in org.webpki.cbor"><code>CBORValidator</code></a> and
+ <a href="CBORDecrypter.html" title="class in org.webpki.cbor"><code>CBORDecrypter</code></a>.
+ </p>
+ <p>
+ To enable the <i>creation</i> of wrapped data you must implement
+ <a href="CBORSigner.Intercepter.html#wrap(org.webpki.cbor.CBORMap)"><code>CBORSigner.Intercepter.wrap(CBORMap)</code></a> and
+ <a href="CBOREncrypter.Intercepter.html#wrap(org.webpki.cbor.CBORMap)"><code>CBOREncrypter.Intercepter.wrap(CBORMap)</code></a>
+ for signatures and encryptions respectively.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>container</code> - A map optionally enclosed in a tag</dd>

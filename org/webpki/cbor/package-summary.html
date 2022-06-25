@@ -59,18 +59,17 @@ This package contains java support for CBOR (RFC 8949).
 <h3>Currently Supported Primitives</h3>
 <table>
 <tr><th>CBOR Data Type</th><th>&nbsp;&nbsp;</th><th>Java Counterpart</th></tr>
-<tr><td><code>unsigned integer</code></td><td></td><td><code>long</code></td></tr>
-<tr><td><code>negative integer</code></td><td></td><td><code>long</code></td></tr>
-<tr><td><code>unsigned bignum</code></td><td></td><td><code>BigInteger</code></td></tr>
-<tr><td><code>negative bignum</code></td><td></td><td><code>BigInteger</code></td></tr>
-<tr><td><code>floating point</code> *</td><td></td><td><code>double</code></td></tr>
+<tr><td><code>integer</code> [1]</td><td></td><td><code>long</code></td></tr>
+<tr><td><code>big integer</code> [1]</td><td></td><td><code>BigInteger</code></td></tr>
+<tr><td><code>floating point</code> [2]</td><td></td><td><code>double</code></td></tr>
 <tr><td><code>byte string</code></td><td></td><td><code>byte[]</code></td></tr>
 <tr><td><code>text string</code></td><td></td><td><code>String</code></td></tr>
 <tr><td><code>true</code></td><td></td><td><code>boolean</code></td></tr>
 <tr><td><code>false</code></td><td></td><td><code>boolean</code></td></tr>
 <tr><td><code>null</code></td><td></td><td><code>null</code></td></tr>
 </table>
-<p>*) Note that floating point data covers the 16, 32, and 64-bit IEEE 754 variants.</p>
+<p>1] The distinction between unsigned and negative values is dealt with automatically.<br>
+2] Floating point data covers the 16, 32, and 64-bit IEEE 754 variants.</p>
 <p>
 In addition to the primitives above, this implementation also supports
 arbitrary tagged objects
@@ -82,7 +81,7 @@ work, it is (by design) quite picky when decoding CBOR data
 and does (by default) not accept:
 <ul>
 <li>Integer data with <i>leading zeros</i>.</li>
-<li><code>bignum</code> objects
+<li><code>big&nbsp;integer</code> objects
 that due to their value could equally well be provided in the
 shorter <code>integer</code> format.</li>
 <li>Floating point data that could equally well be properly represented by a
@@ -93,293 +92,10 @@ Note that floating point and integer objects must be treated as distinct types.<
 </ul>
 On output (encode) the preferred serialization format is always used
 regardless how it was provided.
-
-<h3 id='csf'>Signature Support</h3>
-The CBOR library contains support for creating and validating
-signatures using a specific scheme called
-&quot;CBOR Signature Format&quot; (CSF). 
-<p>
-Note that unlike COSE (RFC 8152), CSF
-leverages <i>deterministic serialization</i>,
-enabling constructs like the following:
-</p>
-<div style='word-break:break-all'><code>
-{<br>
-&nbsp;&nbsp;1: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;1: "Space Shop",<br>
-&nbsp;&nbsp;&nbsp;&nbsp;2: "435.00",<br>
-&nbsp;&nbsp;&nbsp;&nbsp;3: "USD"<br>
-&nbsp;&nbsp;},<br>
-&nbsp;&nbsp;2: "spaceshop.com",<br>
-&nbsp;&nbsp;3: "FR7630002111110020050014382",<br>
-&nbsp;&nbsp;4: "https://bankdirect.org",<br>
-&nbsp;&nbsp;5: "05768401",<br>
-&nbsp;&nbsp;6: "2022-01-14T09:34:08-05:00",<br>
-&nbsp;&nbsp;7: {<br>
-&nbsp;&nbsp;&nbsp;&nbsp;1: 38.8882,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;2: 77.0199<br>
-&nbsp;&nbsp;},<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;<span style='color:grey'>/ Enveloped signature object /</span><br>
-&nbsp;&nbsp;8: {<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ Signature algorithm = ES256 /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;1: -7,<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ Public key descriptor in COSE format /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;4: {<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ kty = EC /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1: 2,<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ crv = P-256 /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1: 1,<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ x /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-2: h'e812b1a6dcbc708f9ec43cc2921fa0a14e9d5eadcc6dc63471dd4b680c6236b5',<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ y /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-3: h'9826dcbd4ce6e388f72edd9be413f2425a10f75b5fd83d95fa0cde53159a51d8'<br>
-&nbsp;&nbsp;&nbsp;&nbsp;},<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ Signature value /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;7: h'39c9668236007d617afd195886c9a07fdf4b7832539c639843701af33c1e301b76cbfdf2b8965bac0593664fbadaf27211186d6c89fab4ae8bb01bca1fa2e429'<br>
-&nbsp;&nbsp;}<br>
-}
-</code></div>
-<p>
-The same object expressed as hex-encoded CBOR:
-</p>
-<p>
-<div style='word-break:break-all'><code>
-a801a3016a53706163652053686f7002663433352e30300363555344026d737061636573686f702e636f6d03781b465237363330303032313131313130303230303530303134333832047668747470733a2f2f62616e6b6469726563742e6f726705683035373638343031067819323032322d30312d31345430393a33343a30382d30353a303007a201fb404371b089a0275202fb405341460aa64c3008a3012604a401022001215820e812b1a6dcbc708f9ec43cc2921fa0a14e9d5eadcc6dc63471dd4b680c6236b52258209826dcbd4ce6e388f72edd9be413f2425a10f75b5fd83d95fa0cde53159a51d807584039c9668236007d617afd195886c9a07fdf4b7832539c639843701af33c1e301b76cbfdf2b8965bac0593664fbadaf27211186d6c89fab4ae8bb01bca1fa2e429
-</code></div>
-</p>
-<p>
-<i>Explanation: </i>
-Labels <code>1</code>-<code>7</code> represent application data
-(which <b>must</b> be supplied in a CBOR <code>map</code>),
-while the <i>application-specific</i> label <code>8</code>
-holds an associated <i>enveloped</i> signature.
-Signatures <b>must</b> for compatibility with CSF,
-be provided as a CBOR <code>map</code> having a fixed set of labels 
-according to the following table:
-</p>
-<table class='webpkitable'>
-<tr><th>Label</th><th>Name</th><th>Argument</th><th>Function</th></tr>
-
-<tr><td style='text-align:center'><code>1</code></td><td><code>algorithm</code></td>
-<td><code>integer</code></td><td>Signature algorithm using COSE identifiers.</td></tr>
-
-<tr><td style='text-align:center'><code>3</code></td><td><code>keyId</code></td>
-<td>&quot;Any&quot;</td><td><i>Optional</i> key identifier using any CBOR construct,
-compatible with this implementation. 
-Note that <code>keyId</code> <b>must not</b> be used together with 
-<code>publicKey</code> or <code>certificatePath</code>.
-
-<tr><td style='text-align:center'><code>4</code></td><td><code>publicKey</code></td>
-<td><code>map</code></td>
-<td><i>Optional</i> public key in COSE format.  
-Note that ECDSA public keys <b>must</b> be supplied with a <i>value parameter</i> for the y-coordinate as well.</td></tr>
-</td></tr>
-
-<tr><td style='text-align:center'><code>6</code></td><td><code>certificatePath</code></td><td><code>array</code></td><td><i>Optional</i> certificate path supplied 
-as an array of <code>byte&nbsp;string</code> objects holding X.509 certificates in DER format, 
-where the first object <b>must</b> be the signature certificate.
-Signature objects <b>must not</b> contain both <code>certificatePath</code> and <code>publicKey</code> elements.
-</td></tr>
-
-<tr><td style='text-align:center'><code>7</code></td><td><code>signature</code></td><td><code>byte&nbsp;string</code></td><td>Signature value.</td></tr>
-</table>
-<p>
-CSF signatures are validated by running the signature validation 
-algorithm over the CBOR binary representation of
-the <code>map</code> holding the application data including the enveloped signature object,
-with the <code>signature</code> (label <code>7</code>) and
-its associated argument as the sole exception. Note that the length
-of the signature object <code>map</code> <b>must</b>
-be updated (to reflect the removal of an element) during validation.</p>
-<p>
-The sample was signed using the following private key (here in JWK format)
-</p>
-<pre>
-{
-  "kty": "EC",
-  "crv": "P-256",
-  "x": "6BKxpty8cI-exDzCkh-goU6dXq3MbcY0cd1LaAxiNrU",
-  "y": "mCbcvUzm44j3Lt2b5BPyQloQ91tf2D2V-gzeUxWaUdg",
-  "d": "6XxMFXhcYT5QN9w5TIg2aSKsbcj-pj4BnZkK7ZOt4B8"
-}
-</pre>
-<p id='csf-algorithms'>
-Currently supported signature algorithms:
-</p>
-<table class='webpkitable'>
-<tr><th>Name</th><th>Identifier</th><th>Compatibility</th></tr>
-<tr style='text-align:center'><td><code>HS256</code></td><td>5</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>HS384</code></td><td>6</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>HS512</code></td><td>7</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>Ed25519</code></td><td>-8</td><td>FIDO, PKIX [1]</td></tr>
-<tr style='text-align:center'><td><code>Ed448</code></td><td>-9</td><td>PKIX [2]</td></tr>
-<tr style='text-align:center'><td><code>ES256</code></td><td>-7</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>ES384</code></td><td>-35</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>ES512</code></td><td>-36</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>PS256</code></td><td>-37</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>PS384</code></td><td>-38</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>PS512</code></td><td>-39</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>RS256</code></td><td>-257</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>RS384</code></td><td>-258</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>RS512</code></td><td>-259</td><td>COSE, JOSE</td></tr>
-</table>
-<p>[1] Unfortunately, different standards groups did not in due time realize that
-existing cryptographic APIs only rarely accept &quot;EdDSA&quot; as a valid signature algorithm.
-In current FIDO alliance specifications the COSE <code>EdDSA</code> algorithm identifier has
-therefore been redefined to rather mean EdDSA with an Ed25519 key which is also what CSF follows.
-PKIX' RFC&nbsp;8410 makes the same distinction.</p>
-<p>[2] CSF extends the scheme used for <code>Ed25519</code> to <code>Ed448</code> as well.</p>
-
-<h3 id='cef'>Encryption Support</h3>
-The CBOR library contains support for encrypting and decrypting
-arbitrary binary data using a specific scheme called
-&quot;CBOR Encryption Format&quot; (CEF).
-In similarity to <a href='CSF'>CSF</a>, CEF also depends on <i>deterministic serialization</i>
-which is used to create authentication data to content encryption
-algorithms like GCM.
-<p>
-The following is a CEF object (here expressed in CBOR diagnostic notation), using the algorithms
-<code>A256GCM</code> and <code>ECDH-ES+A256KW</code> for content- respectively key-wrapping:
-</p>
-<div style='word-break:break-all'><code>
-{<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;<span style='color:grey'>/ Content encryption algorithm = A256GCM /</span><br>
-&nbsp;&nbsp;1: 3,<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;<span style='color:grey'>/ Key encryption object /</span><br>
-&nbsp;&nbsp;2: {<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ Key encryption algorithm = ECDH-ES+A256KW /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;1: -31,<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ Key Id /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;3: "example.com:x25519",<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ Ephemeral public key descriptor in COSE format /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;5: {<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ kty = OKP /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1: 1,<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ crv = X25519 /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1: 4,<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ x /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-2: h'bb167a278ad989b871e7becd18ce9e028c57cdd79a4c7f1ce3d3b4c2ccdc2547'<br>
-&nbsp;&nbsp;&nbsp;&nbsp;},<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;&nbsp;&nbsp;<span style='color:grey'>/ CipherText (Encrypted key) /</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;10: h'79bb27fb0936e5800046243906b032215526168f8a160897c95e91cce18946856c7a8ccb8733df00'<br>
-&nbsp;&nbsp;},<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;<span style='color:grey'>/ Tag /</span><br>
-&nbsp;&nbsp;8: h'2168e17d7d8ca3bf4baed2055442ca4d',<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;<span style='color:grey'>/ Initialization Vector (IV) /</span><br>
-&nbsp;&nbsp;9: h'5e2005f95590c53357291b04',<br>
-<div style='height:0.5em'></div>&nbsp;&nbsp;<span style='color:grey'>/ Ciphertext (Encrypted Content) /</span><br>
-&nbsp;&nbsp;10: h'8e45a77ae37c82f3b1585bbff8ff1b697f25a4bac590'<br>
-}
-</code></div>
-<p>
-The same object expressed as hex-encoded CBOR:
-</p>
-<div style='word-break:break-all'><code>
-a5010302a401381e03726578616d706c652e636f6d3a78323535313905a301012004215820bb167a278ad989b871e7becd18ce9e028c57cdd79a4c7f1ce3d3b4c2ccdc25470a582879bb27fb0936e5800046243906b032215526168f8a160897c95e91cce18946856c7a8ccb8733df0008502168e17d7d8ca3bf4baed2055442ca4d094c5e2005f95590c53357291b040a568e45a77ae37c82f3b1585bbff8ff1b697f25a4bac590
-</code></div>
-<p>
-Decryption of this object using the private key (here in JWK format)
-</p>
-<pre>
-{
-  "kid": "example.com:x25519",
-  "kty": "OKP",
-  "crv": "X25519",
-  "x": "6ZoM7yBYlJYNmxwFl4UT3MtCoTv7ztUjpRuKEXrV8Aw",
-  "d": "cxfl86EVmcqrR07mWENCf1F_5Ni5mt1ViGyERB6Q1vA"
-}
-</pre>
-should return the UTF-8 encoded string <code>&quot;Hello encrypted world!&quot;</code>.
-<p>
-The CEF decryption process is as follows:
-</p>
-<ul>
-<li>Read and save the content encryption parameters <code class='webpkicode'>tag</code>,
-<code class='webpkicode'>iv</code>, and <code class='webpkicode'>ciphertext</code>.</li>
-<li>Remove the <code class='webpkicode'>tag</code>,
-<code class='webpkicode'>iv</code>, and <code class='webpkicode'>ciphertext</code> elements from the
-encryption object.
-Note that the top level <code>map</code> object <b>must</b> be updated
-as well to reflect the changed number of elements.
-<li>Serialize the remaining CBOR encryption object and set the result to 
-Additional Authentication Data (<code>AAD</code>).</li>
-<li>Recover the content encryption key using the elements in the
-key encryption object (featured in label <code>2</code>).</li>
-<li>Apply the content encryption algorithm (featured in label <code>1</code>)
-to the recovered content encryption key,
-the input parameters read in the first step, and <code>AAD</code>.
-The result is the decrypted content.</li>
-</ul>
-Symmetric key encryption CEF objects are processed as above, but
-since they do not have a key encryption component, content encryption 
-keys must be known by recipients.
-<p id='cef-layout'>
-The following figure shows the layout of CEF objects:
-</p>
-<div class='webpkicef'>
-<img src='doc-files/cbor-crypto.svg' style='height:20em'/>
-</div>
-<p>
-The numbers in paranthesis denote the actual label (map key) value.
-Properly designed CEF objects <b>must</b> adhere to the following rules:
-</p>
-<ul>
-<li><code class='webpkicode'>publicKey</code> and <code class='webpkicode'>ephemeralKey</code> elements
-<b>must</b> be compliant with COSE, but <b>must not</b> contain
-any other information than the public key itself
-and associated parameters.</li>
-<li>ECDSA public keys <b>must</b> be supplied with a <i>value parameter</i> for the y-coordinate as well.</li>
-<li><code class='webpkicode'>publicKey</code> and <code class='webpkicode'>keyId</code>
-<b>must not</b> be combined.</li>
-<li>If a <code class='webpkicode'>keyId</code> is used it <b>must</b> be supplied in the main map for
-symmetric encryption schemes, and in the sub map for schemes using key encryption.</li>
-<li>The currently supported key encryption algorithms except for <code>ECDH-ES</code>
-<b>require</b> that the encrypted key is provided in the <code class='webpkicode'>chipherText</code>
-element in the sub map.</li>
-<li>All ECDH-ES variants <b>must</b> include an <code class='webpkicode'>ephemeralKey</code>
-element.</li>
-</ul>
-ECDH based key encryption schemes <b>must</b> use a Key Derivation Function (KDF)
-according to HKDF (RFC&nbsp;5869), profiled as follows:
-<ul>
-<li><code>hmac</code>: The HKDF implementation <b>must</b> use HMAC with SHA-256</li>
-<li><code>salt</code>: N/A. The default extract mode handling <b>must</b> be implemented.</li>
-<li><code>info</code>: This parameter <b>must</b> consist of the actual
-COSE key encryption algorithm,
-expressed as a 32-bit (4 byte) signed big-endian integer.</li>
-</ul>
-<p id='cef-content-encryption-algorithms'>
-Currently supported content encryption algorithms:
-</p>
-
-<table class='webpkitable' style='margin-bottom:1em'>
-<tr><th>Name</th><th>Identifier</th><th>Compatibility</th></tr>
-<tr style='text-align:center'><td><code>A128GCM</code></td><td>1</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>A192GCM</code></td><td>2</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>A256GCM</code></td><td>3</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>A128CBC-HS256</code></td><td>200</td><td>JOSE</td></tr>
-<tr style='text-align:center'><td><code>A192CBC-HS384</code></td><td>201</td><td>JOSE</td></tr>
-<tr style='text-align:center'><td><code>A256CBC-HS512</code></td><td>202</td><td>JOSE</td></tr>
-</table>
-<p id='cef-key-encryption-algorithms' style='padding-top:1em'>
-Currently supported key encryption algorithms:
-</p>
-<table class='webpkitable'>
-<tr><th>Name</th><th>Identifier</th><th>Compatibility</th></tr>
-<tr style='text-align:center'><td><code>ECDH-ES</code></td><td>-25</td><td>COSE, JOSE [1]</td></tr>
-<tr style='text-align:center'><td><code>ECDH-ES+A128KW</code></td><td>-29</td><td>COSE, JOSE [1]</td></tr>
-<tr style='text-align:center'><td><code>ECDH-ES+A192KW</code></td><td>-30</td><td>COSE, JOSE [1]</td></tr>
-<tr style='text-align:center'><td><code>ECDH-ES+A256KW</code></td><td>-31</td><td>COSE, JOSE [1]</td></tr>
-<tr style='text-align:center'><td><code>RSA-OAEP</code></td><td>-40</td><td>COSE, JOSE</td></tr>
-<tr style='text-align:center'><td><code>RSA-OAEP-256</code></td><td>-41</td><td>COSE, JOSE</td></tr>
-</table>
-<p>
-[1] Note that COSE and JOSE do no use the same Key Derivation Function (KDF).
-</p>
-An extensive set of test vectors is currently available at: 
-<a href='https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption'>
-https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
-</a>.</div>
+<h3>Cryptographic Support</h3>
+To aid the use of cryptography, 
+<a href='doc-files/signatures.html'>signatures</a> and 
+<a href='doc-files/encryption.html'>encryption</a> is integrated in the package as well.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -396,15 +112,15 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORAsymKeyDecrypter.html" title="class in org.webpki.cbor">CBORAsymKeyDecrypter</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Class for CBOR asymmetric key decryption.</div>
+<div class="block">Class for asymmetric key decryption.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORAsymKeyDecrypter.KeyLocator.html" title="interface in org.webpki.cbor">CBORAsymKeyDecrypter.KeyLocator</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">For dynamic key retrieval.</div>
+<div class="block">Interface for dynamic key retrieval.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORAsymKeyEncrypter.html" title="class in org.webpki.cbor">CBORAsymKeyEncrypter</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Class for creating CBOR asymmetric key encryptions.</div>
+<div class="block">Class for asymmetric key encryption.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORAsymKeySigner.html" title="class in org.webpki.cbor">CBORAsymKeySigner</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
@@ -416,7 +132,7 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORAsymKeyValidator.KeyLocator.html" title="interface in org.webpki.cbor">CBORAsymKeyValidator.KeyLocator</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">For dynamic key retrieval.</div>
+<div class="block">Interface for dynamic key retrieval.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORBoolean.html" title="class in org.webpki.cbor">CBORBoolean</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
@@ -436,15 +152,15 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORDecrypter.html" title="class in org.webpki.cbor">CBORDecrypter</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Base class for creating CBOR decryption objects.</div>
+<div class="block">Base class for decrypting data.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">Base class for creating CBOR encryption objects.</div>
+<div class="block">Base class for encrypting data.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CBOREncrypter.Intercepter.html" title="interface in org.webpki.cbor">CBOREncrypter.Intercepter</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">For customizing encryption map objects.</div>
+<div class="block">Interface for customizing encryption map objects.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORFloatingPoint.html" title="class in org.webpki.cbor">CBORFloatingPoint</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
@@ -456,8 +172,7 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORHmacSigner.html" title="class in org.webpki.cbor">CBORHmacSigner</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">
- See <a href="CBORSigner.html" title="class in org.webpki.cbor"><code>CBORSigner</code></a> for details.</div>
+<div class="block">Class for creating CBOR HMAC signatures.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORHmacValidator.html" title="class in org.webpki.cbor">CBORHmacValidator</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
@@ -469,7 +184,7 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Class for holding CBOR <code>integer</code> and <code>big number</code>.</div>
+<div class="block">Class for holding CBOR <code>integer</code> and <code>big&nbsp;integer</code>.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
@@ -489,35 +204,51 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">Base class for creating CBOR signatures.</div>
+<div class="block">Base class for signing data.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORSymKeyDecrypter.html" title="class in org.webpki.cbor">CBORSymKeyDecrypter</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Class for CBOR symmetric key decryption.</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CBORSigner.Intercepter.html" title="interface in org.webpki.cbor">CBORSigner.Intercepter</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="block">Interface for customizing signature map objects.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORSymKeyDecrypter.KeyLocator.html" title="interface in org.webpki.cbor">CBORSymKeyDecrypter.KeyLocator</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">For dynamic key retrieval.</div>
-</div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORSymKeyEncrypter.html" title="class in org.webpki.cbor">CBORSymKeyEncrypter</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Class for creating CBOR symmetric key encryptions.</div>
-</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORTaggedObject.html" title="class in org.webpki.cbor">CBORTaggedObject</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORSymKeyDecrypter.html" title="class in org.webpki.cbor">CBORSymKeyDecrypter</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Class for symmetric key decryption.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CBORSymKeyDecrypter.KeyLocator.html" title="interface in org.webpki.cbor">CBORSymKeyDecrypter.KeyLocator</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="block">Interface for dynamic key retrieval.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORSymKeyEncrypter.html" title="class in org.webpki.cbor">CBORSymKeyEncrypter</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Class for symmetric key encryption.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORTag.html" title="class in org.webpki.cbor">CBORTag</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for holding CBOR tagged objects.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORTextString.html" title="class in org.webpki.cbor">CBORTextString</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORTextString.html" title="class in org.webpki.cbor">CBORTextString</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class for holding CBOR text strings.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="CBORTypes.html" title="enum class in org.webpki.cbor">CBORTypes</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab3">
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="CBORTypes.html" title="enum class in org.webpki.cbor">CBORTypes</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab3">
 <div class="block">Enumeration of CBOR types.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Base class for validating signatures.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORX509Decrypter.html" title="class in org.webpki.cbor">CBORX509Decrypter</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Base class for validating CBOR signatures.</div>
+<div class="block">Class for X509 decryption.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORX509Decrypter.KeyLocator.html" title="interface in org.webpki.cbor">CBORX509Decrypter.KeyLocator</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="block">Interface for dynamic key retrieval.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORX509Encrypter.html" title="class in org.webpki.cbor">CBORX509Encrypter</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">Class for X509 encryption.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORX509Signer.html" title="class in org.webpki.cbor">CBORX509Signer</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
@@ -527,9 +258,9 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for CBOR X509 signature validation.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORX509Validator.SignatureParameters.html" title="interface in org.webpki.cbor">CBORX509Validator.SignatureParameters</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORX509Validator.Parameters.html" title="interface in org.webpki.cbor">CBORX509Validator.Parameters</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
-<div class="block">For checking signature parameters.</div>
+<div class="block">Interface for checking signature parameters.</div>
 </div>
 </div>
 </div>

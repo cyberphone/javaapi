@@ -67,7 +67,7 @@ var activeTableTab = "active-table-tab";
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public static interface </span><span class="element-name type-name-label">CBORAsymKeyValidator.KeyLocator</span></div>
-<div class="block">For dynamic key retrieval.</div>
+<div class="block">Interface for dynamic key retrieval.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -85,9 +85,9 @@ var activeTableTab = "active-table-tab";
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#locate(java.security.PublicKey,org.webpki.cbor.CBORObject,org.webpki.crypto.AsymSignatureAlgorithms)" class="member-name-link">locate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;optionalPublicKey,
  <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;optionalKeyId,
- <a href="../crypto/AsymSignatureAlgorithms.html" title="enum class in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;signatureAlgorithm)</code></div>
+ <a href="../crypto/AsymSignatureAlgorithms.html" title="enum class in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Checks signature data and retrieves validation key.</div>
+<div class="block">Retrieves validation key and checks validation meta data.</div>
 </div>
 </div>
 </div>
@@ -108,10 +108,10 @@ var activeTableTab = "active-table-tab";
 <h3>locate</h3>
 <div class="member-signature"><span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a></span>&nbsp;<span class="element-name">locate</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;optionalPublicKey,
  <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;optionalKeyId,
- <a href="../crypto/AsymSignatureAlgorithms.html" title="enum class in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;signatureAlgorithm)</span>
+ <a href="../crypto/AsymSignatureAlgorithms.html" title="enum class in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm)</span>
           throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Checks signature data and retrieves validation key.
+<div class="block">Retrieves validation key and checks validation meta data.
  <p>
  An implementation is supposed to throw an exception if it
  does not find a matching key or if the supplied algorithm does
@@ -121,9 +121,9 @@ var activeTableTab = "active-table-tab";
 <dt>Parameters:</dt>
 <dd><code>optionalPublicKey</code> - Optional public key found in the signature object</dd>
 <dd><code>optionalKeyId</code> - KeyId or <code>null</code></dd>
-<dd><code>signatureAlgorithm</code> - The specified signature algorithm</dd>
+<dd><code>algorithm</code> - Signature algorithm</dd>
 <dt>Returns:</dt>
-<dd>Public key for signature validation</dd>
+<dd>Validation key</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>

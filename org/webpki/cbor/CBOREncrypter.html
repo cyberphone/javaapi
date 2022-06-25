@@ -66,14 +66,30 @@ var activeTableTab = "active-table-tab";
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="CBORAsymKeyEncrypter.html" title="class in org.webpki.cbor">CBORAsymKeyEncrypter</a></code>, <code><a href="CBORSymKeyEncrypter.html" title="class in org.webpki.cbor">CBORSymKeyEncrypter</a></code></dd>
+<dd><code><a href="CBORAsymKeyEncrypter.html" title="class in org.webpki.cbor">CBORAsymKeyEncrypter</a></code>, <code><a href="CBORSymKeyEncrypter.html" title="class in org.webpki.cbor">CBORSymKeyEncrypter</a></code>, <code><a href="CBORX509Encrypter.html" title="class in org.webpki.cbor">CBORX509Encrypter</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">CBOREncrypter</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Base class for creating CBOR encryption objects.
- 
- It uses COSE algorithms but relies on CEF for the packaging.</div>
+<div class="block">Base class for encrypting data.
+ <p>
+ This implementation supports encryptions using 
+ <a title='CEF' target='_blank' href='https://cyberphone.github.io/javaapi/org/webpki/cbor/doc-files/encryption.html'>CEF</a>
+ (CBOR Encryption Format) packaging, while algorithms are derived from COSE.
+ </p>
+ <p>
+ Note that encrypter objects may be used any number of times
+ (assuming that the same parameters are valid).  They are also
+ thread-safe.
+ </p></div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="see-list">
+<li><a href="CBORDecrypter.html" title="class in org.webpki.cbor"><code>CBORDecrypter</code></a></li>
+</ul>
+</dd>
+</dl>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -89,7 +105,7 @@ var activeTableTab = "active-table-tab";
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="CBOREncrypter.Intercepter.html" class="type-name-link" title="interface in org.webpki.cbor">CBOREncrypter.Intercepter</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">For customizing encryption map objects.</div>
+<div class="block">Interface for customizing encryption map objects.</div>
 </div>
 </div>
 </section>
@@ -111,24 +127,24 @@ var activeTableTab = "active-table-tab";
 <div class="block">Encrypts data.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(int)" class="member-name-link">setKeyId</a><wbr>(int&nbsp;keyId)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIntercepter(org.webpki.cbor.CBOREncrypter.Intercepter)" class="member-name-link">setIntercepter</a><wbr>(<a href="CBOREncrypter.Intercepter.html" title="interface in org.webpki.cbor">CBOREncrypter.Intercepter</a>&nbsp;intercepter)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets optional key Id.</div>
+<div class="block">Sets optional Intercepter.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(java.lang.String)" class="member-name-link">setKeyId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;keyId)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(int)" class="member-name-link">setKeyId</a><wbr>(int&nbsp;keyId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets optional key Id.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(org.webpki.cbor.CBORObject)" class="member-name-link">setKeyId</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;keyId)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(java.lang.String)" class="member-name-link">setKeyId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;keyId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets optional key Id.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTagWrapper(org.webpki.cbor.CBOREncrypter.Intercepter)" class="member-name-link">setTagWrapper</a><wbr>(<a href="CBOREncrypter.Intercepter.html" title="interface in org.webpki.cbor">CBOREncrypter.Intercepter</a>&nbsp;intercepter)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(org.webpki.cbor.CBORObject)" class="member-name-link">setKeyId</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;keyId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets optional Intercepter.</div>
+<div class="block">Sets optional key Id.</div>
 </div>
 </div>
 </div>
@@ -148,17 +164,13 @@ var activeTableTab = "active-table-tab";
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="setTagWrapper(org.webpki.cbor.CBOREncrypter.Intercepter)">
-<h3>setTagWrapper</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></span>&nbsp;<span class="element-name">setTagWrapper</span><wbr><span class="parameters">(<a href="CBOREncrypter.Intercepter.html" title="interface in org.webpki.cbor">CBOREncrypter.Intercepter</a>&nbsp;intercepter)</span></div>
-<div class="block">Sets optional Intercepter.
- 
- <p>
- See <a href="CBORCryptoUtils.html#getContainerMap(org.webpki.cbor.CBORObject)"><code>CBORCryptoUtils.getContainerMap(CBORObject)</code></a> for details.
- </p></div>
+<section class="detail" id="setIntercepter(org.webpki.cbor.CBOREncrypter.Intercepter)">
+<h3>setIntercepter</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></span>&nbsp;<span class="element-name">setIntercepter</span><wbr><span class="parameters">(<a href="CBOREncrypter.Intercepter.html" title="interface in org.webpki.cbor">CBOREncrypter.Intercepter</a>&nbsp;intercepter)</span></div>
+<div class="block">Sets optional Intercepter.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>intercepter</code> - An instance of TagWrapper</dd>
+<dd><code>intercepter</code> - An instance of Intercepter</dd>
 <dt>Returns:</dt>
 <dd>this</dd>
 </dl>
@@ -187,7 +199,7 @@ var activeTableTab = "active-table-tab";
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>keyId</code> - A CBOR key Id or <code>null</code></dd>
+<dd><code>keyId</code> - Key Id or <code>null</code></dd>
 <dt>Returns:</dt>
 <dd>this</dd>
 </dl>
@@ -202,7 +214,7 @@ var activeTableTab = "active-table-tab";
  The <code>keyId</code> will be represented as a CBOR <code>integer</code>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>keyId</code> - A CBOR key Id</dd>
+<dd><code>keyId</code> - Key Id</dd>
 <dt>Returns:</dt>
 <dd>this</dd>
 </dl>
@@ -217,7 +229,7 @@ var activeTableTab = "active-table-tab";
  The <code>keyId</code> will be represented as a CBOR <code>text&nbsp;string</code>.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>keyId</code> - A CBOR key Id</dd>
+<dd><code>keyId</code> - Key Id</dd>
 <dt>Returns:</dt>
 <dd>this</dd>
 </dl>
@@ -229,7 +241,11 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">encrypt</span><wbr><span class="parameters">(byte[]&nbsp;dataToEncrypt)</span>
                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Encrypts data.</div>
+<div class="block">Encrypts data.
+ <p>
+ Note that a <a href="CBORTag.html" title="class in org.webpki.cbor"><code>CBORTag</code></a> may embed the encryption object.
+ See <a href="CBORCryptoUtils.html#unwrapContainerMap(org.webpki.cbor.CBORObject)"><code>CBORCryptoUtils.unwrapContainerMap(CBORObject)</code></a> for details.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>dataToEncrypt</code> - The data to encrypt</dd>

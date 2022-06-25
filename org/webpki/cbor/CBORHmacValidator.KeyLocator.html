@@ -84,9 +84,9 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code>byte[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3"><code><a href="#locate(org.webpki.cbor.CBORObject,org.webpki.crypto.HmacAlgorithms)" class="member-name-link">locate</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;optionalKeyId,
- <a href="../crypto/HmacAlgorithms.html" title="enum class in org.webpki.crypto">HmacAlgorithms</a>&nbsp;hmacAlgorithm)</code></div>
+ <a href="../crypto/HmacAlgorithms.html" title="enum class in org.webpki.crypto">HmacAlgorithms</a>&nbsp;algorithm)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab3">
-<div class="block">Check signature data and retrieve validation key.</div>
+<div class="block">Retrieves validation key and check signature meta data.</div>
 </div>
 </div>
 </div>
@@ -106,10 +106,10 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="locate(org.webpki.cbor.CBORObject,org.webpki.crypto.HmacAlgorithms)">
 <h3>locate</h3>
 <div class="member-signature"><span class="return-type">byte[]</span>&nbsp;<span class="element-name">locate</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;optionalKeyId,
- <a href="../crypto/HmacAlgorithms.html" title="enum class in org.webpki.crypto">HmacAlgorithms</a>&nbsp;hmacAlgorithm)</span>
+ <a href="../crypto/HmacAlgorithms.html" title="enum class in org.webpki.crypto">HmacAlgorithms</a>&nbsp;algorithm)</span>
        throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Check signature data and retrieve validation key.
+<div class="block">Retrieves validation key and check signature meta data.
  <p>
  An implementation is supposed to throw an exception if it
  does not find a matching key or if the supplied algorithm does
@@ -118,9 +118,9 @@ var activeTableTab = "active-table-tab";
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>optionalKeyId</code> - KeyId or null</dd>
-<dd><code>hmacAlgorithm</code> - The found HMAC algorithm</dd>
+<dd><code>algorithm</code> - HMAC algorithm</dd>
 <dt>Returns:</dt>
-<dd>Secret key for validation</dd>
+<dd>Validation key</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>

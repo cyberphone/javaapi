@@ -66,14 +66,20 @@ var activeTableTab = "active-table-tab";
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="CBORAsymKeyDecrypter.html" title="class in org.webpki.cbor">CBORAsymKeyDecrypter</a></code>, <code><a href="CBORSymKeyDecrypter.html" title="class in org.webpki.cbor">CBORSymKeyDecrypter</a></code></dd>
+<dd><code><a href="CBORAsymKeyDecrypter.html" title="class in org.webpki.cbor">CBORAsymKeyDecrypter</a></code>, <code><a href="CBORSymKeyDecrypter.html" title="class in org.webpki.cbor">CBORSymKeyDecrypter</a></code>, <code><a href="CBORX509Decrypter.html" title="class in org.webpki.cbor">CBORX509Decrypter</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">CBORDecrypter</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Base class for creating CBOR decryption objects.
- 
- It uses COSE algorithms but relies on CEF for the packaging.</div>
+<div class="block">Base class for decrypting data.
+ <p>
+ See <a href="CBOREncrypter.html" title="class in org.webpki.cbor"><code>CBOREncrypter</code></a> for details.
+ </p>
+ <p>
+ Note that decrypter objects may be used any number of times
+ (assuming that the same parameters are valid).  They are also
+ thread-safe.
+ </p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -116,7 +122,18 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">decrypt</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;encryptionObject)</span>
                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Decrypts data.</div>
+<div class="block">Decrypts data.
+ <p>
+ This method presumes that <code>encryptionObject</code> holds
+ an encryption object according to CEF.
+ </p>
+ <p>
+ Note that if <code>encryptionObject</code> holds a CBOR
+ <code>tag</code> object the <code>tag</code> must in turn contain the actual
+ encryption object.
+ Such a <code>tag</code> is also included in the authenticated data.
+ See <a href="CBORCryptoUtils.html#unwrapContainerMap(org.webpki.cbor.CBORObject)"><code>CBORCryptoUtils.unwrapContainerMap(CBORObject)</code></a> for details.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>encryptionObject</code> - CBOR encryption object</dd>

@@ -37,7 +37,7 @@ var activeTableTab = "active-table-tab";
 <div>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested-class-summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
@@ -71,10 +71,11 @@ var activeTableTab = "active-table-tab";
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">CBORSigner</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Base class for creating CBOR signatures.
+<div class="block">Base class for signing data.
  <p>
- This implementation supports signatures using CSF (CBOR Signature Format) packaging,
- while algorithms are derived from COSE.
+ This implementation supports signatures using 
+ <a title='CSF' target='_blank' href='https://cyberphone.github.io/javaapi/org/webpki/cbor/doc-files/signatures.html'>CSF</a>
+ (CBOR Signature Format) packaging, while algorithms are derived from COSE.
  </p>
  <p>
  Note that signer objects may be used any number of times
@@ -92,6 +93,23 @@ var activeTableTab = "active-table-tab";
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="CBORSigner.Intercepter.html" class="type-name-link" title="interface in org.webpki.cbor">CBORSigner.Intercepter</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Interface for customizing signature map objects.</div>
+</div>
+</div>
+</section>
+</li>
 <!-- ========== METHOD SUMMARY =========== -->
 <li>
 <section class="method-summary" id="method-summary">
@@ -104,41 +122,46 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(int)" class="member-name-link">setKeyId</a><wbr>(int&nbsp;keyId)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIntercepter(org.webpki.cbor.CBORSigner.Intercepter)" class="member-name-link">setIntercepter</a><wbr>(<a href="CBORSigner.Intercepter.html" title="interface in org.webpki.cbor">CBORSigner.Intercepter</a>&nbsp;intercepter)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets signature <code>keyId</code>.</div>
+<div class="block">Sets optional Intercepter.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(java.lang.String)" class="member-name-link">setKeyId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;keyId)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(int)" class="member-name-link">setKeyId</a><wbr>(int&nbsp;keyId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets signature <code>keyId</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(org.webpki.cbor.CBORObject)" class="member-name-link">setKeyId</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;keyId)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(java.lang.String)" class="member-name-link">setKeyId</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;keyId)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets signature <code>keyId</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setProvider(java.lang.String)" class="member-name-link">setProvider</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(org.webpki.cbor.CBORObject)" class="member-name-link">setKeyId</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;keyId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets signature <code>keyId</code>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setProvider(java.lang.String)" class="member-name-link">setProvider</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets cryptographic provider.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sign(int,org.webpki.cbor.CBORMap)" class="member-name-link">sign</a><wbr>(int&nbsp;key,
+ <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;mapToSign)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Signs CBOR object.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sign(int,org.webpki.cbor.CBORObject)" class="member-name-link">sign</a><wbr>(int&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;objectToSign)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sign(java.lang.String,org.webpki.cbor.CBORMap)" class="member-name-link">sign</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
+ <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;mapToSign)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Signs CBOR object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sign(java.lang.String,org.webpki.cbor.CBORObject)" class="member-name-link">sign</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;objectToSign)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sign(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORMap)" class="member-name-link">sign</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
+ <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;mapToSign)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Signs CBOR object.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sign(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)" class="member-name-link">sign</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;objectToSign)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Signs CBOR object.</div>
 </div>
 </div>
@@ -158,6 +181,19 @@ var activeTableTab = "active-table-tab";
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="setIntercepter(org.webpki.cbor.CBORSigner.Intercepter)">
+<h3>setIntercepter</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></span>&nbsp;<span class="element-name">setIntercepter</span><wbr><span class="parameters">(<a href="CBORSigner.Intercepter.html" title="interface in org.webpki.cbor">CBORSigner.Intercepter</a>&nbsp;intercepter)</span></div>
+<div class="block">Sets optional Intercepter.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>intercepter</code> - An instance of Intercepter</dd>
+<dt>Returns:</dt>
+<dd>this</dd>
+</dl>
+</section>
+</li>
 <li>
 <section class="detail" id="setKeyId(org.webpki.cbor.CBORObject)">
 <h3>setKeyId</h3>
@@ -182,7 +218,7 @@ var activeTableTab = "active-table-tab";
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>keyId</code> - A CBOR key Id or <code>null</code></dd>
+<dd><code>keyId</code> - Key Id or <code>null</code></dd>
 <dt>Returns:</dt>
 <dd>this</dd>
 </dl>
@@ -200,7 +236,7 @@ var activeTableTab = "active-table-tab";
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>keyId</code> - A CBOR key Id</dd>
+<dd><code>keyId</code> - Key Id</dd>
 <dt>Returns:</dt>
 <dd>this</dd>
 </dl>
@@ -219,7 +255,7 @@ var activeTableTab = "active-table-tab";
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>keyId</code> - A CBOR key Id</dd>
+<dd><code>keyId</code> - Key Id</dd>
 <dt>Returns:</dt>
 <dd>this</dd>
 </dl>
@@ -239,10 +275,10 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="sign(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)">
+<section class="detail" id="sign(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORMap)">
 <h3>sign</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">sign</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;objectToSign)</span>
+ <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;mapToSign)</span>
                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block">Signs CBOR object.
@@ -251,17 +287,13 @@ var activeTableTab = "active-table-tab";
  Adds an enveloped CSF object (signature) to a CBOR map.
  </p>
  <p>
- Note that if <code>objectToSign</code> holds a CBOR
- tag object the tag must in turn contain the map to be signed,
- and the tag will also be included in the data to be signed.
- </p>
- <p>
- See <a href="CBORCryptoUtils.html#getContainerMap(org.webpki.cbor.CBORObject)"><code>CBORCryptoUtils.getContainerMap(CBORObject)</code></a> for details.
+ Note that a <a href="CBORTag.html" title="class in org.webpki.cbor"><code>CBORTag</code></a> may embed the signature object.
+ See <a href="CBORCryptoUtils.html#unwrapContainerMap(org.webpki.cbor.CBORObject)"><code>CBORCryptoUtils.unwrapContainerMap(CBORObject)</code></a> for details.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key holding the signature in the CBOR map to sign</dd>
-<dd><code>objectToSign</code> - CBOR map to be signed</dd>
+<dd><code>mapToSign</code> - CBOR map to be signed</dd>
 <dt>Returns:</dt>
 <dd>Signed object</dd>
 <dt>Throws:</dt>
@@ -271,21 +303,21 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="sign(int,org.webpki.cbor.CBORObject)">
+<section class="detail" id="sign(int,org.webpki.cbor.CBORMap)">
 <h3>sign</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">sign</span><wbr><span class="parameters">(int&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;objectToSign)</span>
+ <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;mapToSign)</span>
                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block">Signs CBOR object.
  
  <p>
- See <a href="#sign(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)"><code>sign(CBORObject, CBORMap)</code></a> for details.
+ See <a href="#sign(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORMap)"><code>sign(CBORObject, CBORMap)</code></a> for details.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key holding the signature in the CBOR map to sign</dd>
-<dd><code>objectToSign</code> - CBOR map to be signed</dd>
+<dd><code>mapToSign</code> - CBOR map to be signed</dd>
 <dt>Returns:</dt>
 <dd>Signed object</dd>
 <dt>Throws:</dt>
@@ -295,20 +327,20 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="sign(java.lang.String,org.webpki.cbor.CBORObject)">
+<section class="detail" id="sign(java.lang.String,org.webpki.cbor.CBORMap)">
 <h3>sign</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">sign</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;objectToSign)</span>
+ <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;mapToSign)</span>
                 throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block">Signs CBOR object.
  <p>
- See <a href="#sign(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)"><code>sign(CBORObject, CBORMap)</code></a> for details.
+ See <a href="#sign(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORMap)"><code>sign(CBORObject, CBORMap)</code></a> for details.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key holding the signature in the CBOR map to sign</dd>
-<dd><code>objectToSign</code> - CBOR map to be signed</dd>
+<dd><code>mapToSign</code> - CBOR map to be signed</dd>
 <dt>Returns:</dt>
 <dd>Signed object</dd>
 <dt>Throws:</dt>

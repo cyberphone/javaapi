@@ -134,13 +134,13 @@
 <h3>CBORHmacValidator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORHmacValidator</span><wbr><span class="parameters">(byte[]&nbsp;secretKey)</span></div>
 <div class="block">Initializes a validator with a secret key.
- 
- Using this option the algorithm provided by the
- producer is supposed to be correct.  The alternative
- constructor gives the validator full control.</div>
+ <p>
+ This constructor presumes that the validation key is given by the context
+ and that the supplied algorithm meets the policy.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>secretKey</code> - The anticipated secret key</dd>
+<dd><code>secretKey</code> - Validation key</dd>
 </dl>
 </section>
 </li>
@@ -149,9 +149,10 @@
 <h3>CBORHmacValidator</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORHmacValidator</span><wbr><span class="parameters">(<a href="CBORHmacValidator.KeyLocator.html" title="interface in org.webpki.cbor">CBORHmacValidator.KeyLocator</a>&nbsp;keyLocator)</span></div>
 <div class="block">Initializes a validator with a key locator.
- 
- This option provides full control for the verifier
- regarding key identifiers and HMAC algorithms.</div>
+ <p>
+ This constructor provides full control for the verifier
+ regarding key identifiers and HMAC algorithms.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>keyLocator</code> - The call back</dd>

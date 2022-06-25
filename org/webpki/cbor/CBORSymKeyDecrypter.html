@@ -65,13 +65,7 @@
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CBORSymKeyDecrypter</span>
 <span class="extends-implements">extends <a href="CBORDecrypter.html" title="class in org.webpki.cbor">CBORDecrypter</a></span></div>
-<div class="block">Class for CBOR symmetric key decryption.
- 
- It uses COSE algorithms but relies on CEF for the packaging.
-
- Note that decrypter objects may be used any number of times
- (assuming that the same parameters are valid).  They are also
- thread-safe.</div>
+<div class="block">Class for symmetric key decryption.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -87,7 +81,7 @@
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="CBORSymKeyDecrypter.KeyLocator.html" class="type-name-link" title="interface in org.webpki.cbor">CBORSymKeyDecrypter.KeyLocator</a></code></div>
 <div class="col-last even-row-color">
-<div class="block">For dynamic key retrieval.</div>
+<div class="block">Interface for dynamic key retrieval.</div>
 </div>
 </div>
 </section>
@@ -136,10 +130,13 @@
 <section class="detail" id="&lt;init&gt;(byte[])">
 <h3>CBORSymKeyDecrypter</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORSymKeyDecrypter</span><wbr><span class="parameters">(byte[]&nbsp;secretKey)</span></div>
-<div class="block">Initializes a decrypter with a secret key.</div>
+<div class="block">Initializes a decrypter with a secret key.
+ <p>
+ This constructor presumes that the decryption key is given by the context.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>secretKey</code> - The anticipated secret key to decrypt with</dd>
+<dd><code>secretKey</code> - Decryption key</dd>
 </dl>
 </section>
 </li>

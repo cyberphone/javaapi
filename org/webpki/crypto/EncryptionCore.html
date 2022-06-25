@@ -147,7 +147,7 @@ var activeTableTab = "active-table-tab";
  <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;receivedPublicKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
- byte[]&nbsp;encryptedKeyData)</code></div>
+ byte[]&nbsp;encryptedKey)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Perform a receiver side ECDH operation.</div>
 </div>
@@ -257,10 +257,10 @@ var activeTableTab = "active-table-tab";
 <div class="block">Perform a symmetric key encryption.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>contentEncryptionAlgorithm</code> - Algorithm to use</dd>
+<dd><code>contentEncryptionAlgorithm</code> - Encryption algorithm</dd>
 <dd><code>key</code> - Encryption key</dd>
 <dd><code>iv</code> - Initialization vector</dd>
-<dd><code>plainText</code> - The data to be encrypted</dd>
+<dd><code>plainText</code> - Data to be encrypted</dd>
 <dd><code>authData</code> - Additional input factor for authentication</dd>
 <dt>Returns:</dt>
 <dd>A composite object including encrypted data</dd>
@@ -282,14 +282,14 @@ var activeTableTab = "active-table-tab";
 <div class="block">Decrypt using a symmetric key.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>contentEncryptionAlgorithm</code> - Algorithm to use</dd>
-<dd><code>key</code> - The encryption key</dd>
-<dd><code>cipherText</code> - The data to be decrypted</dd>
+<dd><code>contentEncryptionAlgorithm</code> - Encryption algorithm</dd>
+<dd><code>key</code> - Encryption key</dd>
+<dd><code>cipherText</code> - Encrypted data</dd>
 <dd><code>iv</code> - Initialization Vector</dd>
 <dd><code>authData</code> - Additional input used for authentication purposes</dd>
 <dd><code>tag</code> - Authentication tag</dd>
 <dt>Returns:</dt>
-<dd>The data in clear</dd>
+<dd>Decrypted data</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
@@ -374,7 +374,7 @@ var activeTableTab = "active-table-tab";
  <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;receivedPublicKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
- byte[]&nbsp;encryptedKeyData)</span>
+ byte[]&nbsp;encryptedKey)</span>
                                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Perform a receiver side ECDH operation.</div>
@@ -385,7 +385,7 @@ var activeTableTab = "active-table-tab";
 <dd><code>contentEncryptionAlgorithm</code> - The designated content encryption algorithm</dd>
 <dd><code>receivedPublicKey</code> - The sender's (usually ephemeral) public key</dd>
 <dd><code>privateKey</code> - The receiver's private key</dd>
-<dd><code>encryptedKeyData</code> - For ECDH+KW based operations only</dd>
+<dd><code>encryptedKey</code> - For ECDH+KW based operations only</dd>
 <dt>Returns:</dt>
 <dd>Shared secret</dd>
 <dt>Throws:</dt>

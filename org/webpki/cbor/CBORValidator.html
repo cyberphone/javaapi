@@ -71,24 +71,15 @@ var activeTableTab = "active-table-tab";
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">CBORValidator</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Base class for validating CBOR signatures.
+<div class="block">Base class for validating signatures.
  <p>
- This implementation supports signatures using CSF (CBOR Signature Format) packaging,
- while algorithms are derived from COSE.
+ See <a href="CBORSigner.html" title="class in org.webpki.cbor"><code>CBORSigner</code></a> for details.
  </p>
  <p>
  Note that validator objects may be used any number of times
  (assuming that the same parameters are valid).  They are also
  thread-safe.
  </p></div>
-<dl class="notes">
-<dt>See Also:</dt>
-<dd>
-<ul class="see-list">
-<li><a href="CBORSigner.html" title="class in org.webpki.cbor"><code>CBORSigner</code></a></li>
-</ul>
-</dd>
-</dl>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -152,18 +143,16 @@ var activeTableTab = "active-table-tab";
  </p>
  <p>
  Note that if <code>signedObject</code> holds a CBOR
- tag object the tag must in turn contain the signed map,
- and the tag as also included in the signed data.
- </p>
- <p>
- See <a href="CBORCryptoUtils.html#getContainerMap(org.webpki.cbor.CBORObject)"><code>CBORCryptoUtils.getContainerMap(CBORObject)</code></a> for details.
+ <code>tag</code> object the <code>tag</code> must in turn contain the signed <code>map</code>.
+ Such a <code>tag</code> is also included in the signed data.
+ See <a href="CBORCryptoUtils.html#unwrapContainerMap(org.webpki.cbor.CBORObject)"><code>CBORCryptoUtils.unwrapContainerMap(CBORObject)</code></a> for details.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key in map holding signature</dd>
 <dd><code>signedObject</code> - Signed CBOR object</dd>
 <dt>Returns:</dt>
-<dd>The signed object</dd>
+<dd>The original <code>signedObject</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
@@ -186,7 +175,7 @@ var activeTableTab = "active-table-tab";
 <dd><code>key</code> - Key in map holding signature</dd>
 <dd><code>signedObject</code> - Signed CBOR object</dd>
 <dt>Returns:</dt>
-<dd>The signed object</dd>
+<dd>The original <code>signedObject</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
@@ -209,7 +198,7 @@ var activeTableTab = "active-table-tab";
 <dd><code>key</code> - Key in map holding signature</dd>
 <dd><code>signedObject</code> - Signed CBOR object</dd>
 <dt>Returns:</dt>
-<dd>The signed object</dd>
+<dd>The original <code>signedObject</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
