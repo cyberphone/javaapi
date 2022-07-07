@@ -90,12 +90,15 @@ As an example <code>0.0</code> must be encoded as a 16-bit floating point type.
 Note that floating point and integer objects must be treated as distinct types.</li>
 <li>Maps with keys that are not sorted according to section 4.2.1 of RFC 8949.</li>
 </ul>
-On output (encode) the preferred serialization format is always used
+On output (encode) deterministic serialization is always used
 regardless how it was provided.
 <h3>Cryptographic Support</h3>
 To aid the use of cryptography, 
 <a href='doc-files/signatures.html'>signatures</a> and 
-<a href='doc-files/encryption.html'>encryption</a> is integrated in the package as well.</div>
+<a href='doc-files/encryption.html'>encryption</a> is integrated in the package.
+<h3>Diagnostic CBOR</h3>
+Through <a href="CBORDiagnosticParser.html" title="class in org.webpki.cbor"><code>CBORDiagnosticParser</code></a> CBOR in diagnostic (textual) notation 
+can also be processed.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -154,116 +157,120 @@ To aid the use of cryptography,
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Base class for decrypting data.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORDiagnosticParser.html" title="class in org.webpki.cbor">CBORDiagnosticParser</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Class for converting diagnostic CBOR to CBOR.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Base class for encrypting data.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CBOREncrypter.Intercepter.html" title="interface in org.webpki.cbor">CBOREncrypter.Intercepter</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBOREncrypter.Intercepter.html" title="interface in org.webpki.cbor">CBOREncrypter.Intercepter</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Interface for customizing encryption map objects.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORFloatingPoint.html" title="class in org.webpki.cbor">CBORFloatingPoint</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORFloatingPoint.html" title="class in org.webpki.cbor">CBORFloatingPoint</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for holding CBOR floating point numbers.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORFromJSON.html" title="class in org.webpki.cbor">CBORFromJSON</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORFromJSON.html" title="class in org.webpki.cbor">CBORFromJSON</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class for converting JSON to CBOR.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORHmacSigner.html" title="class in org.webpki.cbor">CBORHmacSigner</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORHmacSigner.html" title="class in org.webpki.cbor">CBORHmacSigner</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for creating CBOR HMAC signatures.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORHmacValidator.html" title="class in org.webpki.cbor">CBORHmacValidator</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORHmacValidator.html" title="class in org.webpki.cbor">CBORHmacValidator</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class for CBOR HMAC signature validation.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORHmacValidator.KeyLocator.html" title="interface in org.webpki.cbor">CBORHmacValidator.KeyLocator</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CBORHmacValidator.KeyLocator.html" title="interface in org.webpki.cbor">CBORHmacValidator.KeyLocator</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Interface for dynamic key retrieval.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class for holding CBOR <code>integer</code> and <code>big&nbsp;integer</code>.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORKeyPair.html" title="class in org.webpki.cbor">CBORKeyPair</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORKeyPair.html" title="class in org.webpki.cbor">CBORKeyPair</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class handling CBOR/COSE private keys.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class for holding CBOR maps.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORNull.html" title="class in org.webpki.cbor">CBORNull</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORNull.html" title="class in org.webpki.cbor">CBORNull</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for holding CBOR <code>null</code>.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Base class for all CBOR objects.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORPublicKey.html" title="class in org.webpki.cbor">CBORPublicKey</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORPublicKey.html" title="class in org.webpki.cbor">CBORPublicKey</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class handling CBOR/COSE public keys.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Base class for signing data.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORSigner.Intercepter.html" title="interface in org.webpki.cbor">CBORSigner.Intercepter</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab1">
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CBORSigner.Intercepter.html" title="interface in org.webpki.cbor">CBORSigner.Intercepter</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
 <div class="block">Interface for customizing signature map objects.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORSymKeyDecrypter.html" title="class in org.webpki.cbor">CBORSymKeyDecrypter</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORSymKeyDecrypter.html" title="class in org.webpki.cbor">CBORSymKeyDecrypter</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class for symmetric key decryption.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORSymKeyDecrypter.KeyLocator.html" title="interface in org.webpki.cbor">CBORSymKeyDecrypter.KeyLocator</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CBORSymKeyDecrypter.KeyLocator.html" title="interface in org.webpki.cbor">CBORSymKeyDecrypter.KeyLocator</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="block">Interface for dynamic key retrieval.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORSymKeyEncrypter.html" title="class in org.webpki.cbor">CBORSymKeyEncrypter</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Class for symmetric key encryption.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORTag.html" title="class in org.webpki.cbor">CBORTag</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">Class for holding CBOR tagged objects.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORTextString.html" title="class in org.webpki.cbor">CBORTextString</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Class for holding CBOR text strings.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab3"><a href="CBORTypes.html" title="enum class in org.webpki.cbor">CBORTypes</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab3">
+<div class="block">Enumeration of CBOR types.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Base class for validating signatures.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORX509Decrypter.html" title="class in org.webpki.cbor">CBORX509Decrypter</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">Class for X509 decryption.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORX509Decrypter.KeyLocator.html" title="interface in org.webpki.cbor">CBORX509Decrypter.KeyLocator</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Interface for dynamic key retrieval.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORSymKeyEncrypter.html" title="class in org.webpki.cbor">CBORSymKeyEncrypter</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORX509Encrypter.html" title="class in org.webpki.cbor">CBORX509Encrypter</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Class for symmetric key encryption.</div>
-</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORTag.html" title="class in org.webpki.cbor">CBORTag</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">Class for holding CBOR tagged objects.</div>
-</div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORTextString.html" title="class in org.webpki.cbor">CBORTextString</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Class for holding CBOR text strings.</div>
-</div>
-<div class="col-first even-row-color class-summary class-summary-tab3"><a href="CBORTypes.html" title="enum class in org.webpki.cbor">CBORTypes</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab3">
-<div class="block">Enumeration of CBOR types.</div>
-</div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Base class for validating signatures.</div>
-</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORX509Decrypter.html" title="class in org.webpki.cbor">CBORX509Decrypter</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
-<div class="block">Class for X509 decryption.</div>
-</div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CBORX509Decrypter.KeyLocator.html" title="interface in org.webpki.cbor">CBORX509Decrypter.KeyLocator</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
-<div class="block">Interface for dynamic key retrieval.</div>
-</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORX509Encrypter.html" title="class in org.webpki.cbor">CBORX509Encrypter</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class for X509 encryption.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORX509Signer.html" title="class in org.webpki.cbor">CBORX509Signer</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORX509Signer.html" title="class in org.webpki.cbor">CBORX509Signer</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class for creating CBOR X509 signatures.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORX509Validator.html" title="class in org.webpki.cbor">CBORX509Validator</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORX509Validator.html" title="class in org.webpki.cbor">CBORX509Validator</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for CBOR X509 signature validation.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab1"><a href="CBORX509Validator.Parameters.html" title="interface in org.webpki.cbor">CBORX509Validator.Parameters</a></div>
-<div class="col-last odd-row-color class-summary class-summary-tab1">
+<div class="col-first even-row-color class-summary class-summary-tab1"><a href="CBORX509Validator.Parameters.html" title="interface in org.webpki.cbor">CBORX509Validator.Parameters</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab1">
 <div class="block">Interface for verifying signature meta data.</div>
 </div>
 </div>
