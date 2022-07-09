@@ -887,3 +887,8 @@ table.striped > tbody > tr > th {
 .webpkicode {
   color:maroon;
 }
+
+.webpkihighlite {
+  background: black;
+  color: white;
+}
