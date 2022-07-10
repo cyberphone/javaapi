@@ -143,7 +143,11 @@ var activeTableTab = "active-table-tab";
 <div class="block">Optionally adds custom data to the map.
  <p>
  Custom data may be any valid CBOR object.  This data is assigned
- to the CEF specific label <a href="CBORCryptoConstants.html#CUSTOM_DATA_LABEL"><code>CBORCryptoConstants.CUSTOM_DATA_LABEL</code></a>.
+ to the CSF/CEF specific label <a href="CBORCryptoConstants.html#CUSTOM_DATA_LABEL"><code>CBORCryptoConstants.CUSTOM_DATA_LABEL</code></a>.
+ </p>
+ <p>
+ If this method returns <code>null</code>, the assumption is that there is no
+ custom data.
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>

@@ -94,22 +94,27 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-first">Modifier and Type</div>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(int,org.webpki.cbor.CBORObject)" class="member-name-link">validate</a><wbr>(int&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;signedObject)</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#enableCustomData(boolean)" class="member-name-link">enableCustomData</a><wbr>(boolean&nbsp;flag)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Validates signed CBOR object.</div>
+<div class="block">Enables custom extension data.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(java.lang.String,org.webpki.cbor.CBORObject)" class="member-name-link">validate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(int,org.webpki.cbor.CBORObject)" class="member-name-link">validate</a><wbr>(int&nbsp;key,
  <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;signedObject)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Validates signed CBOR object.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)" class="member-name-link">validate</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(java.lang.String,org.webpki.cbor.CBORObject)" class="member-name-link">validate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
  <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;signedObject)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Validates signed CBOR object.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)" class="member-name-link">validate</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
+ <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;signedObject)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Validates signed CBOR object.</div>
 </div>
 </div>
@@ -129,6 +134,23 @@ var activeTableTab = "active-table-tab";
 <section class="method-details" id="method-detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="enableCustomData(boolean)">
+<h3>enableCustomData</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORValidator.html" title="class in org.webpki.cbor">CBORValidator</a></span>&nbsp;<span class="element-name">enableCustomData</span><wbr><span class="parameters">(boolean&nbsp;flag)</span></div>
+<div class="block">Enables custom extension data.
+ <p>
+ By default custom data elements (<a href="CBORCryptoConstants.html#CUSTOM_DATA_LABEL"><code>CBORCryptoConstants.CUSTOM_DATA_LABEL</code></a>) 
+ are rejected.
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>flag</code> - Set to <code>true</code> if custom data is to be permitted.</dd>
+<dt>Returns:</dt>
+<dd><code>this</code></dd>
+</dl>
+</section>
+</li>
 <li>
 <section class="detail" id="validate(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)">
 <h3>validate</h3>
