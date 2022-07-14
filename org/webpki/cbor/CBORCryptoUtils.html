@@ -85,6 +85,11 @@ var activeTableTab = "active-table-tab";
 <div class="col-last even-row-color">
 <div class="block">Interface for customizing map objects.</div>
 </div>
+<div class="col-first odd-row-color"><code>static enum&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="CBORCryptoUtils.POLICY.html" class="type-name-link" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a></code></div>
+<div class="col-last odd-row-color">
+<div class="block">Policy regarding additional CSF and CEF features.</div>
+</div>
 </div>
 </section>
 </li>
@@ -110,7 +115,8 @@ var activeTableTab = "active-table-tab";
 <div class="block">Encodes certificate path into a CBOR array.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#unwrapContainerMap(org.webpki.cbor.CBORObject)" class="member-name-link">unwrapContainerMap</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;container)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#unwrapContainerMap(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORCryptoUtils.POLICY)" class="member-name-link">unwrapContainerMap</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;container,
+ <a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;tagPolicy)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Unwraps a container map object.</div>
 </div>
@@ -186,9 +192,10 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="unwrapContainerMap(org.webpki.cbor.CBORObject)">
+<section class="detail" id="unwrapContainerMap(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORCryptoUtils.POLICY)">
 <h3>unwrapContainerMap</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">unwrapContainerMap</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;container)</span>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">unwrapContainerMap</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;container,
+ <a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;tagPolicy)</span>
                                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Unwraps a container map object.
  
@@ -222,6 +229,7 @@ var activeTableTab = "active-table-tab";
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>container</code> - A map optionally enclosed in a tag</dd>
+<dd><code>tagPolicy</code> - Tagging policy</dd>
 <dt>Returns:</dt>
 <dd>The map object without the tag</dd>
 <dt>Throws:</dt>
