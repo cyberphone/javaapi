@@ -81,13 +81,18 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="CBORCryptoUtils.Intercepter.html" class="type-name-link" title="interface in org.webpki.cbor">CBORCryptoUtils.Intercepter</a></code></div>
+<div class="col-second even-row-color"><code><a href="CBORCryptoUtils.Collector.html" class="type-name-link" title="interface in org.webpki.cbor">CBORCryptoUtils.Collector</a></code></div>
 <div class="col-last even-row-color">
+<div class="block">Interface for collecting tagged or custom data.</div>
+</div>
+<div class="col-first odd-row-color"><code>static interface&nbsp;</code></div>
+<div class="col-second odd-row-color"><code><a href="CBORCryptoUtils.Intercepter.html" class="type-name-link" title="interface in org.webpki.cbor">CBORCryptoUtils.Intercepter</a></code></div>
+<div class="col-last odd-row-color">
 <div class="block">Interface for customizing map objects.</div>
 </div>
-<div class="col-first odd-row-color"><code>static enum&nbsp;</code></div>
-<div class="col-second odd-row-color"><code><a href="CBORCryptoUtils.POLICY.html" class="type-name-link" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a></code></div>
-<div class="col-last odd-row-color">
+<div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="CBORCryptoUtils.POLICY.html" class="type-name-link" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a></code></div>
+<div class="col-last even-row-color">
 <div class="block">Policy regarding additional CSF and CEF features.</div>
 </div>
 </div>
@@ -113,12 +118,6 @@ var activeTableTab = "active-table-tab";
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#encodeCertificateArray(java.security.cert.X509Certificate%5B%5D)" class="member-name-link">encodeCertificateArray</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]&nbsp;certificatePath)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Encodes certificate path into a CBOR array.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#unwrapContainerMap(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORCryptoUtils.POLICY)" class="member-name-link">unwrapContainerMap</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;container,
- <a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;tagPolicy)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Unwraps a container map object.</div>
 </div>
 </div>
 </div>
@@ -191,52 +190,6 @@ var activeTableTab = "active-table-tab";
 </dl>
 </section>
 </li>
-<li>
-<section class="detail" id="unwrapContainerMap(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORCryptoUtils.POLICY)">
-<h3>unwrapContainerMap</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">unwrapContainerMap</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;container,
- <a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;tagPolicy)</span>
-                                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Unwraps a container map object.
- 
- <p>
- This method is intended for CBOR <code>map</code> objects that <i>optionally</i>
- are wrapped in a tag.  This implementation accepts two variants of tags:
- </p>
- <code>&nbsp;&nbsp;&nbsp;&nbsp;nnn(</code><i>CBOR&nbsp;map</i><code>)</code><br>
- <code>&nbsp;&nbsp;&nbsp;&nbsp;nnn([</code><i>CBOR&nbsp;text&nbsp;string</i><code>,&nbsp;</code><i>CBOR&nbsp;map</i><code>])</code>
- <p>
- The purpose of the second construct is to provide a
- generic way of adding an object type identifier in the
- form of a URL to CBOR <code>map</code> objects.
- The CBOR tag (<code>nnn</code>) would in this case be <i>constant</i>. 
- Example:
- </p>
- <pre>
-     211(["https://example.com/myobject", {
-       "amount": "145.00",
-       "currency": "USD"
-     }])</pre><p>
- Both wrapping methods are intrinsically
- supported by <a href="CBORValidator.html" title="class in org.webpki.cbor"><code>CBORValidator</code></a> and
- <a href="CBORDecrypter.html" title="class in org.webpki.cbor"><code>CBORDecrypter</code></a>
- for signatures and encryption respectively.
- </p>
- <p>
- To enable the <i>creation</i> of wrapped data you must implement
- <a href="CBORCryptoUtils.Intercepter.html#wrap(org.webpki.cbor.CBORMap)"><code>CBORCryptoUtils.Intercepter.wrap(CBORMap)</code></a>.
- </p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>container</code> - A map optionally enclosed in a tag</dd>
-<dd><code>tagPolicy</code> - Tagging policy</dd>
-<dt>Returns:</dt>
-<dd>The map object without the tag</dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</section>
-</li>
 </ul>
 </section>
 </li>
@@ -246,7 +199,7 @@ var activeTableTab = "active-table-tab";
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><i>2005-2021 WebPKI.org.</i></small></p>
+<p class="legal-copy"><small><i>2005-2022 WebPKI.org.</i></small></p>
 </footer>
 </div>
 </div>

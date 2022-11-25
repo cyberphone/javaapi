@@ -74,7 +74,7 @@ var activeTableTab = "active-table-tab";
 <div class="block">Base class for encrypting data.
  <p>
  This implementation supports encryptions using 
- <a title='CEF' target='_blank' href='https://cyberphone.github.io/javaapi/org/webpki/cbor/doc-files/encryption.html'>CEF</a>
+ <a title='CEF' target='_blank' href='doc-files/encryption.html'>CEF</a>
  (CBOR Encryption Format) packaging, while algorithms are derived from COSE.
  </p>
  <p>
@@ -224,11 +224,7 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">encrypt</span><wbr><span class="parameters">(byte[]&nbsp;dataToEncrypt)</span>
                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<div class="block">Encrypts data.
- <p>
- Note that a <a href="CBORTag.html" title="class in org.webpki.cbor"><code>CBORTag</code></a> may embed the encryption object.
- See <a href="CBORCryptoUtils.html#unwrapContainerMap(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORCryptoUtils.POLICY)"><code>CBORCryptoUtils.unwrapContainerMap(CBORObject, POLICY tagPolicy)</code></a> for details.
- </p></div>
+<div class="block">Encrypts data.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>dataToEncrypt</code> - The data to encrypt</dd>
@@ -249,7 +245,7 @@ var activeTableTab = "active-table-tab";
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><i>2005-2021 WebPKI.org.</i></small></p>
+<p class="legal-copy"><small><i>2005-2022 WebPKI.org.</i></small></p>
 </footer>
 </div>
 </div>

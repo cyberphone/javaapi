@@ -100,12 +100,14 @@ var activeTableTab = "active-table-tab";
 <div class="block">Decrypts data.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORDecrypter.html" title="class in org.webpki.cbor">CBORDecrypter</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCustomDataPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY)" class="member-name-link">setCustomDataPolicy</a><wbr>(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;customDataPolicy)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCustomDataPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY,org.webpki.cbor.CBORCryptoUtils.Collector)" class="member-name-link">setCustomDataPolicy</a><wbr>(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;customDataPolicy,
+ <a href="CBORCryptoUtils.Collector.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Collector</a>&nbsp;customDataCallBack)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets custom extension data policy.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORDecrypter.html" title="class in org.webpki.cbor">CBORDecrypter</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTagPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY)" class="member-name-link">setTagPolicy</a><wbr>(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;tagPolicy)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTagPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY,org.webpki.cbor.CBORCryptoUtils.Collector)" class="member-name-link">setTagPolicy</a><wbr>(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;tagPolicy,
+ <a href="CBORCryptoUtils.Collector.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Collector</a>&nbsp;tagCallBack)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets tag wrapping policy.</div>
 </div>
@@ -127,33 +129,43 @@ var activeTableTab = "active-table-tab";
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="setCustomDataPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY)">
+<section class="detail" id="setCustomDataPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY,org.webpki.cbor.CBORCryptoUtils.Collector)">
 <h3>setCustomDataPolicy</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORDecrypter.html" title="class in org.webpki.cbor">CBORDecrypter</a></span>&nbsp;<span class="element-name">setCustomDataPolicy</span><wbr><span class="parameters">(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;customDataPolicy)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORDecrypter.html" title="class in org.webpki.cbor">CBORDecrypter</a></span>&nbsp;<span class="element-name">setCustomDataPolicy</span><wbr><span class="parameters">(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;customDataPolicy,
+ <a href="CBORCryptoUtils.Collector.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Collector</a>&nbsp;customDataCallBack)</span></div>
 <div class="block">Sets custom extension data policy.
  <p>
  By default custom data elements (<a href="CBORCryptoConstants.html#CUSTOM_DATA_LABEL"><code>CBORCryptoConstants.CUSTOM_DATA_LABEL</code></a>) 
  are rejected (<a href="CBORCryptoUtils.POLICY.html#FORBIDDEN"><code>CBORCryptoUtils.POLICY.FORBIDDEN</code></a>).
+ </p>
+ <p>
+ See <a href='doc-files/crypto-options.html'>crypto options</a> for details.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>customDataPolicy</code> - Define level of support</dd>
+<dd><code>customDataCallBack</code> - Interface for reading custom data</dd>
 <dt>Returns:</dt>
 <dd><code>this</code></dd>
 </dl>
 </section>
 </li>
 <li>
-<section class="detail" id="setTagPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY)">
+<section class="detail" id="setTagPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY,org.webpki.cbor.CBORCryptoUtils.Collector)">
 <h3>setTagPolicy</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORDecrypter.html" title="class in org.webpki.cbor">CBORDecrypter</a></span>&nbsp;<span class="element-name">setTagPolicy</span><wbr><span class="parameters">(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;tagPolicy)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORDecrypter.html" title="class in org.webpki.cbor">CBORDecrypter</a></span>&nbsp;<span class="element-name">setTagPolicy</span><wbr><span class="parameters">(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;tagPolicy,
+ <a href="CBORCryptoUtils.Collector.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Collector</a>&nbsp;tagCallBack)</span></div>
 <div class="block">Sets tag wrapping policy.
  <p>
- See <a href="CBORCryptoUtils.html#unwrapContainerMap(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORCryptoUtils.POLICY)"><code>CBORCryptoUtils.unwrapContainerMap(CBORObject, POLICY tagPolicy)</code></a> for details.
+ By default wrapped containers are rejected (<a href="CBORCryptoUtils.POLICY.html#FORBIDDEN"><code>CBORCryptoUtils.POLICY.FORBIDDEN</code></a>).
+ </p>
+ <p>
+ See <a href='doc-files/crypto-options.html'>crypto options</a> for details.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>tagPolicy</code> - Define level of support</dd>
+<dd><code>tagCallBack</code> - Interface for reading tag</dd>
 <dt>Returns:</dt>
 <dd><code>this</code></dd>
 </dl>
@@ -169,17 +181,6 @@ var activeTableTab = "active-table-tab";
  <p>
  This method presumes that <code>encryptionObject</code> holds
  an encryption object according to CEF.
- </p>
- <p>
- Note that if <code>encryptionObject</code> holds a CBOR
- <code>tag</code> object the <code>tag</code> must in turn contain the actual
- encryption object.
- Such a <code>tag</code> is also included in the authenticated data.
- See <a href="CBORCryptoUtils.html#unwrapContainerMap(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORCryptoUtils.POLICY)"><code>CBORCryptoUtils.unwrapContainerMap(CBORObject, POLICY tagPolicy)</code></a> for details.
- </p>
- <p>
- Possible custom data (<a href="CBORCryptoConstants.html#CUSTOM_DATA_LABEL"><code>CBORCryptoConstants.CUSTOM_DATA_LABEL</code></a>)
- must be read directly from the <code>encryptionObject</code>.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -201,7 +202,7 @@ var activeTableTab = "active-table-tab";
 </main>
 <footer role="contentinfo">
 <hr>
-<p class="legal-copy"><small><i>2005-2021 WebPKI.org.</i></small></p>
+<p class="legal-copy"><small><i>2005-2022 WebPKI.org.</i></small></p>
 </footer>
 </div>
 </div>
