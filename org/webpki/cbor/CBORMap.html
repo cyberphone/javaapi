@@ -156,7 +156,7 @@ var activeTableTab = "active-table-tab";
 <div class="block">Checks map for key presence.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readByteStringAndRemoveKey(org.webpki.cbor.CBORInteger)" class="member-name-link">readByteStringAndRemoveKey</a><wbr>(<a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a>&nbsp;key)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#readByteStringAndRemoveKey(org.webpki.cbor.CBORObject)" class="member-name-link">readByteStringAndRemoveKey</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Reads a <code>byte string</code> value, then deletes key.</div>
 </div>
@@ -176,7 +176,7 @@ var activeTableTab = "active-table-tab";
 <div class="block">Removes mapped object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setByteString(org.webpki.cbor.CBORInteger,byte%5B%5D)" class="member-name-link">setByteString</a><wbr>(<a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a>&nbsp;key,
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setByteString(org.webpki.cbor.CBORObject,byte%5B%5D)" class="member-name-link">setByteString</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
  byte[]&nbsp;byteString)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets a <code>byte string</code> value.</div>
@@ -498,9 +498,9 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="readByteStringAndRemoveKey(org.webpki.cbor.CBORInteger)">
+<section class="detail" id="readByteStringAndRemoveKey(org.webpki.cbor.CBORObject)">
 <h3>readByteStringAndRemoveKey</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">readByteStringAndRemoveKey</span><wbr><span class="parameters">(<a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a>&nbsp;key)</span>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">readByteStringAndRemoveKey</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key)</span>
                                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Reads a <code>byte string</code> value, then deletes key.
  <p>
@@ -514,7 +514,7 @@ var activeTableTab = "active-table-tab";
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - Integer key</dd>
+<dd><code>key</code> - Key</dd>
 <dt>Returns:</dt>
 <dd>byte string</dd>
 <dt>Throws:</dt>
@@ -523,9 +523,9 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="setByteString(org.webpki.cbor.CBORInteger,byte[])">
+<section class="detail" id="setByteString(org.webpki.cbor.CBORObject,byte[])">
 <h3>setByteString</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">setByteString</span><wbr><span class="parameters">(<a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a>&nbsp;key,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">setByteString</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
  byte[]&nbsp;byteString)</span>
                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Sets a <code>byte string</code> value.
@@ -538,7 +538,7 @@ var activeTableTab = "active-table-tab";
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - Integer key</dd>
+<dd><code>key</code> - Key</dd>
 <dd><code>byteString</code> - Byte string</dd>
 <dt>Returns:</dt>
 <dd><code>this</code></dd>
