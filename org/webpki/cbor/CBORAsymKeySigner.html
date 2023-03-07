@@ -72,6 +72,11 @@ var activeTableTab = "active-table-tab";
 <div class="block">Class for creating CBOR asymmetric key signatures.
  <p>
  See <a href="CBORSigner.html" title="class in org.webpki.cbor"><code>CBORSigner</code></a> for details.
+ </p>
+ <p> 
+ Note that asymmetric key signatures do not permit using
+ both a <code>keyId</code> and an in-line public key.
+ See <a href="CBORSigner.html#setKeyId(org.webpki.cbor.CBORObject)"><code>CBORSigner.setKeyId(CBORObject)</code></a> and <a href="#setPublicKey(java.security.PublicKey)"><code>setPublicKey(PublicKey)</code></a>.
  </p></div>
 </section>
 <section class="summary">
