@@ -66,7 +66,7 @@ var activeTableTab = "active-table-tab";
 <section class="class-description" id="class-description">
 <dl class="notes">
 <dt>Direct Known Subclasses:</dt>
-<dd><code><a href="CBORArray.html" title="class in org.webpki.cbor">CBORArray</a></code>, <code><a href="CBORBoolean.html" title="class in org.webpki.cbor">CBORBoolean</a></code>, <code><a href="CBORByteString.html" title="class in org.webpki.cbor">CBORByteString</a></code>, <code><a href="CBORFloatingPoint.html" title="class in org.webpki.cbor">CBORFloatingPoint</a></code>, <code><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code>, <code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code>, <code><a href="CBORNull.html" title="class in org.webpki.cbor">CBORNull</a></code>, <code><a href="CBORTag.html" title="class in org.webpki.cbor">CBORTag</a></code>, <code><a href="CBORTextString.html" title="class in org.webpki.cbor">CBORTextString</a></code></dd>
+<dd><code><a href="CBORArray.html" title="class in org.webpki.cbor">CBORArray</a></code>, <code><a href="CBORBigInteger.html" title="class in org.webpki.cbor">CBORBigInteger</a></code>, <code><a href="CBORBoolean.html" title="class in org.webpki.cbor">CBORBoolean</a></code>, <code><a href="CBORByteString.html" title="class in org.webpki.cbor">CBORByteString</a></code>, <code><a href="CBORFloatingPoint.html" title="class in org.webpki.cbor">CBORFloatingPoint</a></code>, <code><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code>, <code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code>, <code><a href="CBORNull.html" title="class in org.webpki.cbor">CBORNull</a></code>, <code><a href="CBORTag.html" title="class in org.webpki.cbor">CBORTag</a></code>, <code><a href="CBORTextString.html" title="class in org.webpki.cbor">CBORTextString</a></code></dd>
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public abstract class </span><span class="element-name type-name-label">CBORObject</span>
@@ -240,7 +240,8 @@ var activeTableTab = "active-table-tab";
 <div class="block">Returns <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link"><code>BigInteger</code></a> value.
  <p>
  This method requires that the object is a
- <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a>, otherwise an exception will be thrown.
+ <a href="CBORBigInteger.html" title="class in org.webpki.cbor"><code>CBORBigInteger</code></a> or <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a>,
+ otherwise an exception will be thrown.
  </p>
  <p>
  Note that this method is independent of the underlying CBOR integer type.
@@ -280,7 +281,7 @@ var activeTableTab = "active-table-tab";
                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Returns <i>unsigned</i> <code>long</code> value.
  <p>
- This method requires that the object is a positive
+ This method requires that the object is an unsigned
  <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a> and fits a Java long (sign bit is used as well),
  otherwise an exception will be thrown.
  </p></div>
