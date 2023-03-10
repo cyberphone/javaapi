@@ -103,7 +103,7 @@ var activeTableTab = "active-table-tab";
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decode(java.io.InputStream,boolean,boolean,boolean,java.lang.Integer)" class="member-name-link">decode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/InputStream.html" title="class or interface in java.io" class="external-link">InputStream</a>&nbsp;inputStream,
  boolean&nbsp;sequenceFlag,
  boolean&nbsp;nonDeterministic,
- boolean&nbsp;constrainedMapKeys,
+ boolean&nbsp;constrainedKeys,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;maxLength)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Decodes CBOR data with options.</div>
@@ -512,7 +512,7 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/InputStream.html" title="class or interface in java.io" class="external-link">InputStream</a>&nbsp;inputStream,
  boolean&nbsp;sequenceFlag,
  boolean&nbsp;nonDeterministic,
- boolean&nbsp;constrainedMapKeys,
+ boolean&nbsp;constrainedKeys,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;maxLength)</span>
                          throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
 <div class="block">Decodes CBOR data with options.</div>
@@ -522,7 +522,7 @@ var activeTableTab = "active-table-tab";
 <dd><code>sequenceFlag</code> - Stop reading after parsing a valid CBOR object
  (no object returns <code>null</code>)</dd>
 <dd><code>nonDeterministic</code> - Do not check data for deterministic representation</dd>
-<dd><code>constrainedMapKeys</code> - Limit map keys to text string and integer types,
+<dd><code>constrainedKeys</code> - Limit map keys to text string and integer types,
  including flagging mixing of these types in map</dd>
 <dd><code>maxLength</code> - Holds maximum input size in 
  bytes or <code>null</code> (<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Integer.html#MAX_VALUE" title="class or interface in java.lang" class="external-link"><code>Integer.MAX_VALUE</code></a> is assumed)</dd>

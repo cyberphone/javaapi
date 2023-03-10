@@ -869,10 +869,14 @@ table.striped > tbody > tr > th {
 .webpkitable th {padding: 0.4em 0.5em;background-color: #f8f8f8;text-align: center;border-width: 1px;border-style: solid; border-color: black}
 
 .webpkisvg, .webpkibox  {
-  box-shadow:0.2em 0.2em 0.2em #d0d0d0;
-  border-width:1px;
-  border-style:solid;
+  box-shadow: 0.2em 0.2em 0.2em #d0d0d0;
+  border-width: 1px;
+  border-style: solid;
   border-color: black';
+}
+
+.webpkilistspacing {
+  padding-bottom: 0.5em;
 }
 
 .webpkisvg {

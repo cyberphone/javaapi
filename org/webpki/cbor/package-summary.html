@@ -55,14 +55,14 @@ var activeTableTab = "active-table-tab";
 <div class="package-signature">package <span class="element-name">org.webpki.cbor</span></div>
 <section class="package-description" id="package-description">
 <div class="block"><h2>CBOR - Encoder, Decoder, Signatures, and Encryption</h2>
-This package contains java support for CBOR 
+This package contains Java support for CBOR 
 [<a href='https://www.rfc-editor.org/rfc/rfc8949.html'>RFC&nbsp;8949</a>].
-<h3>Currently Supported Primitives</h3>
-<table>
-<tr><th>CBOR Data Type</th><th>&nbsp;&nbsp;</th><th>Java Counterpart</th></tr>
-<tr><td><code>integer</code> [1]</td><td></td><td><code>long</code></td></tr>
-<tr><td><code>big integer</code> [1, 2]</td><td></td><td><code>BigInteger</code></td></tr>
-<tr><td><code>floating point</code> [3]</td><td></td><td><code>double</code></td></tr>
+<h3 id='supported-primitives'>Supported Primitives</h3>
+<table class='webpkitable'>
+<tr><th>CBOR Data Type</th><th>Notes</th><th>Java Counterpart</th></tr>
+<tr><td><code>integer</code></td><td>1</td><td><code>long</code></td></tr>
+<tr><td><code>big integer</code></td><td>1, 2</td><td><code>BigInteger</code></td></tr>
+<tr><td><code>floating point</code></td><td>3</td><td><code>double</code></td></tr>
 <tr><td><code>byte string</code></td><td></td><td><code>byte[]</code></td></tr>
 <tr><td><code>text string</code></td><td></td><td><code>String</code></td></tr>
 <tr><td><code>true</code></td><td></td><td><code>boolean</code></td></tr>
@@ -77,28 +77,74 @@ In addition to the primitives above, this implementation also supports
 arbitrary tagged objects
 based on CBOR major type 6.
 </p>
-<h3>Deterministic Serialization</h3>
-Since this package is intended for security related
-work, it is (by design) quite picky when decoding CBOR data
-and does (<a href="CBORObject.html#decode(byte%5B%5D)"><code>by default</code></a>) not accept:
+<h3 id='deterministic-serialization'>Deterministic Serialization</h3>
+Since this package is also intended to be used for security related
+applications, it depends on that CBOR data is represented in a
+<i>deterministic</i> form, permitting
+cryptographic operations like hashing and signatures as well as
+comparisons to be performed on such data without any "adjustments"
+or wrapping arrangements.
+<div style='background-color:grey'>
+Although APIs may be quite different,
+the deterministic serialization scheme described here
+is intended as a <i>standard</i>,
+not in any way limited to the Java platform.
+</div>
+<p>
+The scheme used adhere to section 4.2 of RFC&nbsp;8949, but adds
+a few constraints (denoted by RFC+), where the RFC offers choices.
+</p>
+The rules are as follows:
 <ul>
-<li>Integer data with <i>leading zeros</i>.</li>
-<li><code>big&nbsp;integer</code> objects
-that due to their value could equally well be provided in the
-shorter <code>integer</code> format.</li>
-<li>Floating point data that could equally well be properly represented by a
-shorter variant.
-As an example <code>0.0</code> must be encoded as a 16-bit floating point type.
-Note that floating point and integer objects must be treated as distinct types.</li>
-<li>Maps with keys that are not sorted according to section 4.2.1 of RFC&nbsp;8949.</li>
+<li class='webpkilistspacing'>
+  RFC: Integers (<code>integer</code> and 
+<code>big integer</code>) <b>must</b> use the shortest variant</i>.
+</li>
+<li class='webpkilistspacing'>
+  RFC: Integers <b>must not</b> be supplied with <i>leading zeros</i>.
+</li>
+<li class='webpkilistspacing'>
+  RFC+: Floating point data <b>must</b> use the shortest variant
+including the following special values:
+<table class='webpkitable' style='margin:0.5em 0 0.7em 2em'>
+<tr><th>Value</th><th>CBOR</th></tr>
+<tr><td><code>0.0</code></td><td><code>f90000</code></td></tr>
+<tr><td><code>-0.0</code></td><td><code>f98000</code></td></tr>
+<tr><td><code>Infinity</code></td><td><code>f97c00</code></td></tr>
+<tr><td><code>-Infinity</code></td><td><code>f9fc00</code></td></tr>
+<tr><td><code>NaN</code></td><td><code>f97e00</code></td></tr>
+</table>
+Note that NaN "signaling" <b>must</b> be treated as an <i>error</i>.
+<li style='padding-bottom:0.7em'>
+  RFC+: Floating point and integer objects <b>must</b> be treated as <i>distinct types</i>
+regardless of numeric value (Rule&nbsp;2 in section 4.2.2 of RFC&nbsp;8949).</li>
+<li>
+  RFC+: Map keys <b>must</b> be sorted in the bytewise lexicographic 
+order of their deterministic encoding.
+Since CBOR encoding according to <i>this specification</i>
+makes different CBOR types unique, there are no
+restrictions or specific tests to perform in order to determine
+key equivalence.  
+As an example <code>0.0</code>, <code>-0.0</code>, and <code>0</code>
+represent the three distinct keys 
+<code>f90000</code>, <code>f98000</code>, and <code>00</code> respectively. 
+</li>
 </ul>
-On output (encode) deterministic serialization is always used
-regardless how it was provided.
-<h3>Cryptographic Support</h3>
+Any deviation from the rules above will throw
+an appropriate exception using the standard decoder
+(<a href="CBORObject.html#decode(byte%5B%5D)"><code>CBORObject.decode(byte[])</code></a>).  For more "lenient" CBOR decoding
+see:
+<a href="CBORObject.html#decode(java.io.InputStream,boolean,boolean,boolean,java.lang.Integer)"><code>link</code></a>.
+<p>
+On output (<a href="CBORObject.html#encode()"><code>CBORObject.encode()</code></a>)
+deterministic serialization is always used
+regardless of if CBOR data was parsed or created programmatically.
+</p>
+<h3 id='cryptographic-support'>Cryptographic Support</h3>
 To aid the use of cryptography, support for
 <a href='doc-files/signatures.html'>signatures</a> and 
 <a href='doc-files/encryption.html'>encryption</a> are integrated in the package.
-<h3>Diagnostic CBOR</h3>
+<h3 id='diagnostic-cbor'>Diagnostic CBOR</h3>
 Through the <a href="CBORDiagnosticParser.html" title="class in org.webpki.cbor"><code>CBORDiagnosticParser</code></a> class, CBOR in diagnostic (textual) notation 
 may also be processed.</div>
 </section>

@@ -69,18 +69,7 @@ var activeTableTab = "active-table-tab";
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CBORMap</span>
 <span class="extends-implements">extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span></div>
-<div class="block">Class for holding <code>CBOR</code> map.
- <p>
- In addition to supporting the generic <a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a> type for key identifiers,
- there are convenience methods for 
- retrieving (<code>getObject</code>), 
- setting (<code>setObject</code>),
- testing (<code>hasKey</code>), and
- removing (<code>removeObject</code>)
- objects using the Java <code>String</code> and <code>int</code> types for key identifiers.
- The latter maps to the CBOR <code>text&nbsp;string</code> and <code>integer</code>
- type respectively.
- </p></div>
+<div class="block">Class for holding <code>CBOR</code> map.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -121,16 +110,6 @@ var activeTableTab = "active-table-tab";
 <div class="block">Enumerates all keys in a map.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObject(int)" class="member-name-link">getObject</a><wbr>(int&nbsp;key)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retrieves map object.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObject(java.lang.String)" class="member-name-link">getObject</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Retrieves map object.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getObject(org.webpki.cbor.CBORObject)" class="member-name-link">getObject</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Retrieves map object.</div>
@@ -139,16 +118,6 @@ var activeTableTab = "active-table-tab";
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getType()" class="member-name-link">getType</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns core CBOR type.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasKey(int)" class="member-name-link">hasKey</a><wbr>(int&nbsp;key)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Checks map for key presence.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasKey(java.lang.String)" class="member-name-link">hasKey</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Checks map for key presence.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#hasKey(org.webpki.cbor.CBORObject)" class="member-name-link">hasKey</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key)</code></div>
@@ -161,16 +130,6 @@ var activeTableTab = "active-table-tab";
 <div class="block">Reads a <code>byte string</code> value, then deletes key.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeObject(int)" class="member-name-link">removeObject</a><wbr>(int&nbsp;key)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Removes mapped object.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeObject(java.lang.String)" class="member-name-link">removeObject</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Removes mapped object.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#removeObject(org.webpki.cbor.CBORObject)" class="member-name-link">removeObject</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Removes mapped object.</div>
@@ -180,18 +139,6 @@ var activeTableTab = "active-table-tab";
  byte[]&nbsp;byteString)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets a <code>byte string</code> value.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setObject(int,org.webpki.cbor.CBORObject)" class="member-name-link">setObject</a><wbr>(int&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets map object.</div>
-</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setObject(java.lang.String,org.webpki.cbor.CBORObject)" class="member-name-link">setObject</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Sets map object.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setObject(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)" class="member-name-link">setObject</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
@@ -278,38 +225,6 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="hasKey(int)">
-<h3>hasKey</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasKey</span><wbr><span class="parameters">(int&nbsp;key)</span></div>
-<div class="block">Checks map for key presence.
- <p>
- See <a href="#hasKey(org.webpki.cbor.CBORObject)"><code>hasKey(CBORObject)</code></a> for details.
- </p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
-<dt>Returns:</dt>
-<dd><code>true</code> if the key is present</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="hasKey(java.lang.String)">
-<h3>hasKey</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">hasKey</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</span></div>
-<div class="block">Checks map for key presence.
- <p>
- See <a href="#hasKey(org.webpki.cbor.CBORObject)"><code>hasKey(CBORObject)</code></a> for details.
- </p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
-<dt>Returns:</dt>
-<dd><code>true</code> if the key is present</dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="setObject(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)">
 <h3>setObject</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">setObject</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
@@ -318,48 +233,6 @@ var activeTableTab = "active-table-tab";
 <div class="block">Sets map object.
  <p>
  If <code>key</code> is already present, an exception is thrown.
- </p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
-<dd><code>value</code> - Object</dd>
-<dt>Returns:</dt>
-<dd><code>this</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="setObject(int,org.webpki.cbor.CBORObject)">
-<h3>setObject</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">setObject</span><wbr><span class="parameters">(int&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;value)</span>
-                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Sets map object.
- <p>
- See <a href="#setObject(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)"><code>setObject(CBORObject, CBORObject)</code></a> for details.
- </p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
-<dd><code>value</code> - Object</dd>
-<dt>Returns:</dt>
-<dd><code>this</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="setObject(java.lang.String,org.webpki.cbor.CBORObject)">
-<h3>setObject</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">setObject</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;value)</span>
-                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Sets map object.
- <p>
- See <a href="#setObject(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)"><code>setObject(CBORObject, CBORObject)</code></a> for details.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -392,44 +265,6 @@ var activeTableTab = "active-table-tab";
 </section>
 </li>
 <li>
-<section class="detail" id="getObject(int)">
-<h3>getObject</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">getObject</span><wbr><span class="parameters">(int&nbsp;key)</span>
-                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Retrieves map object.
- <p>
- See <a href="#getObject(org.webpki.cbor.CBORObject)"><code>getObject(CBORObject)</code></a> for details.
- </p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
-<dt>Returns:</dt>
-<dd>Object</dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="getObject(java.lang.String)">
-<h3>getObject</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">getObject</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</span>
-                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Retrieves map object.
- <p>
- See <a href="#getObject(org.webpki.cbor.CBORObject)"><code>getObject(CBORObject)</code></a> for details.
- </p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
-<dt>Returns:</dt>
-<dd>Object</dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="removeObject(org.webpki.cbor.CBORObject)">
 <h3>removeObject</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">removeObject</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key)</span>
@@ -437,44 +272,6 @@ var activeTableTab = "active-table-tab";
 <div class="block">Removes mapped object.
  <p>
  If <code>key</code> is not present, an exception is thrown.
- </p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
-<dt>Returns:</dt>
-<dd><code>this</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="removeObject(int)">
-<h3>removeObject</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">removeObject</span><wbr><span class="parameters">(int&nbsp;key)</span>
-                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Removes mapped object.
- <p>
- See <a href="#removeObject(org.webpki.cbor.CBORObject)"><code>removeObject(CBORObject)</code></a> for details.
- </p></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
-<dt>Returns:</dt>
-<dd><code>this</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="removeObject(java.lang.String)">
-<h3>removeObject</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">removeObject</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;key)</span>
-                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Removes mapped object.
- <p>
- See <a href="#removeObject(org.webpki.cbor.CBORObject)"><code>removeObject(CBORObject)</code></a> for details.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
