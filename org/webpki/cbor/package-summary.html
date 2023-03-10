@@ -59,7 +59,7 @@ This package contains Java support for CBOR
 [<a href='https://www.rfc-editor.org/rfc/rfc8949.html'>RFC&nbsp;8949</a>].
 <h3 id='supported-primitives'>Supported Primitives</h3>
 <table class='webpkitable'>
-<tr><th>CBOR Data Type</th><th>Notes</th><th>Java Counterpart</th></tr>
+<tr><th>CBOR Data Type</th><th>Notes</th><th>Java&nbsp;Mapping</th></tr>
 <tr><td><code>integer</code></td><td>1</td><td><code>long</code></td></tr>
 <tr><td><code>big integer</code></td><td>1, 2</td><td><code>BigInteger</code></td></tr>
 <tr><td><code>floating point</code></td><td>3</td><td><code>double</code></td></tr>
@@ -90,10 +90,8 @@ the deterministic serialization scheme described here
 is intended as a <i>standard</i>,
 not in any way limited to the Java platform.
 </div>
-<p>
 The scheme used adhere to section 4.2 of RFC&nbsp;8949, but adds
 a few constraints (denoted by RFC+), where the RFC offers choices.
-</p>
 The rules are as follows:
 <ul>
 <li class='webpkilistspacing'>

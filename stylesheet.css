@@ -877,7 +877,7 @@ table.striped > tbody > tr > th {
 
 .webpkicomment {
   padding: 0.5em 1em;
-  margin-top: 1.5em;
+  margin: 1.5em 0;
   display: inline-block;
   background-color: #fafffa
 }
