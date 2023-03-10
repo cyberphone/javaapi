@@ -84,7 +84,7 @@ applications, it depends on that CBOR data is represented in a
 cryptographic operations like hashing and signatures as well as
 comparisons to be performed on such data without any "adjustments"
 or wrapping arrangements.
-<div style='background-color:grey'>
+<div class='webpkicomment'>
 Although APIs may be quite different,
 the deterministic serialization scheme described here
 is intended as a <i>standard</i>,
@@ -105,33 +105,32 @@ The rules are as follows:
 </li>
 <li class='webpkilistspacing'>
   RFC+: Floating point data <b>must</b> use the shortest variant
-including the following special values:
+including the following special values and their proper CBOR encoding:
 <table class='webpkitable' style='margin:0.5em 0 0.7em 2em'>
-<tr><th>Value</th><th>CBOR</th></tr>
-<tr><td><code>0.0</code></td><td><code>f90000</code></td></tr>
-<tr><td><code>-0.0</code></td><td><code>f98000</code></td></tr>
-<tr><td><code>Infinity</code></td><td><code>f97c00</code></td></tr>
-<tr><td><code>-Infinity</code></td><td><code>f9fc00</code></td></tr>
-<tr><td><code>NaN</code></td><td><code>f97e00</code></td></tr>
+<tr><th>Value</th><th>Encoding</th></tr>
+<tr><td><code>0.0</code></td><td style='text-align:center'><code>f90000</code></td></tr>
+<tr><td><code>-0.0</code></td><td style='text-align:center'><code>f98000</code></td></tr>
+<tr><td><code>Infinity</code></td><td style='text-align:center'><code>f97c00</code></td></tr>
+<tr><td><code>-Infinity</code></td><td style='text-align:center'><code>f9fc00</code></td></tr>
+<tr><td><code>NaN</code></td><td style='text-align:center'><code>f97e00</code></td></tr>
 </table>
 Note that NaN "signaling" <b>must</b> be treated as an <i>error</i>.
 <li style='padding-bottom:0.7em'>
   RFC+: Floating point and integer objects <b>must</b> be treated as <i>distinct types</i>
-regardless of numeric value (Rule&nbsp;2 in section 4.2.2 of RFC&nbsp;8949).</li>
+regardless of their numeric value (Rule&nbsp;2 in section 4.2.2 of RFC&nbsp;8949).</li>
 <li>
   RFC+: Map keys <b>must</b> be sorted in the bytewise lexicographic 
 order of their deterministic encoding.
-Since CBOR encoding according to <i>this specification</i>
-makes different CBOR types unique, there are no
-restrictions or specific tests to perform in order to determine
-key equivalence.  
+Since CBOR encoding according to this specification
+maintains CBOR type uniqueness, there are no restrictions or specific
+tests to perform in order to determine key equivalence.  
 As an example <code>0.0</code>, <code>-0.0</code>, and <code>0</code>
 represent the three distinct keys 
 <code>f90000</code>, <code>f98000</code>, and <code>00</code> respectively. 
 </li>
 </ul>
 Any deviation from the rules above will throw
-an appropriate exception using the standard decoder
+exceptions using the standard decoder
 (<a href="CBORObject.html#decode(byte%5B%5D)"><code>CBORObject.decode(byte[])</code></a>).  For more "lenient" CBOR decoding
 see:
 <a href="CBORObject.html#decode(java.io.InputStream,boolean,boolean,boolean,java.lang.Integer)"><code>link</code></a>.

@@ -868,11 +868,18 @@ table.striped > tbody > tr > th {
 .webpkitable td {background-color: #fffdf2;padding: 0.4em 0.5em;border-width: 1px;border-style: solid; border-color: black}
 .webpkitable th {padding: 0.4em 0.5em;background-color: #f8f8f8;text-align: center;border-width: 1px;border-style: solid; border-color: black}
 
-.webpkisvg, .webpkibox  {
+.webpkisvg, .webpkibox, .webpkicomment  {
   box-shadow: 0.2em 0.2em 0.2em #d0d0d0;
   border-width: 1px;
   border-style: solid;
   border-color: black';
+}
+
+.webpkicomment {
+  padding: 0.5em 1em;
+  margin-top: 1.5em;
+  display: inline-block;
+  background-color: #fafffa
 }
 
 .webpkilistspacing {
@@ -880,7 +887,7 @@ table.striped > tbody > tr > th {
 }
 
 .webpkisvg {
-  display:inline-block;
+  display: inline-block;
 }
 
 .webpkibox {
