@@ -83,11 +83,10 @@ applications where "raw" CBOR data is subjected to cryptographic operations
 like hashing and signatures as well as to comparisons.
 To make this possible without additional processing,
 data must be in a stable form "on the wire".
-This can either be achieved by requiring
-that the binary always is preserved "as is", or through the use of
-deterministic serialization.  This section describes a variant of
-latter, making compliant CBOR systems less dependent on specific
-encoder and decoder designs.
+This can either be achieved by using the binary "as is", or through
+deterministic serialization.
+This section describes a variant of latter, making compliant CBOR systems
+less dependent on specific encoder and decoder designs.
 <div style='margin-top:0.7em'>
 It is in this context worth noting that XML and JSON do not support
 deterministic serialization.
@@ -103,11 +102,33 @@ a few constraints (denoted by RFC+), where the RFC offers choices.
 The rules are as follows:
 <ul>
 <li class='webpkilistspacing'>
-  RFC: Integers (<code>integer</code> and 
-<code>big integer</code>) <b>must</b> use the shortest variant</i>.
-</li>
-<li class='webpkilistspacing'>
-  RFC: Integers <b>must not</b> be supplied with <i>leading zeros</i>.
+  RFC: Integers, represented by the <code>integer</code> and 
+<code>big&nbsp;integer</code> types, <b>must</b> use the <code>integer</code>
+type if the value is between -2^64 and 2^64-1, otherwise the
+<code>big&nbsp;integer</code> type <b>must</b> be used.
+The following table holds a few sample values and their proper CBOR encoding:
+<table class='webpkitable' style='margin:0.5em 0 0.7em 2em'>
+<tr><th>Value</th><th>Encoding</th></tr>
+<tr style='text-align:right'><td><code>0</code></td><td><code>00</code></td></tr>
+<tr style='text-align:right'><td><code>-1</code></td><td><code>20</code></td></tr>
+<tr style='text-align:right'><td><code>255</code></td><td><code>18ff</code></td></tr>
+<tr style='text-align:right'><td><code>256</code></td><td><code>190100</code></td></tr>
+<tr style='text-align:right'><td><code>-256</code></td><td><code>38ff</code></td></tr>
+<tr style='text-align:right'><td><code>-257</code></td><td><code>390100</code></td></tr>
+<tr style='text-align:right'><td><code>1099511627775</code></td><td><code>1b000000ffffffffff</code></td></tr>
+<tr style='text-align:right'><td><code>18446744073709551615</code></td><td><code>1bffffffffffffffff</code></td></tr>
+<tr style='text-align:right'><td><code>18446744073709551616</code></td><td><code>c249010000000000000000</code></td></tr>
+</table>
+Note that integers <b>must not</b> be supplied with 
+<i>leading zero bytes</i> (like <code>1900ff</code>) unless the
+CBOR representation offers no alternative (like <code>1b0000ffffffffffff</code>).
+<div style='margin:0.7em 0 0.3em 0'>
+Note that the integer serialization scheme above does not always return the
+most compact representation; the value 
+<code>1099511627775</code> 
+(<code>0xffffffffff</code>)
+would actually yield two bytes less using the <code>big&nbsp;integer</code> type. 
+</div>
 </li>
 <li class='webpkilistspacing'>
   RFC+: Floating point data <b>must</b> use the shortest variant
@@ -120,7 +141,8 @@ including the following special values and their proper CBOR encoding:
 <tr><td><code>-Infinity</code></td><td style='text-align:center'><code>f9fc00</code></td></tr>
 <tr><td><code>&nbsp;NaN</code></td><td style='text-align:center'><code>f97e00</code></td></tr>
 </table>
-Note that <code>NaN</code> "signaling" <b>must</b> be flagged as an <i>error</i>.
+Note that <code>NaN</code> "signaling" (like <code>f97e01</code>),
+<b>must</b> be flagged as an <i>error</i>.
 <li class='webpkilistspacing'>
   RFC+: Floating point and integer objects <b>must</b> be treated as <i>distinct types</i>
 regardless of their numeric value (Rule&nbsp;2 in section 4.2.2 of RFC&nbsp;8949).</li>
@@ -152,7 +174,7 @@ regardless of if CBOR data was parsed or created programmatically.
 <h3 id='cryptographic-support'>Cryptographic Support</h3>
 To aid the use of cryptography, support for
 <a href='doc-files/signatures.html'>signatures</a> and 
-<a href='doc-files/encryption.html'>encryption</a> are integrated in the package.
+<a href='doc-files/encryption.html'>encryption</a> is integrated in the package.
 <h3 id='diagnostic-cbor'>Diagnostic CBOR</h3>
 Through the <a href="CBORDiagnosticParser.html" title="class in org.webpki.cbor"><code>CBORDiagnosticParser</code></a> class, CBOR in diagnostic (textual) notation 
 may also be processed.</div>
