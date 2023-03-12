@@ -60,7 +60,7 @@ This package contains Java support for CBOR
 <h3 id='supported-primitives'>Supported Primitives</h3>
 The following table shows the currently supported CBOR
 primitives and their mapping to Java:
-<table class='webpkitable' style='margin-top:0.8em'>
+<table class='webpkitable' style='margin:0.8em 0 0 2em'>
 <tr><th>CBOR Data Type</th><th>Notes</th><th>Java&nbsp;Mapping</th>
 <th>Implementation</th></tr>
 <tr><td><code>integer</code></td><td>1</td><td><code>long</code></td><td><a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a></td></tr>
@@ -95,7 +95,7 @@ be performed at the binary level.
 It is in this context worth noting that XML and JSON do not support
 deterministic serialization.
 </div>
-<div id='standards-proposal' class='webpkicomment'>
+<div id='standards-proposal' class='webpkicomment' style='margin:1.5em 0'>
 Although APIs may be quite different,
 the deterministic serialization scheme described here
 is intended as a <i>standard</i>,
@@ -142,8 +142,10 @@ would actually yield two bytes less using the <code>big&nbsp;integer</code> type
 </div>
 </li>
 <li id='floating-point-serialization' class='webpkilistspacing'>
-  RFC+: Floating point data <b>must</b> use the shortest variant
-including the following special values and their proper CBOR encoding:
+  RFC+: Floating point data <b>must</b> use the shortest IEEE&nbsp;754
+  variant and associated CBOR encoding.
+The following table holds floating point values needing special considerations
+as well as a small set of "edge&nbsp;cases":
 <table class='webpkitable' style='margin:0.8em 0 0.7em 2em'>
 <tr><th>Value</th><th>Encoding</th></tr>
 <tr style='text-align:right'><td><code>0.0</code></td><td><code>f90000</code></td></tr>
@@ -151,6 +153,7 @@ including the following special values and their proper CBOR encoding:
 <tr style='text-align:right'><td><code>Infinity</code></td><td><code>f97c00</code></td></tr>
 <tr style='text-align:right'><td><code>-Infinity</code></td><td><code>f9fc00</code></td></tr>
 <tr style='text-align:right'><td><code>NaN</code></td><td><code>f97e00</code></td></tr>
+<tr><th colspan='2'>Assorted Edge Cases</th></tr>
 <tr style='text-align:right'><td><code>-5.9604644775390625e-8</code></td><td><code>f98001</code></td></tr>
 <tr style='text-align:right'><td><code>-5.960465188081798e-8</code></td><td><code>fab3800001</code></td></tr>
 <tr style='text-align:right'><td><code>65504.0</code></td><td><code>f97bff</code></td></tr>
@@ -187,12 +190,6 @@ As an example, the floating point numbers <code>0.0</code> and
 <code>-0.0</code>, and the integer number <code>0</code>
 represent the distinct keys
 <code>f90000</code>, <code>f98000</code>, and <code>00</code> respectively.
-<div id='map-key-constraints' style='margin:0.5em 0 0.3em 0'>
-However, for maximum interoperability with <i>other</i> CBOR implementations,
-map key types <b>should</b> be limited to <code>integer</code> and
-<code>text&nbsp;string</code>,
-as well as not being mixed in the same map.
-</div>
 </li>
 </ul>
 Any deviation from the rules above will throw
@@ -204,6 +201,12 @@ On output (<a href="CBORObject.html#encode()"><code>CBORObject.encode()</code></
 deterministic serialization is always used
 regardless of if CBOR data was parsed or created programmatically.
 </p>
+<div id='map-key-constraints' class='webpkicomment' style='margin-bottom:0.3em'>
+For maximum interoperability with <i>other</i> CBOR implementations,
+map key types <b>should</b> be limited to <code>integer</code> and
+<code>text&nbsp;string</code>,
+as well as not being mixed in the same map.
+</div>
 <h3 id='input-data-validation'>Input Data Validation</h3>
 A properly designed system validates input data before acting upon it.
 This section describes how this can be achieved using this particular
