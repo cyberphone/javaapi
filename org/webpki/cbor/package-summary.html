@@ -223,7 +223,7 @@ through methods such as <a href="CBORObject.html#getMap()"><code>CBORObject.getM
 </p>
 <p>
 If the underlying CBOR data type does not match the access method
-(like performing <a href="CBORObject.html#getInt()"><code>CBORObject.getInt()</code></a> on a CBOR <code>big&nbsp;integer</code>),
+(like performing <a href="CBORObject.html#getInt()"><code>CBORObject.getInt()</code></a> on a <a href="CBORBigInteger.html" title="class in org.webpki.cbor"><code>CBORBigInteger</code></a>),
 an exception is thrown.
 That is, this implementation performs strict type checking. 
 However, you typically also want to verify
