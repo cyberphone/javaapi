@@ -60,7 +60,7 @@ This package contains Java support for CBOR
 <h3 id='supported-primitives'>Supported Primitives</h3>
 The following table shows the currently supported CBOR
 primitives and their mapping to Java:
-<table class='webpkitable' style='margin:0.8em 0 0 2em'>
+<table class='webpkitable' style='margin:0.8em 1em 0 2em'>
 <tr><th>CBOR Data Type</th><th>Notes</th><th>Java&nbsp;Mapping</th>
 <th>Implementation</th></tr>
 <tr><td><code>integer</code></td><td>1</td><td><code>long</code></td><td><a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a></td></tr>
@@ -118,7 +118,7 @@ The serialization rules are as follows:
 type if the value is between -2^64 and 2^64-1, otherwise the
 <code>big&nbsp;integer</code> type <b>must</b> be used.
 The following table holds a few sample values and their proper CBOR encoding:
-<table class='webpkitable' style='margin:0.8em 0 0.7em 2em'>
+<table class='webpkitable' style='margin:0.8em 1em 0.7em 2em'>
 <tr><th>Value</th><th>Encoding</th></tr>
 <tr style='text-align:right'><td><code>0</code></td><td><code>00</code></td></tr>
 <tr style='text-align:right'><td><code>-1</code></td><td><code>20</code></td></tr>
@@ -146,7 +146,7 @@ would actually yield two bytes less using the <code>big&nbsp;integer</code> type
   variant and associated CBOR encoding.
 The following table holds floating point values needing special considerations
 as well as a small set of "edge&nbsp;cases":
-<table class='webpkitable' style='margin:0.8em 0 0.7em 2em'>
+<table class='webpkitable' style='margin:0.8em 1em 0.7em 2em'>
 <tr><th>Value</th><th>Encoding</th></tr>
 <tr style='text-align:right'><td><code>0.0</code></td><td><code>f90000</code></td></tr>
 <tr style='text-align:right'><td><code>-0.0</code></td><td><code>f98000</code></td></tr>
