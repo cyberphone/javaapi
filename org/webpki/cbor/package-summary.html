@@ -82,9 +82,8 @@ In addition to the primitives above, this implementation also supports
 arbitrary tagged objects based on CBOR major type 6 (<a href="CBORTag.html" title="class in org.webpki.cbor"><code>CBORTag</code></a>).
 </p>
 <h3 id='deterministic-serialization'>Deterministic Serialization</h3>
-This package is also intended to be used for security related
-applications where "raw" CBOR data is subjected to cryptographic operations
-like hashing and signatures.
+In some security related applications, "raw" CBOR data is subjected
+to cryptographic operations like hashing and signatures.
 To make this possible without additional processing,
 data must be in a stable form "on&nbsp;the&nbsp;wire".
 This can either be achieved by using the binary "as&nbsp;is", or through
@@ -98,15 +97,22 @@ It is in this context worth noting that XML and JSON do not support
 deterministic serialization.
 </div>
 <div id='standards-proposal' class='webpkicomment' style='margin:1.5em 0'>
-Although APIs may be quite different,
+Although APIs may be quite different compared to the API of this package,
 the deterministic serialization scheme described here
-is intended as a <i>standard</i>,
-not in any way limited to the Java platform.
+is intended as a <i>standard</i>, not limited to specific platforms.
 </div>
 <div id='adoption-criterion'>
 To facilitate mainstream adoption, the serialization scheme is
 deliberately rather conservative, and should with
 moderate efforts work with most existing CBOR encoders and decoders.
+Having a <i>single</i> way of representing CBOR data should long term
+simplify both implementations and associated testing.
+The serialization scheme has been verified to also be usable in highly
+constrained systems, albeit requiring detailed knowledge of how
+the specific tools deal with CBOR objects. Note that
+there is no requirement to support all CBOR primitives,
+it is sufficient that those that actually are supported,
+conform to this specification.
 </div>
 <div style='margin-top:0.8em'>
 The serialization scheme adheres to section 4.2 of RFC&nbsp;8949, but adds
@@ -204,7 +210,7 @@ exceptions using the standard decoder
 <a href="CBORObject.html#decode(java.io.InputStream,boolean,boolean,boolean,java.lang.Integer)"><code>CBOR decoding options</code></a>.
 <p>
 On output (<a href="CBORObject.html#encode()"><code>CBORObject.encode()</code></a>)
-deterministic serialization is always used
+deterministic serialization is always performed
 regardless of if CBOR data was parsed or created programmatically.
 </p>
 <div id='map-key-constraints' class='webpkicomment' style='margin-bottom:0.3em'>
