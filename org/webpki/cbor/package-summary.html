@@ -105,7 +105,7 @@ is intended as a <i>standard</i>, not limited to specific platforms.
 To facilitate mainstream adoption, the serialization scheme is
 deliberately rather conservative, and should with
 moderate efforts work with most existing CBOR encoders and decoders.
-Having a <i>single</i> way of representing CBOR data should long term
+In fact, having a <i>single</i> way of representing CBOR data should
 simplify both implementations and associated testing.
 The serialization scheme has been verified to also be usable in highly
 constrained systems, albeit requiring detailed knowledge of how
@@ -204,10 +204,10 @@ represent the distinct keys
 <code>f90000</code>, <code>f98000</code>, and <code>00</code> respectively.
 </li>
 </ul>
-Any deviation from the rules above will throw
-exceptions using the standard decoder
-(<a href="CBORObject.html#decode(byte%5B%5D)"><code>CBORObject.decode(byte[])</code></a>).  See also
-<a href="CBORObject.html#decode(java.io.InputStream,boolean,boolean,boolean,java.lang.Integer)"><code>CBOR decoding options</code></a>.
+Any deviation from the rules above will throw exceptions using the standard decoder
+(<a href="CBORObject.html#decode(byte%5B%5D)"><code>CBORObject.decode(byte[])</code></a>).
+For more control of the decoding process including dealing with CBOR sequences, see:
+<a href="CBORObject.html#decode(java.io.InputStream,boolean,boolean,boolean,java.lang.Integer)"><code>CBOR&nbsp;decoding&nbsp;options</code></a>.
 <p>
 On output (<a href="CBORObject.html#encode()"><code>CBORObject.encode()</code></a>)
 deterministic serialization is always performed
