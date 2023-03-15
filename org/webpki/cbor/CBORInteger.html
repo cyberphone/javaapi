@@ -110,7 +110,7 @@ var activeTableTab = "active-table-tab";
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createInt53(long)" class="member-name-link">createInt53</a><wbr>(long&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Creates a 53 bit <code>integer</code>.</div>
+<div class="block">Creates a JavaScript compatible integer.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte[]</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#encode()" class="member-name-link">encode</a>()</code></div>
@@ -171,7 +171,7 @@ var activeTableTab = "active-table-tab";
  the 64-bit unsigned and 64-bit signed ranges.
  </div>
  <p>
- See <a href="CBORBigInteger.html#%3Cinit%3E(java.math.BigInteger)"><code>CBORBigInteger(BigInteger)</code></a>.
+ See <a href="CBORBigInteger.html" title="class in org.webpki.cbor"><code>CBORBigInteger</code></a>.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -235,9 +235,9 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="createInt53(long)">
 <h3>createInt53</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORInteger.html" title="class in org.webpki.cbor">CBORInteger</a></span>&nbsp;<span class="element-name">createInt53</span><wbr><span class="parameters">(long&nbsp;value)</span></div>
-<div class="block">Creates a 53 bit <code>integer</code>.
+<div class="block">Creates a JavaScript compatible integer.
  <p>
- Creates an <code>integer</code> that is compatible with
+ Creates an integer that is compatible with
  the JavaScript <code>Number</code> type which is limited
  to &pm;2^53. A value outside of this range throws an exception.
  </p>
