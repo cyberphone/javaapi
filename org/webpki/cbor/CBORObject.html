@@ -331,15 +331,15 @@ var activeTableTab = "active-table-tab";
 <div class="block">Returns JavaScript compatible <code>long</code> value.
  <p>
  This method requires that the object is a
- <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a> and fits a JavaScript <code>Number</code>, 
- otherwise an exception will be thrown.
+ <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a> and fits a JavaScript <code>Number</code> 
+ (&pm;2^53), otherwise an exception will be thrown.
  </p>
  <p>
  See <a href="CBORInteger.html#createInt53(long)"><code>CBORInteger.createInt53(long)</code></a>.
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>Signed 53-bit long</dd>
+<dd>Signed long</dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code></dd>

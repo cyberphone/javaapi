@@ -239,14 +239,14 @@ var activeTableTab = "active-table-tab";
  <p>
  Creates an <code>integer</code> that is compatible with
  the JavaScript <code>Number</code> type which is limited
- to 2^53.
+ to &pm;2^53. A value outside of this range throws an exception.
  </p>
  <p>
  See <a href="CBORObject.html#getInt53()"><code>CBORObject.getInt53()</code></a>.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>value</code> - Signed 53-bit long</dd>
+<dd><code>value</code> - Signed long</dd>
 <dt>Returns:</dt>
 <dd>CBORInteger</dd>
 <dt>Throws:</dt>
