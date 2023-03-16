@@ -70,9 +70,10 @@ var activeTableTab = "active-table-tab";
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CBORInteger</span>
 <span class="extends-implements">extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span></div>
 <div class="block">Class for holding CBOR <code>integer</code>.
- 
+ <p>
  Note that the encoder is adaptive, selecting the shortest possible
- representation in order to produce a fully deterministic result.</div>
+ representation in order to produce a fully deterministic result.
+ </p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -86,12 +87,12 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(long)" class="member-name-link">CBORInteger</a><wbr>(long&nbsp;value)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a CBOR integer value from a Java long.</div>
+<div class="block">Creates a CBOR signed <code>integer</code> value.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(long,boolean)" class="member-name-link">CBORInteger</a><wbr>(long&nbsp;value,
  boolean&nbsp;unsigned)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Create a CBOR <code>unsigned&nbsp;integer</code> or <code>negative&nbsp;integer</code>.</div>
+<div class="block">Creates a CBOR unsigned or negative <code>integer</code>.</div>
 </div>
 </div>
 </section>
@@ -147,12 +148,13 @@ var activeTableTab = "active-table-tab";
 <h3>CBORInteger</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORInteger</span><wbr><span class="parameters">(long&nbsp;value,
  boolean&nbsp;unsigned)</span></div>
-<div class="block">Create a CBOR <code>unsigned&nbsp;integer</code> or <code>negative&nbsp;integer</code>.
- 
+<div class="block">Creates a CBOR unsigned or negative <code>integer</code>.
+ <p>
  To cope with the entire 65-bit integer span supported by CBOR
  you must use this constructor.  Unsigned integers
  range from <code>0</code> to <code>2^64-1</code>,
  while negative integers range from <code>-1</code> to <code>-2^64</code>.
+ </p>
  <p>
  If the <code>unsigned</code> flag is set to <code>false</code>, 
  this constructor assumes CBOR native encoding mode for negative integers.
@@ -184,7 +186,7 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="&lt;init&gt;(long)">
 <h3>CBORInteger</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORInteger</span><wbr><span class="parameters">(long&nbsp;value)</span></div>
-<div class="block">Creates a CBOR integer value from a Java long.
+<div class="block">Creates a CBOR signed <code>integer</code> value.
  <p>
  See <a href="#%3Cinit%3E(long,boolean)"><code>CBORInteger(long,boolean)</code></a> and 
  <a href="CBORBigInteger.html#%3Cinit%3E(java.math.BigInteger)"><code>CBORBigInteger(BigInteger)</code></a>.
