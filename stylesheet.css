@@ -868,7 +868,7 @@ table.striped > tbody > tr > th {
   display: inline-block;
   border-collapse: collapse;
   box-shadow: 0.2em 0.2em 0.2em #d0d0d0;
-  margin: 0 1em 1em 0;
+  margin: 1em 1em 1em 0;
 }
 .webpkitable td {
   background-color: #fffdf2;
@@ -887,6 +887,7 @@ table.striped > tbody > tr > th {
 }
 
 .webpkisvg, .webpkibox, .webpkicomment, .webpkihexbox  {
+  display: inline-block;
   box-shadow: 0.2em 0.2em 0.2em #d0d0d0;
   border-width: 1px;
   border-style: solid;
@@ -895,16 +896,11 @@ table.striped > tbody > tr > th {
 
 .webpkicomment {
   padding: 0.5em 1em;
-  display: inline-block;
   background-color: #fafffa
 }
 
 .webpkilistspacing {
   padding-bottom: 0.7em;
-}
-
-.webpkisvg {
-  display: inline-block;
 }
 
 .webpkibox, .webpkihexbox {
@@ -914,7 +910,6 @@ table.striped > tbody > tr > th {
 }
 
 .webpkibox {
-  display: inline-block;
   white-space: nowrap;
  }
 
