@@ -58,15 +58,17 @@ var activeTableTab = "active-table-tab";
 This package contains Java support for CBOR 
 [<a href='https://www.rfc-editor.org/rfc/rfc8949.html'>RFC&nbsp;8949</a>].
 <h3 id='supported-primitives'>Supported Primitives</h3>
+<p>
 The following table shows the currently supported CBOR
 primitives and their mapping to Java:
-<div style='overflow-x:auto;padding-right:1em'>
-<table class='webpkitable' style='margin:0.8em 0 0 2em'>
+</p>
+<div class='webpkifloat'>
+<table class='webpkitable' style='margin-left:2em'>
 <tr><th>CBOR&nbsp;Primitive</th><th>Notes</th><th>Java&nbsp;Mapping</th>
 <th>Implementation</th></tr>
 <tr><td><code>integer</code></td><td>1</td><td><code>long</code></td><td><a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a></td></tr>
 <tr><td><code>big&nbsp;integer</code></td><td>1, 2</td><td><code>BigInteger</code></td><td><a href="CBORBigInteger.html" title="class in org.webpki.cbor"><code>CBORBigInteger</code></a></td></tr>
-<tr><td><code>floating&nbsp;point</code></td><td>3</td><td><code>double</code></td><td><a href="CBORDouble.html" title="class in org.webpki.cbor"><code>CBORDouble</code></a></td></tr>
+<tr><td><code>floating&nbsp;point</code></td><td>3</td><td><code>double</code></td><td><a href="CBORFloatingPoint.html" title="class in org.webpki.cbor"><code>CBORFloatingPoint</code></a></td></tr>
 <tr><td><code>byte&nbsp;string</code></td><td></td><td><code>byte[]</code></td><td><a href="CBORBytes.html" title="class in org.webpki.cbor"><code>CBORBytes</code></a></td></tr>
 <tr><td><code>text&nbsp;string</code></td><td></td><td><code>String</code></td><td><a href="CBORString.html" title="class in org.webpki.cbor"><code>CBORString</code></a></td></tr>
 <tr><td><code>true</code></td><td></td><td><code>boolean</code></td><td><a href="CBORBoolean.html" title="class in org.webpki.cbor"><code>CBORBoolean</code></a></td></tr>
@@ -74,9 +76,9 @@ primitives and their mapping to Java:
 <tr><td><code>null</code></td><td></td><td><code>null</code></td><td><a href="CBORNull.html" title="class in org.webpki.cbor"><code>CBORNull</code></a></td></tr>
 </table>
 </div>
-<p>1] The distinction between unsigned and negative values is dealt with automatically.<br>
+1] The distinction between unsigned and negative values is dealt with automatically.<br>
 2] <code>big&nbsp;integer</code> is in this implementation identical to "<code>Bignums</code>" in the RFC.<br>
-3] Floating point data covers the 16, 32, and 64-bit IEEE&nbsp;754 variants.</p>
+3] Floating point data covers the 16, 32, and 64-bit IEEE&nbsp;754 variants.
 <p>
 In addition to the primitives above, this implementation also supports
 arbitrary tagged objects based on CBOR major type 6 (<a href="CBORTag.html" title="class in org.webpki.cbor"><code>CBORTag</code></a>).
@@ -126,8 +128,8 @@ The serialization rules are as follows:
 type if the value is between -2^64 and 2^64-1, otherwise the
 <code>big&nbsp;integer</code> type <b>must</b> be used.
 The following table holds a few sample values and their proper CBOR encoding:
-<div style='overflow-x:auto;padding-right:1em'>
-<table class='webpkitable' style='margin:0.8em 0 0.7em 2em'>
+<div class='webpkifloat'>
+<table class='webpkitable' style='margin-left:2em'>
 <tr><th>Value</th><th>Encoding</th></tr>
 <tr style='text-align:right'><td><code>0</code></td><td><code>00</code></td></tr>
 <tr style='text-align:right'><td><code>-1</code></td><td><code>20</code></td></tr>
@@ -156,8 +158,8 @@ would actually yield two bytes less using the <code>big&nbsp;integer</code> type
   variant and associated CBOR encoding.
 The following table holds floating point values needing special considerations
 as well as a small set of "edge&nbsp;cases":
-<div style='overflow-x:auto;padding-right:1em'>
-<table class='webpkitable' style='margin:0.8em 0 0.7em 2em'>
+<div class='webpkifloat'>
+<table class='webpkitable' style='margin-left:2em'>
 <tr><th>Value</th><th>Encoding</th></tr>
 <tr style='text-align:right'><td><code>0.0</code></td><td><code>f90000</code></td></tr>
 <tr style='text-align:right'><td><code>-0.0</code></td><td><code>f98000</code></td></tr>
@@ -178,10 +180,8 @@ as well as a small set of "edge&nbsp;cases":
 <tr style='text-align:right'><td><code>-1.7976931348623157e+308</code></td><td><code>fbffefffffffffffff</code></td></tr>
 </table>
 </div>
-<div>
 Note that <code>NaN</code> "signaling" (like <code>f97e01</code>),
 <b>must</b> be flagged as an <i>error</i>.
-</div>
 <div style='margin:0.7em 0 0.3em 0'>
 Note that the shortest encoding may result in <i>subnormal</i>
 numbers like <code>f98001</code>.
@@ -344,13 +344,13 @@ may also be processed.</div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class for converting diagnostic CBOR to CBOR.</div>
 </div>
-<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORDouble.html" title="class in org.webpki.cbor">CBORDouble</a></div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
-<div class="block">Class for holding CBOR floating point numbers.</div>
-</div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBOREncrypter.html" title="class in org.webpki.cbor">CBOREncrypter</a></div>
-<div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Base class for encrypting data.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORFloatingPoint.html" title="class in org.webpki.cbor">CBORFloatingPoint</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Class for holding CBOR floating point numbers.</div>
 </div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORFromJSON.html" title="class in org.webpki.cbor">CBORFromJSON</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
