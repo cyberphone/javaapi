@@ -191,7 +191,7 @@ var activeTableTab = "active-table-tab";
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getUnsignedLong()" class="member-name-link">getUnsignedLong</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Returns Jave <i>unsigned</i> <code>long</code> value.</div>
+<div class="block">Returns Java <i>unsigned</i> <code>long</code> value.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNull()" class="member-name-link">isNull</a>()</code></div>
@@ -263,7 +263,7 @@ var activeTableTab = "active-table-tab";
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>BigInteger</dd>
+<dd><code>BigInteger</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
@@ -283,7 +283,7 @@ var activeTableTab = "active-table-tab";
  Also see <a href="#getBigInteger()"><code>getBigInteger()</code></a>.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>Long</dd>
+<dd>Java <code>long</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
@@ -294,7 +294,7 @@ var activeTableTab = "active-table-tab";
 <h3>getUnsignedLong</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getUnsignedLong</span>()
                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<div class="block">Returns Jave <i>unsigned</i> <code>long</code> value.
+<div class="block">Returns Java <i>unsigned</i> <code>long</code> value.
  <p>
  This method requires that the object is an unsigned
  <a href="CBORInteger.html" title="class in org.webpki.cbor"><code>CBORInteger</code></a> and fits a Java <code>long</code> (sign bit is used as well),
@@ -377,7 +377,7 @@ var activeTableTab = "active-table-tab";
 <div class="block">Returns <code>float</code> value.
  <p>
  This method requires that the object is a
- <a href="CBORFloatingPoint.html" title="class in org.webpki.cbor"><code>CBORFloatingPoint</code></a> and fits in a Java float, 
+ <a href="CBORFloatingPoint.html" title="class in org.webpki.cbor"><code>CBORFloatingPoint</code></a> holding a 16 or 32-bit IEEE 754 value, 
  otherwise an exception will be thrown.
  </p></div>
 <dl class="notes">
