@@ -201,7 +201,31 @@ https://github.com/cyberphone/openkeystore/tree/master/testdata/cbor-encryption
 </a>.
 <p>
 Use <a href="../../tools/CBORPrinter.html" title="class in org.webpki.tools"><code>CBORPrinter</code></a> to list contents in a human.friendly way.
-</p></main>
+</p>
+<h3 id='api-example'>Using the Encryption API</h3>
+The following section outlines how the encryption API is supposed to be used.
+<p>
+Sample program:
+</p>
+<div class='webpkifloat'>
+<div class='webpkibox'>
+package&nbsp;cbor_api_demo;<br><br>import&nbsp;java.security.KeyPair;<br>import&nbsp;java.security.PrivateKey;<br>import&nbsp;java.security.PublicKey;<br><br>import&nbsp;org.webpki.cbor.CBORAsymKeyDecrypter;<br>import&nbsp;org.webpki.cbor.CBORAsymKeyEncrypter;<br>import&nbsp;org.webpki.cbor.CBORKeyPair;<br>import&nbsp;org.webpki.cbor.CBORObject;<br><br>import&nbsp;org.webpki.crypto.ContentEncryptionAlgorithms;<br>import&nbsp;org.webpki.crypto.KeyEncryptionAlgorithms;<br><br>import&nbsp;org.webpki.util.HexaDecimal;<br><br>public&nbsp;class&nbsp;EncryptionDemo&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;The&nbsp;same&nbsp;key&nbsp;as&nbsp;in&nbsp;the&nbsp;example&nbsp;but&nbsp;in&nbsp;COSE&nbsp;format.<br>&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;final&nbsp;byte[]&nbsp;x25519_PRIVATE_KEY&nbsp;=&nbsp;HexaDecimal.decode(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"a401012004215820e99a0cef205894960d9b1c05978513dccb"&nbsp;+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"42a13bfbced523a51b8a117ad5f00c2358207317e5f3a11599"&nbsp;+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"caab474ee65843427f517fe4d8b99add55886c84441e90d6f0");<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;static&nbsp;void&nbsp;main(String[]&nbsp;args)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Get&nbsp;keys&nbsp;in&nbsp;Java&nbsp;format.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyPair&nbsp;keyPair&nbsp;=&nbsp;CBORKeyPair.decode(CBORObject.decode(x25519_PRIVATE_KEY));<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PrivateKey&nbsp;receiverKey&nbsp;=&nbsp;keyPair.getPrivate();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PublicKey&nbsp;senderKey&nbsp;=&nbsp;keyPair.getPublic();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Encrypt&nbsp;data&nbsp;using&nbsp;CEF.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;byte[]&nbsp;cborBinary&nbsp;=&nbsp;new&nbsp;CBORAsymKeyEncrypter(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;senderKey,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyEncryptionAlgorithms.ECDH_ES,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ContentEncryptionAlgorithms.A256GCM)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.encrypt("A&nbsp;very&nbsp;secret&nbsp;message".getBytes("utf-8")).encode();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Decrypt&nbsp;data.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;byte[]&nbsp;decryptedData&nbsp;=&nbsp;new&nbsp;CBORAsymKeyDecrypter(receiverKey)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.decrypt(CBORObject.decode(cborBinary));<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Assume&nbsp;that&nbsp;the&nbsp;data&nbsp;is&nbsp;a&nbsp;string.<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String&nbsp;secretMessage&nbsp;=&nbsp;new&nbsp;String(decryptedData,&nbsp;"utf-8");<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println(secretMessage);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(Exception&nbsp;e)&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;new&nbsp;RuntimeException(e);<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}<br>
+</div>
+</div>
+<p>
+The resulting encryption object in diagnostic notation:
+</p>
+<div class='webpkifloat'>
+<div class='webpkibox'>
+{<br>&nbsp;&nbsp;1:&nbsp;3,<br>&nbsp;&nbsp;2:&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;1:&nbsp;-25,<br>&nbsp;&nbsp;&nbsp;&nbsp;7:&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:&nbsp;1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-1:&nbsp;4,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-2:&nbsp;h'3e9c03b4e2ccb023272fe0f1a5a414645a7e5a0952a3da8199ba46812603ee1a'<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;8:&nbsp;h'4ac80be51285309b93b8f4cc38f6b8ba',<br>&nbsp;&nbsp;9:&nbsp;h'9fbd6e151bad2af177dd3382',<br>&nbsp;&nbsp;10:&nbsp;h'115b48dcffcf88dce70b2173d6c368b2cfe802521c'<br>}
+</div>
+</div>
+<p>
+The resulting encryption object expressed in hexadecimal:
+</p>
+<div class='webpkihexbox'>
+a5010302a201381807a3010120042158203e9c03b4e2ccb023272fe0f1a5a414645a7e5a0952a3da8199ba46812603ee1a08504ac80be51285309b93b8f4cc38f6b8ba094c9fbd6e151bad2af177dd33820a55115b48dcffcf88dce70b2173d6c368b2cfe802521c
+</div></main>
 <footer role="contentinfo">
 <hr>
 <p class="legal-copy"><small><i>2005-2022 WebPKI.org.</i></small></p>
