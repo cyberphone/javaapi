@@ -186,7 +186,9 @@ numbers like <code>f98001</code>.
 </div>
 <li id='number-serialization' class='webpkilistspacing'>
   RFC+: Floating point and integer objects <b>must</b> be treated as <i>distinct types</i>
-regardless of their numeric value (Rule&nbsp;2 in section 4.2.2 of RFC&nbsp;8949).</li>
+regardless of their numeric value, which is compliant with
+Rule&nbsp;2 in section 4.2.2 as well
+as with the table in Appendix&nbsp;A of RFC&nbsp;8949.</li>
 <li class='webpkilistspacing'>
   RFC: Map keys <b>must</b> be sorted in the bytewise lexicographic 
 order of their deterministic encoding.
@@ -226,7 +228,7 @@ During <a href="CBORObject.html#decode(byte%5B%5D)"><code>CBORObject.decode(byte
 well-formedness as well as by default, adhering to the determinism scheme.
 </p>
 <p>
-After successful decoding, the CBOR data is provided as a tree of nodes.
+After successful decoding, the CBOR data is provided as a <a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a>.
 For extracting the data of CBOR primitives in a Java compatible way,
 access methods such as 
 <a href="CBORObject.html#getInt()"><code>CBORObject.getInt()</code></a> and <a href="CBORObject.html#getString()"><code>CBORObject.getString()</code></a>
@@ -241,7 +243,7 @@ access to individual CBOR objects of the structure.
 If the underlying CBOR data type does not match the access method
 (like performing <a href="CBORObject.html#getInt()"><code>CBORObject.getInt()</code></a> on a <a href="CBORBigInteger.html" title="class in org.webpki.cbor"><code>CBORBigInteger</code></a>),
 an exception is thrown.
-That is, this implementation performs strict type checking. 
+That is, this implementation performs <i>strict type checking</i>. 
 However, you typically also want to verify
 that <a href="CBORMap.html" title="class in org.webpki.cbor"><code>CBORMap</code></a> objects do not contain unexpected keys,
 or that <a href="CBORArray.html" title="class in org.webpki.cbor"><code>CBORArray</code></a> objects contain unread elements.
