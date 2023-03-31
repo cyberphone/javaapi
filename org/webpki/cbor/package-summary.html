@@ -194,7 +194,7 @@ as with the table in Appendix&nbsp;A of RFC&nbsp;8949.</li>
 order of their deterministic encoding.
 Duplicate keys <b>must</b> be rejected.
 </li>
-<li id='map-key-equivalence'>
+<li id='map-key-equivalence' class='webpkilistspacing'>
   RFC+: Since CBOR encoding according to this specification
 maintains CBOR type uniqueness, there are no specific restrictions or
 tests needed in order to determine map key equivalence.  
@@ -202,6 +202,11 @@ As an example, the floating point numbers <code>0.0</code> and
 <code>-0.0</code>, and the integer number <code>0</code>
 represent the distinct keys
 <code>f90000</code>, <code>f98000</code>, and <code>00</code> respectively.
+</li>
+<li>
+  RFC+: Deterministic CBOR according to this specification
+may also be provided in 
+<a href='#diagnostic-notation'>Diagnostic Notation</a>.
 </li>
 </ul>
 Any deviation from the rules above will throw exceptions using the standard decoder
@@ -261,13 +266,31 @@ and <a href="CBORPublicKey.html" title="class in org.webpki.cbor"><code>CBORPubl
 as well as verifying that there are no unexpected objects
 inside of their respective containers.
 </p>
+<h3 id='cbor-schema-support'>"Schema" Support</h3>
+Although this package does not support a CBOR counterpart
+to <a href='https://www.w3.org/XML/Schema'>XML&nbsp;Schema</a>,
+similar functionality can be achieved using the <i>programmatic
+constructs</i> described in the previous section.
+For an example, turn to 
+<a href='doc-files/typed-decoders.html'>Typed Decoders</a>.
 <h3 id='cryptographic-support'>Cryptographic Support</h3>
 To aid the use of cryptography, support for
-<a href='doc-files/signatures.html'>signatures</a> and 
-<a href='doc-files/encryption.html'>encryption</a> is integrated in the package.
-<h3 id='diagnostic-cbor'>Diagnostic CBOR</h3>
-Through the <a href="CBORDiagnosticParser.html" title="class in org.webpki.cbor"><code>CBORDiagnosticParser</code></a> class, CBOR in diagnostic (textual) notation 
-may also be processed.</div>
+<a href='doc-files/signatures.html'>Signatures</a> and 
+<a href='doc-files/encryption.html'>Encryption</a> is integrated in the package.
+<h3 id='diagnostic-notation'>Diagnostic Notation</h3>
+Through the <a href="CBORDiagnosticNotationDecoder.html" title="class in org.webpki.cbor"><code>CBORDiagnosticNotationDecoder</code></a> class, CBOR data may be provided
+in diagnostic (textual) notation (as described in section 8 of RFC&nbsp;8949),
+making CBOR useful for "config" files as well.
+<p>
+By adhering to the
+<a href='#deterministic-serialization'>deterministic serialization</a> 
+specification above, CBOR data can be <i>bidirectionally</i>
+converted between its native (binary) format and diagnostic notation
+without getting corrupted.
+</p>
+<p>
+Creating CBOR data in diagnostic notation is provided by <a href="CBORObject.html#toString()"><code>CBORObject.toString()</code></a>.
+</p></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -342,7 +365,7 @@ may also be processed.</div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Base class for decrypting data.</div>
 </div>
-<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORDiagnosticParser.html" title="class in org.webpki.cbor">CBORDiagnosticParser</a></div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORDiagnosticNotationDecoder.html" title="class in org.webpki.cbor">CBORDiagnosticNotationDecoder</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab2">
 <div class="block">Class for converting diagnostic CBOR to CBOR.</div>
 </div>
@@ -421,6 +444,14 @@ may also be processed.</div>
 <div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORTag.html" title="class in org.webpki.cbor">CBORTag</a></div>
 <div class="col-last odd-row-color class-summary class-summary-tab2">
 <div class="block">Class for holding CBOR tagged objects.</div>
+</div>
+<div class="col-first even-row-color class-summary class-summary-tab2"><a href="CBORTypedDecoder.html" title="class in org.webpki.cbor">CBORTypedDecoder</a></div>
+<div class="col-last even-row-color class-summary class-summary-tab2">
+<div class="block">Base class for typed decoders.</div>
+</div>
+<div class="col-first odd-row-color class-summary class-summary-tab2"><a href="CBORTypedDecoderCache.html" title="class in org.webpki.cbor">CBORTypedDecoderCache</a></div>
+<div class="col-last odd-row-color class-summary class-summary-tab2">
+<div class="block">Cache for typed decoders.</div>
 </div>
 <div class="col-first even-row-color class-summary class-summary-tab3"><a href="CBORTypes.html" title="enum class in org.webpki.cbor">CBORTypes</a></div>
 <div class="col-last even-row-color class-summary class-summary-tab3">
