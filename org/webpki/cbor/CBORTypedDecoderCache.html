@@ -87,7 +87,7 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">CBORTypedDecoderCache</a>()</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates empty cache.</div>
+<div class="block">Creates empty decoder cache.</div>
 </div>
 </div>
 </section>
@@ -104,7 +104,7 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORTypedDecoderCache.html" title="class in org.webpki.cbor">CBORTypedDecoderCache</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addToCache(java.lang.Class)" class="member-name-link">addToCache</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="CBORTypedDecoder.html" title="class in org.webpki.cbor">CBORTypedDecoder</a>&gt;&nbsp;schemaClass)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#addToCache(java.lang.Class)" class="member-name-link">addToCache</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="CBORTypedDecoder.html" title="class in org.webpki.cbor">CBORTypedDecoder</a>&gt;&nbsp;decoderClass)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Adds typed decoder class to cache.</div>
 </div>
@@ -139,7 +139,7 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="&lt;init&gt;()">
 <h3>CBORTypedDecoderCache</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORTypedDecoderCache</span>()</div>
-<div class="block">Creates empty cache.</div>
+<div class="block">Creates empty decoder cache.</div>
 </section>
 </li>
 </ul>
@@ -171,11 +171,11 @@ var activeTableTab = "active-table-tab";
 <li>
 <section class="detail" id="addToCache(java.lang.Class)">
 <h3>addToCache</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORTypedDecoderCache.html" title="class in org.webpki.cbor">CBORTypedDecoderCache</a></span>&nbsp;<span class="element-name">addToCache</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="CBORTypedDecoder.html" title="class in org.webpki.cbor">CBORTypedDecoder</a>&gt;&nbsp;schemaClass)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORTypedDecoderCache.html" title="class in org.webpki.cbor">CBORTypedDecoderCache</a></span>&nbsp;<span class="element-name">addToCache</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;? extends <a href="CBORTypedDecoder.html" title="class in org.webpki.cbor">CBORTypedDecoder</a>&gt;&nbsp;decoderClass)</span></div>
 <div class="block">Adds typed decoder class to cache.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>schemaClass</code> - Typed decoder class</dd>
+<dd><code>decoderClass</code> - Typed decoder class</dd>
 <dt>Returns:</dt>
 <dd><a href="CBORTypedDecoderCache.html" title="class in org.webpki.cbor"><code>CBORTypedDecoderCache</code></a></dd>
 </dl>
