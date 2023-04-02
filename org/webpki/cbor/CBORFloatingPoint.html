@@ -37,7 +37,7 @@ var activeTableTab = "active-table-tab";
 <div>
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested-class-summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
@@ -81,6 +81,23 @@ var activeTableTab = "active-table-tab";
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static enum&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="CBORFloatingPoint.IeeeVariant.html" class="type-name-link" title="enum class in org.webpki.cbor">CBORFloatingPoint.IeeeVariant</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Underlying IEEE 754 type.</div>
+</div>
+</div>
+</section>
+</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -117,9 +134,14 @@ var activeTableTab = "active-table-tab";
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">A slightly nicer formatter than Java's original</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORTypes.html" title="enum class in org.webpki.cbor">CBORTypes</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getType()" class="member-name-link">getType</a>()</code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORFloatingPoint.IeeeVariant.html" title="enum class in org.webpki.cbor">CBORFloatingPoint.IeeeVariant</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getIeeeVariant()" class="member-name-link">getIeeeVariant</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Returns actual IEEE 754 type.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORTypes.html" title="enum class in org.webpki.cbor">CBORTypes</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getType()" class="member-name-link">getType</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Returns core CBOR type.</div>
 </div>
 </div>
@@ -193,6 +215,17 @@ var activeTableTab = "active-table-tab";
 <dd><code><a href="CBORObject.html#getType()">getType</a></code>&nbsp;in class&nbsp;<code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></dd>
 <dt>Returns:</dt>
 <dd>The CBOR core type</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getIeeeVariant()">
+<h3>getIeeeVariant</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORFloatingPoint.IeeeVariant.html" title="enum class in org.webpki.cbor">CBORFloatingPoint.IeeeVariant</a></span>&nbsp;<span class="element-name">getIeeeVariant</span>()</div>
+<div class="block">Returns actual IEEE 754 type.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><a href="CBORFloatingPoint.IeeeVariant.html" title="enum class in org.webpki.cbor"><code>CBORFloatingPoint.IeeeVariant</code></a></dd>
 </dl>
 </section>
 </li>
