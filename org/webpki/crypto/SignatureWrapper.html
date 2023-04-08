@@ -67,9 +67,7 @@ var activeTableTab = "active-table-tab";
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">SignatureWrapper</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
-<div class="block">Wrapper over java.security.Signature.
-
- Source configured for the default provider.</div>
+<div class="block">Wrapper over <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Signature.html" title="class or interface in java.security" class="external-link"><code>Signature</code></a>.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -83,18 +81,26 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.webpki.crypto.AsymSignatureAlgorithms,java.security.PrivateKey)" class="member-name-link">SignatureWrapper</a><wbr>(<a href="AsymSignatureAlgorithms.html" title="enum class in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Initiates a signer.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(org.webpki.crypto.AsymSignatureAlgorithms,java.security.PrivateKey,java.lang.String)" class="member-name-link">SignatureWrapper</a><wbr>(<a href="AsymSignatureAlgorithms.html" title="enum class in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Initites a signer.</div>
+</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.webpki.crypto.AsymSignatureAlgorithms,java.security.PublicKey)" class="member-name-link">SignatureWrapper</a><wbr>(<a href="AsymSignatureAlgorithms.html" title="enum class in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Initiates a verifier.</div>
+</div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(org.webpki.crypto.AsymSignatureAlgorithms,java.security.PublicKey,java.lang.String)" class="member-name-link">SignatureWrapper</a><wbr>(<a href="AsymSignatureAlgorithms.html" title="enum class in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider)</code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Initiates a verifier.</div>
+</div>
 </div>
 </section>
 </li>
@@ -111,22 +117,32 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SignatureWrapper.html" title="class in org.webpki.crypto">SignatureWrapper</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#ecdsaAsn1SignatureEncoding(boolean)" class="member-name-link">ecdsaAsn1SignatureEncoding</a><wbr>(boolean&nbsp;flag)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets ASN.1 encoding mode for ECDSA.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Provider.html" title="class or interface in java.security" class="external-link">Provider</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getProvider()" class="member-name-link">getProvider</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>byte[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#sign()" class="member-name-link">sign</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">See <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Signature.html" title="class or interface in java.security" class="external-link"><code>Signature</code></a>.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SignatureWrapper.html" title="class in org.webpki.crypto">SignatureWrapper</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(byte)" class="member-name-link">update</a><wbr>(byte&nbsp;data)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">See <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Signature.html" title="class or interface in java.security" class="external-link"><code>Signature</code></a>.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="SignatureWrapper.html" title="class in org.webpki.crypto">SignatureWrapper</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(byte%5B%5D)" class="member-name-link">update</a><wbr>(byte[]&nbsp;data)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">See <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Signature.html" title="class or interface in java.security" class="external-link"><code>Signature</code></a>.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#verify(byte%5B%5D)" class="member-name-link">verify</a><wbr>(byte[]&nbsp;signature)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">See <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Signature.html" title="class or interface in java.security" class="external-link"><code>Signature</code></a>.</div>
+</div>
 </div>
 </div>
 </div>
@@ -152,7 +168,12 @@ var activeTableTab = "active-table-tab";
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Initiates a verifier.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>algorithm</code> - </dd>
+<dd><code>publicKey</code> - </dd>
+<dd><code>provider</code> - </dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
@@ -166,7 +187,11 @@ var activeTableTab = "active-table-tab";
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Initiates a verifier.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>algorithm</code> - </dd>
+<dd><code>publicKey</code> - </dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
@@ -181,7 +206,12 @@ var activeTableTab = "active-table-tab";
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;provider)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Initites a signer.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>algorithm</code> - </dd>
+<dd><code>privateKey</code> - </dd>
+<dd><code>provider</code> - </dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
@@ -195,7 +225,11 @@ var activeTableTab = "active-table-tab";
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey)</span>
                  throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">Initiates a signer.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>algorithm</code> - </dd>
+<dd><code>privateKey</code> - </dd>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
@@ -214,6 +248,15 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="ecdsaAsn1SignatureEncoding(boolean)">
 <h3>ecdsaAsn1SignatureEncoding</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SignatureWrapper.html" title="class in org.webpki.crypto">SignatureWrapper</a></span>&nbsp;<span class="element-name">ecdsaAsn1SignatureEncoding</span><wbr><span class="parameters">(boolean&nbsp;flag)</span></div>
+<div class="block">Sets ASN.1 encoding mode for ECDSA.
+ <p>
+ Default is <code>false</code>.
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>flag</code> - </dd>
+<dt>Returns:</dt>
+</dl>
 </section>
 </li>
 <li>
@@ -221,7 +264,11 @@ var activeTableTab = "active-table-tab";
 <h3>update</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SignatureWrapper.html" title="class in org.webpki.crypto">SignatureWrapper</a></span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(byte[]&nbsp;data)</span>
                         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
+<div class="block">See <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Signature.html" title="class or interface in java.security" class="external-link"><code>Signature</code></a>.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>data</code> - </dd>
+<dt>Returns:</dt>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
@@ -232,7 +279,11 @@ var activeTableTab = "active-table-tab";
 <h3>update</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="SignatureWrapper.html" title="class in org.webpki.crypto">SignatureWrapper</a></span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(byte&nbsp;data)</span>
                         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
+<div class="block">See <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Signature.html" title="class or interface in java.security" class="external-link"><code>Signature</code></a>.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>data</code> - </dd>
+<dt>Returns:</dt>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
@@ -250,7 +301,11 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">verify</span><wbr><span class="parameters">(byte[]&nbsp;signature)</span>
                throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">See <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Signature.html" title="class or interface in java.security" class="external-link"><code>Signature</code></a>.</div>
 <dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>signature</code> - </dd>
+<dt>Returns:</dt>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
@@ -263,7 +318,9 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">sign</span>()
             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="block">See <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/Signature.html" title="class or interface in java.security" class="external-link"><code>Signature</code></a>.</div>
 <dl class="notes">
+<dt>Returns:</dt>
 <dt>Throws:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
