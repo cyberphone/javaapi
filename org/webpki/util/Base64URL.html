@@ -84,19 +84,19 @@ var activeTableTab = "active-table-tab";
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte[]</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decode(java.lang.String)" class="member-name-link">decode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;base64url)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decode(java.lang.String)" class="member-name-link">decode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;base64Url)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Converts a base64url String to a byte array.</div>
+<div class="block">Decodes base64url String to a byte array.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte[]</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decodePadded(java.lang.String)" class="member-name-link">decodePadded</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;base64url)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decodePadded(java.lang.String)" class="member-name-link">decodePadded</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;base64Url)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Converts a base64url String to a byte array.</div>
+<div class="block">Decodes a base64url String to a byte array.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#encode(byte%5B%5D)" class="member-name-link">encode</a><wbr>(byte[]&nbsp;byteArray)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Converts a byte array to a base64url String.</div>
+<div class="block">Encodes a byte array to a base64url String.</div>
 </div>
 </div>
 </div>
@@ -118,14 +118,14 @@ var activeTableTab = "active-table-tab";
 <li>
 <section class="detail" id="decode(java.lang.String)">
 <h3>decode</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;base64url)</span></div>
-<div class="block">Converts a base64url String to a byte array.
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;base64Url)</span></div>
+<div class="block">Decodes base64url String to a byte array.
  <p>
  This method <b>does not</b> accept padding or line wraps.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>base64url</code> - Encoded data</dd>
+<dd><code>base64Url</code> - Encoded data</dd>
 <dt>Returns:</dt>
 <dd>Decoded data as a byte array</dd>
 </dl>
@@ -134,8 +134,8 @@ var activeTableTab = "active-table-tab";
 <li>
 <section class="detail" id="decodePadded(java.lang.String)">
 <h3>decodePadded</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">decodePadded</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;base64url)</span></div>
-<div class="block">Converts a base64url String to a byte array.
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">decodePadded</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;base64Url)</span></div>
+<div class="block">Decodes a base64url String to a byte array.
  <p>
  This method accepts <i>optional</i> padding.
  </p>
@@ -144,7 +144,7 @@ var activeTableTab = "active-table-tab";
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>base64url</code> - Encoded data</dd>
+<dd><code>base64Url</code> - Encoded data</dd>
 <dt>Returns:</dt>
 <dd>Decoded data as a byte array</dd>
 </dl>
@@ -154,7 +154,7 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="encode(byte[])">
 <h3>encode</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">encode</span><wbr><span class="parameters">(byte[]&nbsp;byteArray)</span></div>
-<div class="block">Converts a byte array to a base64url String.
+<div class="block">Encodes a byte array to a base64url String.
  <p>
  This method adds no padding or line wraps.
  </p></div>
