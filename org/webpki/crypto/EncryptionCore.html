@@ -146,7 +146,7 @@ var activeTableTab = "active-table-tab";
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#receiverKeyAgreement(boolean,org.webpki.crypto.KeyEncryptionAlgorithms,org.webpki.crypto.ContentEncryptionAlgorithms,java.security.PublicKey,java.security.PrivateKey,byte%5B%5D)" class="member-name-link">receiverKeyAgreement</a><wbr>(boolean&nbsp;coseMode,
  <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
  <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;receivedPublicKey,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
  byte[]&nbsp;encryptedKey)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
@@ -171,7 +171,7 @@ var activeTableTab = "active-table-tab";
  byte[]&nbsp;contentEncryptionKey,
  <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
  <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;staticKey)</code></div>
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Perform a sender side ECDH operation.</div>
 </div>
@@ -187,7 +187,7 @@ var activeTableTab = "active-table-tab";
 <div class="block">Explicitly set provider for ECDH operations.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static void</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setRsaProvider(java.lang.String)" class="member-name-link">setRsaProvider</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;providerName)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#setRsaProvider(java.lang.String)" class="member-name-link">setRsaProvider</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;rsaProviderName)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Explicitly set provider for RSA operations.</div>
 </div>
@@ -226,6 +226,10 @@ var activeTableTab = "active-table-tab";
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;ecEphemeralProviderName)</span></div>
 <div class="block">Explicitly set provider for ECDH operations.
  <p>
+ Setting <code>ecStaticProviderName</code> to <code>"AndroidKeystore"</cde>
+ permits <i>decryption</i> using HSM protected keys.
+ </p>
+ <p>
  Setting <code>ecEphemeralProviderName</code> to anything but <code>null</code>
  should be done with caution.
  </p></div>
@@ -239,11 +243,11 @@ var activeTableTab = "active-table-tab";
 <li>
 <section class="detail" id="setRsaProvider(java.lang.String)">
 <h3>setRsaProvider</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRsaProvider</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;providerName)</span></div>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setRsaProvider</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;rsaProviderName)</span></div>
 <div class="block">Explicitly set provider for RSA operations.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>providerName</code> - Name of provider</dd>
+<dd><code>rsaProviderName</code> - Name of provider</dd>
 </dl>
 </section>
 </li>
@@ -386,7 +390,7 @@ var activeTableTab = "active-table-tab";
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">receiverKeyAgreement</span><wbr><span class="parameters">(boolean&nbsp;coseMode,
  <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
  <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;receivedPublicKey,
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
  byte[]&nbsp;encryptedKey)</span>
                                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a>,
@@ -397,7 +401,7 @@ var activeTableTab = "active-table-tab";
 <dd><code>coseMode</code> - True => hmacKdf, else concatKdf</dd>
 <dd><code>keyEncryptionAlgorithm</code> - The ECDH algorithm</dd>
 <dd><code>contentEncryptionAlgorithm</code> - The designated content encryption algorithm</dd>
-<dd><code>receivedPublicKey</code> - The sender's (usually ephemeral) public key</dd>
+<dd><code>publicKey</code> - The sender's (usually ephemeral) public key</dd>
 <dd><code>privateKey</code> - The receiver's private key</dd>
 <dd><code>encryptedKey</code> - For ECDH+KW based operations only</dd>
 <dt>Returns:</dt>
@@ -415,7 +419,7 @@ var activeTableTab = "active-table-tab";
  byte[]&nbsp;contentEncryptionKey,
  <a href="KeyEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">KeyEncryptionAlgorithms</a>&nbsp;keyEncryptionAlgorithm,
  <a href="ContentEncryptionAlgorithms.html" title="enum class in org.webpki.crypto">ContentEncryptionAlgorithms</a>&nbsp;contentEncryptionAlgorithm,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;staticKey)</span>
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PublicKey.html" title="class or interface in java.security" class="external-link">PublicKey</a>&nbsp;publicKey)</span>
                                                                     throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
 <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
 <div class="block">Perform a sender side ECDH operation.</div>
@@ -425,7 +429,7 @@ var activeTableTab = "active-table-tab";
 <dd><code>contentEncryptionKey</code> - Also known as CEK</dd>
 <dd><code>keyEncryptionAlgorithm</code> - The ECDH algorithm</dd>
 <dd><code>contentEncryptionAlgorithm</code> - The designated content encryption algorithm</dd>
-<dd><code>staticKey</code> - The receiver's (usually static) public key</dd>
+<dd><code>publicKey</code> - The receiver's (usually static) public key</dd>
 <dt>Returns:</dt>
 <dd>A composite object including the (plain text) data encryption key</dd>
 <dt>Throws:</dt>
