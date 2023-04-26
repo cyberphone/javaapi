@@ -131,7 +131,7 @@ var activeTableTab = "active-table-tab";
  <a href="BaseASN1Object.html" title="class in org.webpki.asn1">BaseASN1Object</a>&nbsp;value)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="ASN1Sequence.html" title="class in org.webpki.asn1">ASN1Sequence</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#x509Certificate(java.security.cert.Certificate)" class="member-name-link">x509Certificate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/Certificate.html" title="class or interface in java.security.cert" class="external-link">Certificate</a>&nbsp;c)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#x509Certificate(java.security.cert.X509Certificate)" class="member-name-link">x509Certificate</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>&nbsp;c)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">&nbsp;</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#x509Certificate(org.webpki.asn1.BaseASN1Object)" class="member-name-link">x509Certificate</a><wbr>(<a href="BaseASN1Object.html" title="class in org.webpki.asn1">BaseASN1Object</a>&nbsp;o)</code></div>
@@ -201,52 +201,26 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="getBinary(org.webpki.asn1.BaseASN1Object,int[])">
 <h3>getBinary</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">getBinary</span><wbr><span class="parameters">(<a href="BaseASN1Object.html" title="class in org.webpki.asn1">BaseASN1Object</a>&nbsp;o,
- int[]&nbsp;path)</span>
-                        throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
+ int[]&nbsp;path)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="x509Certificate(org.webpki.asn1.BaseASN1Object,int[])">
 <h3>x509Certificate</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a></span>&nbsp;<span class="element-name">x509Certificate</span><wbr><span class="parameters">(<a href="BaseASN1Object.html" title="class in org.webpki.asn1">BaseASN1Object</a>&nbsp;o,
- int[]&nbsp;path)</span>
-                                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
-<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
-</dl>
+ int[]&nbsp;path)</span></div>
 </section>
 </li>
 <li>
 <section class="detail" id="x509Certificate(org.webpki.asn1.BaseASN1Object)">
 <h3>x509Certificate</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a></span>&nbsp;<span class="element-name">x509Certificate</span><wbr><span class="parameters">(<a href="BaseASN1Object.html" title="class in org.webpki.asn1">BaseASN1Object</a>&nbsp;o)</span>
-                                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
-<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
-</dl>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a></span>&nbsp;<span class="element-name">x509Certificate</span><wbr><span class="parameters">(<a href="BaseASN1Object.html" title="class in org.webpki.asn1">BaseASN1Object</a>&nbsp;o)</span></div>
 </section>
 </li>
 <li>
-<section class="detail" id="x509Certificate(java.security.cert.Certificate)">
+<section class="detail" id="x509Certificate(java.security.cert.X509Certificate)">
 <h3>x509Certificate</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ASN1Sequence.html" title="class in org.webpki.asn1">ASN1Sequence</a></span>&nbsp;<span class="element-name">x509Certificate</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/Certificate.html" title="class or interface in java.security.cert" class="external-link">Certificate</a>&nbsp;c)</span>
-                                    throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
-<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
-</dl>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="ASN1Sequence.html" title="class in org.webpki.asn1">ASN1Sequence</a></span>&nbsp;<span class="element-name">x509Certificate</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>&nbsp;c)</span></div>
 </section>
 </li>
 <li>
