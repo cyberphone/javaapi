@@ -133,8 +133,7 @@ var activeTableTab = "active-table-tab";
 <li>
 <section class="detail" id="setExtensionNames(java.lang.String[])">
 <h3>setExtensionNames</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JSONSigner.html" title="class in org.webpki.json">JSONSigner</a></span>&nbsp;<span class="element-name">setExtensionNames</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;names)</span>
-                             throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JSONSigner.html" title="class in org.webpki.json">JSONSigner</a></span>&nbsp;<span class="element-name">setExtensionNames</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;names)</span></div>
 <div class="block">Set (object level) list of permitted extension elements.
  This must only be done for the first signer in a multi-signature
  scenario</div>
@@ -143,40 +142,32 @@ var activeTableTab = "active-table-tab";
 <dd><code>names</code> - A list of permitted extensions</dd>
 <dt>Returns:</dt>
 <dd><code>this</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setExtensionData(org.webpki.json.JSONObjectWriter)">
 <h3>setExtensionData</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JSONSigner.html" title="class in org.webpki.json">JSONSigner</a></span>&nbsp;<span class="element-name">setExtensionData</span><wbr><span class="parameters">(<a href="JSONObjectWriter.html" title="class in org.webpki.json">JSONObjectWriter</a>&nbsp;extensions)</span>
-                            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JSONSigner.html" title="class in org.webpki.json">JSONSigner</a></span>&nbsp;<span class="element-name">setExtensionData</span><wbr><span class="parameters">(<a href="JSONObjectWriter.html" title="class in org.webpki.json">JSONObjectWriter</a>&nbsp;extensions)</span></div>
 <div class="block">Set specific extension data for this signature.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>extensions</code> - JSON object holding the extension properties and associated values</dd>
 <dt>Returns:</dt>
 <dd><code>this</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="setExcluded(java.lang.String[])">
 <h3>setExcluded</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JSONSigner.html" title="class in org.webpki.json">JSONSigner</a></span>&nbsp;<span class="element-name">setExcluded</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;excluded)</span>
-                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JSONSigner.html" title="class in org.webpki.json">JSONSigner</a></span>&nbsp;<span class="element-name">setExcluded</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;excluded)</span></div>
 <div class="block">Set &quot;excl&quot; for this signature.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>excluded</code> - Array holding the names of properties that must be excluded from the signature</dd>
 <dt>Returns:</dt>
 <dd><code>this</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
 </dl>
 </section>
 </li>
@@ -204,12 +195,7 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="setExtensionNames(java.lang.String[],boolean)">
 <h3>setExtensionNames</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">setExtensionNames</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>[]&nbsp;names,
- boolean&nbsp;encryptionMode)</span>
-                       throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
-<dl class="notes">
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-</dl>
+ boolean&nbsp;encryptionMode)</span></div>
 </section>
 </li>
 </ul>

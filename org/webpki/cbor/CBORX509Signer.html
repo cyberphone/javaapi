@@ -65,12 +65,12 @@
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CBORX509Signer</span>
 <span class="extends-implements">extends <a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></span></div>
-<div class="block">Class for creating CBOR X509 signatures.
+<div class="block">Class for creating X.509 signatures.
  <p>
- See <a href="CBORSigner.html" title="class in org.webpki.cbor"><code>CBORSigner</code></a> for details.
+ Also see <a href="CBORSigner.html" title="class in org.webpki.cbor"><code>CBORSigner</code></a>.
  </p>
  <p> 
- Note that X509 signatures do not permit the use of a <code>keyId</code>.
+ Note that X.509 signatures do not permit the use of a <code>keyId</code>.
  </p></div>
 </section>
 <section class="summary">
@@ -86,13 +86,13 @@
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.security.PrivateKey,java.security.cert.X509Certificate%5B%5D)" class="member-name-link">CBORX509Signer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]&nbsp;certificatePath)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Initializes an X509 signer with a private key.</div>
+<div class="block">Initializes an X.509 signer with a private key.</div>
 </div>
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.security.PrivateKey,java.security.cert.X509Certificate%5B%5D,org.webpki.crypto.AsymSignatureAlgorithms)" class="member-name-link">CBORX509Signer</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]&nbsp;certificatePath,
  <a href="../crypto/AsymSignatureAlgorithms.html" title="enum class in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Initializes an X509 signer with a private key.</div>
+<div class="block">Initializes an X.509 signer with a private key.</div>
 </div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(org.webpki.crypto.X509SignerInterface)" class="member-name-link">CBORX509Signer</a><wbr>(<a href="../crypto/X509SignerInterface.html" title="interface in org.webpki.crypto">X509SignerInterface</a>&nbsp;signer)</code></div>
 <div class="col-last even-row-color">
@@ -107,7 +107,7 @@
 <h2>Method Summary</h2>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-org.webpki.cbor.CBORSigner">Methods inherited from class&nbsp;org.webpki.cbor.<a href="CBORSigner.html" title="class in org.webpki.cbor">CBORSigner</a></h3>
-<code><a href="CBORSigner.html#setIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)">setIntercepter</a>, <a href="CBORSigner.html#setKeyId(org.webpki.cbor.CBORObject)">setKeyId</a>, <a href="CBORSigner.html#setProvider(java.lang.String)">setProvider</a>, <a href="CBORSigner.html#sign(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORMap)">sign</a></code></div>
+<code><a href="CBORSigner.html#setCloneMode(boolean)">setCloneMode</a>, <a href="CBORSigner.html#setIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)">setIntercepter</a>, <a href="CBORSigner.html#setKeyId(org.webpki.cbor.CBORObject)">setKeyId</a>, <a href="CBORSigner.html#setProvider(java.lang.String)">setProvider</a>, <a href="CBORSigner.html#sign(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORMap)">sign</a></code></div>
 <div class="inherited-list">
 <h3 id="methods-inherited-from-class-java.lang.Object">Methods inherited from class&nbsp;java.lang.<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></h3>
 <code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#getClass()" title="class or interface in java.lang" class="external-link">getClass</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#hashCode()" title="class or interface in java.lang" class="external-link">hashCode</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notify()" title="class or interface in java.lang" class="external-link">notify</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#notifyAll()" title="class or interface in java.lang" class="external-link">notifyAll</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#toString()" title="class or interface in java.lang" class="external-link">toString</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait()" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long)" title="class or interface in java.lang" class="external-link">wait</a>, <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#wait(long,int)" title="class or interface in java.lang" class="external-link">wait</a></code></div>
@@ -138,7 +138,7 @@
 <h3>CBORX509Signer</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORX509Signer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]&nbsp;certificatePath)</span></div>
-<div class="block">Initializes an X509 signer with a private key.
+<div class="block">Initializes an X.509 signer with a private key.
  <p>
  The signature algorithm to use is based on the recommendations
  in RFC 7518.
@@ -156,7 +156,7 @@
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORX509Signer</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/PrivateKey.html" title="class or interface in java.security" class="external-link">PrivateKey</a>&nbsp;privateKey,
  <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/cert/X509Certificate.html" title="class or interface in java.security.cert" class="external-link">X509Certificate</a>[]&nbsp;certificatePath,
  <a href="../crypto/AsymSignatureAlgorithms.html" title="enum class in org.webpki.crypto">AsymSignatureAlgorithms</a>&nbsp;algorithm)</span></div>
-<div class="block">Initializes an X509 signer with a private key.</div>
+<div class="block">Initializes an X.509 signer with a private key.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>privateKey</code> - Signature key</dd>

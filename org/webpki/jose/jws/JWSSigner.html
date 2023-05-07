@@ -146,8 +146,7 @@ var activeTableTab = "active-table-tab";
 <li>
 <section class="detail" id="setKeyId(java.lang.String)">
 <h3>setKeyId</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JWSSigner.html" title="class in org.webpki.jose.jws">JWSSigner</a></span>&nbsp;<span class="element-name">setKeyId</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;keyId)</span>
-                   throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JWSSigner.html" title="class in org.webpki.jose.jws">JWSSigner</a></span>&nbsp;<span class="element-name">setKeyId</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;keyId)</span></div>
 <div class="block">Adds "kid" to the JWS header.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -155,15 +154,14 @@ var activeTableTab = "active-table-tab";
 <dt>Returns:</dt>
 <dd>JwsSigner</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code>IOException</code></dd>
 </dl>
 </section>
 </li>
 <li>
 <section class="detail" id="addHeaderItems(org.webpki.json.JSONObjectReader)">
 <h3>addHeaderItems</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JWSSigner.html" title="class in org.webpki.jose.jws">JWSSigner</a></span>&nbsp;<span class="element-name">addHeaderItems</span><wbr><span class="parameters">(<a href="../../json/JSONObjectReader.html" title="class in org.webpki.json">JSONObjectReader</a>&nbsp;items)</span>
-                         throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="JWSSigner.html" title="class in org.webpki.jose.jws">JWSSigner</a></span>&nbsp;<span class="element-name">addHeaderItems</span><wbr><span class="parameters">(<a href="../../json/JSONObjectReader.html" title="class in org.webpki.json">JSONObjectReader</a>&nbsp;items)</span></div>
 <div class="block">Add header elements.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -171,7 +169,7 @@ var activeTableTab = "active-table-tab";
 <dt>Returns:</dt>
 <dd>JwsSigner</dd>
 <dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
+<dd><code>IOException</code></dd>
 </dl>
 </section>
 </li>
@@ -179,9 +177,7 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="sign(org.webpki.json.JSONObjectWriter,java.lang.String)">
 <h3>sign</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../../json/JSONObjectWriter.html" title="class in org.webpki.json">JSONObjectWriter</a></span>&nbsp;<span class="element-name">sign</span><wbr><span class="parameters">(<a href="../../json/JSONObjectWriter.html" title="class in org.webpki.json">JSONObjectWriter</a>&nbsp;objectToBeSigned,
- <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;signatureProperty)</span>
-                      throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
-<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
+ <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;signatureProperty)</span></div>
 <div class="block">Create JWS/CT object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -189,9 +185,6 @@ var activeTableTab = "active-table-tab";
 <dd><code>signatureProperty</code> - Name of property holding the "detached" JWS</dd>
 <dt>Returns:</dt>
 <dd>The now signed <code>objectToBeSigned</code></dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
 </section>
 </li>
@@ -199,9 +192,7 @@ var activeTableTab = "active-table-tab";
 <section class="detail" id="sign(byte[],boolean)">
 <h3>sign</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">sign</span><wbr><span class="parameters">(byte[]&nbsp;jwsPayload,
- boolean&nbsp;detached)</span>
-            throws <span class="exceptions"><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a>,
-<a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></span></div>
+ boolean&nbsp;detached)</span></div>
 <div class="block">Create compact mode JWS object.
  Note that the detached mode follows the specification
  described in 
@@ -212,9 +203,6 @@ var activeTableTab = "active-table-tab";
 <dd><code>detached</code> - True if payload is not to be supplied in the JWS string</dd>
 <dt>Returns:</dt>
 <dd>JWS compact (string)</dd>
-<dt>Throws:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/IOException.html" title="class or interface in java.io" class="external-link">IOException</a></code></dd>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/security/GeneralSecurityException.html" title="class or interface in java.security" class="external-link">GeneralSecurityException</a></code></dd>
 </dl>
 </section>
 </li>
