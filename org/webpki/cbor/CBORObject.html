@@ -611,7 +611,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base
  Verifies that all data from the current object including
  possible child objects have been read
  (through calling <a href="#getBytes()"><code>getBytes()</code></a> etc.),
- and throws <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> if this is not the case.
+ and throws a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> if this is not the case.
  </p>
  Also see <a href="#scan()"><code>scan()</code></a>.</div>
 </section>
@@ -729,7 +729,11 @@ implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base
 <section class="detail" id="clone()">
 <h3>clone</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">clone</span>()</div>
-<div class="block">Deep copy of <code>CBORObject</code>.</div>
+<div class="block">Deep copy of <code>CBORObject</code>.
+ <p>
+ Note that the copy is assumed to be &quot;unread&quot;
+ (<a href="#checkForUnread()"><code>checkForUnread()</code></a>).
+ </p></div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone()" title="class or interface in java.lang" class="external-link">clone</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
