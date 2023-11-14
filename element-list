@@ -15,6 +15,3 @@ org.webpki.tools
 org.webpki.util
 org.webpki.webauth
 org.webpki.webutil
-org.webpki.xml
-org.webpki.xmldsig
-org.webpki.xmlenc
