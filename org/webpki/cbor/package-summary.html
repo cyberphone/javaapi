@@ -247,7 +247,7 @@ well-formedness as well as by default, adhering to the determinism scheme.
 After successful decoding, the CBOR data is provided as a <a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a>.
 For extracting the data of CBOR primitives in a Java compatible way,
 there are type specific access methods such as 
-<a href="CBORObject.html#getInt()"><code>CBORObject.getInt()</code></a> and <a href="CBORObject.html#getString()"><code>CBORObject.getString()</code></a>.
+<a href="CBORObject.html#getInt32()"><code>CBORObject.getInt32()</code></a> and <a href="CBORObject.html#getString()"><code>CBORObject.getString()</code></a>.
 For accessing structured CBOR objects, the
 <a href="CBORObject.html#getMap()"><code>CBORObject.getMap()</code></a>,
 <a href="CBORObject.html#getArray()"><code>CBORObject.getArray()</code></a>,
@@ -257,7 +257,7 @@ access to individual CBOR objects of the structure.
 </p>
 <p>
 If the underlying CBOR data type does not match the access method
-(like performing <a href="CBORObject.html#getInt()"><code>CBORObject.getInt()</code></a> on a <a href="CBORBigInt.html" title="class in org.webpki.cbor"><code>CBORBigInt</code></a>),
+(like performing <a href="CBORObject.html#getInt32()"><code>CBORObject.getInt32()</code></a> on a <a href="CBORBigInt.html" title="class in org.webpki.cbor"><code>CBORBigInt</code></a>),
 an exception is thrown.
 That is, this implementation performs <i>strict type checking</i>. 
 </p>
