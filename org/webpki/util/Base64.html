@@ -100,17 +100,17 @@
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static byte[]</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decode(java.lang.String)" class="member-name-link">decode</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;base64)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Decodes a base64 String to a byte array.</div>
+<div class="block">Decode base64 string.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#encode(byte%5B%5D)" class="member-name-link">encode</a><wbr>(byte[]&nbsp;byteArray)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Encodes a byte array to a base64 String.</div>
+<div class="block">Encode byte array.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#mimeEncode(byte%5B%5D)" class="member-name-link">mimeEncode</a><wbr>(byte[]&nbsp;byteArray)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Encodes a byte array to a base64 String.</div>
+<div class="block">Encode byte array.</div>
 </div>
 </div>
 </div>
@@ -133,13 +133,13 @@
 <section class="detail" id="decode(java.lang.String)">
 <h3>decode</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">byte[]</span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;base64)</span></div>
-<div class="block">Decodes a base64 String to a byte array.
+<div class="block">Decode base64 string.
  <p>
  Note that line wraps are <i>ignored</i>.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>base64</code> - Encoded data</dd>
+<dd><code>base64</code> - Encoded data in base64 format</dd>
 <dt>Returns:</dt>
 <dd>Decoded data as a byte array</dd>
 <dt>Throws:</dt>
@@ -151,7 +151,7 @@
 <section class="detail" id="encode(byte[])">
 <h3>encode</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">encode</span><wbr><span class="parameters">(byte[]&nbsp;byteArray)</span></div>
-<div class="block">Encodes a byte array to a base64 String.
+<div class="block">Encode byte array.
  <p>
  This method adds no padding or line wraps.
  </p></div>
@@ -159,7 +159,7 @@
 <dt>Parameters:</dt>
 <dd><code>byteArray</code> - Binary data</dd>
 <dt>Returns:</dt>
-<dd>Encoded data as a String</dd>
+<dd>Encoded data as a base64 string</dd>
 </dl>
 </section>
 </li>
@@ -167,7 +167,7 @@
 <section class="detail" id="mimeEncode(byte[])">
 <h3>mimeEncode</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">mimeEncode</span><wbr><span class="parameters">(byte[]&nbsp;byteArray)</span></div>
-<div class="block">Encodes a byte array to a base64 String.
+<div class="block">Encode byte array.
  <p>
  This method wraps lines and adds padding.
  </p></div>
@@ -175,7 +175,7 @@
 <dt>Parameters:</dt>
 <dd><code>byteArray</code> - Binary data</dd>
 <dt>Returns:</dt>
-<dd>Encoded data as a String</dd>
+<dd>Encoded data as a base64 string</dd>
 </dl>
 </section>
 </li>
