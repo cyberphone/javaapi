@@ -96,8 +96,8 @@
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.io.InputStream,boolean,boolean,boolean,java.lang.Integer)" class="member-name-link">CBORDecoder</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/InputStream.html" title="class or interface in java.io" class="external-link">InputStream</a>&nbsp;inputStream,
  boolean&nbsp;sequenceFlag,
- boolean&nbsp;nonDeterministic,
- boolean&nbsp;disableInvalidFloats,
+ boolean&nbsp;lenientFlag,
+ boolean&nbsp;rejectNaNFlag,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;maxLength)</code></div>
 <div class="col-last even-row-color">
 <div class="block">Create CBOR decoder.</div>
@@ -148,8 +148,8 @@
 <h3>CBORDecoder</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORDecoder</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/io/InputStream.html" title="class or interface in java.io" class="external-link">InputStream</a>&nbsp;inputStream,
  boolean&nbsp;sequenceFlag,
- boolean&nbsp;nonDeterministic,
- boolean&nbsp;disableInvalidFloats,
+ boolean&nbsp;lenientFlag,
+ boolean&nbsp;rejectNaNFlag,
  <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Integer.html" title="class or interface in java.lang" class="external-link">Integer</a>&nbsp;maxLength)</span></div>
 <div class="block">Create CBOR decoder.
  <p>
@@ -161,11 +161,11 @@
  <code>inputStream</code> must hold exactly one CBOR object.</dd>
 <dd><code>sequenceFlag</code> - If <code>true</code> stop reading after decoding a CBOR object
  (no object returns <code>null</code>).</dd>
-<dd><code>nonDeterministic</code> - If <code>true</code> disable 
+<dd><code>lenientFlag</code> - If <code>true</code> disable 
  <a href='package-summary.html#deterministic-encoding'>Deterministic&nbsp;Encoding</a>
  checks for number serialization and map <i>sorting</i>.
  See also <a href="CBORMap.html#setSortingMode(boolean)"><code>CBORMap.setSortingMode(boolean)</code></a>.</dd>
-<dd><code>disableInvalidFloats</code> - By default, this implementation supports 
+<dd><code>rejectNaNFlag</code> - By default, this implementation supports 
  <code>NaN</code>, <code>Infinity</code>, 
  and <code>-Infinity</code>. In case these variants are not applicable for the
  application in question, they can be "outlawed" (causing a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> 
