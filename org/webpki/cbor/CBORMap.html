@@ -135,7 +135,7 @@
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getConditionally(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)" class="member-name-link">getConditionally</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;defaultValue)</code></div>
+ <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;defaultObject)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get mapped CBOR object conditionally.</div>
 </div>
@@ -151,7 +151,7 @@
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#set(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)" class="member-name-link">set</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;value)</code></div>
+ <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set mapped CBOR object.</div>
 </div>
@@ -164,6 +164,12 @@
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get size of the CBOR <code>map</code>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)" class="member-name-link">update</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
+ <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;object)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Update mapped CBOR object.</div>
 </div>
 </div>
 </div>
@@ -218,7 +224,7 @@
 <section class="detail" id="set(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)">
 <h3>set</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">set</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;value)</span></div>
+ <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;object)</span></div>
 <div class="block">Set mapped CBOR object.
  <p>
  If <code>key</code> is already present, a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
@@ -226,7 +232,7 @@
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key</dd>
-<dd><code>value</code> - Value</dd>
+<dd><code>object</code> - Object (value)</dd>
 <dt>Returns:</dt>
 <dd><code>this</code></dd>
 <dt>Throws:</dt>
@@ -267,14 +273,14 @@
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">get</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key)</span></div>
 <div class="block">Get mapped CBOR object.
  <p>
- If <code>key</code> is present, the associated <code>value</code> is returned,
+ If <code>key</code> is present, the associated <code>object</code> is returned,
  else a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key</dd>
 <dt>Returns:</dt>
-<dd><code>value</code></dd>
+<dd><code>object</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
 </dl>
@@ -284,19 +290,19 @@
 <section class="detail" id="getConditionally(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)">
 <h3>getConditionally</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">getConditionally</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;defaultValue)</span></div>
+ <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;defaultObject)</span></div>
 <div class="block">Get mapped CBOR object conditionally.
  <p>
- If <code>key</code> is present, the associated <code>value</code> is returned,
- else <code>defaultValue</code> is returned.
- Note: <code>defaultValue</code> may be <code>null</code>.
+ If <code>key</code> is present, the associated <code>object</code> is returned,
+ else <code>defaultObject</code> is returned.
+ Note: <code>defaultObject</code> may be <code>null</code>.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key</dd>
-<dd><code>defaultValue</code> - Default value</dd>
+<dd><code>defaulObject</code> - Default object (value)</dd>
 <dt>Returns:</dt>
-<dd><code>value</code> or <code>defaultValue</code></dd>
+<dd><code>object</code> or <code>defaultObject</code></dd>
 </dl>
 </section>
 </li>
@@ -319,18 +325,35 @@
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key)</span></div>
 <div class="block">Remove mapped CBOR object.
  <p>
- If <code>key</code> is present, the associated <code>value</code> is returned,
+ If <code>key</code> is present, the associated <code>object</code> is removed,
  else a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
- </p>
- <p>
- After saving <code>value</code> for return, the <code>key</code> and its
- associated <code>value</code> are removed.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key</dd>
 <dt>Returns:</dt>
-<dd><code>value</code></dd>
+<dd>Removed <code>object</code></dd>
+<dt>Throws:</dt>
+<dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="update(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)">
+<h3>update</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
+ <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;object)</span></div>
+<div class="block">Update mapped CBOR object.
+ <p>
+ If <code>key</code> is present, the associated <code>object</code> is updated,
+ else a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>key</code> - Key</dd>
+<dd><code>object</code> - Object (value)</dd>
+<dt>Returns:</dt>
+<dd>Previous <code>object</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
 </dl>
