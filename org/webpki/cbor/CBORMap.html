@@ -171,8 +171,9 @@
 <div class="block">Get size of the CBOR <code>map</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)" class="member-name-link">update</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;object)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject,boolean)" class="member-name-link">update</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
+ <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;object,
+ boolean&nbsp;existing)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Update mapped CBOR object.</div>
 </div>
@@ -363,21 +364,27 @@
 </section>
 </li>
 <li>
-<section class="detail" id="update(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject)">
+<section class="detail" id="update(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject,boolean)">
 <h3>update</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">update</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
- <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;object)</span></div>
+ <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;object,
+ boolean&nbsp;existing)</span></div>
 <div class="block">Update mapped CBOR object.
  <p>
- If <code>key</code> is present, the associated <code>object</code> is updated,
+ If <code>existing</code> is <code>true</code>, <code>key</code> must already be present,
  else a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
+ </p>
+ <p>
+ If <code>existing</code> is <code>false</code>, a <code>map</code> entry for <code>key</code>
+ will be created if not already present.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key</dd>
-<dd><code>object</code> - Object (value)</dd>
+<dd><code>object</code> - New object (value)</dd>
+<dd><code>existing</code> - Flag</dd>
 <dt>Returns:</dt>
-<dd>Previous <code>object</code></dd>
+<dd>Previous <code>object</code>.  May be <code>null</code>.</dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
 </dl>
