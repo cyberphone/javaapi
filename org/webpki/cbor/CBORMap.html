@@ -139,7 +139,7 @@
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get mapped CBOR object conditionally.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>[]</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a><wbr>&lt;<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&gt;</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getKeys()" class="member-name-link">getKeys</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Enumerate all keys in the CBOR <code>map</code>.</div>
@@ -237,7 +237,7 @@
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
+<dd><code>key</code> - Key (name)</dd>
 <dd><code>object</code> - Object (value)</dd>
 <dt>Returns:</dt>
 <dd><code>this</code></dd>
@@ -256,8 +256,7 @@
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
-<dd><code>object</code> - Object (value)</dd>
+<dd><code>map</code> - Map to be merged</dd>
 <dt>Returns:</dt>
 <dd><code>this</code></dd>
 <dt>Throws:</dt>
@@ -303,7 +302,7 @@
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
+<dd><code>key</code> - Key (name)</dd>
 <dt>Returns:</dt>
 <dd><code>object</code></dd>
 <dt>Throws:</dt>
@@ -324,8 +323,8 @@
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
-<dd><code>defaulObject</code> - Default object (value)</dd>
+<dd><code>key</code> - Key (name)</dd>
+<dd><code>defaultObject</code> - Default object (value)</dd>
 <dt>Returns:</dt>
 <dd><code>object</code> or <code>defaultObject</code></dd>
 </dl>
@@ -338,7 +337,7 @@
 <div class="block">Check CBOR <code>map</code> for key presence.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
+<dd><code>key</code> - Key (name)</dd>
 <dt>Returns:</dt>
 <dd><code>true</code> if the key is present</dd>
 </dl>
@@ -350,14 +349,15 @@
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">remove</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key)</span></div>
 <div class="block">Remove mapped CBOR object.
  <p>
- If <code>key</code> is present, the associated <code>object</code> is removed,
+ If <code>key</code> is present, the <code>key</code> and
+ associated <code>object</code> are removed,
  else a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
+<dd><code>key</code> - Key (name)</dd>
 <dt>Returns:</dt>
-<dd>Removed <code>object</code></dd>
+<dd>Removed object (value)</dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
 </dl>
@@ -380,7 +380,7 @@
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>key</code> - Key</dd>
+<dd><code>key</code> - Key (name)</dd>
 <dd><code>object</code> - New object (value)</dd>
 <dd><code>existing</code> - Flag</dd>
 <dt>Returns:</dt>
@@ -393,7 +393,7 @@
 <li>
 <section class="detail" id="getKeys()">
 <h3>getKeys</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>[]</span>&nbsp;<span class="element-name">getKeys</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/ArrayList.html" title="class or interface in java.util" class="external-link">ArrayList</a>&lt;<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&gt;</span>&nbsp;<span class="element-name">getKeys</span>()</div>
 <div class="block">Enumerate all keys in the CBOR <code>map</code>.
  <p>
  Note: the keys are returned in proper sort order.
