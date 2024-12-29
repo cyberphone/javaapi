@@ -252,15 +252,15 @@
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">merge</span><wbr><span class="parameters">(<a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a>&nbsp;map)</span></div>
 <div class="block">Merge CBOR map.
  <p>
- A duplicate key causes a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> to be thrown.
+ Note that a duplicate key causes a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> to be thrown.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>map</code> - Map to be merged</dd>
+<dd><code>map</code> - Map to be merged into the current mao</dd>
 <dt>Returns:</dt>
 <dd><code>this</code></dd>
 <dt>Throws:</dt>
-<dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code> - For <code>key</code> duplicates</dd>
+<dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
 </dl>
 </section>
 </li>
