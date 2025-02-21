@@ -242,11 +242,15 @@
  int&nbsp;maxInputLength)</span></div>
 <div class="block">Create a customized CBOR decoder.
  <p>
- This constructor enables decoder customization through an <code>options</code> parameter.
+ This constructor presumes that the actual decoding is performed
+ by one or more (for sequences only) calls to <a href="#decodeWithOptions()"><code>decodeWithOptions()</code></a>.
+ </p>
+ <p>
+ Customization is provided through an <code>options</code> parameter.
  Multiple options can be combined using the binary OR-operator ("<code>|</code>").
  A zero (0) sets the decoder default mode.
  The options are defined by the following constants:
- <div style='margin-top:0.5em'><a href="#SEQUENCE_MODE"><code>SEQUENCE_MODE</code></a>:</div>
+ <div style='margin-top:0.3em'><a href="#SEQUENCE_MODE"><code>SEQUENCE_MODE</code></a>:</div>
  <div style='padding:0.2em 0 0 1.2em'>If the <a href="#SEQUENCE_MODE"><code>SEQUENCE_MODE</code></a>
  option is defined, the following apply:
  <ul style='padding:0;margin:0 0 0.5em 1.2em'>
