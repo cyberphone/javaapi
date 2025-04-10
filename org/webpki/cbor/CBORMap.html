@@ -32,7 +32,7 @@
 <li>
 <p>Summary:</p>
 <ul>
-<li>Nested</li>
+<li><a href="#nested-class-summary">Nested</a></li>
 <li>Field</li>
 <li><a href="#constructor-summary">Constr</a></li>
 <li><a href="#method-summary">Method</a></li>
@@ -52,7 +52,7 @@
 <div id="navbar-sub-list">
 <ul class="sub-nav-list">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested-class-summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor-summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method-summary">Method</a></li>
@@ -97,6 +97,23 @@
 </section>
 <section class="summary">
 <ul class="summary-list">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<li>
+<section class="nested-class-summary" id="nested-class-summary">
+<h2>Nested Class Summary</h2>
+<div class="caption"><span>Nested Classes</span></div>
+<div class="summary-table three-column-summary">
+<div class="table-header col-first">Modifier and Type</div>
+<div class="table-header col-second">Class</div>
+<div class="table-header col-last">Description</div>
+<div class="col-first even-row-color"><code>static interface&nbsp;</code></div>
+<div class="col-second even-row-color"><code><a href="CBORMap.Dynamic.html" class="type-name-link" title="interface in org.webpki.cbor">CBORMap.Dynamic</a></code></div>
+<div class="col-last even-row-color">
+<div class="block">Support interface for dynamic CBOR generation.</div>
+</div>
+</div>
+</section>
+</li>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <li>
 <section class="constructor-summary" id="constructor-summary">
@@ -161,20 +178,25 @@
 <div class="block">Set mapped CBOR object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSortingMode(boolean)" class="member-name-link">setSortingMode</a><wbr>(boolean&nbsp;preSortedKeys)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setDynamic(org.webpki.cbor.CBORMap.Dynamic)" class="member-name-link">setDynamic</a><wbr>(<a href="CBORMap.Dynamic.html" title="interface in org.webpki.cbor">CBORMap.Dynamic</a>&nbsp;dynamic)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set CBOR data using an external (dynamic) interface.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSortingMode(boolean)" class="member-name-link">setSortingMode</a><wbr>(boolean&nbsp;preSortedKeys)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set sorting mode for the CBOR map.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#size()" class="member-name-link">size</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get size of the CBOR map.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject,boolean)" class="member-name-link">update</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#update(org.webpki.cbor.CBORObject,org.webpki.cbor.CBORObject,boolean)" class="member-name-link">update</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;key,
  <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;object,
  boolean&nbsp;existing)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Update mapped CBOR object.</div>
 </div>
 </div>
@@ -246,6 +268,27 @@
 <dt>Parameters:</dt>
 <dd><code>key</code> - Key (name)</dd>
 <dd><code>object</code> - Object (value)</dd>
+<dt>Returns:</dt>
+<dd><code>this</code></dd>
+<dt>Throws:</dt>
+<dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setDynamic(org.webpki.cbor.CBORMap.Dynamic)">
+<h3>setDynamic</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">setDynamic</span><wbr><span class="parameters">(<a href="CBORMap.Dynamic.html" title="interface in org.webpki.cbor">CBORMap.Dynamic</a>&nbsp;dynamic)</span></div>
+<div class="block">Set CBOR data using an external (dynamic) interface.
+ <p>
+ Sample using a construct suitable for chained writing:
+ <pre>
+    setDynamic((wr) -&gt; optionalString == null ? wr : wr.set(KEY, new CBORString(optionalString))); 
+ </pre>
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>dynamic</code> - Interface (usually Lambda)</dd>
 <dt>Returns:</dt>
 <dd><code>this</code></dd>
 <dt>Throws:</dt>
