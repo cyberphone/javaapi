@@ -789,13 +789,16 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toDiagnosticNotation</span><wbr><span class="parameters">(boolean&nbsp;prettyPrint)</span></div>
 <div class="block">Render CBOR object in
  <a href='package-summary.html#diagnostic-notation'>Diagnostic Notation</a>.
- <p></div>
+ <p>
+ If the object (as well as possible
+ child objects), conforms to the subset of data types supported by JSON,
+ this method can also be used to generate JSON data.
+ </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>prettyPrint</code> - If <code>true</code> white space is added to make the 
  result easier to read.  If <code>false</code> elements are output
- without additional white space (=single line).
- </p></dd>
+ without additional white space (=single line).</dd>
 </dl>
 </section>
 </li>
