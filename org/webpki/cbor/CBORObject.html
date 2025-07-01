@@ -752,16 +752,15 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</span></div>
 <div class="block">Compare CBOR objects for equality.
  <p>
- Equality in CBOR depends on the actual binary encoding which in turn depends on
- <a href='package-summary.html#deterministic-encoding' class='webpkilink'>Deterministic&nbsp;Encoding</a>.
- </p>
- <p>
  The result is <code>true</code> if and only if the argument is not <code>null</code> and is a
- <a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a>.
+ <a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a>, and the actual binary encodings are equivalent (which in turn depends on
+ <a href='package-summary.html#deterministic-encoding' class='webpkilink'>Deterministic&nbsp;Encoding</a>).
  </p></div>
 <dl class="notes">
 <dt>Overrides:</dt>
 <dd><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="class or interface in java.lang" class="external-link">equals</a></code>&nbsp;in class&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></dd>
+<dt>Parameters:</dt>
+<dd><code>Argument</code> - to compare with</dd>
 </dl>
 </section>
 </li>
