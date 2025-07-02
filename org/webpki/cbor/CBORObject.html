@@ -755,8 +755,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">equals</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</span></div>
 <div class="block">Compare CBOR objects for equality.
  <p>
- The result is <code>true</code> if and only if the argument is not <code>null</code> and is a
- <a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a>, and the binary encodings (as provided by <a href="#encode()"><code>encode()</code></a>) are equivalent.
+ The result is <code>true</code> if and only if the argument is
+ not <code>null</code> and is a <a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a>, and the associated
+ binary encodings (as provided by <a href="#encode()"><code>encode()</code></a>) are equivalent.
  </p></div>
 <dl class="notes">
 <dt>Overrides:</dt>
@@ -772,7 +773,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">compareTo</span><wbr><span class="parameters">(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;object)</span></div>
 <div class="block">Compare CBOR objects for magnitude.
  <p>
- The comparison is based on the binary encodings as provided by <a href="#encode()"><code>encode()</code></a>.
+ The comparison is based on the associated binary encodings as provided by <a href="#encode()"><code>encode()</code></a>.
  </p></div>
 <dl class="notes">
 <dt>Specified by:</dt>
