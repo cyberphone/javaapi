@@ -129,7 +129,7 @@
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNaNPayload()" class="member-name-link">getNaNPayload</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get <code>NaN</code> payload bits.</div>
+<div class="block">Get <code>NaN</code> payload.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNonFinite()" class="member-name-link">getNonFinite</a>()</code></div>
@@ -182,11 +182,16 @@
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORNonFinite</span><wbr><span class="parameters">(long&nbsp;value)</span></div>
 <div class="block">Creates a CBOR <i>non-finite</i> <code>float</code> object.
  <p>
- See also <a href="CBORObject.html#getFloat64()"><code>CBORObject.getFloat64()</code></a> and <a href="CBORObject.html#getFloat32()"><code>CBORObject.getFloat32()</code></a>
+ The constructor takes a <code>16</code>, <code>32</code>, or <code>64</code>-bit
+ non-finite number in <code>IEEE-754</code> encoding.
+ Note that the argument <b>must</b> fit within <code>NaN</code> and <code>Infinity</code> number space.
+ </p>
+ <p>
+ See also <a href="CBORFloat.html#%3Cinit%3E(double)"><code>CBORFloat(double)</code></a>.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>value</code> - Java long holding a 16, 32, or 64-bit non-finite number.</dd>
+<dd><code>value</code> - <code>long</code> holding the number</dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
 </dl>
@@ -214,12 +219,11 @@
  <tr><td><code>d51-d0</code> in <i>big-endian</i> order</td></tr>
  </table>
  </div>
- <div>
- Note that a payload with only zeros, will force the encoder to set bit <code>d0</code>.
- </div>
+ Note that a payload having all bits set to zero, will be encoded as CBOR
+ <code>Infinity</code> (<code>f97c00</code>).
  <div style='margin-top:1em'>
- Although provided here for <i>reference purposes</i> only, the payloads bits are
- subsequently stuffed into an <code>IEEE-754</code> 64-bit object according to the following:
+ The payloads bits are subsequently put into an <code>IEEE-754</code>
+ <code>64</code>-bit object having the following layout:
  </div>
  <div>
  <table class='webpkitable'>
@@ -228,10 +232,17 @@
  </table>
  </div>
  <div>
- Note that the encoder will subsequently select the shortest serialization
- required to properly represent the provided set of bits.
- As an example, an argument of <code>6</code> (<code>d1</code> and <code>d2</code> bits are set),
- would yield a CBOR item encoded as <code>f97d80</code>, here shown in hexadecimal notation.
+ Note that the encoder will (due to deterministic encoding rules), subsequently select
+ the shortest serialization required to properly represent the payload bit field.
+ As an example, a payload having the bits <code>d1</code> and <code>d4</code> set
+ (decimal value <code>18</code>),
+ would yield a CBOR item encoded as <code>f97d20</code>, here shown in hexadecimal notation.
+ </div>
+ <div style='margin-top:0.7em'>
+ The reason for reversing the payload bits is to make sure that a specific bit will remain
+ in a fix position (having the same value), regardless if added or removed bits force
+ the encoder to select a larger or smaller
+ <code>IEEE-754</code> variant.
  </div></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -251,14 +262,14 @@
 <section class="detail" id="getNaNPayload()">
 <h3>getNaNPayload</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getNaNPayload</span>()</div>
-<div class="block">Get <code>NaN</code> payload bits.
+<div class="block">Get <code>NaN</code> payload.
  <p>
  This method is the "consumer" counterpart to <a href="#createNaNPayload(long)"><code>createNaNPayload(long)</code></a>.
- Note that a "quiet" <code>NaN</code> (<code>7e00</code>) returns zero.
+ Note that a payload having all bits set to zero, is CBOR-wise represented as <code>Infinity</code> (<code>f97c00</code>).
  </p>
  <p>
  If the sign bit is also required, the <a href="#getNonFinite64()"><code>getNonFinite64()</code></a>
- method must be used.
+ method must rather be used.
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
