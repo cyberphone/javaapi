@@ -160,7 +160,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCombinedFloat64()" class="member-name-link">getCombinedFloat64</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Documention: to be writtem...</div>
+<div class="block">Get CBOR <code>float64</code> includng <code>NaN</code> and <code>Infinity</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/GregorianCalendar.html" title="class or interface in java.util" class="external-link">GregorianCalendar</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDateTime()" class="member-name-link">getDateTime</a>()</code></div>
@@ -482,7 +482,21 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <section class="detail" id="getCombinedFloat64()">
 <h3>getCombinedFloat64</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getCombinedFloat64</span>()</div>
-<div class="block">Documention: to be writtem...</div>
+<div class="block">Get CBOR <code>float64</code> includng <code>NaN</code> and <code>Infinity</code>.
+ <p>
+ Unlike <a href="#getFloat64()"><code>getFloat64()</code></a>, this method also supports the "quite" <code>NaN</code> 
+ and the two <code>Infinity</code> variants.
+ </p>
+ <p>
+ This method requires that the object is a
+ <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> or a <a href="CBORNonFinite.html" title="class in org.webpki.cbor"><code>CBORNonFinite</code></a>, otherwise a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
+ </p></div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>double</code></dd>
+<dt>Throws:</dt>
+<dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+</dl>
 </section>
 </li>
 <li>
@@ -493,6 +507,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
  <p>
  This method requires that the object is a
  <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a>, otherwise a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
+ </p>
+ <p>
+ Unlike <a href="#getCombinedFloat64()"><code>getCombinedFloat64()</code></a>, this method only accepts "pure" floating-point
+ numbers.  This makes it adapted for CBOR protocols that do not consider <code>NaN</code>
+ or <code>Infinity</code> valid items.  That is, the latter cause a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a>
+ to be thrown.
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>

@@ -122,39 +122,39 @@
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createNanWithPayload(long)" class="member-name-link">createNanWithPayload</a><wbr>(long&nbsp;payloadBits)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createNaNWithPayload(long)" class="member-name-link">createNaNWithPayload</a><wbr>(long&nbsp;payload)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a <code>NaN</code> with a payload.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNaNPayloadBits()" class="member-name-link">getNaNPayloadBits</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Documention: to be writtem...</div>
+<div class="block">Get NaN payload bits.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNonFinite()" class="member-name-link">getNonFinite</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Documention: to be writtem...</div>
+<div class="block">Documentation: to be written...</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNonFinite64()" class="member-name-link">getNonFinite64</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Documention: to be writtem...</div>
+<div class="block">Documentation: to be written...</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBasic(boolean)" class="member-name-link">isBasic</a><wbr>(boolean&nbsp;allFlag)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isBasic()" class="member-name-link">isBasic</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Documention: to be writtem...</div>
+<div class="block">Documentation: to be written...</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNaN()" class="member-name-link">isNaN</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Documention: to be writtem...</div>
+<div class="block">Documentation: to be written...</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#length()" class="member-name-link">length</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get length of the optimized IEEE 754 type.</div>
+<div class="block">Get length of the serialized IEEE 754 type.</div>
 </div>
 </div>
 </div>
@@ -201,21 +201,21 @@
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="createNanWithPayload(long)">
-<h3>createNanWithPayload</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></span>&nbsp;<span class="element-name">createNanWithPayload</span><wbr><span class="parameters">(long&nbsp;payloadBits)</span></div>
+<section class="detail" id="createNaNWithPayload(long)">
+<h3>createNaNWithPayload</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></span>&nbsp;<span class="element-name">createNaNWithPayload</span><wbr><span class="parameters">(long&nbsp;payload)</span></div>
 <div class="block">Create a <code>NaN</code> with a payload.
  <div style='margin-top:1em'>
  The following table represents this method from a <i>developer</i> perspective:
  </div>
  <div>
  <table class='webpkitable'>
- <tr><th>Payload Bits</th></tr>
- <tr><td><code>b52-b1</code> in <i>big-endian</i> format</td></tr>
+ <tr><th>Payload</th></tr>
+ <tr><td><code>d51-d0</code> in <i>big-endian</i> order</td></tr>
  </table>
  </div>
  <div>
- Note that a payload with only zeros, cause a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> to be thrown.
+ Note that a payload with only zeros, will force the encoder to set bit <code>d0</code> to <code>1</code>.
  </div>
  <div style='margin-top:1em'>
  Although provided here for <i>reference purposes</i> only, the payloads bits are
@@ -224,19 +224,19 @@
  <div>
  <table class='webpkitable'>
  <tr><th>Sign &amp; Exponent</th><th>Significand</th></tr>
- <tr><td style='text-align:center'>011111111111</th><td><code>b1-b52</code> in <i>little-endian</i> format</td></tr>
+ <tr><td style='text-align:center'>011111111111</th><td><code>d0-d51</code> in <i>little-endian</i> order</td></tr>
  </table>
  </div>
  <div>
  Note that the encoder will subsequently select the shortest serialization
  required to properly represent the provided set of bits.
- As an example, an argument of <code>6</code> (<code>b2</code> and <code>b3</code> bits are set),
+ As an example, an argument of <code>6</code> (<code>d1</code> and <code>d2</code> bits are set),
  would yield a CBOR item encoded as
  <code>f97d80</code>, here shown in hexadecimal notation.
  </div></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>payloadBits</code> - Holds a set of application specific bits</dd>
+<dd><code>payload</code> - Holds a set of application specific bits</dd>
 <dt>Returns:</dt>
 <dd><a href="CBORNonFinite.html" title="class in org.webpki.cbor"><code>CBORNonFinite</code></a>.  Also see <a href='../../webpki/cbor/package-summary.html#supported-objects'>CBOR wrapper objects</a>.</dd>
 <dt>See Also:</dt>
@@ -253,14 +253,22 @@
 <section class="detail" id="getNaNPayloadBits()">
 <h3>getNaNPayloadBits</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getNaNPayloadBits</span>()</div>
-<div class="block">Documention: to be writtem...</div>
+<div class="block">Get NaN payload bits.
+ <p>
+ This method is the consumer counterpart to <a href="#createNaNWithPayload(long)"><code>createNaNWithPayload(long)</code></a>.
+ Note that a "quiet" NaN (<code>7e00</code>) returns zero.
+ </p>
+ <p>
+ If the sign bit is also required, the <a href="#getNonFinite64()"><code>getNonFinite64()</code></a>
+ method must be used.
+ </p></div>
 </section>
 </li>
 <li>
 <section class="detail" id="length()">
 <h3>length</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">length</span>()</div>
-<div class="block">Get length of the optimized IEEE 754 type.
+<div class="block">Get length of the serialized IEEE 754 type.
  <p>
  Note that you must cast a <a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a> to <a href="CBORNonFinite.html" title="class in org.webpki.cbor"><code>CBORNonFinite</code></a>
  in order to access <a href="#length()"><code>length()</code></a>.
@@ -272,31 +280,31 @@
 </section>
 </li>
 <li>
-<section class="detail" id="isBasic(boolean)">
+<section class="detail" id="isBasic()">
 <h3>isBasic</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBasic</span><wbr><span class="parameters">(boolean&nbsp;allFlag)</span></div>
-<div class="block">Documention: to be writtem...</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isBasic</span>()</div>
+<div class="block">Documentation: to be written...</div>
 </section>
 </li>
 <li>
 <section class="detail" id="isNaN()">
 <h3>isNaN</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNaN</span>()</div>
-<div class="block">Documention: to be writtem...</div>
+<div class="block">Documentation: to be written...</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getNonFinite()">
 <h3>getNonFinite</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getNonFinite</span>()</div>
-<div class="block">Documention: to be writtem...</div>
+<div class="block">Documentation: to be written...</div>
 </section>
 </li>
 <li>
 <section class="detail" id="getNonFinite64()">
 <h3>getNonFinite64</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getNonFinite64</span>()</div>
-<div class="block">Documention: to be writtem...</div>
+<div class="block">Documentation: to be written...</div>
 </section>
 </li>
 </ul>
