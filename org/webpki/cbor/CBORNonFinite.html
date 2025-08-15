@@ -122,12 +122,12 @@
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createNaNWithPayload(long)" class="member-name-link">createNaNWithPayload</a><wbr>(long&nbsp;payload)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createNaNPayload(long)" class="member-name-link">createNaNPayload</a><wbr>(long&nbsp;payload)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Create a <code>NaN</code> with a payload.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNaNPayloadBits()" class="member-name-link">getNaNPayloadBits</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNaNPayload()" class="member-name-link">getNaNPayload</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get <code>NaN</code> payload bits.</div>
 </div>
@@ -201,9 +201,9 @@
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="createNaNWithPayload(long)">
-<h3>createNaNWithPayload</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></span>&nbsp;<span class="element-name">createNaNWithPayload</span><wbr><span class="parameters">(long&nbsp;payload)</span></div>
+<section class="detail" id="createNaNPayload(long)">
+<h3>createNaNPayload</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></span>&nbsp;<span class="element-name">createNaNPayload</span><wbr><span class="parameters">(long&nbsp;payload)</span></div>
 <div class="block">Create a <code>NaN</code> with a payload.
  <div style='margin-top:1em'>
  The following table represents this method from a <i>developer</i> perspective:
@@ -248,18 +248,22 @@
 </section>
 </li>
 <li>
-<section class="detail" id="getNaNPayloadBits()">
-<h3>getNaNPayloadBits</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getNaNPayloadBits</span>()</div>
+<section class="detail" id="getNaNPayload()">
+<h3>getNaNPayload</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getNaNPayload</span>()</div>
 <div class="block">Get <code>NaN</code> payload bits.
  <p>
- This method is the consumer counterpart to <a href="#createNaNWithPayload(long)"><code>createNaNWithPayload(long)</code></a>.
+ This method is the "consumer" counterpart to <a href="#createNaNPayload(long)"><code>createNaNPayload(long)</code></a>.
  Note that a "quiet" <code>NaN</code> (<code>7e00</code>) returns zero.
  </p>
  <p>
  If the sign bit is also required, the <a href="#getNonFinite64()"><code>getNonFinite64()</code></a>
  method must be used.
  </p></div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd><code>long</code></dd>
+</dl>
 </section>
 </li>
 <li>
