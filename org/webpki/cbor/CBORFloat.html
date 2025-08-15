@@ -127,7 +127,7 @@
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createExpandedFloat(double)" class="member-name-link">createExpandedFloat</a><wbr>(double&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Create a combined</div>
+<div class="block">Creates an "extended" CBOR <code>float</code> object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#formatDouble(java.lang.Double)" class="member-name-link">formatDouble</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</code></div>
@@ -178,7 +178,7 @@
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>value</code> - Java double</dd>
+<dd><code>value</code> - The floating-point value</dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
 </dl>
@@ -218,7 +218,29 @@
 <section class="detail" id="createExpandedFloat(double)">
 <h3>createExpandedFloat</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">createExpandedFloat</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
-<div class="block">Create a combined</div>
+<div class="block">Creates an "extended" CBOR <code>float</code> object.
+ <p>
+ Unlike <a href="#%3Cinit%3E(double)"><code>CBORFloat(double)</code></a>, this method also supports the "quiet" <code>NaN</code> 
+ and the two <code>Infinity</code> variants.
+ </p>
+ <p>
+ Note that return type is either <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> or <a href="CBORNonFinite.html" title="class in org.webpki.cbor"><code>CBORNonFinite</code></a>, depending
+ on if the argument is a "regular" floating-point value of one of the non-finite variants.
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - The floating-point value</dd>
+<dt>Returns:</dt>
+<dd><a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a></dd>
+<dt>Throws:</dt>
+<dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list-long">
+<li><a href="CBORObject.html#getExpandedFloat64()"><code>CBORObject.getExpandedFloat64()</code></a></li>
+</ul>
+</dd>
+</dl>
 </section>
 </li>
 <li>
