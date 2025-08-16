@@ -168,7 +168,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get UNIX <code>Epoch</code> time object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExpandedFloat64()" class="member-name-link">getExpandedFloat64</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExtendedFloat64()" class="member-name-link">getExtendedFloat64</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get "extended" CBOR <code>float64</code> value.</div>
 </div>
@@ -479,9 +479,9 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 </section>
 </li>
 <li>
-<section class="detail" id="getExpandedFloat64()">
-<h3>getExpandedFloat64</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getExpandedFloat64</span>()</div>
+<section class="detail" id="getExtendedFloat64()">
+<h3>getExtendedFloat64</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getExtendedFloat64</span>()</div>
 <div class="block">Get "extended" CBOR <code>float64</code> value.
  <p>
  Note that unlike <a href="#getFloat64()"><code>getFloat64()</code></a>, this method also supports the "quiet" <code>NaN</code> 
@@ -499,7 +499,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="CBORFloat.html#createExpandedFloat(double)"><code>CBORFloat.createExpandedFloat(double)</code></a></li>
+<li><a href="CBORFloat.html#createExtendedFloat(double)"><code>CBORFloat.createExtendedFloat(double)</code></a></li>
 </ul>
 </dd>
 </dl>
@@ -515,7 +515,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
  <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a>, otherwise a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p>
  <p>
- Unlike <a href="#getExpandedFloat64()"><code>getExpandedFloat64()</code></a>, this method only accepts "pure" floating-point
+ Unlike <a href="#getExtendedFloat64()"><code>getExtendedFloat64()</code></a>, this method only accepts "pure" floating-point
  numbers.  This makes it adapted for CBOR protocols that do not consider <code>NaN</code>
  or <code>Infinity</code> valid items.  That is, the latter cause a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a>
  to be thrown.
