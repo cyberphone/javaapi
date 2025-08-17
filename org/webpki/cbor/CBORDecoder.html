@@ -146,14 +146,20 @@
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Decode CBOR data.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#decodeWithOptions()" class="member-name-link">decodeWithOptions</a>()</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#decode(byte%5B%5D,int)" class="member-name-link">decode</a><wbr>(byte[]&nbsp;cbor,
+ int&nbsp;options)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Decode CBOR data.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#decodeWithOptions()" class="member-name-link">decodeWithOptions</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Decode CBOR data with options.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getByteCount()" class="member-name-link">getByteCount</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getByteCount()" class="member-name-link">getByteCount</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get CBOR decoder byte count.</div>
 </div>
 </div>
@@ -354,6 +360,34 @@
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>cbor</code> - CBOR binary data <i>holding exactly one CBOR object</i>.</dd>
+<dt>Returns:</dt>
+<dd><a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a></dd>
+<dt>Throws:</dt>
+<dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="decode(byte[],int)">
+<h3>decode</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">decode</span><wbr><span class="parameters">(byte[]&nbsp;cbor,
+ int&nbsp;options)</span></div>
+<div class="block">Decode CBOR data.
+ <p>
+ Unsupported or malformed CBOR data cause a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> to be thrown.
+ </p>
+ <p>
+ This conveniance method is identical to:
+ </p>
+ <div class='webpkifloat'>
+ <pre>  new CBORDecoder(new ByteArrayInputStream(cbor), options, cbor.length)
+      .decodeWithOptions();
+ </pre>
+ </div></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>cbor</code> - CBOR binary data <i>holding exactly one CBOR object</i>.</dd>
+<dd><code>options</code> - The decoder options.</dd>
 <dt>Returns:</dt>
 <dd><a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a></dd>
 <dt>Throws:</dt>
