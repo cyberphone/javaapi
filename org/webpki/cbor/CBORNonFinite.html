@@ -196,7 +196,7 @@
  non-finite number in <code>IEEE-754</code> encoding.
  </p>
  <p>
- See also <a href="CBORFloat.html#%3Cinit%3E(double)"><code>CBORFloat(double)</code></a> and <a href="CBORFloat.html#createExtendedFloat(double)"><code>CBORFloat.createExtendedFloat(double)</code></a>.
+ See also <a href="CBORFloat.html#%3Cinit%3E(double)"><code>CBORFloat(double)</code></a> and <a href="CBORFloat.html#createExtended(double)"><code>CBORFloat.createExtended(double)</code></a>.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -245,10 +245,12 @@
  <tr style='text-align:center'><td>0</td><td>11111111111</td><td style='white-space:nowrap'><code>d0-d51</code> in <i>little-endian</i> order</td></tr>
  </table></div>
  <div>
+ For setting the sign bit, see <a href="#setSign(boolean)"><code>setSign(boolean)</code></a>.
+ </div>
+ <div style='margin-top:0.7em'>
  The reason for <i>reversing</i> the payload bits is to ensure that a specific bit will remain
  in a fix position (maintain the same value), independent of the size of the
  <code>IEEE-754</code> variant used for encoding.
- For setting the sign bit, see <a href="#setSign(boolean)"><code>setSign(boolean)</code></a>.
  </div>
  <div style='margin-top:0.7em'>
  Note that the encoder will (due to CBOR deterministic encoding rules), select
@@ -277,7 +279,7 @@
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="CBORFloat.html#createExtendedFloat(double)"><code>CBORFloat.createExtendedFloat(double)</code></a></li>
+<li><a href="CBORFloat.html#createExtended(double)"><code>CBORFloat.createExtended(double)</code></a></li>
 </ul>
 </dd>
 </dl>
