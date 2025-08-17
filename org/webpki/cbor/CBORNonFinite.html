@@ -142,19 +142,29 @@
 <div class="block">Get payload data.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNaN()" class="member-name-link">isNaN</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSign()" class="member-name-link">getSign</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Check if CBOR non-finite object is a <code>NaN</code>.</div>
+<div class="block">Get the sign bit of the non-finite <code>float</code>.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSimple()" class="member-name-link">isSimple</a>()</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNaN()" class="member-name-link">isNaN</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Check if CBOR non-finite object is a <code>NaN</code>.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSimple()" class="member-name-link">isSimple</a>()</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Check if CBOR non-finite object is simple.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#length()" class="member-name-link">length</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#length()" class="member-name-link">length</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get length of CBOR non-finite object.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSign(boolean)" class="member-name-link">setSign</a><wbr>(boolean&nbsp;on)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set the sign bit of the non-finite <code>float</code>.</div>
 </div>
 </div>
 </div>
@@ -284,6 +294,30 @@
 <dl class="notes">
 <dt>Returns:</dt>
 <dd><code>long</code> holding the "pure" payload</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setSign(boolean)">
+<h3>setSign</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></span>&nbsp;<span class="element-name">setSign</span><wbr><span class="parameters">(boolean&nbsp;on)</span></div>
+<div class="block">Set the sign bit of the non-finite <code>float</code>.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>on</code> - Sign bit</dd>
+<dt>Returns:</dt>
+<dd><a href="CBORNonFinite.html" title="class in org.webpki.cbor"><code>CBORNonFinite</code></a></dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getSign()">
+<h3>getSign</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">getSign</span>()</div>
+<div class="block">Get the sign bit of the non-finite <code>float</code>.</div>
+<dl class="notes">
+<dt>Returns:</dt>
+<dd>Sign bit expressed as a <code>boolean</code></dd>
 </dl>
 </section>
 </li>
