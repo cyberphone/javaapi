@@ -90,7 +90,15 @@
 <span class="extends-implements">extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span></div>
 <div class="block">Class for holding CBOR <i>non-finite</i> <code>float</code> objects.
  <p>
- See also <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a>.
+ Due to the fact that platform support for non-finite <code>float</code> objects
+ beyond the three simple forms, "quiet" <code>NaN</code>, <code>Infinity</code>,
+ and <code>-Infinity</code> is limited, the Java implementation <i>separates</i>
+ non-finite <code>float</code> objects from "genuine" <code>float</code> numbers.
+ The latter are dealt with by the <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> class.
+ </p>
+ <p>
+ Since non-finite data can be "anything" that makes sence for consuming
+ applications, <code>long</code> is used as value container.
  </p></div>
 </section>
 <section class="summary">
@@ -105,7 +113,7 @@
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(long)" class="member-name-link">CBORNonFinite</a><wbr>(long&nbsp;value)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a CBOR <i>non-finite</i> <code>float</code> object.</div>
+<div class="block">Creates a <i>non-finite</i> <code>float</code>.</div>
 </div>
 </div>
 </section>
@@ -129,12 +137,12 @@
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNonFinite()" class="member-name-link">getNonFinite</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get <i>actual</i> CBOR non-finite <code>float</code> object.</div>
+<div class="block">Get <i>actual</i> non-finite object (value).</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getNonFinite64()" class="member-name-link">getNonFinite64</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get <i>expanded</i> CBOR non-finite <code>float</code> object.</div>
+<div class="block">Get <i>expanded</i> non-finite object (value).</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>long</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getPayloadData()" class="member-name-link">getPayloadData</a>()</code></div>
@@ -144,27 +152,27 @@
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSign()" class="member-name-link">getSign</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get the sign bit of the non-finite <code>float</code>.</div>
+<div class="block">Get sign bit of the non-finite object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNaN()" class="member-name-link">isNaN</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Check if CBOR non-finite object is a <code>NaN</code>.</div>
+<div class="block">Check if the non-finite object is a <code>NaN</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSimple()" class="member-name-link">isSimple</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Check if CBOR non-finite object is simple.</div>
+<div class="block">Check if the non-finite object is simple.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#length()" class="member-name-link">length</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get length of CBOR non-finite object.</div>
+<div class="block">Get length of the non-finite object.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSign(boolean)" class="member-name-link">setSign</a><wbr>(boolean&nbsp;on)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Set the sign bit of the non-finite <code>float</code>.</div>
+<div class="block">Set sign bit of the non-finite object.</div>
 </div>
 </div>
 </div>
@@ -190,7 +198,7 @@
 <section class="detail" id="&lt;init&gt;(long)">
 <h3>CBORNonFinite</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORNonFinite</span><wbr><span class="parameters">(long&nbsp;value)</span></div>
-<div class="block">Creates a CBOR <i>non-finite</i> <code>float</code> object.
+<div class="block">Creates a <i>non-finite</i> <code>float</code>.
  <p>
  The constructor takes a <code>16</code>, <code>32</code>, or <code>64</code>-bit
  non-finite number in <code>IEEE-754</code> encoding.
@@ -303,7 +311,7 @@
 <section class="detail" id="setSign(boolean)">
 <h3>setSign</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></span>&nbsp;<span class="element-name">setSign</span><wbr><span class="parameters">(boolean&nbsp;on)</span></div>
-<div class="block">Set the sign bit of the non-finite <code>float</code>.</div>
+<div class="block">Set sign bit of the non-finite object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>on</code> - Sign bit</dd>
@@ -322,7 +330,7 @@
 <section class="detail" id="getSign()">
 <h3>getSign</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">getSign</span>()</div>
-<div class="block">Get the sign bit of the non-finite <code>float</code>.</div>
+<div class="block">Get sign bit of the non-finite object.</div>
 <dl class="notes">
 <dt>Returns:</dt>
 <dd>Sign bit expressed as a <code>boolean</code></dd>
@@ -339,7 +347,7 @@
 <section class="detail" id="length()">
 <h3>length</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">length</span>()</div>
-<div class="block">Get length of CBOR non-finite object.
+<div class="block">Get length of the non-finite object.
  <p>
  Note that you must cast a <a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a> to <a href="CBORNonFinite.html" title="class in org.webpki.cbor"><code>CBORNonFinite</code></a>
  in order to access <a href="#length()"><code>length()</code></a>.
@@ -354,10 +362,10 @@
 <section class="detail" id="isSimple()">
 <h3>isSimple</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSimple</span>()</div>
-<div class="block">Check if CBOR non-finite object is simple.
+<div class="block">Check if the non-finite object is simple.
  <p>
  This method returns <code>true</code> if the non-finite object is a "quiet" <code>NaN</code>,
- <code>Infinity</code>, or <code>-Infinity</code>, else it returns <code>false</code>.
+ <code>Infinity</code>, or <code>-Infinity</code>, else <code>false</code> is returned.
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -369,10 +377,10 @@
 <section class="detail" id="isNaN()">
 <h3>isNaN</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNaN</span>()</div>
-<div class="block">Check if CBOR non-finite object is a <code>NaN</code>.
+<div class="block">Check if the non-finite object is a <code>NaN</code>.
  <p>
  This method returns <code>true</code> for <i>all conformant</i> <code>NaN</code> variants,
- else it returns <code>false</code>.
+ else <code>false</code> is returned..
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -384,7 +392,7 @@
 <section class="detail" id="getNonFinite()">
 <h3>getNonFinite</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getNonFinite</span>()</div>
-<div class="block">Get <i>actual</i> CBOR non-finite <code>float</code> object.
+<div class="block">Get <i>actual</i> non-finite object (value).
  <p>
  This method returns the value of a CBOR non-finite
  object.  The value is provided in the most compact form
@@ -400,7 +408,7 @@
 <section class="detail" id="getNonFinite64()">
 <h3>getNonFinite64</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">long</span>&nbsp;<span class="element-name">getNonFinite64</span>()</div>
-<div class="block">Get <i>expanded</i> CBOR non-finite <code>float</code> object.
+<div class="block">Get <i>expanded</i> non-finite object (value).
  <p>
  This method returns the value of a CBOR non-finite
  object after it has been expanded to 64 bits.
