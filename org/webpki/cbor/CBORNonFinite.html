@@ -88,12 +88,12 @@
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CBORNonFinite</span>
 <span class="extends-implements">extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span></div>
-<div class="block">Class for holding CBOR <i>non-finite</i> <code>float</code> objects.
+<div class="block">Class for holding CBOR <i>non-finite</i> floating-point objects.
  <p>
- Due to the fact that platform support for non-finite <code>float</code> objects
+ Due to the fact that platform support for non-finite floating-point objects
  beyond the three simple forms, "quiet" <code>NaN</code>, <code>Infinity</code>,
- and <code>-Infinity</code> is limited, the Java implementation <i>separates</i>
- non-finite <code>float</code> objects from "genuine" <code>float</code> numbers.
+ and <code>-Infinity</code> is limited, this implementation <i>separates</i>
+ non-finite floating-point objects from "genuine" floating-point numbers.
  The latter are dealt with by the <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> class.
  </p>
  <p>
@@ -113,7 +113,7 @@
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(long)" class="member-name-link">CBORNonFinite</a><wbr>(long&nbsp;value)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a <i>non-finite</i> <code>float</code>.</div>
+<div class="block">Creates a <i>non-finite</i> floating-point number.</div>
 </div>
 </div>
 </section>
@@ -198,17 +198,17 @@
 <section class="detail" id="&lt;init&gt;(long)">
 <h3>CBORNonFinite</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORNonFinite</span><wbr><span class="parameters">(long&nbsp;value)</span></div>
-<div class="block">Creates a <i>non-finite</i> <code>float</code>.
+<div class="block">Creates a <i>non-finite</i> floating-point number.
  <p>
  The constructor takes a <code>16</code>, <code>32</code>, or <code>64</code>-bit
  non-finite number in <code>IEEE-754</code> encoding.
  </p>
  <p>
- See also <a href="CBORFloat.html#%3Cinit%3E(double)"><code>CBORFloat(double)</code></a> and <a href="CBORFloat.html#createExtended(double)"><code>CBORFloat.createExtended(double)</code></a>.
+ See also <a href="CBORFloat.html#%3Cinit%3E(double)"><code>CBORFloat(double)</code></a> and <a href="CBORFloat.html#createExtendedFloat(double)"><code>CBORFloat.createExtendedFloat(double)</code></a>.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>value</code> - <code>long</code> holding the number</dd>
+<dd><code>value</code> - Non-finite number expressed as a <code>long</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code> - If the argument is not within the non-finite number space</dd>
 </dl>
@@ -287,7 +287,7 @@
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
-<li><a href="CBORFloat.html#createExtended(double)"><code>CBORFloat.createExtended(double)</code></a></li>
+<li><a href="CBORFloat.html#createExtendedFloat(double)"><code>CBORFloat.createExtendedFloat(double)</code></a></li>
 </ul>
 </dd>
 </dl>
