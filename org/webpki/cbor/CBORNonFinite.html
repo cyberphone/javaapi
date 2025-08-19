@@ -152,27 +152,27 @@
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getSign()" class="member-name-link">getSign</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get sign bit of the non-finite object.</div>
+<div class="block">Get sign bit of non-finite object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isNaN()" class="member-name-link">isNaN</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Check if the non-finite object is a <code>NaN</code>.</div>
+<div class="block">Check if non-finite object is a <code>NaN</code>.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#isSimple()" class="member-name-link">isSimple</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Check if the non-finite object is simple.</div>
+<div class="block">Check if non-finite object is simple.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#length()" class="member-name-link">length</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get length of the non-finite object.</div>
+<div class="block">Get length of non-finite object.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSign(boolean)" class="member-name-link">setSign</a><wbr>(boolean&nbsp;on)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setSign(boolean)" class="member-name-link">setSign</a><wbr>(boolean&nbsp;sign)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Set sign bit of the non-finite object.</div>
+<div class="block">Set sign bit of non-finite object.</div>
 </div>
 </div>
 </div>
@@ -310,11 +310,11 @@
 <li>
 <section class="detail" id="setSign(boolean)">
 <h3>setSign</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></span>&nbsp;<span class="element-name">setSign</span><wbr><span class="parameters">(boolean&nbsp;on)</span></div>
-<div class="block">Set sign bit of the non-finite object.</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORNonFinite.html" title="class in org.webpki.cbor">CBORNonFinite</a></span>&nbsp;<span class="element-name">setSign</span><wbr><span class="parameters">(boolean&nbsp;sign)</span></div>
+<div class="block">Set sign bit of non-finite object.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>on</code> - Sign bit</dd>
+<dd><code>sign</code> - Sign bit expressed as a <code>boolean</code>. <code>true</code> = 1, <code>false</code> = 0.</dd>
 <dt>Returns:</dt>
 <dd><a href="CBORNonFinite.html" title="class in org.webpki.cbor"><code>CBORNonFinite</code></a></dd>
 <dt>See Also:</dt>
@@ -330,10 +330,10 @@
 <section class="detail" id="getSign()">
 <h3>getSign</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">getSign</span>()</div>
-<div class="block">Get sign bit of the non-finite object.</div>
+<div class="block">Get sign bit of non-finite object.</div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>Sign bit expressed as a <code>boolean</code></dd>
+<dd>Sign bit expressed as a <code>boolean</code>. <code>true</code> = 1, <code>false</code> = 0.</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
@@ -347,7 +347,7 @@
 <section class="detail" id="length()">
 <h3>length</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">length</span>()</div>
-<div class="block">Get length of the non-finite object.
+<div class="block">Get length of non-finite object.
  <p>
  Note that you must cast a <a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a> to <a href="CBORNonFinite.html" title="class in org.webpki.cbor"><code>CBORNonFinite</code></a>
  in order to access <a href="#length()"><code>length()</code></a>.
@@ -362,7 +362,7 @@
 <section class="detail" id="isSimple()">
 <h3>isSimple</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isSimple</span>()</div>
-<div class="block">Check if the non-finite object is simple.
+<div class="block">Check if non-finite object is simple.
  <p>
  This method returns <code>true</code> if the non-finite object is a "quiet" <code>NaN</code>,
  <code>Infinity</code>, or <code>-Infinity</code>, else <code>false</code> is returned.
@@ -377,7 +377,7 @@
 <section class="detail" id="isNaN()">
 <h3>isNaN</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">isNaN</span>()</div>
-<div class="block">Check if the non-finite object is a <code>NaN</code>.
+<div class="block">Check if non-finite object is a <code>NaN</code>.
  <p>
  This method returns <code>true</code> for <i>all conformant</i> <code>NaN</code> variants,
  else <code>false</code> is returned..
