@@ -91,10 +91,11 @@
 <div class="block">Class for holding CBOR <code>#7.n</code> (simple) objects.
  <p>
  Although <code>simple</code> types in the range of <code>0-19</code> and <code>32-255</code>
- may appear like some kind of integers, a more logical use is functioning as unique
- (reserved) labels in CBOR maps, with <code>simple(99)</code> featured in
- <a href='../../webpki/cbor/doc-files/signatures.html'>Signatures</a>
- as a representative example.
+ may appear like some kind of integers, serving as a limited set of <i>unique
+ and reserved labels</i> (keys) in CBOR maps seems like a more logical use case.
+ The <code>simple(99)</code> label featured in
+ <a href='../../webpki/cbor/doc-files/signatures.html' class='webpkilink'>Embedded&nbsp;Signatures</a>
+ is a representative example.
  </p></div>
 </section>
 <section class="summary">
@@ -149,6 +150,12 @@
 <dd><code>value</code> - Value/type of simple</dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORObject.html#getSimple()"><code>CBORObject.getSimple()</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>

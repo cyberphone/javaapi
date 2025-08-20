@@ -78,12 +78,12 @@ an encountered non-finite number will throw a <a href="../CBORException.html" ti
 <tr><td colspan='2' style='padding-top:0.8em'>COMPLETE</td></tr>
 <tr><td style='padding-left:1.5em'>// Check what the decoder returned:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td><td></td></tr>
 <tr><td colspan='2' style='padding-left:1.5em'>if (cborObject instanceof <a href="../CBORNonFinite.html" title="class in org.webpki.cbor"><code>CBORNonFinite</code></a> nf) {</td></tr>
-<tr><td style='padding-left:1.5em'>&nbsp;&nbsp;// Non-finite number to proceess</td><td></td></tr>
+<tr><td style='padding-left:1.5em'>&nbsp;&nbsp;// Non-finite number to process</td><td></td></tr>
 <tr><td style='padding-left:1.5em'>&nbsp;&nbsp;// Select suitable method:</td><td></td></tr>
 <tr><td style='padding-left:1.5em'>&nbsp;&nbsp;nf.<a href="../CBORNonFinite.html#getNonFinite()"><code>getNonFinite()</code></a></td><td>// Non-finite number</td></tr>
 <tr><td style='padding-left:1.5em'>&nbsp;&nbsp;nf.<a href="../CBORNonFinite.html#getPayloadData()"><code>getPayloadData()</code></a></td><td>// Application-specific data</td></tr>
 <tr><td style='padding-left:1.5em'>} else {</td><td></td></tr>
-<tr><td style='padding-left:1.5em'>&nbsp;&nbsp;// "Genuine" number to proceess</td><td></td></tr>
+<tr><td style='padding-left:1.5em'>&nbsp;&nbsp;// "Genuine" number to process</td><td></td></tr>
 <tr><td style='padding-left:1.5em'>&nbsp;&nbsp;cborObject.<a href="../CBORObject.html#getFloat64()"><code>getFloat64()</code></a></td><td>// "Genuine" number</td></tr>
 <tr><td style='padding-left:1.5em'>}</td><td></td></tr>
 </table>
