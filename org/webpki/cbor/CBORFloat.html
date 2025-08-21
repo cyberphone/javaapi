@@ -191,8 +191,10 @@
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">createExtendedFloat</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
 <div class="block">Creates an "extended" CBOR <code>float</code> object.
  <p>
- Unlike <a href="#%3Cinit%3E(double)"><code>CBORFloat(double)</code></a>, this method also supports the "simple" <code>NaN</code> 
- and the two <code>Infinity</code> variants.
+ Unlike <a href="#%3Cinit%3E(double)"><code>CBORFloat(double)</code></a>, this method also supports the
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#NaN" title="class or interface in java.lang" class="external-link"><code>Double.NaN</code></a>,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#POSITIVE_INFINITY" title="class or interface in java.lang" class="external-link"><code>Double.POSITIVE_INFINITY</code></a>, and 
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#NEGATIVE_INFINITY" title="class or interface in java.lang" class="external-link"><code>Double.NEGATIVE_INFINITY</code></a> non-finite variants.
  </p>
  <p>
  <a href="CBORObject.html#getExtendedFloat64()"><code>CBORObject.getExtendedFloat64()</code></a> is the <i>decoder</i> counterpart.
