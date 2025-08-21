@@ -90,8 +90,8 @@
 <span class="extends-implements">extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span></div>
 <div class="block">Class for holding CBOR <code>float</code> objects.
  <p>
- Numbers are constrained to the IEEE 754 notation
- using the length 16, 32, and 64 bit on the "wire".  Which
+ Numbers are in the <code>IEEE-754</code> format
+ using the length <code>16</code>, <code>32</code>, and <code>64</code> bit on the "wire".  Which
  length to use is governed by the size and precision 
  required to (minimally) correctly represent a number.
  </p></div>
@@ -132,7 +132,7 @@
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#length()" class="member-name-link">length</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get length of the serialized <code>IEEE 754</code> object.</div>
+<div class="block">Get length of the serialized <code>IEEE-754</code> object.</div>
 </div>
 </div>
 </div>
@@ -191,7 +191,7 @@
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">createExtendedFloat</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
 <div class="block">Creates an "extended" CBOR <code>float</code> object.
  <p>
- Unlike <a href="#%3Cinit%3E(double)"><code>CBORFloat(double)</code></a>, this method also supports the "quiet" <code>NaN</code> 
+ Unlike <a href="#%3Cinit%3E(double)"><code>CBORFloat(double)</code></a>, this method also supports the "simple" <code>NaN</code> 
  and the two <code>Infinity</code> variants.
  </p>
  <p>
@@ -208,6 +208,12 @@
 <dd><a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORNonFinite.html#%3Cinit%3E(long)"><code>CBORNonFinite(long)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
@@ -215,7 +221,7 @@
 <section class="detail" id="length()">
 <h3>length</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">length</span>()</div>
-<div class="block">Get length of the serialized <code>IEEE 754</code> object.
+<div class="block">Get length of the serialized <code>IEEE-754</code> object.
  <p>
  Note that you must cast a <a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a> to <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a>
  in order to access <a href="#length()"><code>length()</code></a>.
