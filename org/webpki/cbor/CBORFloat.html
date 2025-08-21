@@ -129,15 +129,10 @@
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates an "extended" CBOR <code>float</code> object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#formatDouble(java.lang.Double)" class="member-name-link">formatDouble</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
-<div class="block">Get number in diagnostic notation.</div>
-</div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#length()" class="member-name-link">length</a>()</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get length of the serialized IEEE 754 type.</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#length()" class="member-name-link">length</a>()</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Get length of the serialized <code>IEEE 754</code> object.</div>
 </div>
 </div>
 </div>
@@ -191,28 +186,6 @@
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="formatDouble(java.lang.Double)">
-<h3>formatDouble</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">formatDouble</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html" title="class or interface in java.lang" class="external-link">Double</a>&nbsp;value)</span></div>
-<div class="block">Get number in diagnostic notation.
- <p>
- Floating point numbers are serialized using at least
- one integer digit (may be <code>0</code>), a decimal point, and
- one or more fractional digits. 
- </p>
- <p>
- Possible exponents are written as <code>e&pm;</code><i>n</i>, where <i>n</i> != <code>0</code>.
- </p>
- This method also supports <code>NaN</code>, <code>Infinity</code>, and <code>-Infinity</code>.</div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>value</code> - Floating-point value</dd>
-<dt>Returns:</dt>
-<dd>The double in string format</dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="createExtendedFloat(double)">
 <h3>createExtendedFloat</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">createExtendedFloat</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
@@ -242,7 +215,7 @@
 <section class="detail" id="length()">
 <h3>length</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="element-name">length</span>()</div>
-<div class="block">Get length of the serialized IEEE 754 type.
+<div class="block">Get length of the serialized <code>IEEE 754</code> object.
  <p>
  Note that you must cast a <a href="CBORObject.html" title="class in org.webpki.cbor"><code>CBORObject</code></a> to <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a>
  in order to access <a href="#length()"><code>length()</code></a>.
