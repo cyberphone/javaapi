@@ -484,8 +484,10 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">double</span>&nbsp;<span class="element-name">getExtendedFloat64</span>()</div>
 <div class="block">Get "extended" CBOR <code>float64</code> value.
  <p>
- Note that unlike <a href="#getFloat64()"><code>getFloat64()</code></a>, this method also supports the "quiet" <code>NaN</code> 
- and the two <code>Infinity</code> variants.
+ Note that unlike <a href="#getFloat64()"><code>getFloat64()</code></a>, this method also supports the
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#NaN" title="class or interface in java.lang" class="external-link"><code>Double.NaN</code></a>,
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#POSITIVE_INFINITY" title="class or interface in java.lang" class="external-link"><code>Double.POSITIVE_INFINITY</code></a>, and 
+ <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/Double.html#NEGATIVE_INFINITY" title="class or interface in java.lang" class="external-link"><code>Double.NEGATIVE_INFINITY</code></a> non-finite variants.
  </p>
  <p>
  This method requires that the object is a
@@ -515,7 +517,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
  <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a>, otherwise a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p>
  <p>
- Unlike <a href="#getExtendedFloat64()"><code>getExtendedFloat64()</code></a>, this method only accepts "pure" floating-point
+ Unlike <a href="#getExtendedFloat64()"><code>getExtendedFloat64()</code></a>, this method only accepts "regular" floating-point
  numbers.  This makes it adapted for CBOR protocols that do not consider <code>NaN</code>
  or <code>Infinity</code> valid items.  That is, the latter cause a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a>
  to be thrown.
@@ -535,7 +537,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get CBOR <code>float32</code> value.
  <p>
  This method requires that the object is a
- <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> holding a 16 or 32-bit IEEE 754 value, 
+ <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> holding a 16 or 32-bit <code>IEEE&nbsp;754</code> value, 
  otherwise a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
 <dl class="notes">
@@ -553,7 +555,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get CBOR <code>float16</code> value.
  <p>
  This method requires that the object is a
- <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> holding a 16-bit IEEE 754 value, 
+ <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> holding a 16-bit <code>IEEE&nbsp;754</code> value, 
  otherwise a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
 <dl class="notes">
@@ -641,7 +643,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/GregorianCalendar.html" title="class or interface in java.util" class="external-link">GregorianCalendar</a></span>&nbsp;<span class="element-name">getEpochTime</span>()</div>
 <div class="block">Get UNIX <code>Epoch</code> time object.
  <p>
- This method requires that the underlying object is a 
+ This method requires that the object is a 
  <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> or <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a>, 
  otherwise a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
@@ -665,7 +667,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/GregorianCalendar.html" title="class or interface in java.util" class="external-link">GregorianCalendar</a></span>&nbsp;<span class="element-name">getDateTime</span>()</div>
 <div class="block">Get ISO <code>date/time</code> object.
  <p>
- This method requires that the underlying object is a 
+ This method requires that the object is a 
  <a href="CBORString.html" title="class in org.webpki.cbor"><code>CBORString</code></a> that is compatible with ISO date/time
  [<a href='https://www.rfc-editor.org/rfc/rfc3339.html' class='webpkilink'>RFC&nbsp;3339</a>], 
  otherwise a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
