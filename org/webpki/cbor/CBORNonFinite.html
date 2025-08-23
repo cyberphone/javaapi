@@ -240,12 +240,6 @@
 <dd><code>payload</code> - Payload data</dd>
 <dt>Returns:</dt>
 <dd><a href="CBORNonFinite.html" title="class in org.webpki.cbor"><code>CBORNonFinite</code></a></dd>
-<dt>See Also:</dt>
-<dd>
-<ul class="tag-list-long">
-<li><a href="CBORFloat.html#createExtendedFloat(double)"><code>CBORFloat.createExtendedFloat(double)</code></a></li>
-</ul>
-</dd>
 </dl>
 </section>
 </li>
@@ -286,10 +280,14 @@
 <section class="detail" id="getSign()">
 <h3>getSign</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">getSign</span>()</div>
-<div class="block">Get sign bit of non-finite object.</div>
+<div class="block">Get sign bit of non-finite object.
+ <p>
+ This method returns <code>true</code> if the sign bit is <code>1</code>,
+ else <code>false</code> is returned.
+ </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd>Sign bit expressed as a <code>boolean</code>. <code>true</code> = 1, <code>false</code> = 0.</dd>
+<dd><code>boolean</code>.</dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list">
