@@ -283,12 +283,11 @@
 <h3>setDynamic</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORMap.html" title="class in org.webpki.cbor">CBORMap</a></span>&nbsp;<span class="element-name">setDynamic</span><wbr><span class="parameters">(<a href="CBORMap.Dynamic.html" title="interface in org.webpki.cbor">CBORMap.Dynamic</a>&nbsp;dynamic)</span></div>
 <div class="block">Set CBOR data using an external (dynamic) interface.
- <p>
+ <p></p>
  Sample using a construct suitable for chained writing:
- <pre>
-    setDynamic((wr) -&gt; optionalString == null ? wr : wr.set(KEY, new CBORString(optionalString))); 
- </pre>
- </p></div>
+ <div class='webpkifloat'>
+ <pre>  setDynamic((wr) -&gt; optionalString == null ? wr : wr.set(KEY, new CBORString(optionalString)));</pre>
+ </div></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>dynamic</code> - Interface (usually Lambda)</dd>
