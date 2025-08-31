@@ -121,14 +121,19 @@
 <div class="block">Set multiple signature mode.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORValidator.html" title="type parameter in CBORValidator">T</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTagPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY,org.webpki.cbor.CBORCryptoUtils.Collector)" class="member-name-link">setTagPolicy</a><wbr>(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;tagPolicy,
- <a href="CBORCryptoUtils.Collector.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Collector</a>&nbsp;tagCollector)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setNonProtectedPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY)" class="member-name-link">setNonProtectedPolicy</a><wbr>(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;nonProtectedPolicy)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Sets non-protected data policy.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORValidator.html" title="type parameter in CBORValidator">T</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setTagPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY,org.webpki.cbor.CBORCryptoUtils.Collector)" class="member-name-link">setTagPolicy</a><wbr>(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;tagPolicy,
+ <a href="CBORCryptoUtils.Collector.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Collector</a>&nbsp;tagCollector)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets tag wrapping policy.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(org.webpki.cbor.CBORObject)" class="member-name-link">validate</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;signedObject)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#validate(org.webpki.cbor.CBORObject)" class="member-name-link">validate</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;signedObject)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Validates signed CBOR object.</div>
 </div>
 </div>
@@ -203,6 +208,22 @@
 <dt>Parameters:</dt>
 <dd><code>tagPolicy</code> - Define level of support</dd>
 <dd><code>tagCollector</code> - Interface for reading tag</dd>
+<dt>Returns:</dt>
+<dd><code>this</code> of subclass</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setNonProtectedPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY)">
+<h3>setNonProtectedPolicy</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORValidator.html" title="type parameter in CBORValidator">T</a></span>&nbsp;<span class="element-name">setNonProtectedPolicy</span><wbr><span class="parameters">(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;nonProtectedPolicy)</span></div>
+<div class="block">Sets non-protected data policy.
+ <p>
+ By default non-protected data is rejected (<a href="CBORCryptoUtils.POLICY.html#FORBIDDEN"><code>CBORCryptoUtils.POLICY.FORBIDDEN</code></a>).
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>nonProtectedPolicy</code> - Define level of support</dd>
 <dt>Returns:</dt>
 <dd><code>this</code> of subclass</dd>
 </dl>
