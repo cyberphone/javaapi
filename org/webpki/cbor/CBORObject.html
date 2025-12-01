@@ -95,7 +95,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
  <p>
  In this implementation "object" should be regarded as 
  equivalent to the  
- CBOR [<a href='https://www.rfc-editor.org/rfc/rfc8949.html' class='webpkilink'>RFC&nbsp;8949</a>]
+ CBOR [<a href='https://www.rfc-editor.org/rfc/rfc8949.html' class='webpkilink'>RFC8949</a>]
  term, "data item".
  </p></div>
 </section>
@@ -160,12 +160,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/GregorianCalendar.html" title="class or interface in java.util" class="external-link">GregorianCalendar</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDateTime()" class="member-name-link">getDateTime</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get ISO <code>date/time</code> object.</div>
+<div class="block">Get <code>ISO</code> <code>DateTime</code> object.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/GregorianCalendar.html" title="class or interface in java.util" class="external-link">GregorianCalendar</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getEpochTime()" class="member-name-link">getEpochTime</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Get UNIX <code>Epoch</code> time object.</div>
+<div class="block">Get <code>IEEE</code> <code>Epoch</code> time object.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>double</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getExtendedFloat64()" class="member-name-link">getExtendedFloat64</a>()</code></div>
@@ -377,8 +377,8 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
  <p>
  This method requires that the object is a
  <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> and has a value ranging from JavaScript's 
- <code>Number.MIN_SAFE_INTEGER</code> (<code>-2<sup>53</sup>+1</code>) to
- <code>Number.MAX_SAFE_INTEGER</code> (<code>2<sup>53</sup>-1</code>).
+ <code>Number.MIN_SAFE_INTEGER</code> (<code>-9007199254740991</code>) to
+ <code>Number.MAX_SAFE_INTEGER</code> (<code>9007199254740991</code>).
  </p>
  <p>
  Since 53-bit integers are specific to JavaScript, this method
@@ -669,11 +669,14 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <section class="detail" id="getEpochTime()">
 <h3>getEpochTime</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/GregorianCalendar.html" title="class or interface in java.util" class="external-link">GregorianCalendar</a></span>&nbsp;<span class="element-name">getEpochTime</span>()</div>
-<div class="block">Get UNIX <code>Epoch</code> time object.
+<div class="block">Get <code>IEEE</code> <code>Epoch</code> time object.
  <p>
  This method requires that the object is a 
  <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> or <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a>, 
  otherwise a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
+ </p>
+ <p>
+ <code>Epoch</code> values must be within <code>0</code> to <code>253402300799</code> (<code>9999-12-31T23:59:59Z</code>). 
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
@@ -693,12 +696,15 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <section class="detail" id="getDateTime()">
 <h3>getDateTime</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/GregorianCalendar.html" title="class or interface in java.util" class="external-link">GregorianCalendar</a></span>&nbsp;<span class="element-name">getDateTime</span>()</div>
-<div class="block">Get ISO <code>date/time</code> object.
+<div class="block">Get <code>ISO</code> <code>DateTime</code> object.
  <p>
  This method requires that the object is a 
  <a href="CBORString.html" title="class in org.webpki.cbor"><code>CBORString</code></a> that is compatible with ISO date/time
- [<a href='https://www.rfc-editor.org/rfc/rfc3339.html' class='webpkilink'>RFC&nbsp;3339</a>], 
+ [<a href='https://www.rfc-editor.org/rfc/rfc3339.html' class='webpkilink'>RFC3339</a>], 
  otherwise a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
+ </p>
+ <p>
+ <code>DateTime</code> objects must not be negative or exceed <code>"9999-12-31T23:59:59Z"</code>. 
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
