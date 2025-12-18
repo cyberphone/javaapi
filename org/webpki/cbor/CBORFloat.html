@@ -137,6 +137,16 @@
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates an "extended" CBOR <code>float</code> object.</div>
 </div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORFloat.html" title="class in org.webpki.cbor">CBORFloat</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createFloat16(double)" class="member-name-link">createFloat16</a><wbr>(double&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a CBOR <code>float16</code> object.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORFloat.html" title="class in org.webpki.cbor">CBORFloat</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createFloat32(double)" class="member-name-link">createFloat32</a><wbr>(double&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a CBOR <code>float32</code> object.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>int</code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#length()" class="member-name-link">length</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
@@ -209,7 +219,7 @@
  </p>
  <p>
  Note that return type is either <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> or <a href="CBORNonFinite.html" title="class in org.webpki.cbor"><code>CBORNonFinite</code></a>, depending
- on if the argument is a "regular" floating-point value of one of the non-finite variants.
+ on if the argument is a "regular" floating-point value or one of the non-finite variants.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
@@ -222,6 +232,71 @@
 <dd>
 <ul class="tag-list">
 <li><a href="CBORNonFinite.html#%3Cinit%3E(long)"><code>CBORNonFinite(long)</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="createFloat32(double)">
+<h3>createFloat32</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORFloat.html" title="class in org.webpki.cbor">CBORFloat</a></span>&nbsp;<span class="element-name">createFloat32</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
+<div class="block">Creates a CBOR <code>float32</code> object.
+ <p>
+ This method creates a <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> object,
+ where the value is converted to fit CBOR <code>float32</code> representation.
+ </p>
+ <p>
+ If the value (after applying
+ <span style='white-space:nowrap'><code>IEEE</code> <code>754</code></span> rounding rules),
+ is out of range, a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
+ </p>
+ <p>
+ Note that this method returns a <code>float16</code> compatible object
+ if the value and precision is <i>equivalent</i> to the <code>float32</code>
+ representation (e.g. <code>2.5</code>).
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - Floating-point value</dd>
+<dt>Returns:</dt>
+<dd><a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a></dd>
+<dt>Throws:</dt>
+<dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORObject.html#getFloat32()"><code>CBORObject.getFloat32()</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="createFloat16(double)">
+<h3>createFloat16</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORFloat.html" title="class in org.webpki.cbor">CBORFloat</a></span>&nbsp;<span class="element-name">createFloat16</span><wbr><span class="parameters">(double&nbsp;value)</span></div>
+<div class="block">Creates a CBOR <code>float16</code> object.
+ <p>
+ This method creates a <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> object,
+ where the value is converted to fit CBOR <code>float16</code> representation.
+ </p>
+ <p>
+ If the value (after applying
+ <span style='white-space:nowrap'><code>IEEE</code> <code>754</code></span> rounding rules),
+ is out of range, a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - Floating-point value</dd>
+<dt>Returns:</dt>
+<dd><a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a></dd>
+<dt>Throws:</dt>
+<dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORObject.html#getFloat16()"><code>CBORObject.getFloat16()</code></a></li>
 </ul>
 </dd>
 </dl>
