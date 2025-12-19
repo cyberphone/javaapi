@@ -88,12 +88,15 @@
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">CBORBigInt</span>
 <span class="extends-implements">extends <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span></div>
-<div class="block">Class for holding CBOR integer objects.
- <p>
- Note that <i>the encoder is adaptive</i>, selecting the proper CBOR
- representation in order to produce a fully deterministic result.
- </p>
- See also <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a>.</div>
+<div class="block">Class for holding CBOR <code>integer</code> objects.</div>
+<dl class="notes">
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a></li>
+</ul>
+</dd>
+</dl>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -107,7 +110,7 @@
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.math.BigInteger)" class="member-name-link">CBORBigInt</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a>&nbsp;value)</code></div>
 <div class="col-last even-row-color">
-<div class="block">Creates a CBOR integer value of any size.</div>
+<div class="block">Creates a CBOR <code>integer</code> value of any size.</div>
 </div>
 </div>
 </section>
@@ -137,11 +140,7 @@
 <section class="detail" id="&lt;init&gt;(java.math.BigInteger)">
 <h3>CBORBigInt</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORBigInt</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a>&nbsp;value)</span></div>
-<div class="block">Creates a CBOR integer value of any size.
- <p>
- Also see <a href="CBORInt.html#%3Cinit%3E(long)"><code>CBORInt(long)</code></a> and
- <a href="CBORObject.html#getBigInteger()"><code>CBORObject.getBigInteger()</code></a>.
- </p>
+<div class="block">Creates a CBOR <code>integer</code> value of any size.
  <p>
  Note: if <code>value</code> is within the CBOR <code>int</code> range,
  <code>int</code> encoding will be used, otherwise <code>value</code>
@@ -150,6 +149,13 @@
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>value</code> - Integer in BigInteger format</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORInt.html#%3Cinit%3E(long)"><code>CBORInt(long)</code></a></li>
+<li><a href="CBORObject.html#getBigInteger()"><code>CBORObject.getBigInteger()</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
