@@ -129,7 +129,7 @@
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(long,boolean)" class="member-name-link">CBORInt</a><wbr>(long&nbsp;value,
  boolean&nbsp;unsigned)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Creates a CBOR unsigned or negative <code>int</code> object.</div>
+<div class="block">Creates a CBOR unsigned or signed <code>int</code> object.</div>
 </div>
 </div>
 </section>
@@ -205,12 +205,11 @@
 <h3>CBORInt</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORInt</span><wbr><span class="parameters">(long&nbsp;value,
  boolean&nbsp;unsigned)</span></div>
-<div class="block">Creates a CBOR unsigned or negative <code>int</code> object.
+<div class="block">Creates a CBOR unsigned or signed <code>int</code> object.
  <p>
- Unsigned integers range from <code>0</code> to 
- <span style='white-space:nowrap'><code>2<sup>64</sup>-1</code></span>,
- while valid negative integers range from <code>-1</code> to
- <span style='white-space:nowrap'><code>-2<sup>63</sup></code></span>.
+ If <code>unsigned</code> is <code>true</code>, <code>value</code> is treated
+ as an <i>unsigned</i> integer with range <code>0</code> to <code>0xffffffffffffffff</code>,
+ else <code>value</code> is assumed to be a standard java (<i>signed</i>) long.
  </p>
  <p>
  See also <a href="CBORBigInt.html#%3Cinit%3E(java.math.BigInteger)"><code>CBORBigInt(BigInteger)</code></a> and
@@ -219,9 +218,7 @@
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>value</code> - long value</dd>
-<dd><code>unsigned</code> - <code>true</code> if value should be considered as unsigned</dd>
-<dt>Throws:</dt>
-<dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dd><code>unsigned</code> - <code>true</code> =&gt; unsigned</dd>
 </dl>
 </section>
 </li>
@@ -232,11 +229,11 @@
 <div class="block">Creates a CBOR signed <code>int</code> object.
  <p>
  This constructor is equivalent to 
- <a href="#%3Cinit%3E(long,boolean)"><code><code>CBORInt(value, value &gt;= 0)</code></code></a>.
+ <a href="#%3Cinit%3E(long,boolean)"><code><code>CBORInt(value, false)</code></code></a>.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>value</code> - Java (signed) long type</dd>
+<dd><code>value</code> - Java (<i>signed</i>) long</dd>
 </dl>
 </section>
 </li>
