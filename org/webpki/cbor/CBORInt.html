@@ -98,7 +98,8 @@
  using <a href="CBORBigInt.html" title="class in org.webpki.cbor"><code>CBORBigInt</code></a> is the supported workaround.
  </div>
  <p>
- For better control of the generation of short integers, see
+ For fine-grained control of programmatically created integers,
+ the following methods are provided as an <i>alternative</i> to the constructor:
  <a href="#createInt8(int)"><code>createInt8(int)</code></a>,
  <a href="#createUint8(int)"><code>createUint8(int)</code></a>,
  <a href="#createInt16(int)"><code>createInt16(int)</code></a>,
@@ -106,6 +107,9 @@
  <a href="#createInt32(long)"><code>createInt32(long)</code></a>,
  <a href="#createUint32(long)"><code>createUint32(long)</code></a>, and
  <a href="#createInt53(long)"><code>createInt53(long)</code></a>.
+ Note that these methods <i>do not change data</i>; they
+ only verify that data is within expected limits, and if that is the case,
+ finish the operation using the standard constructor.
  </p></div>
 </section>
 <section class="summary">
