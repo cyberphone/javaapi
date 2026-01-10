@@ -406,7 +406,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get CBOR <code>int64</code> object.
  <p>
  If current object is not a
- <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> or holds a value outside the range
+ <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a>, or holds a value outside the range
  <code>-0x8000000000000000</code> to 
  <code>0x7fffffffffffffff</code>, a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
@@ -425,7 +425,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get CBOR <code>uint64</code> object.
  <p>
  If current object is not a
- <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> or holds a value outside the range
+ <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a>, or holds a value outside the range
  <code>0</code> to 
  <code>0xffffffffffffffff</code>, a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
@@ -444,7 +444,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get CBOR <code>int53</code> object.
  <p>
  If current object is not a
- <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> or holds a value outside the range JavaScript's 
+ <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a>, or holds a value outside the JavaScript limits
  <code>Number.MIN_SAFE_INTEGER</code> (<code>-9007199254740991</code>) to
  <code>Number.MAX_SAFE_INTEGER</code> (<code>9007199254740991</code>),
  a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
@@ -468,7 +468,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get CBOR <code>int32</code> object.
  <p>
  If current object is not a
- <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> or holds a value outside the range
+ <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a>, or holds a value outside the range
  <code>-0x80000000</code> to 
  <code>0x7fffffff</code>, a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
@@ -487,7 +487,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get CBOR <code>uint32</code> object.
  <p>
  If current object is not a
- <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> or holds a value outside the range
+ <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a>, or holds a value outside the range
  <code>0</code> to 
  <code>0xffffffff</code>, a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
@@ -506,7 +506,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get CBOR <code>int16</code> object.
  <p>
  If current object is not a
- <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> or holds a value outside the range
+ <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a>, or holds a value outside the range
  <code>-0x8000</code> to 
  <code>0x7fff</code>, a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
@@ -525,7 +525,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get CBOR <code>uint16</code> object.
  <p>
  If current object is not a
- <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> or holds a value outside the range
+ <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a>, or holds a value outside the range
  <code>0</code> to 
  <code>0xffff</code>, a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
@@ -544,7 +544,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get CBOR <code>int8</code> object.
  <p>
  If current object is not a
- <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> or holds a value outside the range
+ <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a>, or holds a value outside the range
  <code>-0x80</code> to 
  <code>0x7f</code>, a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
@@ -563,7 +563,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get CBOR <code>uint8</code> object.
  <p>
  If current object is not a
- <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> or holds a value outside the range
+ <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a>, or holds a value outside the range
  <code>0</code> to 
  <code>0xff</code>, a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p></div>
