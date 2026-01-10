@@ -75,9 +75,10 @@ notation:
 <table class='webpkitable' style='margin-left:2em'>
 <tr><th>CDDL</th><th>Implementation</th>
 <th>Java&nbsp;Mapping</th><th>Notes</th></tr>
-<tr style='text-align:center'><td><code>int</code></td><td><a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a></td><td><code>long</code></td><td><code>1</code></td></tr>
-<tr style='text-align:center'><td><code>bigint</code></td><td><a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a></td><td><code>BigInteger</code></td><td><code>1</code></td></tr>
-<tr style='text-align:center'><td rowspan='2'><code>float</code></td><td><a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a></td><td><code>double</code></td><td><code>2</code>, <code>3</code></td></tr>
+<tr style='text-align:center'><td><code>integer</code></td><td><a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a></td>
+  <td><code>long</code>&nbsp;/&nbsp;<code>BigInteger</code></td><td><code>1</code></td></tr>
+<tr style='text-align:center'><td rowspan='2'><code>float</code></td>
+  <td><a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a></td><td><code>double</code></td><td><code>2</code>, <code>3</code></td></tr>
 <tr style='text-align:center'><td><a href="CBORNonFinite.html" title="class in org.webpki.cbor"><code>CBORNonFinite</code></a></td><td><code>long</code></td><td><code>3</code></td></tr>
 <tr style='text-align:center'><td><code>bstr</code></td><td><a href="CBORBytes.html" title="class in org.webpki.cbor"><code>CBORBytes</code></a></td><td><code>byte[]</code></td><td></td></tr>
 <tr style='text-align:center'><td><code>tstr</code></td><td><a href="CBORString.html" title="class in org.webpki.cbor"><code>CBORString</code></a></td><td><code>String</code></td><td></td></tr>
@@ -101,7 +102,6 @@ The encoded representation is determined by the size and precision of the value.
 The distinction between unsigned and negative values is
  dealt with automatically.
  The encoded representation is determined by the size of the value.
-See also <a href="CBORObject.html#getBigInteger()"><code>CBORObject.getBigInteger()</code></a>.
 The following table holds additional CDDL defintions 
 [<a href='https://www.ietf.org/archive/id/draft-rundgren-cbor-core-24.html#name-additional-cddl-types' class='webpkilink'>CDDL-EXT</a>],
 and their API counterparts:
@@ -175,15 +175,22 @@ and their API counterparts:
     <td style='text-align:center'><code>int128</code></td>
     <td><a href="CBORObject.html#getInt128()"><code>CBORObject.getInt128()</code></a></td>
     <td><a href="CBORInt.html#createInt128(java.math.BigInteger)"><code>CBORInt.createInt128(BigInteger)</code></a></td>
-    <td style='text-align:center'><a href="CBORInt.html#%3Cinit%3E(long)"><code>CBORInt(BigInteger)</code></a></td>
+    <td style='text-align:center'><a href="CBORInt.html#%3Cinit%3E(java.math.BigInteger)"><code>CBORInt(BigInteger)</code></a></td>
     <td style='text-align:center'><code>1</code>, <code>2</code></td>
   </tr>
   <tr>
     <td style='text-align:center'><code>uint128</code></td>
     <td><a href="CBORObject.html#getUint128()"><code>CBORObject.getUint128()</code></a></td>
     <td><a href="CBORInt.html#createUint128(java.math.BigInteger)"><code>CBORInt.createUint128(BigInteger)</code></a></td>
-    <td style='text-align:center'><a href="CBORInt.html#%3Cinit%3E(long)"><code>CBORInt(BigInteger)</code></a></td>
+    <td style='text-align:center'><a href="CBORInt.html#%3Cinit%3E(java.math.BigInteger)"><code>CBORInt(BigInteger)</code></a></td>
     <td style='text-align:center'><code>1</code>, <code>2</code></td>
+  </tr>
+  <tr>
+    <td style='text-align:center'><code>integer</code></td>
+    <td><a href="CBORObject.html#getBigInteger()"><code>CBORObject.getBigInteger()</code></a></td>
+    <td style='text-align:center'><i>Through Constructor</i></td>
+    <td style='text-align:center'><a href="CBORInt.html#%3Cinit%3E(java.math.BigInteger)"><code>CBORInt(BigInteger)</code></a></td>
+    <td style='text-align:center'></td>
   </tr>
 </table>
 </div>
@@ -195,9 +202,8 @@ and their API counterparts:
     the associated "Decoding" method.
   </li>
 </li>
-<li style='padding-top:0.5em'>Counterparts to the core integer types
-  featured in languages like Java, C and Rust.
-  Value ranges are compatible with <i>two's complement</i> representation.
+<li style='padding-top:0.5em'>Counterparts to the <i>fixed-size</i>, <i>two's complement</i> integer types,
+  featured in languages like Java, C, and Rust.
 </li>
 <li style='padding-top:0.5em'>Integer mapping the JavaScript <code>Number</code> type.
   For maintaining JavaScript compatibility, integers are limited to the range:

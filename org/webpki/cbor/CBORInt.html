@@ -123,10 +123,12 @@
 <div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(long,boolean)" class="member-name-link">CBORInt</a><wbr>(long&nbsp;value,
  boolean&nbsp;unsigned)</code></div>
 <div class="col-last odd-row-color">
-<div class="block">Creates a CBOR unsigned or signed <code>int</code> object.</div>
+<div class="block">Creates a CBOR <code>int</code> object.</div>
 </div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(java.math.BigInteger)" class="member-name-link">CBORInt</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a>&nbsp;value)</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Creates a CBOR <code>integer</code> object.</div>
+</div>
 </div>
 </section>
 </li>
@@ -210,6 +212,20 @@
 <section class="detail" id="&lt;init&gt;(java.math.BigInteger)">
 <h3>CBORInt</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORInt</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a>&nbsp;value)</span></div>
+<div class="block">Creates a CBOR <code>integer</code> object.
+ <p>
+ Constructor supporting integers of any size.
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - </dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORObject.html#getBigInteger()"><code>CBORObject.getBigInteger()</code></a></li>
+</ul>
+</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -217,7 +233,7 @@
 <h3>CBORInt</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORInt</span><wbr><span class="parameters">(long&nbsp;value,
  boolean&nbsp;unsigned)</span></div>
-<div class="block">Creates a CBOR unsigned or signed <code>int</code> object.
+<div class="block">Creates a CBOR <code>int</code> object.
  <p>
  If the <code>unsigned</code> flag is <code>true</code>, <code>value</code> is treated
  as an <i>unsigned</i> long with range <code>0</code> to <code>0xffffffffffffffff</code>.
@@ -225,15 +241,17 @@
  <p>
  If the <code>unsigned</code> flag is <code>false</code>, <code>value</code> is treated
  as a standard java (<i>signed</i>) long with range <code>-0x8000000000000000</code> to <code>0x7fffffffffffffff</code>.
- </p>
- <p>
- See also <a href="#%3Cinit%3E(java.math.BigInteger)"><code>CBORInt(BigInteger)</code></a> and
- <a href="CBORObject.html#getBigInteger()"><code>CBORObject.getBigInteger()</code></a>.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>value</code> - long value</dd>
 <dd><code>unsigned</code> - <code>true</code> =&gt; unsigned</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="#%3Cinit%3E(java.math.BigInteger)"><code>CBORInt(BigInteger)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
