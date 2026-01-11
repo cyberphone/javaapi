@@ -452,7 +452,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
  a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p>
  <p>
- Since 53-bit integers are specific to JavaScript, this method
+ Since 53-bit integers are specific to JavaScript, <code>int53</code> objects
  should be used with caution in cross-platform scenarios.
  </p></div>
 <dl class="notes">
@@ -460,6 +460,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <dd><code>long</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORInt.html#createInt53(long)"><code>CBORInt.createInt53(long)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
@@ -479,6 +485,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <dd><code>int</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORInt.html#createInt32(long)"><code>CBORInt.createInt32(long)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
@@ -498,6 +510,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <dd><code>long</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORInt.html#createUint32(long)"><code>CBORInt.createUint32(long)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
@@ -517,6 +535,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <dd><code>int</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORInt.html#createInt16(int)"><code>CBORInt.createInt16(int)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
@@ -536,6 +560,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <dd><code>int</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORInt.html#createUint16(int)"><code>CBORInt.createUint16(int)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
@@ -555,6 +585,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <dd><code>int</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORInt.html#createInt8(int)"><code>CBORInt.createInt8(int)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
@@ -574,6 +610,12 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <dd><code>int</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORInt.html#createUint8(int)"><code>CBORInt.createUint8(int)</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
@@ -584,7 +626,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get "extended" CBOR <code>float</code> object.
  <p>
  If current object is not a
- <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> holding a 64-bit, 32-bit, or 16-bit
+ <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> holding a 64, 32, or 16-bit
  <span style='white-space:nowrap'><code>IEEE</code> <code>754</code></span> number, 
  a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p>
@@ -615,7 +657,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="block">Get CBOR <code>float</code> object.
  <p>
  If current object is not a
- <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> holding a 64-bit, 32-bit, or 16-bit
+ <a href="CBORFloat.html" title="class in org.webpki.cbor"><code>CBORFloat</code></a> holding a 64, 32, or 16-bit
  <span style='white-space:nowrap'><code>IEEE</code> <code>754</code></span> number, 
  a <a href="CBORException.html" title="class in org.webpki.cbor"><code>CBORException</code></a> is thrown.
  </p>
