@@ -103,7 +103,7 @@
  <a href="#createUint128(java.math.BigInteger)"><code>createUint128(BigInteger)</code></a>.
  Note that these methods <i>do not change data</i>; they
  only verify that data is within expected limits, and if that is the case,
- finish the operation using the standard constructor.
+ finish the operation using one of the standard constructors.
  </p></div>
 </section>
 <section class="summary">
@@ -215,6 +215,11 @@
 <div class="block">Creates a CBOR <code>integer</code> object.
  <p>
  Constructor supporting integers of any size.
+ </p>
+ <p>
+ Note that using this constructor or one of the other constrctors
+ do not affect CBOR encoding; it is only about accomodating integers
+ of different size.
  </p></div>
 <dl class="notes">
 <dt>Parameters:</dt>
