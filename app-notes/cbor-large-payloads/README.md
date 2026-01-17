@@ -77,8 +77,8 @@ public class test {
 
       // Now read (in modest chunks), the potentially large attached file.
       byte[] buffer = new byte[BUFFER_SIZE];
-      int byteCount = 0;
-      for (int n; (n = inputStream.read(buffer)) > 0; byteCount += n) {
+      int fileSize = 0;
+      for (int n; (n = inputStream.read(buffer)) > 0; fileSize += n) {
         // Each chunk updates the SHA256 calculation.
         hashFunction.update(buffer, 0, n);
         /////////////////////////////////////////////////////
@@ -95,7 +95,7 @@ public class test {
       }
 
       // We actually did it!
-      System.out.printf("\nSuccessfully received: %s (%d)\n", metaData.get(FILE_KEY).getString(), byteCount);
+      System.out.printf("\nSuccessfully received: %s (%d)\n", metaData.get(FILE_KEY).getString(), fileSize);
 
     } catch (Exception e) {
       // Something is wrong...
@@ -103,7 +103,6 @@ public class test {
     }
   }
 }
-
 ```
 If all is good the result should be:
 ```
@@ -111,4 +110,4 @@ Successfully received: shanty-the-cat.jpg (2239423)
 ```
 
 ## Other solutions
-Server-based attachments may also be be provided as URLs.
+Server-based attachments may also be provided as URLs.
