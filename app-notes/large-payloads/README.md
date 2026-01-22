@@ -57,7 +57,7 @@ public class test {
     try {
       // Perform an HTTP request and get a stream to the returned body.
       HttpRequest request = HttpRequest.newBuilder()
-        .uri(new URI("https://cyberphone.github.io/javaapi/app-notes/cbor-large-payloads/payload.bin"))
+        .uri(new URI("https://cyberphone.github.io/javaapi/app-notes/large-payloads/payload.bin"))
         .GET()
         .build();
       HttpResponse<InputStream> response = HttpClient.newBuilder()
