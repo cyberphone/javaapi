@@ -31,7 +31,6 @@ import java.io.InputStream;
 
 import java.net.URI;
 
-import java.util.HexFormat;
 import java.util.Arrays;
 
 import java.net.http.HttpClient;
