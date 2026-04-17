@@ -24,7 +24,9 @@ The concatenation of `metadata.cbor` and `shanty-the-cat.jpg` is subsequently st
 
 The sample code below shows how `payload.bin` could be processed by a receiver:
 ```java
-// test.java
+// LargePayloadTest.java
+
+package org.webpki.cbor.external;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -45,18 +47,18 @@ import org.webpki.cbor.CBORMap;
 import org.webpki.cbor.CBORString;
 
 
-public class test {
+public class LargePayloadTest {
 
   static final CBORString FILE_KEY = new CBORString("file");
   static final CBORString SHA256_KEY = new CBORString("sha256");
 
-  static final int BUFFER_SIZE = 1024;
+  static final int CHUNK_SIZE = 1024;
 
   public static void main(String[] args) {
     try {
       // Perform an HTTP request and get a stream to the returned body.
       HttpRequest request = HttpRequest.newBuilder()
-        .uri(new URI("https://cyberphone.github.io/javaapi/app-notes/large-payloads/payload.bin"))
+        .uri(new URI("https://cyberphone.github.io/cbor-core/large-payload/payload.bin"))
         .GET()
         .build();
       HttpResponse<InputStream> response = HttpClient.newBuilder()
@@ -75,11 +77,11 @@ public class test {
       MessageDigest hashFunction = MessageDigest.getInstance("SHA256");
 
       // Now read (in modest chunks), the potentially large attached file.
-      byte[] buffer = new byte[BUFFER_SIZE];
+      byte[] chunk = new byte[CHUNK_SIZE];
       int fileSize = 0;
-      for (int n; (n = inputStream.read(buffer)) > 0; fileSize += n) {
+      for (int n; (n = inputStream.read(chunk)) > 0; fileSize += n) {
         // Each chunk updates the SHA256 calculation.
-        hashFunction.update(buffer, 0, n);
+        hashFunction.update(chunk, 0, n);
         /////////////////////////////////////////////////////
         // Store the chunk in an application-specific way. //
         /////////////////////////////////////////////////////
