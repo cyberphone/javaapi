@@ -108,7 +108,7 @@
  <tr><td><i>Reserved</i> <code>COTX</code></td>
  <td><code><a href="#RESERVED_TAG_COTX">1010</a>([</code><i>Text&nbsp;string</i><code>,
  </code><i>CBOR&nbsp;object</i><code>])</code></td>
- <td>See <a href="#getCOTXObject()"><code>getCOTXObject()</code></a></td></tr>
+ <td>See <a href="#getCOTX()"><code>getCOTX()</code></a></td></tr>
  </table>
  </div>
  The <i>reserved</i> tags are verified for correctness during decoding as well
@@ -130,7 +130,7 @@
 <div class="table-header col-second">Class</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
-<div class="col-second even-row-color"><code><a href="CBORTag.COTXObject.html" class="type-name-link" title="class in org.webpki.cbor">CBORTag.COTXObject</a></code></div>
+<div class="col-second even-row-color"><code><a href="CBORTag.COTX.html" class="type-name-link" title="class in org.webpki.cbor">CBORTag.COTX</a></code></div>
 <div class="col-last even-row-color">
 <div class="block">Return object for COTX tags.</div>
 </div>
@@ -177,7 +177,7 @@
 <div class="col-last even-row-color">
 <div class="block">Creates a CBOR tagged object.</div>
 </div>
-<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,org.webpki.cbor.CBORObject)" class="member-name-link">CBORTag</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;typeUrl,
+<div class="col-constructor-name odd-row-color"><code><a href="#%3Cinit%3E(java.lang.String,org.webpki.cbor.CBORObject)" class="member-name-link">CBORTag</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
  <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;object)</code></div>
 <div class="col-last odd-row-color">
 <div class="block">Creates a <a href='https://www.ietf.org/archive/id/draft-rundgren-cotx-05.html' class='webpkilink'>COTX</a> object.</div>
@@ -201,8 +201,8 @@
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get tagged CBOR object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORTag.COTXObject.html" title="class in org.webpki.cbor">CBORTag.COTXObject</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCOTXObject()" class="member-name-link">getCOTXObject</a>()</code></div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORTag.COTX.html" title="class in org.webpki.cbor">CBORTag.COTX</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getCOTX()" class="member-name-link">getCOTX</a>()</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get <code>COTX</code> object.</div>
 </div>
@@ -297,7 +297,7 @@
 <li>
 <section class="detail" id="&lt;init&gt;(java.lang.String,org.webpki.cbor.CBORObject)">
 <h3>CBORTag</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORTag</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;typeUrl,
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">CBORTag</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a>&nbsp;id,
  <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;object)</span></div>
 <div class="block">Creates a <a href='https://www.ietf.org/archive/id/draft-rundgren-cotx-05.html' class='webpkilink'>COTX</a> object.
  <p>
@@ -314,8 +314,14 @@
  </div></div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>typeUrl</code> - Type URL (or other string)</dd>
+<dd><code>id</code> - URL or other string serving as type id</dd>
 <dd><code>object</code> - Object</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORTag.COTX.html" title="class in org.webpki.cbor"><code>CBORTag.COTX</code></a></li>
+</ul>
+</dd>
 </dl>
 </section>
 </li>
@@ -405,9 +411,9 @@
 </section>
 </li>
 <li>
-<section class="detail" id="getCOTXObject()">
-<h3>getCOTXObject</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORTag.COTXObject.html" title="class in org.webpki.cbor">CBORTag.COTXObject</a></span>&nbsp;<span class="element-name">getCOTXObject</span>()</div>
+<section class="detail" id="getCOTX()">
+<h3>getCOTX</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORTag.COTX.html" title="class in org.webpki.cbor">CBORTag.COTX</a></span>&nbsp;<span class="element-name">getCOTX</span>()</div>
 <div class="block">Get <code>COTX</code> object.
  <p>
  This method assumes that a valid <a href="#%3Cinit%3E(java.lang.String,org.webpki.cbor.CBORObject)"><code>COTX</code></a> tag has been found, 
@@ -415,7 +421,7 @@
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd><code>COTXObject</code></dd>
+<dd><code>COTX</code></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
 <dt>See Also:</dt>
