@@ -131,14 +131,19 @@
 <div class="block">Encrypt data, return tagged CEF object.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBOREncrypter.html" title="type parameter in CBOREncrypter">T</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)" class="member-name-link">setIntercepter</a><wbr>(<a href="CBORCryptoUtils.Intercepter.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Intercepter</a>&nbsp;intercepter)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setCustomDataIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)" class="member-name-link">setCustomDataIntercepter</a><wbr>(<a href="CBORCryptoUtils.Intercepter.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Intercepter</a>&nbsp;customDataIntercepter)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">Set optional Intercepter.</div>
+<div class="block">Set optional custom data intercepter.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBOREncrypter.html" title="type parameter in CBOREncrypter">T</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setKeyId(org.webpki.cbor.CBORObject)" class="member-name-link">setKeyId</a><wbr>(<a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a>&nbsp;keyId)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Set optional key Id.</div>
+</div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBOREncrypter.html" title="type parameter in CBOREncrypter">T</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUnprotectedDataIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)" class="member-name-link">setUnprotectedDataIntercepter</a><wbr>(<a href="CBORCryptoUtils.Intercepter.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Intercepter</a>&nbsp;unprotectedDataIntercepter)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Set optional unprotected data intercepter.</div>
 </div>
 </div>
 </div>
@@ -158,13 +163,26 @@
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="setIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)">
-<h3>setIntercepter</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBOREncrypter.html" title="type parameter in CBOREncrypter">T</a></span>&nbsp;<span class="element-name">setIntercepter</span><wbr><span class="parameters">(<a href="CBORCryptoUtils.Intercepter.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Intercepter</a>&nbsp;intercepter)</span></div>
-<div class="block">Set optional Intercepter.</div>
+<section class="detail" id="setCustomDataIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)">
+<h3>setCustomDataIntercepter</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBOREncrypter.html" title="type parameter in CBOREncrypter">T</a></span>&nbsp;<span class="element-name">setCustomDataIntercepter</span><wbr><span class="parameters">(<a href="CBORCryptoUtils.Intercepter.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Intercepter</a>&nbsp;customDataIntercepter)</span></div>
+<div class="block">Set optional custom data intercepter.</div>
 <dl class="notes">
 <dt>Parameters:</dt>
-<dd><code>intercepter</code> - An instance of Intercepter</dd>
+<dd><code>customDataIntercepter</code> - An instance of Intercepter</dd>
+<dt>Returns:</dt>
+<dd><code>this</code> of subclass</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="setUnprotectedDataIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)">
+<h3>setUnprotectedDataIntercepter</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBOREncrypter.html" title="type parameter in CBOREncrypter">T</a></span>&nbsp;<span class="element-name">setUnprotectedDataIntercepter</span><wbr><span class="parameters">(<a href="CBORCryptoUtils.Intercepter.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Intercepter</a>&nbsp;unprotectedDataIntercepter)</span></div>
+<div class="block">Set optional unprotected data intercepter.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>unprotectedDataIntercepter</code> - An instance of Intercepter</dd>
 <dt>Returns:</dt>
 <dd><code>this</code> of subclass</dd>
 </dl>

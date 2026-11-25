@@ -99,6 +99,8 @@
  <a href="#createInt32(long)"><code>createInt32(long)</code></a>,
  <a href="#createUint32(long)"><code>createUint32(long)</code></a>,
  <a href="#createInt53(long)"><code>createInt53(long)</code></a>,
+ <a href="#createInt64(long)"><code>createInt64(long)</code></a>,
+ <a href="#createUint64(long)"><code>createUint64(long)</code></a>,
  <a href="#createInt128(java.math.BigInteger)"><code>createInt128(BigInteger)</code></a>, and
  <a href="#createUint128(java.math.BigInteger)"><code>createUint128(BigInteger)</code></a>.
  Note that these methods <i>do not change data</i>; they
@@ -164,24 +166,34 @@
 <div class="block">Creates a CBOR <code>int53</code> object.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORInt.html" title="class in org.webpki.cbor">CBORInt</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createInt8(int)" class="member-name-link">createInt8</a><wbr>(int&nbsp;value)</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createInt64(long)" class="member-name-link">createInt64</a><wbr>(long&nbsp;value)</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a CBOR <code>int64</code> object.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORInt.html" title="class in org.webpki.cbor">CBORInt</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createInt8(int)" class="member-name-link">createInt8</a><wbr>(int&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a CBOR <code>int8</code> object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORInt.html" title="class in org.webpki.cbor">CBORInt</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUint128(java.math.BigInteger)" class="member-name-link">createUint128</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORInt.html" title="class in org.webpki.cbor">CBORInt</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUint128(java.math.BigInteger)" class="member-name-link">createUint128</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigInteger.html" title="class or interface in java.math" class="external-link">BigInteger</a>&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a CBOR <code>uint128</code> object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORInt.html" title="class in org.webpki.cbor">CBORInt</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUint16(int)" class="member-name-link">createUint16</a><wbr>(int&nbsp;value)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORInt.html" title="class in org.webpki.cbor">CBORInt</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUint16(int)" class="member-name-link">createUint16</a><wbr>(int&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a CBOR <code>uint16</code> object.</div>
 </div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORInt.html" title="class in org.webpki.cbor">CBORInt</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUint32(long)" class="member-name-link">createUint32</a><wbr>(long&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORInt.html" title="class in org.webpki.cbor">CBORInt</a></code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUint32(long)" class="member-name-link">createUint32</a><wbr>(long&nbsp;value)</code></div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
 <div class="block">Creates a CBOR <code>uint32</code> object.</div>
+</div>
+<div class="col-first odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORInt.html" title="class in org.webpki.cbor">CBORInt</a></code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUint64(long)" class="member-name-link">createUint64</a><wbr>(long&nbsp;value)</code></div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4">
+<div class="block">Creates a CBOR <code>uint64</code> object.</div>
 </div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code>static <a href="CBORInt.html" title="class in org.webpki.cbor">CBORInt</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab1 method-summary-table-tab4"><code><a href="#createUint8(int)" class="member-name-link">createUint8</a><wbr>(int&nbsp;value)</code></div>
@@ -471,6 +483,56 @@
 <dd>
 <ul class="tag-list">
 <li><a href="CBORObject.html#getInt53()"><code>CBORObject.getInt53()</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="createInt64(long)">
+<h3>createInt64</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORInt.html" title="class in org.webpki.cbor">CBORInt</a></span>&nbsp;<span class="element-name">createInt64</span><wbr><span class="parameters">(long&nbsp;value)</span></div>
+<div class="block">Creates a CBOR <code>int64</code> object.
+ <p>
+ This method creates a <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> object,
+ where the value is within
+ <code>-0x8000000000000000</code> to 
+ <code>0x7fffffffffffffff</code>.
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - Integer</dd>
+<dt>Returns:</dt>
+<dd><a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> object</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORObject.html#getInt64()"><code>CBORObject.getInt64()</code></a></li>
+</ul>
+</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="createUint64(long)">
+<h3>createUint64</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="CBORInt.html" title="class in org.webpki.cbor">CBORInt</a></span>&nbsp;<span class="element-name">createUint64</span><wbr><span class="parameters">(long&nbsp;value)</span></div>
+<div class="block">Creates a CBOR <code>uint64</code> object.
+ <p>
+ This method creates a <a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> object,
+ where the value is within
+ <code>0</code> to 
+ <code>0xffffffffffffffff</code>.
+ </p></div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - Integer</dd>
+<dt>Returns:</dt>
+<dd><a href="CBORInt.html" title="class in org.webpki.cbor"><code>CBORInt</code></a> object</dd>
+<dt>See Also:</dt>
+<dd>
+<ul class="tag-list">
+<li><a href="CBORObject.html#getUint64()"><code>CBORObject.getUint64()</code></a></li>
 </ul>
 </dd>
 </dl>

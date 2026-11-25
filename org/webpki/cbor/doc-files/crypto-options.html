@@ -66,8 +66,8 @@ the actual tag object or <code>null</code> if the container is not tagged.</p>
 
 <h3 id="creating-custom-data-heading" style='padding:1em 0 0 0'>Creating Custom Data</h3>
 Adding custom data to CSF or CEF containers is performed by calling
-<a href="../CBORSigner.html#setIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)"><code>CBORSigner.setIntercepter(CBORCryptoUtils.Intercepter)</code></a> and
-<a href="../CBOREncrypter.html#setIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)"><code>CBOREncrypter.setIntercepter(CBORCryptoUtils.Intercepter)</code></a> respectively,
+<a href="../CBORSigner.html#setCustomDataIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)"><code>CBORSigner.setCustomDataIntercepter(CBORCryptoUtils.Intercepter)</code></a> and
+<a href="../CBOREncrypter.html#setCustomDataIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)"><code>CBOREncrypter.setCustomDataIntercepter(CBORCryptoUtils.Intercepter)</code></a> respectively,
 where <a href="../CBORCryptoUtils.Intercepter.html#getCustomData()"><code>CBORCryptoUtils.Intercepter.getCustomData()</code></a> is supposed
 to provide the actual data.
 

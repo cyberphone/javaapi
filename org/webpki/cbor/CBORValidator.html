@@ -127,7 +127,8 @@
 <div class="block">Sets tag wrapping policy.</div>
 </div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="CBORValidator.html" title="type parameter in CBORValidator">T</a></code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUnprotectedDataPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY)" class="member-name-link">setUnprotectedDataPolicy</a><wbr>(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;policy)</code></div>
+<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#setUnprotectedDataPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY,org.webpki.cbor.CBORCryptoUtils.Collector)" class="member-name-link">setUnprotectedDataPolicy</a><wbr>(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;policy,
+ <a href="CBORCryptoUtils.Collector.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Collector</a>&nbsp;unprotectedDataCollector)</code></div>
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Sets unprotected data policy.</div>
 </div>
@@ -214,12 +215,13 @@
 </section>
 </li>
 <li>
-<section class="detail" id="setUnprotectedDataPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY)">
+<section class="detail" id="setUnprotectedDataPolicy(org.webpki.cbor.CBORCryptoUtils.POLICY,org.webpki.cbor.CBORCryptoUtils.Collector)">
 <h3>setUnprotectedDataPolicy</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORValidator.html" title="type parameter in CBORValidator">T</a></span>&nbsp;<span class="element-name">setUnprotectedDataPolicy</span><wbr><span class="parameters">(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;policy)</span></div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="CBORValidator.html" title="type parameter in CBORValidator">T</a></span>&nbsp;<span class="element-name">setUnprotectedDataPolicy</span><wbr><span class="parameters">(<a href="CBORCryptoUtils.POLICY.html" title="enum class in org.webpki.cbor">CBORCryptoUtils.POLICY</a>&nbsp;policy,
+ <a href="CBORCryptoUtils.Collector.html" title="interface in org.webpki.cbor">CBORCryptoUtils.Collector</a>&nbsp;unprotectedDataCollector)</span></div>
 <div class="block">Sets unprotected data policy.
  <p>
- Unprotected data is indicated by the reserved label <a href="CBORCryptoConstants.html#CSF_UNPROTECTED_LBL"><code>CBORCryptoConstants.CSF_UNPROTECTED_LBL</code></a>.
+ Unprotected data is indicated by the reserved label <a href="CBORCryptoConstants.html#CXF_UNPROTECTED_LBL"><code>CBORCryptoConstants.CXF_UNPROTECTED_LBL</code></a>.
  </p>
  <p>
  By default unprotected data is rejected (<a href="CBORCryptoUtils.POLICY.html#FORBIDDEN"><code>CBORCryptoUtils.POLICY.FORBIDDEN</code></a>).
@@ -227,6 +229,7 @@
 <dl class="notes">
 <dt>Parameters:</dt>
 <dd><code>policy</code> - Define level of support</dd>
+<dd><code>unprotectedDataCollector</code> - Interface for reading unprotected data</dd>
 <dt>Returns:</dt>
 <dd><code>this</code> of subclass</dd>
 </dl>
