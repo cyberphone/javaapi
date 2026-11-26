@@ -82,13 +82,7 @@
 </dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public static interface </span><span class="element-name type-name-label">CBORCryptoUtils.Intercepter</span></div>
-<div class="block">Interface for customizing map objects.
- <p>
- Implementations of this interface must be set by calling
- <a href="CBORSigner.html#setCustomDataIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)"><code>CBORSigner.setCustomDataIntercepter(Intercepter)</code></a> and
- <a href="CBOREncrypter.html#setCustomDataIntercepter(org.webpki.cbor.CBORCryptoUtils.Intercepter)"><code>CBOREncrypter.setCustomDataIntercepter(Intercepter)</code></a> for
- signatures and encryption respectively.
- </p></div>
+<div class="block">Interface for customizing CSF/CEF objects.</div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -104,9 +98,9 @@
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code>default <a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getCustomData()" class="member-name-link">getCustomData</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5"><code><a href="#getData()" class="member-name-link">getData</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab5">
-<div class="block">Optionally add custom data to the map.</div>
+<div class="block">Optionally add specific data to the map.</div>
 </div>
 </div>
 </div>
@@ -123,21 +117,17 @@
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="getCustomData()">
-<h3>getCustomData</h3>
-<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">getCustomData</span>()</div>
-<div class="block">Optionally add custom data to the map.
- <p>
- Custom data may be any valid CBOR object.  This data is assigned
- to the CSF/CEF specific label <a href="CBORCryptoConstants.html#CXF_CUSTOM_DATA_LBL"><code>CBORCryptoConstants.CXF_CUSTOM_DATA_LBL</code></a>.
- </p>
+<section class="detail" id="getData()">
+<h3>getData</h3>
+<div class="member-signature"><span class="modifiers">default</span>&nbsp;<span class="return-type"><a href="CBORObject.html" title="class in org.webpki.cbor">CBORObject</a></span>&nbsp;<span class="element-name">getData</span>()</div>
+<div class="block">Optionally add specific data to the map.
  <p>
  If this method returns <code>null</code>, the assumption is that there is no
  custom data.
  </p></div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd><code>null</code> (default implementation) or custom data object.</dd>
+<dd><code>null</code> (default implementation) or a specific data object.</dd>
 </dl>
 </section>
 </li>
