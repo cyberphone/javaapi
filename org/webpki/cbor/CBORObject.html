@@ -162,7 +162,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get CBOR <code>bstr</code> object.</div>
 </div>
-<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Instant.html" title="class or interface in java.time" class="external-link">Instant</a></code></div>
+<div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/OffsetDateTime.html" title="class or interface in java.time" class="external-link">OffsetDateTime</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#getDateTime()" class="member-name-link">getDateTime</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
 <div class="block">Get <code>DateTime</code> object.</div>
@@ -868,7 +868,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
 <li>
 <section class="detail" id="getDateTime()">
 <h3>getDateTime</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Instant.html" title="class or interface in java.time" class="external-link">Instant</a></span>&nbsp;<span class="element-name">getDateTime</span>()</div>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/OffsetDateTime.html" title="class or interface in java.time" class="external-link">OffsetDateTime</a></span>&nbsp;<span class="element-name">getDateTime</span>()</div>
 <div class="block">Get <code>DateTime</code> object.
  
  <div style='margin-top:0.5em'>
@@ -891,14 +891,19 @@ implements <a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base
  </div></div>
 <dl class="notes">
 <dt>Returns:</dt>
-<dd><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/Instant.html" title="class or interface in java.time" class="external-link"><code>Instant</code></a></dd>
+<dd><a href="https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/OffsetDateTime.html" title="class or interface in java.time" class="external-link"><code>OffsetDateTime</code></a></dd>
 <dt>Throws:</dt>
 <dd><code><a href="CBORException.html" title="class in org.webpki.cbor">CBORException</a></code></dd>
 <dt>See Also:</dt>
 <dd>
 <ul class="tag-list-long">
 <li><a href="CBORTag.html#getDateTime()"><code>CBORTag.getDateTime()</code></a></li>
-<li><a href="CBORUtil.html#createDateTime(java.time.Instant,boolean,boolean)"><code>CBORUtil.createDateTime(Instant, boolean, boolean)</code></a></li>
+<li>
+<details class="invalid-tag">
+<summary>invalid reference</summary>
+<pre><code>CBORUtil#createDateTime(Instant, boolean, boolean)</code></pre>
+</details>
+</li>
 </ul>
 </dd>
 </dl>
